@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8"/>
+  <title>[tsc-devel] Re: Bad build? · tsc-devel@secretchronicles.org</title>
+  <style type="text/css">html, body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial Nova", "Arial", sans-serif;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  margin: 0px;
+}
+
+a {
+  color: #0b8ae1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #520ebb;
+}
+
+header {
+  margin: 0px;
+  padding: 12px 6px;
+  background-color: #0b8ae1;
+}
+
+header ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header ul li::after {
+  margin-left: 8px;
+  content: "|";
+  margin-right: 8px;
+}
+
+header ul li:last-child::after {
+  content: "";
+  margin-right: 0px;
+}
+
+header a {
+  color: white;
+}
+
+header a:hover {
+  color: black;
+}
+
+footer {
+  border-top: 1px solid #999999;
+  color: #999999;
+  font-size: 0.8rem;
+  padding: 8px;
+  text-align: center;
+  clear: both;
+}
+
+footer p {
+  margin: 0px;
+}
+
+main {
+  margin: 8px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+h1.msg-subject {
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+h2, caption {
+  font-size: 1rem;
+}
+
+
+.msg-meta {
+  margin-top: 0px;
+}
+
+.msg-from {
+  font-weight: bold;
+}
+
+.msg-cc {
+  color: #e1730a;
+}
+
+.msg-attachments h2 {
+  font-style: italic;
+}
+
+table, tr, td, th {
+  border: none;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #eeeeee;
+}
+
+thead tr {
+  border-bottom: 1px solid black;
+}
+
+.newyear {
+  font-style: italic;
+  text-align: center;
+  font-weight: bold;
+}
+
+.numreplies {
+  text-align: center;
+}
+
+.thread-ghost {
+  font-style: italic;
+}
+
+.lastreply {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+pre, code {
+  font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+.msg-body {
+  width: 80ch;
+}
+
+.msg-quote {
+  color: #698900;
+  font-style: italic;
+}
+
+.msg-nav {
+  clear: both;
+}
+
+.msg-thread-nav {
+  width: calc(50% - 4px);
+}
+
+.msg-thread-nav-bydate {
+  float: right;
+}
+
+.msg-thread-nav-bythread {
+  float: left;
+}
+
+.msg-thread-nav table caption {
+  background-color: #0b8ae1;
+  color: white;
+  border: none;
+  caption-side: top;
+  text-align: center;
+  font-weight: bold;
+}
+
+.msg-thread-nav tbody tr td {
+  padding: 2px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.msg-thread-nav-bydate table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bydate table td:nth-child(1) {
+  width: 55%;
+
+}
+
+.msg-thread-nav-bydate table td:nth-child(2) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bydate table td:nth-child(3) {
+  width:20%;
+  text-align: right;
+}
+
+.msg-thread-nav-bydate table td:nth-child(4) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+
+.msg-thread-nav-bythread table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bythread table td:nth-child(1) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+.msg-thread-nav-bythread table td:nth-child(2) {
+  width: 20%;
+
+}
+
+.msg-thread-nav-bythread table td:nth-child(3) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bythread table td:nth-child(4) {
+  width:55%;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-0 {
+  padding-left: 0px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-1 {
+  padding-left: 32px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-2 {
+  padding-left: 64px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-3 {
+  padding-left: 96px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-4 {
+  padding-left: 128px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-5 {
+  padding-left: 160px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-6 {
+  padding-left: 192px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-7 {
+  padding-left: 224px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-8 {
+  padding-left: 256px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-9 {
+  padding-left: 288px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-10 {
+  padding-left: 320px;
+}
+
+.threadindex {
+    table-layout: fixed;
+}
+
+.threadindex th:nth-child(1) {
+    width: 78%;
+}
+
+.threadindex th:nth-child(2) {
+    text-align: center;
+    width: 7%;
+}
+
+.threadindex th:nth-child(3) {
+    width: 15%;
+}
+
+.formatted-patch .patch-add {
+  color: #00CC00;
+}
+
+.formatted-patch .patch-del {
+  color: #FF0000;
+}
+
+.formatted-patch .patch-pos {
+  color: #0000FF;
+  background-color: #ddddFF;
+}
+
+div.formatted-patch {
+  border: 1px solid black;
+}
+
+div.formatted-patch pre {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'Inconsolata', 'DejaVu Sans Mono', monospace;
+  margin: 0px;
+}
+
+
+div.formatted-patch pre.linenos {
+  background-color: #0b8ae1;
+  float: left;
+  padding-right: 4px;
+  text-align: right;
+  margin-right: 4px;
+}
+
+.linenos a {
+  color: white;
+}
+
+.linenos a:hover {
+  color: black;
+}
+
+.linenos a:target {
+  color: #8b000e;
+}
+
+tracker-placeholder {
+  display: none;
+}
+
+.tracker-state-change {
+  font-style: italic;
+  color: #e1730a;
+}
+
+.ticket-state {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.ticket-state-open {
+  color: #00CC00;
+}
+
+.ticket-state-confirmed {
+  color: #e1730a;
+}
+
+.ticket-state-closed {
+  color: #FF0000;
+}
+
+.tracker-panel {
+  width: 450px;
+  float: right;
+  margin: 8px;
+  padding: 0px;
+  border: 2px solid #0b8ae1;
+  text-align: center;
+}
+
+.tracker-panel h2 {
+  background-color: #0b8ae1;
+  color: white;
+  margin-top: 0px;
+}
+
+.tracker-panel ul {
+  padding: 0px 8px;
+  margin: 8px;
+  text-align: left;
+  list-style-type: none;
+}
+
+.tracker-table {
+  table-layout: fixed;
+}
+
+.tracker-table tbody td:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tracker-table thead th:nth-child(1) {
+  width: 60%;
+}
+
+.tracker-table thead th:nth-child(2) {
+  width: 13%;
+}
+
+.tracker-table thead th:nth-child(3) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(4) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(5) {
+  width: 7%;
+  text-align: center;
+}
+
+.tracker-table tbody td:nth-child(5) {
+  text-align: center;
+}
+
+#tracker-filter-subject {
+  width: calc(100% - 8px);
+}
+
+.filter-hide {
+  display: none;
+}
+
+@media(max-width: 768px) {
+
+  html, body {
+    font-size: 18px;
+  }
+
+  .lastreply {
+    display: none;
+  }
+
+  .msg-body {
+    width: initial;
+  }
+
+  .msg-thread-nav-bydate {
+    float: none;
+  }
+
+  .msg-thread-nav-bythread {
+    float: none;
+  }
+
+  .threadindex .lastreply {
+      display: none;
+      width: 0%;
+  }
+
+  .threadindex th:nth-child(1) {
+      width: 80%;
+  }
+
+  .threadindex th:nth-child(2) {
+      width: 20%;
+  }
+
+  .tracker-panel {
+    width: 95%;
+    margin: 0px auto;
+    float: none;
+  }
+
+  .tracker-table thead th:nth-child(1) {
+  width: 80%;
+  }
+
+  .tracker-table thead th:nth-child(2), .tracker-table tbody td:nth-child(2) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(3), .tracker-table tbody td:nth-child(3) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(4), .tracker-table tbody td:nth-child(4) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(5) {
+    width: 20%;
+  }
+}
+</style>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<header>
+<ul><li><a href="/historic/tsc-devel-archive/">tsc-devel@secretchronicles.org</a></li><li><a href="/historic/tsc-devel-archive/about.html">About</a></li></ul>
+</header>
+<main>
+<h1 class="msg-subject">[tsc-devel] Re: Bad build?</h1>
+<p class="msg-meta">
+  <span class="msg-from">datahead</span> |
+
+ Mon, 01 Aug 2016 07:32:01 UTC
+</p>
+
+
+
+
+<div class="tracker-placeholder"></div>
+
+
+
+<pre class="msg-body">Post via forum by datahead &lt;…9@x…&gt;:
+I couldn&#39;t sleep, so I did a little valgrinding.  I figured I&#39;d at least post the valgrind output.
+
+./runRelease.sh shell script commands:
+[code]
+rm ~/.config/tsc/config.xml
+cd /home/datahead/TSC-Release/TSC/tsc/build
+valgrind ./testinstall/bin/tsc
+[/code]
+
+Valgrind output:
+[code]
+…d@d…:~$ ./runRelease.sh
+rm: cannot remove ‘/home/datahead/.config/tsc/config.xml’: No such file or directory
+==2766== Memcheck, a memory error detector
+==2766== Copyright (C) 2002-2013, and GNU GPL&#39;d, by Julian Seward et al.
+==2766== Using Valgrind-3.10.1 and LibVEX; rerun with -h for copyright info
+==2766== Command: ./testinstall/bin/tsc
+==2766== 
+Initializing resource manager and core classes
+Game data directory: /home/datahead/TSC-Release/TSC/tsc/build/testinstall/share/tsc
+User data directory: /home/datahead/.local/share/tsc
+User cache directory: /home/datahead/.cache/tsc
+User config directory: /home/datahead/.config/tsc
+Initializing Package Manager
+==2766== Conditional jump or move depends on uninitialised value(s)
+==2766==    at 0xC422094: ??? (in /usr/lib/nvidia-340/libnvidia-glcore.so.340.96)
+==2766==    by 0xC3C8425: ??? (in /usr/lib/nvidia-340/libnvidia-glcore.so.340.96)
+==2766==    by 0xC3CAC6D: ??? (in /usr/lib/nvidia-340/libnvidia-glcore.so.340.96)
+==2766==    by 0xC55C175: ??? (in /usr/lib/nvidia-340/libnvidia-glcore.so.340.96)
+==2766==    by 0xC55FAB1: ??? (in /usr/lib/nvidia-340/libnvidia-glcore.so.340.96)
+==2766==    by 0xC4021E4: ??? (in /usr/lib/nvidia-340/libnvidia-glcore.so.340.96)
+==2766==    by 0xC402561: ??? (in /usr/lib/nvidia-340/libnvidia-glcore.so.340.96)
+==2766==    by 0xC4025F7: ??? (in /usr/lib/nvidia-340/libnvidia-glcore.so.340.96)
+==2766==    by 0xC55C795: ??? (in /usr/lib/nvidia-340/libnvidia-glcore.so.340.96)
+==2766==    by 0xC5691D3: ??? (in /usr/lib/nvidia-340/libnvidia-glcore.so.340.96)
+==2766==    by 0xC10D875: ??? (in /usr/lib/nvidia-340/libnvidia-glcore.so.340.96)
+==2766==    by 0xC10DBF7: ??? (in /usr/lib/nvidia-340/libnvidia-glcore.so.340.96)
+==2766== 
+==2766== Conditional jump or move depends on uninitialised value(s)
+==2766==    at 0xC422094: ??? (in /usr/lib/nvidia-340/libnvidia-glcore.so.340.96)
+==2766==    by 0xC3C8425: ??? (in /usr/lib/nvidia-340/libnvidia-glcore.so.340.96)
+==2766==    by 0xC3CA9CF: ??? (in /usr/lib/nvidia-340/libnvidia-glcore.so.340.96)
+==2766==    by 0xC57C005: ??? (in /usr/lib/nvidia-340/libnvidia-glcore.so.340.96)
+==2766==    by 0xC57D73E: ??? (in /usr/lib/nvidia-340/libnvidia-glcore.so.340.96)
+==2766==    by 0xC4021E4: ??? (in /usr/lib/nvidia-340/libnvidia-glcore.so.340.96)
+==2766==    by 0xC402561: ??? (in /usr/lib/nvidia-340/libnvidia-glcore.so.340.96)
+==2766==    by 0xC4025F7: ??? (in /usr/lib/nvidia-340/libnvidia-glcore.so.340.96)
+==2766==    by 0xC57C7B0: ??? (in /usr/lib/nvidia-340/libnvidia-glcore.so.340.96)
+==2766==    by 0xC56A098: ??? (in /usr/lib/nvidia-340/libnvidia-glcore.so.340.96)
+==2766==    by 0xC10DE42: ??? (in /usr/lib/nvidia-340/libnvidia-glcore.so.340.96)
+==2766==    by 0xC56EDE2: ??? (in /usr/lib/nvidia-340/libnvidia-glcore.so.340.96)
+==2766== 
+==2766== Conditional jump or move depends on uninitialised value(s)
+==2766==    at 0xC422094: ??? (in /usr/lib/nvidia-340/libnvidia-glcore.so.340.96)
+==2766==    by 0xC3C8425: ??? (in /usr/lib/nvidia-340/libnvidia-glcore.so.340.96)
+==2766==    by 0xC3C8CDC: ??? (in /usr/lib/nvidia-340/libnvidia-glcore.so.340.96)
+==2766==    by 0xC5A4397: ??? (in /usr/lib/nvidia-340/libnvidia-glcore.so.340.96)
+==2766==    by 0xC5A5B4E: ??? (in /usr/lib/nvidia-340/libnvidia-glcore.so.340.96)
+==2766==    by 0xC4021E4: ??? (in /usr/lib/nvidia-340/libnvidia-glcore.so.340.96)
+==2766==    by 0xC402561: ??? (in /usr/lib/nvidia-340/libnvidia-glcore.so.340.96)
+==2766==    by 0xC4025F7: ??? (in /usr/lib/nvidia-340/libnvidia-glcore.so.340.96)
+==2766==    by 0xC5A4715: ??? (in /usr/lib/nvidia-340/libnvidia-glcore.so.340.96)
+==2766==    by 0xC56EE82: ??? (in /usr/lib/nvidia-340/libnvidia-glcore.so.340.96)
+==2766==    by 0xC3BF0F4: ??? (in /usr/lib/nvidia-340/libnvidia-glcore.so.340.96)
+==2766==    by 0xC3A1EAB: ??? (in /usr/lib/nvidia-340/libnvidia-glcore.so.340.96)
+==2766== 
+Warning: Preferences file &#39;/home/datahead/.config/tsc/config.xml&#39; does not exist. Using default values.
+Configuration file is &#39;/home/datahead/.config/tsc/config.xml&#39;.
+Translation locale is en_US.UTF-8
+Translation support with gettext set to:
+	Directory /home/datahead/TSC-Release/TSC/tsc/build/testinstall/share/tsc/translations
+	Codeset: UTF-8
+	Text domain: Secretchronicles
+CEGUI log file is at &#39;/home/datahead/.cache/tsc/cegui.log&#39;.
+Loading campaigns
+Loaded campaign file: /home/datahead/TSC-Release/TSC/tsc/build/testinstall/share/tsc/campaigns/tutorial.tsccpn
+Loaded campaign file: /home/datahead/TSC-Release/TSC/tsc/build/testinstall/share/tsc/campaigns/smc.tsccpn
+Setting up level player
+Loading levels
+Applying preferences
+==2766== Invalid read of size 4
+==2766==    at 0x6B684C: TSC::cSprite_Manager::Generate_UID() (sprite_manager.cpp:459)
+==2766==    by 0x6B574E: TSC::cSprite_Manager::Add(TSC::cSprite*) (sprite_manager.cpp:62)
+==2766==    by 0x6BFA89: TSC::cEditor::Try_Add_Image_Item(boost::filesystem::path) (editor.cpp:803)
+==2766==    by 0x6C11F7: TSC::cEditor::load_image_items() (editor.cpp:937)
+==2766==    by 0x6BC47A: TSC::cEditor::Init() (editor.cpp:93)
+==2766==    by 0x69F414: TSC::Init_Game() (main.cpp:311)
+==2766==    by 0x69E895: main (main.cpp:180)
+==2766==  Address 0x10c3d030 is 32 bytes inside a block of size 40 free&#39;d
+==2766==    at 0x4C2C2BC: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2766==    by 0x6BAE57: __gnu_cxx::new_allocator&lt;std::_Rb_tree_node&lt;int&gt; &gt;::deallocate(std::_Rb_tree_node&lt;int&gt;*, unsigned long) (new_allocator.h:110)
+==2766==    by 0x6B9FF7: std::_Rb_tree&lt;int, int, std::_Identity&lt;int&gt;, std::less&lt;int&gt;, std::allocator&lt;int&gt; &gt;::_M_put_node(std::_Rb_tree_node&lt;int&gt;*) (stl_tree.h:374)
+==2766==    by 0x6B8ED5: std::_Rb_tree&lt;int, int, std::_Identity&lt;int&gt;, std::less&lt;int&gt;, std::allocator&lt;int&gt; &gt;::_M_destroy_node(std::_Rb_tree_node&lt;int&gt;*) (stl_tree.h:422)
+==2766==    by 0x6B9D9B: std::_Rb_tree&lt;int, int, std::_Identity&lt;int&gt;, std::less&lt;int&gt;, std::allocator&lt;int&gt; &gt;::_M_erase_aux(std::_Rb_tree_const_iterator&lt;int&gt;) (stl_tree.h:1746)
+==2766==    by 0x6B8C58: std::_Rb_tree&lt;int, int, std::_Identity&lt;int&gt;, std::less&lt;int&gt;, std::allocator&lt;int&gt; &gt;::erase[abi:cxx11](std::_Rb_tree_const_iterator&lt;int&gt;) (stl_tree.h:809)
+==2766==    by 0x6B7A56: std::set&lt;int, std::less&lt;int&gt;, std::allocator&lt;int&gt; &gt;::erase[abi:cxx11](std::_Rb_tree_const_iterator&lt;int&gt;) (stl_set.h:552)
+==2766==    by 0x6B683F: TSC::cSprite_Manager::Generate_UID() (sprite_manager.cpp:458)
+==2766==    by 0x6B574E: TSC::cSprite_Manager::Add(TSC::cSprite*) (sprite_manager.cpp:62)
+==2766==    by 0x6BFA89: TSC::cEditor::Try_Add_Image_Item(boost::filesystem::path) (editor.cpp:803)
+==2766==    by 0x6C11F7: TSC::cEditor::load_image_items() (editor.cpp:937)
+==2766==    by 0x6BC47A: TSC::cEditor::Init() (editor.cpp:93)
+==2766== 
+==2766== Invalid read of size 1
+==2766==    at 0x540B4B: TSC::cVideo::Downscale_Image(unsigned char const*, int, int, int, unsigned char*, int, int) const (video.cpp:1426)
+==2766==    by 0x53FDC5: TSC::cVideo::Create_Texture(sf::Image*, bool, unsigned int, unsigned int) const (video.cpp:1063)
+==2766==    by 0x53F8D6: TSC::cVideo::Load_GL_Surface_Helper(boost::filesystem::path, bool, bool, bool) (video.cpp:952)
+==2766==    by 0x53E646: TSC::cVideo::Get_Surface_Helper(boost::filesystem::path, bool, bool) (video.cpp:789)
+==2766==    by 0x53E2E7: TSC::cVideo::Get_Surface(boost::filesystem::path, bool) (video.cpp:753)
+==2766==    by 0x6BFA1C: TSC::cEditor::Try_Add_Image_Item(boost::filesystem::path) (editor.cpp:801)
+==2766==    by 0x6C11F7: TSC::cEditor::load_image_items() (editor.cpp:937)
+==2766==    by 0x6BC47A: TSC::cEditor::Init() (editor.cpp:93)
+==2766==    by 0x69F414: TSC::Init_Game() (main.cpp:311)
+==2766==    by 0x69E895: main (main.cpp:180)
+==2766==  Address 0x1b657080 is 0 bytes after a block of size 524,288 alloc&#39;d
+==2766==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2766==    by 0x5236B81: std::vector&lt;unsigned char, std::allocator&lt;unsigned char&gt; &gt;::_M_fill_insert(__gnu_cxx::__normal_iterator&lt;unsigned char*, std::vector&lt;unsigned char, std::allocator&lt;unsigned char&gt; &gt; &gt;, unsigned long, unsigned char const&amp;) (in /usr/local/lib/libCEGUIBase-0.so.2.4.2)
+==2766==    by 0x598414A: sf::priv::ImageLoader::loadImageFromFile(std::string const&amp;, std::vector&lt;unsigned char, std::allocator&lt;unsigned char&gt; &gt;&amp;, sf::Vector2&lt;unsigned int&gt;&amp;) (in /usr/local/lib/libsfml-graphics.so.2.3.2)
+==2766==    by 0x53F06C: TSC::cVideo::Load_Image_Helper(boost::filesystem::path, bool, bool, bool) const (video.cpp:874)
+==2766==    by 0x53F84A: TSC::cVideo::Load_GL_Surface_Helper(boost::filesystem::path, bool, bool, bool) (video.cpp:939)
+==2766==    by 0x53E646: TSC::cVideo::Get_Surface_Helper(boost::filesystem::path, bool, bool) (video.cpp:789)
+==2766==    by 0x53E2E7: TSC::cVideo::Get_Surface(boost::filesystem::path, bool) (video.cpp:753)
+==2766==    by 0x6BFA1C: TSC::cEditor::Try_Add_Image_Item(boost::filesystem::path) (editor.cpp:801)
+==2766==    by 0x6C11F7: TSC::cEditor::load_image_items() (editor.cpp:937)
+==2766==    by 0x6BC47A: TSC::cEditor::Init() (editor.cpp:93)
+==2766==    by 0x69F414: TSC::Init_Game() (main.cpp:311)
+==2766==    by 0x69E895: main (main.cpp:180)
+==2766== 
+==2766== Invalid write of size 1
+==2766==    at 0x540B97: TSC::cVideo::Downscale_Image(unsigned char const*, int, int, int, unsigned char*, int, int) const (video.cpp:1430)
+==2766==    by 0x53FDC5: TSC::cVideo::Create_Texture(sf::Image*, bool, unsigned int, unsigned int) const (video.cpp:1063)
+==2766==    by 0x53F8D6: TSC::cVideo::Load_GL_Surface_Helper(boost::filesystem::path, bool, bool, bool) (video.cpp:952)
+==2766==    by 0x53E646: TSC::cVideo::Get_Surface_Helper(boost::filesystem::path, bool, bool) (video.cpp:789)
+==2766==    by 0x53E2E7: TSC::cVideo::Get_Surface(boost::filesystem::path, bool) (video.cpp:753)
+==2766==    by 0x6BFA1C: TSC::cEditor::Try_Add_Image_Item(boost::filesystem::path) (editor.cpp:801)
+==2766==    by 0x6C11F7: TSC::cEditor::load_image_items() (editor.cpp:937)
+==2766==    by 0x6BC47A: TSC::cEditor::Init() (editor.cpp:93)
+==2766==    by 0x69F414: TSC::Init_Game() (main.cpp:311)
+==2766==    by 0x69E895: main (main.cpp:180)
+==2766==  Address 0x1a951e00 is 0 bytes after a block of size 131,072 alloc&#39;d
+==2766==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2766==    by 0x53FD66: TSC::cVideo::Create_Texture(sf::Image*, bool, unsigned int, unsigned int) const (video.cpp:1062)
+==2766==    by 0x53F8D6: TSC::cVideo::Load_GL_Surface_Helper(boost::filesystem::path, bool, bool, bool) (video.cpp:952)
+==2766==    by 0x53E646: TSC::cVideo::Get_Surface_Helper(boost::filesystem::path, bool, bool) (video.cpp:789)
+==2766==    by 0x53E2E7: TSC::cVideo::Get_Surface(boost::filesystem::path, bool) (video.cpp:753)
+==2766==    by 0x6BFA1C: TSC::cEditor::Try_Add_Image_Item(boost::filesystem::path) (editor.cpp:801)
+==2766==    by 0x6C11F7: TSC::cEditor::load_image_items() (editor.cpp:937)
+==2766==    by 0x6BC47A: TSC::cEditor::Init() (editor.cpp:93)
+==2766==    by 0x69F414: TSC::Init_Game() (main.cpp:311)
+==2766==    by 0x69E895: main (main.cpp:180)
+==2766== 
+
+valgrind: m_mallocfree.c:278 (mk_plain_bszB): Assertion &#39;bszB != 0&#39; failed.
+valgrind: This is probably caused by your program erroneously writing past the
+end of a heap block and corrupting heap metadata.  If you fix any
+invalid writes reported by Memcheck, this assertion failure will
+probably go away.  Please try that before reporting this as a bug.
+
+
+host stacktrace:
+==2766==    at 0x3805DB16: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+==2766==    by 0x3805DC24: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+==2766==    by 0x3805DDA6: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+==2766==    by 0x380688EA: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+==2766==    by 0x38069402: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+==2766==    by 0x3806AF84: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+==2766==    by 0x3802CCA4: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+==2766==    by 0x3802CECA: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+==2766==    by 0x380AF1F5: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+==2766==    by 0x380BDCBC: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+
+sched status:
+  running_tid=1
+
+Thread 1: status = VgTs_Runnable
+==2766==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2766==    by 0x5236B81: std::vector&lt;unsigned char, std::allocator&lt;unsigned char&gt; &gt;::_M_fill_insert(__gnu_cxx::__normal_iterator&lt;unsigned char*, std::vector&lt;unsigned char, std::allocator&lt;unsigned char&gt; &gt; &gt;, unsigned long, unsigned char const&amp;) (in /usr/local/lib/libCEGUIBase-0.so.2.4.2)
+==2766==    by 0x596A091: sf::Image::create(unsigned int, unsigned int, unsigned char const*) (in /usr/local/lib/libsfml-graphics.so.2.3.2)
+==2766==    by 0x53FDF8: TSC::cVideo::Create_Texture(sf::Image*, bool, unsigned int, unsigned int) const (video.cpp:1066)
+==2766==    by 0x53F8D6: TSC::cVideo::Load_GL_Surface_Helper(boost::filesystem::path, bool, bool, bool) (video.cpp:952)
+==2766==    by 0x53E646: TSC::cVideo::Get_Surface_Helper(boost::filesystem::path, bool, bool) (video.cpp:789)
+==2766==    by 0x53E2E7: TSC::cVideo::Get_Surface(boost::filesystem::path, bool) (video.cpp:753)
+==2766==    by 0x6BFA1C: TSC::cEditor::Try_Add_Image_Item(boost::filesystem::path) (editor.cpp:801)
+==2766==    by 0x6C11F7: TSC::cEditor::load_image_items() (editor.cpp:937)
+==2766==    by 0x6BC47A: TSC::cEditor::Init() (editor.cpp:93)
+==2766==    by 0x69F414: TSC::Init_Game() (main.cpp:311)
+==2766==    by 0x69E895: main (main.cpp:180)
+
+Thread 2: status = VgTs_WaitSys
+==2766==    at 0x81193AD: ??? (syscall-template.S:81)
+==2766==    by 0x1237EFD7: pa_iochannel_read_with_creds (in /usr/lib/x86_64-linux-gnu/pulseaudio/libpulsecommon-4.0.so)
+==2766==    by 0x1238EFE6: ??? (in /usr/lib/x86_64-linux-gnu/pulseaudio/libpulsecommon-4.0.so)
+==2766==    by 0x11F26AEB: pa_mainloop_dispatch (in /usr/lib/x86_64-linux-gnu/libpulse.so.0.16.2)
+==2766==    by 0x11F26ED9: pa_mainloop_iterate (in /usr/lib/x86_64-linux-gnu/libpulse.so.0.16.2)
+==2766==    by 0x11F26F7F: pa_mainloop_run (in /usr/lib/x86_64-linux-gnu/libpulse.so.0.16.2)
+==2766==    by 0x11F34FE2: ??? (in /usr/lib/x86_64-linux-gnu/libpulse.so.0.16.2)
+==2766==    by 0x1239EF07: ??? (in /usr/lib/x86_64-linux-gnu/pulseaudio/libpulsecommon-4.0.so)
+==2766==    by 0xA74E183: start_thread (pthread_create.c:312)
+==2766==    by 0x811837C: clone (clone.S:111)
+
+Thread 3: status = VgTs_WaitSys
+==2766==    at 0xA74BC7A: __pthread_mutex_lock_full (pthread_mutex_lock.c:341)
+==2766==    by 0x1239E08D: pa_mutex_lock (in /usr/lib/x86_64-linux-gnu/pulseaudio/libpulsecommon-4.0.so)
+==2766==    by 0x8B4A54C: ??? (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.14.0)
+==2766==    by 0x8B3CE69: ??? (in /usr/lib/x86_64-linux-gnu/libopenal.so.1.14.0)
+==2766==    by 0xA74E183: start_thread (pthread_create.c:312)
+==2766==    by 0x811837C: clone (clone.S:111)
+
+
+Note: see also the FAQ in the source distribution.
+It contains workarounds to several common problems.
+In particular, if Valgrind aborted or crashed after
+identifying problems in your program, there&#39;s a good chance
+that fixing those problems will prevent Valgrind aborting or
+crashing, especially if it happened in m_mallocfree.c.
+
+If that doesn&#39;t help, please report this bug to: www.valgrind.org
+
+In the bug report, send all the above text, the valgrind
+version, and what OS and version you are using.  Thanks.
+[/code]
+
+-- 
+Sent by Chessboard.
+</pre>
+
+
+
+<div class="msg-nav">
+<div class="msg-thread-nav msg-thread-nav-bythread">
+<table>
+<caption>By Thread</caption>
+<tbody>
+<tr><td></td><td>2016-07-31 22:57:19</td><td>datahead</td><td class="msg-thread-level-0"><a href="/historic/tsc-devel-archive/2016/07/m7.html">[tsc-devel] Bad build?</a></td></tr>
+<tr><td></td><td>2016-07-31 23:45:36</td><td>datahead</td><td class="msg-thread-level-1"><a href="/historic/tsc-devel-archive/2016/07/m8.html">[tsc-devel] Re: Bad build?</a></td></tr>
+<tr><td></td><td>2016-07-31 23:50:15</td><td>datahead</td><td class="msg-thread-level-2"><a href="/historic/tsc-devel-archive/2016/07/m9.html">[tsc-devel] Re: Bad build?</a></td></tr>
+<tr><td>▶</td><td>2016-08-01 07:32:01</td><td>datahead</td><td class="msg-thread-level-3"><a href="/historic/tsc-devel-archive/2016/08/m2.html">[tsc-devel] Re: Bad build?</a></td></tr>
+<tr><td></td><td>2016-08-01 07:46:08</td><td>datahead</td><td class="msg-thread-level-4"><a href="/historic/tsc-devel-archive/2016/08/m3.html">[tsc-devel] Re: Bad build?</a></td></tr>
+<tr><td></td><td>2016-08-01 08:58:38</td><td>Marvin Gülker</td><td class="msg-thread-level-5"><a href="/historic/tsc-devel-archive/2016/08/m5.html">Re: [tsc-devel] Re: Bad build?</a></td></tr>
+<tr><td></td><td>2016-08-02 05:44:02</td><td>datahead</td><td class="msg-thread-level-6"><a href="/historic/tsc-devel-archive/2016/08/m11.html">[tsc-devel] Re: Bad build?</a></td></tr>
+<tr><td></td><td>2016-08-04 12:33:50</td><td>SK K</td><td class="msg-thread-level-7"><a href="/historic/tsc-devel-archive/2016/08/m20.html">Re: [tsc-devel] Re: Bad build?</a></td></tr>
+<tr><td></td><td>2016-08-04 19:04:17</td><td>Marvin Gülker</td><td class="msg-thread-level-8"><a href="/historic/tsc-devel-archive/2016/08/m21.html">Re: [tsc-devel] Re: Bad build?</a></td></tr>
+
+</tbody>
+</table>
+</div>
+<div class="msg-thread-nav msg-thread-nav-bydate">
+<table>
+<caption>By Date</caption>
+<tbody>
+
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/07/m7.html">[tsc-devel] Bad build?</a></td><td>datahead</td><td>2016-07-31 22:57:19</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/07/m8.html">[tsc-devel] Re: Bad build?</a></td><td>datahead</td><td>2016-07-31 23:45:36</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/07/m9.html">[tsc-devel] Re: Bad build?</a></td><td>datahead</td><td>2016-07-31 23:50:15</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/08/m2.html">[tsc-devel] Re: Bad build?</a></td><td>datahead</td><td>2016-08-01 07:32:01</td><td class="msg-here">◀</td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/08/m3.html">[tsc-devel] Re: Bad build?</a></td><td>datahead</td><td>2016-08-01 07:46:08</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/08/m5.html">Re: [tsc-devel] Re: Bad build?</a></td><td>Marvin Gülker</td><td>2016-08-01 08:58:38</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/08/m11.html">[tsc-devel] Re: Bad build?</a></td><td>datahead</td><td>2016-08-02 05:44:02</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/08/m20.html">Re: [tsc-devel] Re: Bad build?</a></td><td>SK K</td><td>2016-08-04 12:33:50</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/08/m21.html">Re: [tsc-devel] Re: Bad build?</a></td><td>Marvin Gülker</td><td>2016-08-04 19:04:17</td><td class="msg-here"></td></tr>
+
+</tbody>
+</table>
+</div>
+</div>
+
+</main>
+<footer>
+<p>Mailing list archive generated by <a href="https://mg.guelker.eu/projects/postkasten/">Postkasten</a>.</p>
+</footer>
+</body>
+</html>

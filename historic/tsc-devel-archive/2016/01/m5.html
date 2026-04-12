@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Re: [tsc-devel] Retaining old IRC logs... · tsc-devel@secretchronicles.org</title>
+  <style type="text/css">html, body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial Nova", "Arial", sans-serif;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  margin: 0px;
+}
+
+a {
+  color: #0b8ae1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #520ebb;
+}
+
+header {
+  margin: 0px;
+  padding: 12px 6px;
+  background-color: #0b8ae1;
+}
+
+header ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header ul li::after {
+  margin-left: 8px;
+  content: "|";
+  margin-right: 8px;
+}
+
+header ul li:last-child::after {
+  content: "";
+  margin-right: 0px;
+}
+
+header a {
+  color: white;
+}
+
+header a:hover {
+  color: black;
+}
+
+footer {
+  border-top: 1px solid #999999;
+  color: #999999;
+  font-size: 0.8rem;
+  padding: 8px;
+  text-align: center;
+  clear: both;
+}
+
+footer p {
+  margin: 0px;
+}
+
+main {
+  margin: 8px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+h1.msg-subject {
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+h2, caption {
+  font-size: 1rem;
+}
+
+
+.msg-meta {
+  margin-top: 0px;
+}
+
+.msg-from {
+  font-weight: bold;
+}
+
+.msg-cc {
+  color: #e1730a;
+}
+
+.msg-attachments h2 {
+  font-style: italic;
+}
+
+table, tr, td, th {
+  border: none;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #eeeeee;
+}
+
+thead tr {
+  border-bottom: 1px solid black;
+}
+
+.newyear {
+  font-style: italic;
+  text-align: center;
+  font-weight: bold;
+}
+
+.numreplies {
+  text-align: center;
+}
+
+.thread-ghost {
+  font-style: italic;
+}
+
+.lastreply {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+pre, code {
+  font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+.msg-body {
+  width: 80ch;
+}
+
+.msg-quote {
+  color: #698900;
+  font-style: italic;
+}
+
+.msg-nav {
+  clear: both;
+}
+
+.msg-thread-nav {
+  width: calc(50% - 4px);
+}
+
+.msg-thread-nav-bydate {
+  float: right;
+}
+
+.msg-thread-nav-bythread {
+  float: left;
+}
+
+.msg-thread-nav table caption {
+  background-color: #0b8ae1;
+  color: white;
+  border: none;
+  caption-side: top;
+  text-align: center;
+  font-weight: bold;
+}
+
+.msg-thread-nav tbody tr td {
+  padding: 2px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.msg-thread-nav-bydate table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bydate table td:nth-child(1) {
+  width: 55%;
+
+}
+
+.msg-thread-nav-bydate table td:nth-child(2) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bydate table td:nth-child(3) {
+  width:20%;
+  text-align: right;
+}
+
+.msg-thread-nav-bydate table td:nth-child(4) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+
+.msg-thread-nav-bythread table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bythread table td:nth-child(1) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+.msg-thread-nav-bythread table td:nth-child(2) {
+  width: 20%;
+
+}
+
+.msg-thread-nav-bythread table td:nth-child(3) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bythread table td:nth-child(4) {
+  width:55%;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-0 {
+  padding-left: 0px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-1 {
+  padding-left: 32px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-2 {
+  padding-left: 64px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-3 {
+  padding-left: 96px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-4 {
+  padding-left: 128px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-5 {
+  padding-left: 160px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-6 {
+  padding-left: 192px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-7 {
+  padding-left: 224px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-8 {
+  padding-left: 256px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-9 {
+  padding-left: 288px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-10 {
+  padding-left: 320px;
+}
+
+.threadindex {
+    table-layout: fixed;
+}
+
+.threadindex th:nth-child(1) {
+    width: 78%;
+}
+
+.threadindex th:nth-child(2) {
+    text-align: center;
+    width: 7%;
+}
+
+.threadindex th:nth-child(3) {
+    width: 15%;
+}
+
+.formatted-patch .patch-add {
+  color: #00CC00;
+}
+
+.formatted-patch .patch-del {
+  color: #FF0000;
+}
+
+.formatted-patch .patch-pos {
+  color: #0000FF;
+  background-color: #ddddFF;
+}
+
+div.formatted-patch {
+  border: 1px solid black;
+}
+
+div.formatted-patch pre {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'Inconsolata', 'DejaVu Sans Mono', monospace;
+  margin: 0px;
+}
+
+
+div.formatted-patch pre.linenos {
+  background-color: #0b8ae1;
+  float: left;
+  padding-right: 4px;
+  text-align: right;
+  margin-right: 4px;
+}
+
+.linenos a {
+  color: white;
+}
+
+.linenos a:hover {
+  color: black;
+}
+
+.linenos a:target {
+  color: #8b000e;
+}
+
+tracker-placeholder {
+  display: none;
+}
+
+.tracker-state-change {
+  font-style: italic;
+  color: #e1730a;
+}
+
+.ticket-state {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.ticket-state-open {
+  color: #00CC00;
+}
+
+.ticket-state-confirmed {
+  color: #e1730a;
+}
+
+.ticket-state-closed {
+  color: #FF0000;
+}
+
+.tracker-panel {
+  width: 450px;
+  float: right;
+  margin: 8px;
+  padding: 0px;
+  border: 2px solid #0b8ae1;
+  text-align: center;
+}
+
+.tracker-panel h2 {
+  background-color: #0b8ae1;
+  color: white;
+  margin-top: 0px;
+}
+
+.tracker-panel ul {
+  padding: 0px 8px;
+  margin: 8px;
+  text-align: left;
+  list-style-type: none;
+}
+
+.tracker-table {
+  table-layout: fixed;
+}
+
+.tracker-table tbody td:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tracker-table thead th:nth-child(1) {
+  width: 60%;
+}
+
+.tracker-table thead th:nth-child(2) {
+  width: 13%;
+}
+
+.tracker-table thead th:nth-child(3) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(4) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(5) {
+  width: 7%;
+  text-align: center;
+}
+
+.tracker-table tbody td:nth-child(5) {
+  text-align: center;
+}
+
+#tracker-filter-subject {
+  width: calc(100% - 8px);
+}
+
+.filter-hide {
+  display: none;
+}
+
+@media(max-width: 768px) {
+
+  html, body {
+    font-size: 18px;
+  }
+
+  .lastreply {
+    display: none;
+  }
+
+  .msg-body {
+    width: initial;
+  }
+
+  .msg-thread-nav-bydate {
+    float: none;
+  }
+
+  .msg-thread-nav-bythread {
+    float: none;
+  }
+
+  .threadindex .lastreply {
+      display: none;
+      width: 0%;
+  }
+
+  .threadindex th:nth-child(1) {
+      width: 80%;
+  }
+
+  .threadindex th:nth-child(2) {
+      width: 20%;
+  }
+
+  .tracker-panel {
+    width: 95%;
+    margin: 0px auto;
+    float: none;
+  }
+
+  .tracker-table thead th:nth-child(1) {
+  width: 80%;
+  }
+
+  .tracker-table thead th:nth-child(2), .tracker-table tbody td:nth-child(2) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(3), .tracker-table tbody td:nth-child(3) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(4), .tracker-table tbody td:nth-child(4) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(5) {
+    width: 20%;
+  }
+}
+</style>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<header>
+<ul><li><a href="/historic/tsc-devel-archive/">tsc-devel@secretchronicles.org</a></li><li><a href="/historic/tsc-devel-archive/about.html">About</a></li></ul>
+</header>
+<main>
+<h1 class="msg-subject">Re: [tsc-devel] Retaining old IRC logs...</h1>
+<p class="msg-meta">
+  <span class="msg-from">Quintus</span> |
+
+ Tue, 12 Jan 2016 17:34:52 UTC
+</p>
+
+
+
+
+<div class="tracker-placeholder"></div>
+
+
+
+<pre class="msg-body">Hi everyone,
+
+apologies for this somewhat long email, but I think it’s easiest if I
+make my point of view clear with more detail than I gave in IRC.
+
+I. The facts
+============
+
+datahead &lt;…r@f…&gt; writes:
+
+<span class="msg-quote">&gt; Post via forum by datahead &lt;…9@x…&gt;:</span>
+<span class="msg-quote">&gt; Regarding the discussion about purging old IRC logs, I do not think we</span>
+<span class="msg-quote">&gt; should just delete all logs older than 6 months.</span>
+
+For those who weren’t in IRC today here are the facts: furbot has logged
+our IRC channel permanently and reliably for almost two years now, with
+only one major interruption. The first available log file is from
+2014-06-12. Logfiles are available both in HTML format with nice
+colourisation, and in plaintext format suitable for reading on text
+consoles.
+
+Regarding disk space occupation here are the stats:
+
+    % du -h logs
+    7,6M logs/plainlogs
+    26M  logs/htmllogs
+    34M  logs
+
+As for backups, duplicity currently keeps 2 full backups on the disk,
+and every 4 months it does a full backup (in-between incremental backups
+are made every week). That is, our oldest backup currently is 8 months.
+
+The backups are large:
+
+% du -h backup
+18M backup/database
+45G backup/filesystem
+45G backup
+
+Since we have long crossed the 8 month mark, this is the size our backup
+storage is going to stay around with (until we add more large files to
+alexandria, like TSC releases).
+
+II. My point of view
+====================
+
+<span class="msg-quote">&gt; If we want to move them off the server, that is fine, but I think they</span>
+<span class="msg-quote">&gt; should be kept somewhere.  Major meeting and some important</span>
+<span class="msg-quote">&gt; discussions are in the logs.</span>
+
+I will explain why I made this suggestion. While sydney has correctly
+stated that the log files occupate a certain amount of disk space on our
+server, I do think this is neglectible. Just see the du(1) outputs
+above. If the logs ever were a problem, we could compress them.
+
+I have other reasons why I advocate deletion of old logs. Here are my
+main points:
+
+1) No use.
+
+It is quite unlikely that we will ever need to read through an IRC
+chatlog from ten years ago. Keeping useless data just for the sake of
+keeping it around because one could in some unknown point in a rather
+distant future have some unknown use for them is something that makes me
+shiver.
+
+2) Abuse.
+
+Building on this, nobody can foresee what the data may be used for by
+people other than us (or maybe even by someone of us? Nobody knows). You
+cannot assure that someone who wants to damage you in some way in the
+future will not find something compromising in the data collected about
+you five years ago.
+
+3) Against “But it was public!”
+
+The IRC channel is public, and the fact we are logging it is even
+publically announced via ChanServ on joining. However, compared to
+forums or a mailinglist, chats are a different means of
+communication. The need to reply instantly causes answers that have not
+been well thought through before posting them. That is, the risk of
+something unwanted being logged (which you might not even have thought
+of while writing) is higher than on an asynchronous medium such as a
+forum or a mailinglist.
+
+That being said, I would also sympathise with forum and mailinglist
+entries not being available publically forever as well. In this regard
+it is important to point out that our mailinglist since it was first
+established supports the use of the “X-No-Archive” email header. You as
+the mail sender can set this header in your email to “yes”. It instructs
+the mailinglist software to exclude your email from the mail archive;
+the mail will be delivered, but it will neither make it to the official
+list archive, neither to the forum gateway. You can participate without
+being logged publically. For a similar discussion around disabling
+channel logging by default, see my explanations under III.2) further
+below.
+
+4) Important events can still be preserved.
+
+Every now and then the TSC team holds the “General Discussion”, a
+meeting of the entire (well, ideally) team in IRC and discusses and
+resolves a large number of problems that could not be resolved for a
+longer time and require some more intense discussion than what the
+tracker provides. By the nature of these meetings there are lots of
+important decisions made, probably even including some votes, therefore
+there is a viable interest of having these discussion archived (as they
+contain the reasons why TSC developed in one direction or another).
+
+It however is easily possible to preserve the IRC logs of a General
+Discussion (or other important events) separately. They can easily be
+copied onto some other location on the server before they are
+deleted. The vast majority of the talks in #secretchronicles however is
+informal and serves the (very important) use case of keeping the social
+aspects in our team intact. These social interactions are interesting to
+read when participating, but serve no use later on. The bad jokes I made
+three years ago are nothing that needs to be preserved.
+
+5) Project decisions are not made in IRC (alone) outside a GD.
+
+It has always been our practise (and I see no reason to change this)
+that decisions that are not resolvable offhand are taken to the forum,
+the mailinglist, or the tracker so everybody has time to think about his
+arguments. Therefore, outside the well-prepared circumstances of a
+General Discussion project-relevant decisions are not made in IRC, at
+least not in IRC alone. Deleting the chat logs of days without a GD
+doesn’t mean we lose something thus.
+
+6) Log files in backups.
+
+The chatlog files are not going to be unavailable immediately after
+deletion. As outlined above, backups of alexandria are made in regular
+intervals. This effectively means that deleting them only makes them
+inaccessible for the public. Really “deleted” in the sense there is no
+possibility to restore them are they first when they have cycled out of
+the backups. With the current configuration this would be 8 months.
+
+7) Conclusion.
+
+When I weight the importance of the data in question (mostly informal
+social talks) against the impact of keeping them (possible abuse of
+data, which might be used against the person who said what was logged),
+I conclude that it is better to delete logs whose use is at least
+unclear.
+
+Note I don’t suggest to delete all the logs older than a day. I find it
+okay if the logs are kept around for six months in public, maybe a
+little longer in the backups for restoring in case it’s needed. Just
+having them sitting around there forever or for a really long time
+bothers me. Feel free to discuss the length of the storing intervals
+with me.
+
+III. Other aspects
+==================
+
+1) Search function.
+
+<span class="msg-quote">&gt; Having a search function, however, would make the old logs much more</span>
+<span class="msg-quote">&gt; useful.</span>
+
+With this I agree. It can easily be implemented as a simple CGI script
+crawling the plaintext logs.
+
+2) Disabling logging?
+
+I have an alternative suggestion. We could disable logging in
+#secretchronicles by default and instead only turn it on when we
+determine it’s required. furbot already supports the commands !stoplog
+and !startlog which disable/enable the logging functionality. These
+commands can only be issued by channel ops, so there’s no risk of random
+people turning on/off channel logging. It would enable us to decide “on
+the fly” when logging a conversation is useful, and it would make
+logging even more explicit than it is now. People who don’t want to be
+logged, but still want to participate in chats around TSC, would be able
+to join our channel thus as well (this is currently not possible,
+because everything is logged). Currently, the only possibility to do so
+is subscribing to the mailinglist and setting the “X-No-Archive”
+header. IMO this is enough, but naturally I wouldn’t be against
+positively expanding our privacy handling.
+
+3) No action taken yet.
+
+I have not deleted anything yet. This just for your information.
+
+Valete,
+Quintus
+
+-- 
+#!/sbin/quintus
+Blog: <a href="http://www.guelkerdev.de">http://www.guelkerdev.de</a>
+
+GnuPG key: F1D8799FBCC8BC4F
+
+</pre>
+
+
+
+<div class="msg-nav">
+<div class="msg-thread-nav msg-thread-nav-bythread">
+<table>
+<caption>By Thread</caption>
+<tbody>
+<tr><td></td><td>2016-01-12 16:26:23</td><td>datahead</td><td class="msg-thread-level-0"><a href="/historic/tsc-devel-archive/2016/01/m4.html">[tsc-devel] Retaining old IRC logs...</a></td></tr>
+<tr><td>▶</td><td>2016-01-12 17:34:52</td><td>Quintus</td><td class="msg-thread-level-1"><a href="/historic/tsc-devel-archive/2016/01/m5.html">Re: [tsc-devel] Retaining old IRC logs...</a></td></tr>
+<tr><td></td><td>2016-01-12 18:56:04</td><td>Chris Jacobsen</td><td class="msg-thread-level-2"><a href="/historic/tsc-devel-archive/2016/01/m6.html">Re: [tsc-devel] Retaining old IRC logs...</a></td></tr>
+<tr><td></td><td>2016-01-27 22:53:25</td><td>datahead</td><td class="msg-thread-level-3"><a href="/historic/tsc-devel-archive/2016/01/m32.html">[tsc-devel] Re: Retaining old IRC logs...</a></td></tr>
+<tr><td></td><td>2016-05-04 18:44:04</td><td>Marvin Gülker</td><td class="msg-thread-level-4"><a href="/historic/tsc-devel-archive/2016/05/m3.html">Re: [tsc-devel] Re: Retaining old IRC logs...</a></td></tr>
+<tr><td></td><td>2016-05-05 11:48:23</td><td>Lauri Ojansivu</td><td class="msg-thread-level-5"><a href="/historic/tsc-devel-archive/2016/05/m5.html">Re: [tsc-devel] Re: Retaining old IRC logs...</a></td></tr>
+<tr><td></td><td>2016-05-05 14:45:30</td><td>Marvin Gülker</td><td class="msg-thread-level-6"><a href="/historic/tsc-devel-archive/2016/05/m6.html">Re: [tsc-devel] Re: Retaining old IRC logs...</a></td></tr>
+<tr><td></td><td>2016-05-20 18:58:42</td><td>Lauri Ojansivu</td><td class="msg-thread-level-7"><a href="/historic/tsc-devel-archive/2016/05/m10.html">Re: [tsc-devel] Re: Retaining old IRC logs...</a></td></tr>
+<tr><td></td><td>2016-05-21 15:34:48</td><td>Marvin Gülker</td><td class="msg-thread-level-8"><a href="/historic/tsc-devel-archive/2016/05/m11.html">Re: [tsc-devel] Re: Retaining old IRC logs...</a></td></tr>
+
+</tbody>
+</table>
+</div>
+<div class="msg-thread-nav msg-thread-nav-bydate">
+<table>
+<caption>By Date</caption>
+<tbody>
+
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/01/m4.html">[tsc-devel] Retaining old IRC logs...</a></td><td>datahead</td><td>2016-01-12 16:26:23</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/01/m5.html">Re: [tsc-devel] Retaining old IRC logs...</a></td><td>Quintus</td><td>2016-01-12 17:34:52</td><td class="msg-here">◀</td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/01/m6.html">Re: [tsc-devel] Retaining old IRC logs...</a></td><td>Chris Jacobsen</td><td>2016-01-12 18:56:04</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/01/m32.html">[tsc-devel] Re: Retaining old IRC logs...</a></td><td>datahead</td><td>2016-01-27 22:53:25</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/05/m3.html">Re: [tsc-devel] Re: Retaining old IRC logs...</a></td><td>Marvin Gülker</td><td>2016-05-04 18:44:04</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/05/m5.html">Re: [tsc-devel] Re: Retaining old IRC logs...</a></td><td>Lauri Ojansivu</td><td>2016-05-05 11:48:23</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/05/m6.html">Re: [tsc-devel] Re: Retaining old IRC logs...</a></td><td>Marvin Gülker</td><td>2016-05-05 14:45:30</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/05/m10.html">Re: [tsc-devel] Re: Retaining old IRC logs...</a></td><td>Lauri Ojansivu</td><td>2016-05-20 18:58:42</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/05/m11.html">Re: [tsc-devel] Re: Retaining old IRC logs...</a></td><td>Marvin Gülker</td><td>2016-05-21 15:34:48</td><td class="msg-here"></td></tr>
+
+</tbody>
+</table>
+</div>
+</div>
+
+</main>
+<footer>
+<p>Mailing list archive generated by <a href="https://mg.guelker.eu/projects/postkasten/">Postkasten</a>.</p>
+</footer>
+</body>
+</html>

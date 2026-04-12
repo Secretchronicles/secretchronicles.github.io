@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8"/>
+  <title>[tsc-devel] Re: Build system for TSC3 · tsc-devel@secretchronicles.org</title>
+  <style type="text/css">html, body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial Nova", "Arial", sans-serif;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  margin: 0px;
+}
+
+a {
+  color: #0b8ae1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #520ebb;
+}
+
+header {
+  margin: 0px;
+  padding: 12px 6px;
+  background-color: #0b8ae1;
+}
+
+header ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header ul li::after {
+  margin-left: 8px;
+  content: "|";
+  margin-right: 8px;
+}
+
+header ul li:last-child::after {
+  content: "";
+  margin-right: 0px;
+}
+
+header a {
+  color: white;
+}
+
+header a:hover {
+  color: black;
+}
+
+footer {
+  border-top: 1px solid #999999;
+  color: #999999;
+  font-size: 0.8rem;
+  padding: 8px;
+  text-align: center;
+  clear: both;
+}
+
+footer p {
+  margin: 0px;
+}
+
+main {
+  margin: 8px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+h1.msg-subject {
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+h2, caption {
+  font-size: 1rem;
+}
+
+
+.msg-meta {
+  margin-top: 0px;
+}
+
+.msg-from {
+  font-weight: bold;
+}
+
+.msg-cc {
+  color: #e1730a;
+}
+
+.msg-attachments h2 {
+  font-style: italic;
+}
+
+table, tr, td, th {
+  border: none;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #eeeeee;
+}
+
+thead tr {
+  border-bottom: 1px solid black;
+}
+
+.newyear {
+  font-style: italic;
+  text-align: center;
+  font-weight: bold;
+}
+
+.numreplies {
+  text-align: center;
+}
+
+.thread-ghost {
+  font-style: italic;
+}
+
+.lastreply {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+pre, code {
+  font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+.msg-body {
+  width: 80ch;
+}
+
+.msg-quote {
+  color: #698900;
+  font-style: italic;
+}
+
+.msg-nav {
+  clear: both;
+}
+
+.msg-thread-nav {
+  width: calc(50% - 4px);
+}
+
+.msg-thread-nav-bydate {
+  float: right;
+}
+
+.msg-thread-nav-bythread {
+  float: left;
+}
+
+.msg-thread-nav table caption {
+  background-color: #0b8ae1;
+  color: white;
+  border: none;
+  caption-side: top;
+  text-align: center;
+  font-weight: bold;
+}
+
+.msg-thread-nav tbody tr td {
+  padding: 2px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.msg-thread-nav-bydate table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bydate table td:nth-child(1) {
+  width: 55%;
+
+}
+
+.msg-thread-nav-bydate table td:nth-child(2) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bydate table td:nth-child(3) {
+  width:20%;
+  text-align: right;
+}
+
+.msg-thread-nav-bydate table td:nth-child(4) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+
+.msg-thread-nav-bythread table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bythread table td:nth-child(1) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+.msg-thread-nav-bythread table td:nth-child(2) {
+  width: 20%;
+
+}
+
+.msg-thread-nav-bythread table td:nth-child(3) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bythread table td:nth-child(4) {
+  width:55%;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-0 {
+  padding-left: 0px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-1 {
+  padding-left: 32px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-2 {
+  padding-left: 64px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-3 {
+  padding-left: 96px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-4 {
+  padding-left: 128px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-5 {
+  padding-left: 160px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-6 {
+  padding-left: 192px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-7 {
+  padding-left: 224px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-8 {
+  padding-left: 256px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-9 {
+  padding-left: 288px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-10 {
+  padding-left: 320px;
+}
+
+.threadindex {
+    table-layout: fixed;
+}
+
+.threadindex th:nth-child(1) {
+    width: 78%;
+}
+
+.threadindex th:nth-child(2) {
+    text-align: center;
+    width: 7%;
+}
+
+.threadindex th:nth-child(3) {
+    width: 15%;
+}
+
+.formatted-patch .patch-add {
+  color: #00CC00;
+}
+
+.formatted-patch .patch-del {
+  color: #FF0000;
+}
+
+.formatted-patch .patch-pos {
+  color: #0000FF;
+  background-color: #ddddFF;
+}
+
+div.formatted-patch {
+  border: 1px solid black;
+}
+
+div.formatted-patch pre {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'Inconsolata', 'DejaVu Sans Mono', monospace;
+  margin: 0px;
+}
+
+
+div.formatted-patch pre.linenos {
+  background-color: #0b8ae1;
+  float: left;
+  padding-right: 4px;
+  text-align: right;
+  margin-right: 4px;
+}
+
+.linenos a {
+  color: white;
+}
+
+.linenos a:hover {
+  color: black;
+}
+
+.linenos a:target {
+  color: #8b000e;
+}
+
+tracker-placeholder {
+  display: none;
+}
+
+.tracker-state-change {
+  font-style: italic;
+  color: #e1730a;
+}
+
+.ticket-state {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.ticket-state-open {
+  color: #00CC00;
+}
+
+.ticket-state-confirmed {
+  color: #e1730a;
+}
+
+.ticket-state-closed {
+  color: #FF0000;
+}
+
+.tracker-panel {
+  width: 450px;
+  float: right;
+  margin: 8px;
+  padding: 0px;
+  border: 2px solid #0b8ae1;
+  text-align: center;
+}
+
+.tracker-panel h2 {
+  background-color: #0b8ae1;
+  color: white;
+  margin-top: 0px;
+}
+
+.tracker-panel ul {
+  padding: 0px 8px;
+  margin: 8px;
+  text-align: left;
+  list-style-type: none;
+}
+
+.tracker-table {
+  table-layout: fixed;
+}
+
+.tracker-table tbody td:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tracker-table thead th:nth-child(1) {
+  width: 60%;
+}
+
+.tracker-table thead th:nth-child(2) {
+  width: 13%;
+}
+
+.tracker-table thead th:nth-child(3) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(4) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(5) {
+  width: 7%;
+  text-align: center;
+}
+
+.tracker-table tbody td:nth-child(5) {
+  text-align: center;
+}
+
+#tracker-filter-subject {
+  width: calc(100% - 8px);
+}
+
+.filter-hide {
+  display: none;
+}
+
+@media(max-width: 768px) {
+
+  html, body {
+    font-size: 18px;
+  }
+
+  .lastreply {
+    display: none;
+  }
+
+  .msg-body {
+    width: initial;
+  }
+
+  .msg-thread-nav-bydate {
+    float: none;
+  }
+
+  .msg-thread-nav-bythread {
+    float: none;
+  }
+
+  .threadindex .lastreply {
+      display: none;
+      width: 0%;
+  }
+
+  .threadindex th:nth-child(1) {
+      width: 80%;
+  }
+
+  .threadindex th:nth-child(2) {
+      width: 20%;
+  }
+
+  .tracker-panel {
+    width: 95%;
+    margin: 0px auto;
+    float: none;
+  }
+
+  .tracker-table thead th:nth-child(1) {
+  width: 80%;
+  }
+
+  .tracker-table thead th:nth-child(2), .tracker-table tbody td:nth-child(2) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(3), .tracker-table tbody td:nth-child(3) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(4), .tracker-table tbody td:nth-child(4) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(5) {
+    width: 20%;
+  }
+}
+</style>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<header>
+<ul><li><a href="/historic/tsc-devel-archive/">tsc-devel@secretchronicles.org</a></li><li><a href="/historic/tsc-devel-archive/about.html">About</a></li></ul>
+</header>
+<main>
+<h1 class="msg-subject">[tsc-devel] Re: Build system for TSC3</h1>
+<p class="msg-meta">
+  <span class="msg-from">Marvin Gülker</span> |
+
+ Mon, 18 Jun 2018 10:27:00 UTC
+</p>
+
+
+
+
+<div class="tracker-placeholder"></div>
+
+
+
+<pre class="msg-body">Thank you for your suggestions. I&#39;m going to take a look at each of them
+when I find the time. Again, don&#39;t expect me to switch anything anytime
+soon.
+
+A few comments:
+
+Am 17. Juni 2018 um 08:37 Uhr -0500 schrieb Ryan Gonzalez:
+<span class="msg-quote">&gt; I&#39;d highly advise *against* something homegrown.</span>
+
+Rake isn&#39;t exactly &#34;home-grown&#34;, unless you count Makefile-based build
+systems as &#34;home-grown&#34;. Rake is basically Ruby&#39;s adaption of Make, just
+much more powerful.
+
+<span class="msg-quote">&gt; Maintaining a custom build system on top of SCons literally killed the Yhc</span>
+<span class="msg-quote">&gt; project, and there are inevitably going to be insane portability issues on</span>
+<span class="msg-quote">&gt; less frequently used platforms.</span>
+
+I do agree that we don&#39;t want to have a build system that causes more
+work than TSC itself. If I detect this to happen with Rake (or any other
+build system), the approach on that road is going to get cancelled.
+
+<span class="msg-quote">&gt; - Meson. Now used by many GNOME and Red Hat projects (systemd, GTK+,</span>
+<span class="msg-quote">&gt; flatpak, ...) to replace the aging autotools build systems. IMO if you want</span>
+<span class="msg-quote">&gt; a meta build system (e.g. a build system generator like CMake), this is the</span>
+<span class="msg-quote">&gt; best option. It configures and builds super fast, too, and it comes with</span>
+<span class="msg-quote">&gt; built-in Boost support. Con: requires Python 3.</span>
+
+I will take this into narrower consideration. Python 3 is getting more
+and more common, so I don&#39;t think that it is a real counter argument. It
+does depend on ninja instead of the traditional make, though, and that
+isn&#39;t as commonly installed as Python 3.
+
+What alerts me more is this (source: &lt;<a href="http://mesonbuild.com/Quick-guide.html">http://mesonbuild.com/Quick-guide.html</a>&gt;):
+
+<span class="msg-quote">&gt; You can also use Meson as packaged by your distro, but beware that due</span>
+<span class="msg-quote">&gt; to our frequent release cycle and development speed this version might</span>
+<span class="msg-quote">&gt; be out of date.</span>
+
+This is the friendly rewording of &#34;screw stable releases, screw your
+distro, and we don&#39;t care for you if you are on Debian&#34;. It looks to me
+as if it needs to cool down a little. Maybe a great project, but until
+the development speed has slowed down enough to rely on Debian&#39;s
+packaging to actually deliver a supported version, I see problems.
+
+<span class="msg-quote">&gt; - Boost.Build. Idiosyncratic syntax (in master, they finally removed the</span>
+<span class="msg-quote">&gt; &#34;space before semicolon&#34; requirement), so-so documentation, and it&#39;s a bit</span>
+<span class="msg-quote">&gt; slower...but if you&#39;re going for pure C++ configuration support, I&#39;ve never</span>
+<span class="msg-quote">&gt; seen anyone beat it.</span>
+
+I&#39;ve tried speficially to remove TSC&#39;s dependency on Boost in TSC3 as
+it&#39;s just a giant dependency. If it doesn&#39;t pull in all of boost, it
+might still be an option, though.
+
+<span class="msg-quote">&gt; - Waf. Used by the Samba project. I haven&#39;t used it in quite a while, but it</span>
+<span class="msg-quote">&gt; runs on many Python versions, and it&#39;s pretty fast, too.</span>
+
+This is appearently not in Debian&#39;s repositories.
+
+<span class="msg-quote">&gt; - Bazel. This thing is the literal definition of &#34;fat&#34; (depends on the JVM,</span>
+<span class="msg-quote">&gt; and the Windows binaries, bizarrely enough, include the *entire JVM*),</span>
+<span class="msg-quote">&gt; but... If you want you builds to work literally flawlessly...man, it&#39;s *so*</span>
+<span class="msg-quote">&gt; stinking nice.</span>
+
+I think we could just use autotools if we want that kind of build system
+dependency... I don&#39;t have Java installed on my system and am not going
+to install it because some build system wants it.
+
+<span class="msg-quote">&gt; - Fbuild. Ok, I&#39;m basically the only person who uses this, but hey, this</span>
+<span class="msg-quote">&gt; list wouldn&#39;t be complete without a little plug, right? 😉</span>
+
+Appearently not in Debian&#39;s repositories either. And if you&#39;re the only
+maintainer of it, there&#39;s a good chance that at some point you lose
+interest in working on it, which would require TSC to take it over
+entirely.
+
+Marvin
+
+-- 
+Blog: <a href="https://mg.guelker.eu">https://mg.guelker.eu</a>
+PGP/GPG ID: F1D8799FBCC8BC4F
+_______________________________________________
+tsc-devel mailing list -- …l@l…
+To unsubscribe send an email to …e@l…
+</pre>
+
+
+
+<div class="msg-nav">
+<div class="msg-thread-nav msg-thread-nav-bythread">
+<table>
+<caption>By Thread</caption>
+<tbody>
+<tr><td></td><td>2018-06-17 10:05:51</td><td>Marvin Gülker</td><td class="msg-thread-level-0"><a href="/historic/tsc-devel-archive/2018/06/m14.html">[tsc-devel] Build system for TSC3</a></td></tr>
+<tr><td></td><td>2018-06-17 13:37:33</td><td>Ryan Gonzalez</td><td class="msg-thread-level-1"><a href="/historic/tsc-devel-archive/2018/06/m15.html">[tsc-devel] Re: Build system for TSC3</a></td></tr>
+<tr><td>▶</td><td>2018-06-18 10:27:00</td><td>Marvin Gülker</td><td class="msg-thread-level-2"><a href="/historic/tsc-devel-archive/2018/06/m16.html">[tsc-devel] Re: Build system for TSC3</a></td></tr>
+<tr><td></td><td>2018-06-18 13:26:24</td><td>Ryan Gonzalez</td><td class="msg-thread-level-3"><a href="/historic/tsc-devel-archive/2018/06/m17.html">[tsc-devel] Re: Build system for TSC3</a></td></tr>
+
+</tbody>
+</table>
+</div>
+<div class="msg-thread-nav msg-thread-nav-bydate">
+<table>
+<caption>By Date</caption>
+<tbody>
+
+
+<tr><td><a href="/historic/tsc-devel-archive/2018/06/m14.html">[tsc-devel] Build system for TSC3</a></td><td>Marvin Gülker</td><td>2018-06-17 10:05:51</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2018/06/m15.html">[tsc-devel] Re: Build system for TSC3</a></td><td>Ryan Gonzalez</td><td>2018-06-17 13:37:33</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2018/06/m16.html">[tsc-devel] Re: Build system for TSC3</a></td><td>Marvin Gülker</td><td>2018-06-18 10:27:00</td><td class="msg-here">◀</td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2018/06/m17.html">[tsc-devel] Re: Build system for TSC3</a></td><td>Ryan Gonzalez</td><td>2018-06-18 13:26:24</td><td class="msg-here"></td></tr>
+
+</tbody>
+</table>
+</div>
+</div>
+
+</main>
+<footer>
+<p>Mailing list archive generated by <a href="https://mg.guelker.eu/projects/postkasten/">Postkasten</a>.</p>
+</footer>
+</body>
+</html>

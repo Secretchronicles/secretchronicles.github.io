@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8"/>
+  <title>votingrules.diff · tsc-devel@secretchronicles.org</title>
+  <style type="text/css">html, body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial Nova", "Arial", sans-serif;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  margin: 0px;
+}
+
+a {
+  color: #0b8ae1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #520ebb;
+}
+
+header {
+  margin: 0px;
+  padding: 12px 6px;
+  background-color: #0b8ae1;
+}
+
+header ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header ul li::after {
+  margin-left: 8px;
+  content: "|";
+  margin-right: 8px;
+}
+
+header ul li:last-child::after {
+  content: "";
+  margin-right: 0px;
+}
+
+header a {
+  color: white;
+}
+
+header a:hover {
+  color: black;
+}
+
+footer {
+  border-top: 1px solid #999999;
+  color: #999999;
+  font-size: 0.8rem;
+  padding: 8px;
+  text-align: center;
+  clear: both;
+}
+
+footer p {
+  margin: 0px;
+}
+
+main {
+  margin: 8px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+h1.msg-subject {
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+h2, caption {
+  font-size: 1rem;
+}
+
+
+.msg-meta {
+  margin-top: 0px;
+}
+
+.msg-from {
+  font-weight: bold;
+}
+
+.msg-cc {
+  color: #e1730a;
+}
+
+.msg-attachments h2 {
+  font-style: italic;
+}
+
+table, tr, td, th {
+  border: none;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #eeeeee;
+}
+
+thead tr {
+  border-bottom: 1px solid black;
+}
+
+.newyear {
+  font-style: italic;
+  text-align: center;
+  font-weight: bold;
+}
+
+.numreplies {
+  text-align: center;
+}
+
+.thread-ghost {
+  font-style: italic;
+}
+
+.lastreply {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+pre, code {
+  font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+.msg-body {
+  width: 80ch;
+}
+
+.msg-quote {
+  color: #698900;
+  font-style: italic;
+}
+
+.msg-nav {
+  clear: both;
+}
+
+.msg-thread-nav {
+  width: calc(50% - 4px);
+}
+
+.msg-thread-nav-bydate {
+  float: right;
+}
+
+.msg-thread-nav-bythread {
+  float: left;
+}
+
+.msg-thread-nav table caption {
+  background-color: #0b8ae1;
+  color: white;
+  border: none;
+  caption-side: top;
+  text-align: center;
+  font-weight: bold;
+}
+
+.msg-thread-nav tbody tr td {
+  padding: 2px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.msg-thread-nav-bydate table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bydate table td:nth-child(1) {
+  width: 55%;
+
+}
+
+.msg-thread-nav-bydate table td:nth-child(2) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bydate table td:nth-child(3) {
+  width:20%;
+  text-align: right;
+}
+
+.msg-thread-nav-bydate table td:nth-child(4) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+
+.msg-thread-nav-bythread table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bythread table td:nth-child(1) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+.msg-thread-nav-bythread table td:nth-child(2) {
+  width: 20%;
+
+}
+
+.msg-thread-nav-bythread table td:nth-child(3) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bythread table td:nth-child(4) {
+  width:55%;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-0 {
+  padding-left: 0px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-1 {
+  padding-left: 32px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-2 {
+  padding-left: 64px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-3 {
+  padding-left: 96px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-4 {
+  padding-left: 128px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-5 {
+  padding-left: 160px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-6 {
+  padding-left: 192px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-7 {
+  padding-left: 224px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-8 {
+  padding-left: 256px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-9 {
+  padding-left: 288px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-10 {
+  padding-left: 320px;
+}
+
+.threadindex {
+    table-layout: fixed;
+}
+
+.threadindex th:nth-child(1) {
+    width: 78%;
+}
+
+.threadindex th:nth-child(2) {
+    text-align: center;
+    width: 7%;
+}
+
+.threadindex th:nth-child(3) {
+    width: 15%;
+}
+
+.formatted-patch .patch-add {
+  color: #00CC00;
+}
+
+.formatted-patch .patch-del {
+  color: #FF0000;
+}
+
+.formatted-patch .patch-pos {
+  color: #0000FF;
+  background-color: #ddddFF;
+}
+
+div.formatted-patch {
+  border: 1px solid black;
+}
+
+div.formatted-patch pre {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'Inconsolata', 'DejaVu Sans Mono', monospace;
+  margin: 0px;
+}
+
+
+div.formatted-patch pre.linenos {
+  background-color: #0b8ae1;
+  float: left;
+  padding-right: 4px;
+  text-align: right;
+  margin-right: 4px;
+}
+
+.linenos a {
+  color: white;
+}
+
+.linenos a:hover {
+  color: black;
+}
+
+.linenos a:target {
+  color: #8b000e;
+}
+
+tracker-placeholder {
+  display: none;
+}
+
+.tracker-state-change {
+  font-style: italic;
+  color: #e1730a;
+}
+
+.ticket-state {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.ticket-state-open {
+  color: #00CC00;
+}
+
+.ticket-state-confirmed {
+  color: #e1730a;
+}
+
+.ticket-state-closed {
+  color: #FF0000;
+}
+
+.tracker-panel {
+  width: 450px;
+  float: right;
+  margin: 8px;
+  padding: 0px;
+  border: 2px solid #0b8ae1;
+  text-align: center;
+}
+
+.tracker-panel h2 {
+  background-color: #0b8ae1;
+  color: white;
+  margin-top: 0px;
+}
+
+.tracker-panel ul {
+  padding: 0px 8px;
+  margin: 8px;
+  text-align: left;
+  list-style-type: none;
+}
+
+.tracker-table {
+  table-layout: fixed;
+}
+
+.tracker-table tbody td:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tracker-table thead th:nth-child(1) {
+  width: 60%;
+}
+
+.tracker-table thead th:nth-child(2) {
+  width: 13%;
+}
+
+.tracker-table thead th:nth-child(3) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(4) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(5) {
+  width: 7%;
+  text-align: center;
+}
+
+.tracker-table tbody td:nth-child(5) {
+  text-align: center;
+}
+
+#tracker-filter-subject {
+  width: calc(100% - 8px);
+}
+
+.filter-hide {
+  display: none;
+}
+
+@media(max-width: 768px) {
+
+  html, body {
+    font-size: 18px;
+  }
+
+  .lastreply {
+    display: none;
+  }
+
+  .msg-body {
+    width: initial;
+  }
+
+  .msg-thread-nav-bydate {
+    float: none;
+  }
+
+  .msg-thread-nav-bythread {
+    float: none;
+  }
+
+  .threadindex .lastreply {
+      display: none;
+      width: 0%;
+  }
+
+  .threadindex th:nth-child(1) {
+      width: 80%;
+  }
+
+  .threadindex th:nth-child(2) {
+      width: 20%;
+  }
+
+  .tracker-panel {
+    width: 95%;
+    margin: 0px auto;
+    float: none;
+  }
+
+  .tracker-table thead th:nth-child(1) {
+  width: 80%;
+  }
+
+  .tracker-table thead th:nth-child(2), .tracker-table tbody td:nth-child(2) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(3), .tracker-table tbody td:nth-child(3) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(4), .tracker-table tbody td:nth-child(4) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(5) {
+    width: 20%;
+  }
+}
+</style>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<header>
+<ul><li><a href="/historic/tsc-devel-archive/">tsc-devel@secretchronicles.org</a></li><li><a href="/historic/tsc-devel-archive/about.html">About</a></li></ul>
+</header>
+<main>
+<h1>votingrules.diff</h1>
+<p><b>Extracted from message:</b> <a href="/historic/tsc-devel-archive/2016/03/m43.html">[tsc-devel] VOTE ANNOUNCEMENT: Voting Rules Change</a></p>
+<p><a href="/historic/tsc-devel-archive/2016/03/a43/votingrules.diff">Download raw patch</a></p>
+<div class="formatted-patch">
+<pre class='linenos'><a id='n0' name='n0' href='#n0'>0</a>
+<a id='n1' name='n1' href='#n1'>1</a>
+<a id='n2' name='n2' href='#n2'>2</a>
+<a id='n3' name='n3' href='#n3'>3</a>
+<a id='n4' name='n4' href='#n4'>4</a>
+<a id='n5' name='n5' href='#n5'>5</a>
+<a id='n6' name='n6' href='#n6'>6</a>
+<a id='n7' name='n7' href='#n7'>7</a>
+<a id='n8' name='n8' href='#n8'>8</a>
+<a id='n9' name='n9' href='#n9'>9</a>
+<a id='n10' name='n10' href='#n10'>10</a>
+<a id='n11' name='n11' href='#n11'>11</a>
+<a id='n12' name='n12' href='#n12'>12</a>
+<a id='n13' name='n13' href='#n13'>13</a>
+<a id='n14' name='n14' href='#n14'>14</a>
+<a id='n15' name='n15' href='#n15'>15</a>
+<a id='n16' name='n16' href='#n16'>16</a>
+<a id='n17' name='n17' href='#n17'>17</a>
+<a id='n18' name='n18' href='#n18'>18</a>
+<a id='n19' name='n19' href='#n19'>19</a>
+<a id='n20' name='n20' href='#n20'>20</a>
+<a id='n21' name='n21' href='#n21'>21</a>
+<a id='n22' name='n22' href='#n22'>22</a>
+<a id='n23' name='n23' href='#n23'>23</a>
+<a id='n24' name='n24' href='#n24'>24</a>
+<a id='n25' name='n25' href='#n25'>25</a>
+<a id='n26' name='n26' href='#n26'>26</a>
+<a id='n27' name='n27' href='#n27'>27</a>
+<a id='n28' name='n28' href='#n28'>28</a>
+<a id='n29' name='n29' href='#n29'>29</a>
+<a id='n30' name='n30' href='#n30'>30</a>
+<a id='n31' name='n31' href='#n31'>31</a>
+<a id='n32' name='n32' href='#n32'>32</a>
+<a id='n33' name='n33' href='#n33'>33</a>
+<a id='n34' name='n34' href='#n34'>34</a>
+<a id='n35' name='n35' href='#n35'>35</a>
+<a id='n36' name='n36' href='#n36'>36</a>
+<a id='n37' name='n37' href='#n37'>37</a>
+<a id='n38' name='n38' href='#n38'>38</a>
+<a id='n39' name='n39' href='#n39'>39</a>
+<a id='n40' name='n40' href='#n40'>40</a>
+<a id='n41' name='n41' href='#n41'>41</a>
+<a id='n42' name='n42' href='#n42'>42</a>
+<a id='n43' name='n43' href='#n43'>43</a>
+<a id='n44' name='n44' href='#n44'>44</a>
+<a id='n45' name='n45' href='#n45'>45</a>
+<a id='n46' name='n46' href='#n46'>46</a>
+<a id='n47' name='n47' href='#n47'>47</a>
+<a id='n48' name='n48' href='#n48'>48</a>
+<a id='n49' name='n49' href='#n49'>49</a>
+<a id='n50' name='n50' href='#n50'>50</a>
+<a id='n51' name='n51' href='#n51'>51</a>
+<a id='n52' name='n52' href='#n52'>52</a>
+<a id='n53' name='n53' href='#n53'>53</a>
+<a id='n54' name='n54' href='#n54'>54</a>
+<a id='n55' name='n55' href='#n55'>55</a>
+<a id='n56' name='n56' href='#n56'>56</a>
+<a id='n57' name='n57' href='#n57'>57</a>
+<a id='n58' name='n58' href='#n58'>58</a>
+<a id='n59' name='n59' href='#n59'>59</a>
+<a id='n60' name='n60' href='#n60'>60</a>
+<a id='n61' name='n61' href='#n61'>61</a>
+<a id='n62' name='n62' href='#n62'>62</a>
+<a id='n63' name='n63' href='#n63'>63</a>
+<a id='n64' name='n64' href='#n64'>64</a>
+</pre><pre class='formatted-patch'>diff --git a/votingrules/votingrules-2015-08-15.tex b/votingrules/votingrules-2015-08-15.tex
+index ba6a2a3..cd8ef4b 100644
+<span class='patch-del'>--- a/votingrules/votingrules-2015-08-15.tex</span>
+<span class='patch-add'>+++ b/votingrules/votingrules-2015-08-15.tex</span>
+<span class='patch-pos'>@@ -77,8 +77,8 @@ whole.</span>
+   \item have been nominated by an existing team member.
+   \end{enumerate}
+ 
+<span class='patch-del'>-  The vote requires that two thirds of the existing team members vote</span>
+<span class='patch-del'>-  in favour of adding the new person to the team.</span>
+<span class='patch-add'>+  The vote requires that two thirds of the team members voting are in</span>
+<span class='patch-add'>+  favour of adding the new person to the team.</span>
+ 
+   In case of Nr. 1 above, as an exception to \ref{cl:voting}, the
+   person with this amount of commits included is also allowed to place
+<span class='patch-pos'>@@ -101,10 +101,10 @@ whole.</span>
+     be removed from the team.
+   \item The team reserves the right to remove any person at any time,
+     for any reason, through a vote.  This requires a two thirds
+<span class='patch-del'>-    majority, and the candidate for removal is not allowed to cast a</span>
+<span class='patch-del'>-    vote.  The team is expected to try to follow fair criteria for</span>
+<span class='patch-del'>-    such removals and consider changing the rules if repeated removals</span>
+<span class='patch-del'>-    occur.</span>
+<span class='patch-add'>+    majority of those voting, and the candidate for removal is not</span>
+<span class='patch-add'>+    allowed to participate in the vote.  The team is expected to try to</span>
+<span class='patch-add'>+    follow fair criteria for such removals and consider changing the</span>
+<span class='patch-add'>+    rules if repeated removals occur.</span>
+   \end{enumerate}
+ 
+   Upon removal a person will be removed from the GitHub organization.
+<span class='patch-pos'>@@ -142,6 +142,24 @@ whole.</span>
+   If the project lead is unavailable, the assistant lead guides the
+   process instead.
+ 
+<span class='patch-add'>+  \SubClause{title=IRC Voting Announcement}</span>
+<span class='patch-add'>+</span>
+<span class='patch-add'>+  For votings held in \irc — as an exception to §\,5(2)(Nr.3) — it is</span>
+<span class='patch-add'>+  sufficient to announce all available voting options in \irc prior to</span>
+<span class='patch-add'>+  taking the votes.</span>
+<span class='patch-add'>+</span>
+<span class='patch-add'>+  If at least three team members are available in \irc and are not just</span>
+<span class='patch-add'>+  idling, it is possible to waive the two-week preparation interval</span>
+<span class='patch-add'>+  and vote immediately. The waiver requires all non-idling team</span>
+<span class='patch-add'>+  members in the chatroom to agree on it.</span>
+<span class='patch-add'>+</span>
+<span class='patch-add'>+</span>
+<span class='patch-add'>+  Any team member can challenge a voting made under the conditions of</span>
+<span class='patch-add'>+  (2) above until two weeks after the declaration of results have</span>
+<span class='patch-add'>+  passed by approaching the project lead accordingly. If the voting is</span>
+<span class='patch-add'>+  challenged, it is treated the same way as if it failed (\ref{failedvote}).</span>
+<span class='patch-add'>+</span>
+<span class='patch-add'>+</span>
+   \Clause{title=Open Vote}
+ 
+   The default open vote happens openly on any of the project’s
+<span class='patch-pos'>@@ -263,7 +281,8 @@ whole.</span>
+   \Clause{title=Changes}
+ 
+   Changes to this document require a vote whose winning option passes
+<span class='patch-del'>-  with at least two thirds of the team members being in favour of it.</span>
+<span class='patch-add'>+  with at least two thirds of all existing team members being in</span>
+<span class='patch-add'>+  favour of it.</span>
+ 
+   \Clause{title=First Date of Force}
+ 
+</pre>
+</div>
+</main>
+<footer>
+<p>Mailing list archive generated by <a href="https://mg.guelker.eu/projects/postkasten/">Postkasten</a>.</p>
+</footer>
+</html>

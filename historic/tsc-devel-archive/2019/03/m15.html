@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8"/>
+  <title>[tsc-devel] Discourse forum · tsc-devel@secretchronicles.org</title>
+  <style type="text/css">html, body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial Nova", "Arial", sans-serif;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  margin: 0px;
+}
+
+a {
+  color: #0b8ae1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #520ebb;
+}
+
+header {
+  margin: 0px;
+  padding: 12px 6px;
+  background-color: #0b8ae1;
+}
+
+header ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header ul li::after {
+  margin-left: 8px;
+  content: "|";
+  margin-right: 8px;
+}
+
+header ul li:last-child::after {
+  content: "";
+  margin-right: 0px;
+}
+
+header a {
+  color: white;
+}
+
+header a:hover {
+  color: black;
+}
+
+footer {
+  border-top: 1px solid #999999;
+  color: #999999;
+  font-size: 0.8rem;
+  padding: 8px;
+  text-align: center;
+  clear: both;
+}
+
+footer p {
+  margin: 0px;
+}
+
+main {
+  margin: 8px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+h1.msg-subject {
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+h2, caption {
+  font-size: 1rem;
+}
+
+
+.msg-meta {
+  margin-top: 0px;
+}
+
+.msg-from {
+  font-weight: bold;
+}
+
+.msg-cc {
+  color: #e1730a;
+}
+
+.msg-attachments h2 {
+  font-style: italic;
+}
+
+table, tr, td, th {
+  border: none;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #eeeeee;
+}
+
+thead tr {
+  border-bottom: 1px solid black;
+}
+
+.newyear {
+  font-style: italic;
+  text-align: center;
+  font-weight: bold;
+}
+
+.numreplies {
+  text-align: center;
+}
+
+.thread-ghost {
+  font-style: italic;
+}
+
+.lastreply {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+pre, code {
+  font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+.msg-body {
+  width: 80ch;
+}
+
+.msg-quote {
+  color: #698900;
+  font-style: italic;
+}
+
+.msg-nav {
+  clear: both;
+}
+
+.msg-thread-nav {
+  width: calc(50% - 4px);
+}
+
+.msg-thread-nav-bydate {
+  float: right;
+}
+
+.msg-thread-nav-bythread {
+  float: left;
+}
+
+.msg-thread-nav table caption {
+  background-color: #0b8ae1;
+  color: white;
+  border: none;
+  caption-side: top;
+  text-align: center;
+  font-weight: bold;
+}
+
+.msg-thread-nav tbody tr td {
+  padding: 2px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.msg-thread-nav-bydate table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bydate table td:nth-child(1) {
+  width: 55%;
+
+}
+
+.msg-thread-nav-bydate table td:nth-child(2) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bydate table td:nth-child(3) {
+  width:20%;
+  text-align: right;
+}
+
+.msg-thread-nav-bydate table td:nth-child(4) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+
+.msg-thread-nav-bythread table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bythread table td:nth-child(1) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+.msg-thread-nav-bythread table td:nth-child(2) {
+  width: 20%;
+
+}
+
+.msg-thread-nav-bythread table td:nth-child(3) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bythread table td:nth-child(4) {
+  width:55%;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-0 {
+  padding-left: 0px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-1 {
+  padding-left: 32px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-2 {
+  padding-left: 64px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-3 {
+  padding-left: 96px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-4 {
+  padding-left: 128px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-5 {
+  padding-left: 160px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-6 {
+  padding-left: 192px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-7 {
+  padding-left: 224px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-8 {
+  padding-left: 256px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-9 {
+  padding-left: 288px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-10 {
+  padding-left: 320px;
+}
+
+.threadindex {
+    table-layout: fixed;
+}
+
+.threadindex th:nth-child(1) {
+    width: 78%;
+}
+
+.threadindex th:nth-child(2) {
+    text-align: center;
+    width: 7%;
+}
+
+.threadindex th:nth-child(3) {
+    width: 15%;
+}
+
+.formatted-patch .patch-add {
+  color: #00CC00;
+}
+
+.formatted-patch .patch-del {
+  color: #FF0000;
+}
+
+.formatted-patch .patch-pos {
+  color: #0000FF;
+  background-color: #ddddFF;
+}
+
+div.formatted-patch {
+  border: 1px solid black;
+}
+
+div.formatted-patch pre {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'Inconsolata', 'DejaVu Sans Mono', monospace;
+  margin: 0px;
+}
+
+
+div.formatted-patch pre.linenos {
+  background-color: #0b8ae1;
+  float: left;
+  padding-right: 4px;
+  text-align: right;
+  margin-right: 4px;
+}
+
+.linenos a {
+  color: white;
+}
+
+.linenos a:hover {
+  color: black;
+}
+
+.linenos a:target {
+  color: #8b000e;
+}
+
+tracker-placeholder {
+  display: none;
+}
+
+.tracker-state-change {
+  font-style: italic;
+  color: #e1730a;
+}
+
+.ticket-state {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.ticket-state-open {
+  color: #00CC00;
+}
+
+.ticket-state-confirmed {
+  color: #e1730a;
+}
+
+.ticket-state-closed {
+  color: #FF0000;
+}
+
+.tracker-panel {
+  width: 450px;
+  float: right;
+  margin: 8px;
+  padding: 0px;
+  border: 2px solid #0b8ae1;
+  text-align: center;
+}
+
+.tracker-panel h2 {
+  background-color: #0b8ae1;
+  color: white;
+  margin-top: 0px;
+}
+
+.tracker-panel ul {
+  padding: 0px 8px;
+  margin: 8px;
+  text-align: left;
+  list-style-type: none;
+}
+
+.tracker-table {
+  table-layout: fixed;
+}
+
+.tracker-table tbody td:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tracker-table thead th:nth-child(1) {
+  width: 60%;
+}
+
+.tracker-table thead th:nth-child(2) {
+  width: 13%;
+}
+
+.tracker-table thead th:nth-child(3) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(4) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(5) {
+  width: 7%;
+  text-align: center;
+}
+
+.tracker-table tbody td:nth-child(5) {
+  text-align: center;
+}
+
+#tracker-filter-subject {
+  width: calc(100% - 8px);
+}
+
+.filter-hide {
+  display: none;
+}
+
+@media(max-width: 768px) {
+
+  html, body {
+    font-size: 18px;
+  }
+
+  .lastreply {
+    display: none;
+  }
+
+  .msg-body {
+    width: initial;
+  }
+
+  .msg-thread-nav-bydate {
+    float: none;
+  }
+
+  .msg-thread-nav-bythread {
+    float: none;
+  }
+
+  .threadindex .lastreply {
+      display: none;
+      width: 0%;
+  }
+
+  .threadindex th:nth-child(1) {
+      width: 80%;
+  }
+
+  .threadindex th:nth-child(2) {
+      width: 20%;
+  }
+
+  .tracker-panel {
+    width: 95%;
+    margin: 0px auto;
+    float: none;
+  }
+
+  .tracker-table thead th:nth-child(1) {
+  width: 80%;
+  }
+
+  .tracker-table thead th:nth-child(2), .tracker-table tbody td:nth-child(2) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(3), .tracker-table tbody td:nth-child(3) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(4), .tracker-table tbody td:nth-child(4) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(5) {
+    width: 20%;
+  }
+}
+</style>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<header>
+<ul><li><a href="/historic/tsc-devel-archive/">tsc-devel@secretchronicles.org</a></li><li><a href="/historic/tsc-devel-archive/about.html">About</a></li></ul>
+</header>
+<main>
+<h1 class="msg-subject">[tsc-devel] Discourse forum</h1>
+<p class="msg-meta">
+  <span class="msg-from">Marvin Gülker</span> |
+
+ Tue, 26 Mar 2019 13:44:29 UTC
+</p>
+
+
+
+
+<div class="tracker-placeholder"></div>
+
+
+
+<pre class="msg-body">Hi everyone,
+
+TSC team member kirbyfan has suggested to take the opportunity of our
+server outage and provide a web interface to the mailing list via an
+installation of Discourse¹. This thread is to ask everyone what they
+think about the question and whether it is worth the effort. In this
+rather longish e-mail, I am first going to outline the current setup
+(I.), then give information about Discourse (II.), and then conclude
+with my own opinion (III.).
+
+I. First, a description of the current state. This mailing list is
+managed by an installation of GNU Mailman 3² that has been installed via
+Ubuntu 18.04’s repositories. Albeit it was a little tricky to set up
+(documentation problems), it should now quietly do its job and its
+security is provided via the distribution’s repositories. Mailman 3
+provides a forum-like web interface which we host at
+&lt;<a href="https://lists.secretchronicles.org/hyperkitty/list/tsc-devel@lists.secretchronicles.org/">https://lists.secretchronicles.org/hyperkitty/list/tsc-devel@lists.secretchronicles.org/</a>&gt;.
+
+Mailman 3 is modular. It consists of mailman-core (the actual e-mail
+handling programme), Postorious (a web interface for administrative
+actios like registration), and Hyperkitty (a web interface for reading
+and posting to/from the mailing list; the link above points to
+Hyperkitty). mailman-core provides a REST API which Postorious uses for
+administrative actions. It is possible to write a custom client for
+mailman-core or execute administrative actions from the shell; Mailman 3
+even comes with a commandline programme for that (“mailman shell”).
+
+If your only experience so far is with Mailman 2’s web interface, I ask
+you to try Hyperkitty first. Mailman 3 is a complete rewrite and its web
+interface is not at all comparable to Mailman 2’s.
+
+II. Second, to get an impression of how a Discourse installation
+interacting with a mailing list looks like, take a look at the
+inofficial Ruby-Talk mirror at rubytalk.org³. This mirror is read-only,
+but it should still give a feeling on how things look. For a demo
+supporting both read and write, check out Discourse’s official
+demo⁴. Discourse is not available in Ubuntu 18.04’s repositories and
+offers new releases in a very rapid cycle⁵. Alone in January 2019 there
+were 4 stable releases (and several beta releases, but these are not
+important for us).
+
+Discourse is a RubyOnRails application with lots of dependencies,
+including a NodeJS server and a Redis DB. It’s front end makes extensive
+use of JavaScript and can’t sensibly be used without it. The
+official installation guide⁶ starts with this:
+
+<span class="msg-quote">&gt; The only officially supported installs of Discourse are Docker</span>
+<span class="msg-quote">&gt; based. You must have SSH access to a 64-bit Linux server with Docker</span>
+<span class="msg-quote">&gt; support. We regret that we cannot support any other methods of</span>
+<span class="msg-quote">&gt; installation [...].</span>
+
+III. Third, my own opinion on the topic. It might be surprising, but the
+topic is not actually important for me. This has two reasons: a) I want
+to work with TSC’s code primaryly, and that’s independant of the mailing
+list. b) I use the e-mail interface anyway and do not post via the web
+interface. Thus, how the mailing list looks on
+&lt;<a href="https://lists.secretchronicles.org">https://lists.secretchronicles.org</a>&gt; does not matter to me personally.
+I would have been fine with Mailman 2 either.
+
+I was working on Rails applications in times before Docker existed and
+as such I find the Discourse team’s reasoning why Docker is required
+quite disgusting (“Hosting Rails applications is complicated.” -- this
+is a quote). Containers have known security problems, and under our
+tight timing constraints I find it of utmost importance to make a secure
+setup as automatic (once installed, of course) as possible. This is the
+primary reason why I am very reluctant to installing anything that is it
+not available in a distribution’s repositories. Just enabling
+unattended-upgrades should relieve me from security issues until the
+distribution’s end of life. In fact, I have never worked with containers
+so far. As you probably know, I’ve been using ArchLinux, Gentoo, and
+even Slackware, as my daily drivers, and the spirit of these
+distributions hardly matches the spirit containerisation follows. I like
+fiddling with configuration files. If there’s a problem, I will dig up
+the documentation reference and solve it. It will not surprise you that
+when I today need to work on a web application, I prefer
+Sinatra. RubyOnRails has long gone a route that does not fit my
+understanding of software development.
+
+I want to highlight one thing, though. While I am fine with whatever web
+interface the majority finds nice, I want to be able to continue to use
+a proper mailing list interface and the web interface has to be a good
+mailing list citizen. This means:
+
+* It should not encourage top posting.
+* It should either use plain text e-mail or send out a readable and
+  well-formatted text/plain MIME part that does not lose information
+  compared to the text/html MIME part.
+* It should properly thread, i.e. it should set the In-Reply-To: and
+  References: e-mail headers properly to the post it replies to and
+  not just always to the OP. If you never used a threading e-mail
+  client, try Thunderbird, susbcribe to Ruby-Talk or any other mailing
+  list, filter all of its e-mail automatically into a folder, and enable
+  threaded view in that folder. It’s very convenient.
+* It should forbid edits after posting, or at least send an
+  understandable e-mail on editing to the mailing list.
+
+An example that falls short of multiple of these points is GitHub’s
+issue tracker. It’s e-mail interface is not actually nice to use at
+all. Even I prefer using its web interface, and this annoys me every
+day I need to do it.
+
+When the aforementioned inofficial Ruby-Talk mirror was discussed, more
+concerns were raised⁷, though the above ones are those that matter to
+me. Further replies on the respective thread on Ruby-Talk indicate that
+some of the points mentioned in the linked Ruby-Talk post have been
+addressed by now.
+
+There are some more aspects to consider. Discourse is rather resource
+hungry. Our new server should be able to easily handle that, though. So
+this is not a deal breaker. Its frequent release cycle however means
+that someone has to keep a permanent eye on our installation, especially
+given that Discourse it not available in the Distribution’s
+repositories. That’s something I expressly don’t want to do. For that I
+simply lack the time. It is thus required that someone volunteers to
+take care of keeping Discourse up to date. I shiver when I imagine the
+useless use of extra software with the Docker image (it will tuck an
+Nginx installation behind our Apache installation effectively), but I
+shall not complain if someone else than me maintains it.
+
+Ideally, Discourse would just act as a subscriber to the mailing list,
+as does the aforementioned Ruby-Talk mirror. That would leave the actual
+mail management to Mailman, which is engineered to do just that and does
+it properly. Since Mailman 3 is modular, we could then disable
+Hyperkitty and instead use Discourse for interaction with the mailing
+list. With some glue scripting, registration can be made to work via
+mailman-core’s REST API probably. That assumes Discourse supports
+plugins in some way, though. It would also leave the possibility open to
+hook up an external mail archive like marc.info or Gmane.
+
+I apologise for the length of this e-mail, but you will acknowledge that
+providing all of these aspects in a chat does not work out.
+
+  -quintus
+
+¹ <a href="https://www.discourse.org/">https://www.discourse.org/</a>
+² <a href="http://www.list.org/">http://www.list.org/</a>
+³ <a href="https://rubytalk.org/">https://rubytalk.org/</a>
+⁴ <a href="https://try.discourse.org/">https://try.discourse.org/</a>
+⁵ <a href="https://github.com/discourse/discourse/releases">https://github.com/discourse/discourse/releases</a>
+⁶ <a href="https://github.com/discourse/discourse/blob/master/docs/INSTALL.md">https://github.com/discourse/discourse/blob/master/docs/INSTALL.md</a>
+⁷ Cf. <a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-talk/438496">http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-talk/438496</a>
+
+-- 
+Blog: <a href="https://mg.guelker.eu">https://mg.guelker.eu</a>
+_______________________________________________
+tsc-devel mailing list -- …l@l…
+To unsubscribe send an email to …e@l…
+</pre>
+
+
+
+<div class="msg-nav">
+<div class="msg-thread-nav msg-thread-nav-bythread">
+<table>
+<caption>By Thread</caption>
+<tbody>
+<tr><td>▶</td><td>2019-03-26 13:44:29</td><td>Marvin Gülker</td><td class="msg-thread-level-0"><a href="/historic/tsc-devel-archive/2019/03/m15.html">[tsc-devel] Discourse forum</a></td></tr>
+<tr><td></td><td>2019-03-27 01:11:06</td><td>Ryan Gonzalez</td><td class="msg-thread-level-1"><a href="/historic/tsc-devel-archive/2019/03/m16.html">[tsc-devel] Re: Discourse forum</a></td></tr>
+<tr><td></td><td>2019-03-27 01:35:14</td><td>Lauri Ojansivu</td><td class="msg-thread-level-1"><a href="/historic/tsc-devel-archive/2019/03/m17.html">[tsc-devel] Re: Discourse forum</a></td></tr>
+<tr><td></td><td>2019-03-27 01:54:21</td><td>Ryan Gonzalez</td><td class="msg-thread-level-2"><a href="/historic/tsc-devel-archive/2019/03/m18.html">[tsc-devel] Re: Discourse forum</a></td></tr>
+<tr><td></td><td>2019-03-27 07:40:57</td><td>Marvin Gülker</td><td class="msg-thread-level-3"><a href="/historic/tsc-devel-archive/2019/03/m19.html">[tsc-devel] Re: Discourse forum</a></td></tr>
+<tr><td></td><td>2019-03-27 07:48:47</td><td>Marvin Gülker</td><td class="msg-thread-level-4"><a href="/historic/tsc-devel-archive/2019/03/m20.html">[tsc-devel] Re: Discourse forum</a></td></tr>
+<tr><td></td><td>2019-03-27 13:11:46</td><td>Lauri Ojansivu</td><td class="msg-thread-level-1"><a href="/historic/tsc-devel-archive/2019/03/m21.html">[tsc-devel] Re: Discourse forum</a></td></tr>
+
+</tbody>
+</table>
+</div>
+<div class="msg-thread-nav msg-thread-nav-bydate">
+<table>
+<caption>By Date</caption>
+<tbody>
+
+
+<tr><td><a href="/historic/tsc-devel-archive/2019/03/m15.html">[tsc-devel] Discourse forum</a></td><td>Marvin Gülker</td><td>2019-03-26 13:44:29</td><td class="msg-here">◀</td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2019/03/m16.html">[tsc-devel] Re: Discourse forum</a></td><td>Ryan Gonzalez</td><td>2019-03-27 01:11:06</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2019/03/m17.html">[tsc-devel] Re: Discourse forum</a></td><td>Lauri Ojansivu</td><td>2019-03-27 01:35:14</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2019/03/m18.html">[tsc-devel] Re: Discourse forum</a></td><td>Ryan Gonzalez</td><td>2019-03-27 01:54:21</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2019/03/m19.html">[tsc-devel] Re: Discourse forum</a></td><td>Marvin Gülker</td><td>2019-03-27 07:40:57</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2019/03/m20.html">[tsc-devel] Re: Discourse forum</a></td><td>Marvin Gülker</td><td>2019-03-27 07:48:47</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2019/03/m21.html">[tsc-devel] Re: Discourse forum</a></td><td>Lauri Ojansivu</td><td>2019-03-27 13:11:46</td><td class="msg-here"></td></tr>
+
+</tbody>
+</table>
+</div>
+</div>
+
+</main>
+<footer>
+<p>Mailing list archive generated by <a href="https://mg.guelker.eu/projects/postkasten/">Postkasten</a>.</p>
+</footer>
+</body>
+</html>

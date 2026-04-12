@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Re: [tsc-devel] Fw: mp3 -&gt; ogg command... · tsc-devel@secretchronicles.org</title>
+  <style type="text/css">html, body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial Nova", "Arial", sans-serif;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  margin: 0px;
+}
+
+a {
+  color: #0b8ae1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #520ebb;
+}
+
+header {
+  margin: 0px;
+  padding: 12px 6px;
+  background-color: #0b8ae1;
+}
+
+header ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header ul li::after {
+  margin-left: 8px;
+  content: "|";
+  margin-right: 8px;
+}
+
+header ul li:last-child::after {
+  content: "";
+  margin-right: 0px;
+}
+
+header a {
+  color: white;
+}
+
+header a:hover {
+  color: black;
+}
+
+footer {
+  border-top: 1px solid #999999;
+  color: #999999;
+  font-size: 0.8rem;
+  padding: 8px;
+  text-align: center;
+  clear: both;
+}
+
+footer p {
+  margin: 0px;
+}
+
+main {
+  margin: 8px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+h1.msg-subject {
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+h2, caption {
+  font-size: 1rem;
+}
+
+
+.msg-meta {
+  margin-top: 0px;
+}
+
+.msg-from {
+  font-weight: bold;
+}
+
+.msg-cc {
+  color: #e1730a;
+}
+
+.msg-attachments h2 {
+  font-style: italic;
+}
+
+table, tr, td, th {
+  border: none;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #eeeeee;
+}
+
+thead tr {
+  border-bottom: 1px solid black;
+}
+
+.newyear {
+  font-style: italic;
+  text-align: center;
+  font-weight: bold;
+}
+
+.numreplies {
+  text-align: center;
+}
+
+.thread-ghost {
+  font-style: italic;
+}
+
+.lastreply {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+pre, code {
+  font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+.msg-body {
+  width: 80ch;
+}
+
+.msg-quote {
+  color: #698900;
+  font-style: italic;
+}
+
+.msg-nav {
+  clear: both;
+}
+
+.msg-thread-nav {
+  width: calc(50% - 4px);
+}
+
+.msg-thread-nav-bydate {
+  float: right;
+}
+
+.msg-thread-nav-bythread {
+  float: left;
+}
+
+.msg-thread-nav table caption {
+  background-color: #0b8ae1;
+  color: white;
+  border: none;
+  caption-side: top;
+  text-align: center;
+  font-weight: bold;
+}
+
+.msg-thread-nav tbody tr td {
+  padding: 2px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.msg-thread-nav-bydate table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bydate table td:nth-child(1) {
+  width: 55%;
+
+}
+
+.msg-thread-nav-bydate table td:nth-child(2) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bydate table td:nth-child(3) {
+  width:20%;
+  text-align: right;
+}
+
+.msg-thread-nav-bydate table td:nth-child(4) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+
+.msg-thread-nav-bythread table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bythread table td:nth-child(1) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+.msg-thread-nav-bythread table td:nth-child(2) {
+  width: 20%;
+
+}
+
+.msg-thread-nav-bythread table td:nth-child(3) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bythread table td:nth-child(4) {
+  width:55%;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-0 {
+  padding-left: 0px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-1 {
+  padding-left: 32px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-2 {
+  padding-left: 64px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-3 {
+  padding-left: 96px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-4 {
+  padding-left: 128px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-5 {
+  padding-left: 160px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-6 {
+  padding-left: 192px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-7 {
+  padding-left: 224px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-8 {
+  padding-left: 256px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-9 {
+  padding-left: 288px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-10 {
+  padding-left: 320px;
+}
+
+.threadindex {
+    table-layout: fixed;
+}
+
+.threadindex th:nth-child(1) {
+    width: 78%;
+}
+
+.threadindex th:nth-child(2) {
+    text-align: center;
+    width: 7%;
+}
+
+.threadindex th:nth-child(3) {
+    width: 15%;
+}
+
+.formatted-patch .patch-add {
+  color: #00CC00;
+}
+
+.formatted-patch .patch-del {
+  color: #FF0000;
+}
+
+.formatted-patch .patch-pos {
+  color: #0000FF;
+  background-color: #ddddFF;
+}
+
+div.formatted-patch {
+  border: 1px solid black;
+}
+
+div.formatted-patch pre {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'Inconsolata', 'DejaVu Sans Mono', monospace;
+  margin: 0px;
+}
+
+
+div.formatted-patch pre.linenos {
+  background-color: #0b8ae1;
+  float: left;
+  padding-right: 4px;
+  text-align: right;
+  margin-right: 4px;
+}
+
+.linenos a {
+  color: white;
+}
+
+.linenos a:hover {
+  color: black;
+}
+
+.linenos a:target {
+  color: #8b000e;
+}
+
+tracker-placeholder {
+  display: none;
+}
+
+.tracker-state-change {
+  font-style: italic;
+  color: #e1730a;
+}
+
+.ticket-state {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.ticket-state-open {
+  color: #00CC00;
+}
+
+.ticket-state-confirmed {
+  color: #e1730a;
+}
+
+.ticket-state-closed {
+  color: #FF0000;
+}
+
+.tracker-panel {
+  width: 450px;
+  float: right;
+  margin: 8px;
+  padding: 0px;
+  border: 2px solid #0b8ae1;
+  text-align: center;
+}
+
+.tracker-panel h2 {
+  background-color: #0b8ae1;
+  color: white;
+  margin-top: 0px;
+}
+
+.tracker-panel ul {
+  padding: 0px 8px;
+  margin: 8px;
+  text-align: left;
+  list-style-type: none;
+}
+
+.tracker-table {
+  table-layout: fixed;
+}
+
+.tracker-table tbody td:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tracker-table thead th:nth-child(1) {
+  width: 60%;
+}
+
+.tracker-table thead th:nth-child(2) {
+  width: 13%;
+}
+
+.tracker-table thead th:nth-child(3) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(4) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(5) {
+  width: 7%;
+  text-align: center;
+}
+
+.tracker-table tbody td:nth-child(5) {
+  text-align: center;
+}
+
+#tracker-filter-subject {
+  width: calc(100% - 8px);
+}
+
+.filter-hide {
+  display: none;
+}
+
+@media(max-width: 768px) {
+
+  html, body {
+    font-size: 18px;
+  }
+
+  .lastreply {
+    display: none;
+  }
+
+  .msg-body {
+    width: initial;
+  }
+
+  .msg-thread-nav-bydate {
+    float: none;
+  }
+
+  .msg-thread-nav-bythread {
+    float: none;
+  }
+
+  .threadindex .lastreply {
+      display: none;
+      width: 0%;
+  }
+
+  .threadindex th:nth-child(1) {
+      width: 80%;
+  }
+
+  .threadindex th:nth-child(2) {
+      width: 20%;
+  }
+
+  .tracker-panel {
+    width: 95%;
+    margin: 0px auto;
+    float: none;
+  }
+
+  .tracker-table thead th:nth-child(1) {
+  width: 80%;
+  }
+
+  .tracker-table thead th:nth-child(2), .tracker-table tbody td:nth-child(2) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(3), .tracker-table tbody td:nth-child(3) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(4), .tracker-table tbody td:nth-child(4) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(5) {
+    width: 20%;
+  }
+}
+</style>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<header>
+<ul><li><a href="/historic/tsc-devel-archive/">tsc-devel@secretchronicles.org</a></li><li><a href="/historic/tsc-devel-archive/about.html">About</a></li></ul>
+</header>
+<main>
+<h1 class="msg-subject">Re: [tsc-devel] Fw: mp3 -&gt; ogg command...</h1>
+<p class="msg-meta">
+  <span class="msg-from">Sydney Dykstra</span> |
+
+ Mon, 02 Feb 2015 21:38:38 UTC
+</p>
+
+
+
+
+<div class="tracker-placeholder"></div>
+
+
+
+<pre class="msg-body">I wanted to give this a shot, but Debian Jessie does not come with 
+ffmpeg anymore. Whats wrong with running it through a audio editing 
+program like Audacity? I attached the version of the new Vanilla Dome 
+music I converted in Audacity.
+
+<a href="https://cloud.openmailbox.org/public.php?service=files&amp;t=a8c6e3231b5e67b8a8582b0c772494dc&amp;download">https://cloud.openmailbox.org/public.php?service=files&amp;t=a8c6e3231b5e67b8a8582b0c772494dc&amp;download</a>
+
+-Sydney
+
+On 02/01/2015 10:09 PM, Chris Jacobsen wrote:
+<span class="msg-quote">&gt; For everyone&#39;s reference (I was discussing this with Sydney)...</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; On Friday, January 16, 2015 7:14 AM, Quintus &lt;…s@q…&gt; </span>
+<span class="msg-quote">&gt; wrote:</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; Hi Chris,</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; Chris Jacobsen &lt;…9@y… &lt;mailto:…9@y…&gt;&gt; writes:</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; &gt; If you get a chance later to send me the command you use to convert</span>
+<span class="msg-quote">&gt; &gt; mp3&#39;s to ogg&#39;s, I wanted to use it to convert Silensir&#39;s song. This</span>
+<span class="msg-quote">&gt; &gt; would ensure consistent use of compression settings, etc. I could</span>
+<span class="msg-quote">&gt; &gt; then document it in the wiki so that everyone has this information.</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; It’s a two-step process. First, you have to determine the bitrate of the</span>
+<span class="msg-quote">&gt; input file:</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+<span class="msg-quote">&gt; $ ffmpeg -i &lt;file&gt;.mp3</span>
+<span class="msg-quote">&gt; [...]</span>
+<span class="msg-quote">&gt; [mp3 @ 0x7ffdf06767e0] Estimating duration from bitrate, this may be </span>
+<span class="msg-quote">&gt; inaccurate</span>
+<span class="msg-quote">&gt; Input #0, mp3, from &#39;test.mp3&#39;:</span>
+<span class="msg-quote">&gt;   Duration: 00:01:58.31, start: 0.000000, bitrate: 192 kb/s</span>
+<span class="msg-quote">&gt;     Stream #0:0: Audio: mp3, 44100 Hz, stereo, s16p, 192 kb/s</span>
+<span class="msg-quote">&gt; At least one output file must be specified</span>
+<span class="msg-quote">&gt; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; That song has a bitrate of 192 kilobyte per second. Now convert it to</span>
+<span class="msg-quote">&gt; OGG Vorbis with at least that or a higher bitrate (though of course the</span>
+<span class="msg-quote">&gt; song will not magically gain better quality just if you specify a higher</span>
+<span class="msg-quote">&gt; bitrate. That would only be possible if you had a lossless FLAC file):</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+<span class="msg-quote">&gt; $ ffmpeg -i &lt;file&gt;.mp3 -b:a 192k output.ogg</span>
+<span class="msg-quote">&gt; [...]</span>
+<span class="msg-quote">&gt; Input #0, mp3, from &#39;test.mp3&#39;:</span>
+<span class="msg-quote">&gt;   Duration: 00:01:58.31, start: 0.000000, bitrate: 192 kb/s</span>
+<span class="msg-quote">&gt;     Stream #0:0: Audio: mp3, 44100 Hz, stereo, s16p, 192 kb/s</span>
+<span class="msg-quote">&gt; Output #0, ogg, to &#39;output.ogg&#39;:</span>
+<span class="msg-quote">&gt;   Metadata:</span>
+<span class="msg-quote">&gt;     encoder        : Lavf56.15.102</span>
+<span class="msg-quote">&gt;     Stream #0:0: Audio: vorbis (libvorbis), 44100 Hz, stereo, fltp, </span>
+<span class="msg-quote">&gt; 192 kb/s</span>
+<span class="msg-quote">&gt;     Metadata:</span>
+<span class="msg-quote">&gt;       encoder        : Lavc56.13.100 libvorbis</span>
+<span class="msg-quote">&gt; Stream mapping:</span>
+<span class="msg-quote">&gt;   Stream #0:0 -&gt; #0:0 (mp3 (native) -&gt; vorbis (libvorbis))</span>
+<span class="msg-quote">&gt; [...]</span>
+<span class="msg-quote">&gt; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; It might be useful to understand how multimedia file formats work. There’s</span>
+<span class="msg-quote">&gt; generally a “Container” format, in which one or multiple streams of</span>
+<span class="msg-quote">&gt; “encoded” multimedia data reside. For example, if you have an .ogv video</span>
+<span class="msg-quote">&gt; file, you have:</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; 1. Container format: OGG</span>
+<span class="msg-quote">&gt;   1. Audio codec: Vorbis</span>
+<span class="msg-quote">&gt;   2. Video codec: Theora</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; From a more general point of view, there’s no difference between audio</span>
+<span class="msg-quote">&gt; and video files therefore; from the outside, it looks the same. An OGG</span>
+<span class="msg-quote">&gt; container may contain only an audio codec, then it’s an audio file. If</span>
+<span class="msg-quote">&gt; it also contains a video codec, it’s a audio+video file. Only a video</span>
+<span class="msg-quote">&gt; codec would also be possible.</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; Not all container formats support all codecs. OGG and Matroska (MKV) are</span>
+<span class="msg-quote">&gt; formats that support a number of codecs inside them, especially MKV is</span>
+<span class="msg-quote">&gt; very liberal. The combination of Matroska as the container, Vorbis as</span>
+<span class="msg-quote">&gt; the audio codec, and VP8 as the Video codec is known as WEBM.</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; 1. Container format: MKV</span>
+<span class="msg-quote">&gt;   1. Audio codec: Vorbis</span>
+<span class="msg-quote">&gt;   2. Video codec: VP8</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; MP3 also is a container format, but the only codec it supports inside it</span>
+<span class="msg-quote">&gt; is AAC, which is covered by several unfree software patents. Thus, if</span>
+<span class="msg-quote">&gt; you say you &#34;convert an MP3 to OGG&#34;, what you really do is this:</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; 1. Container format: MP3 -&gt; OGG</span>
+<span class="msg-quote">&gt;   1. Audio codec: AAC -&gt; Vorbis</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; You convert both the container format and the included codec.</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; A newer alternative to the Vorbis audio codec that recently occured is</span>
+<span class="msg-quote">&gt; the Opus codec. It is usually packaged inside an OGG container.</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; 1. Container format: OGG</span>
+<span class="msg-quote">&gt;   1. Audio codec: Opus</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; Matroska and OGG are patent-free container formats, Vorbis and Opus are</span>
+<span class="msg-quote">&gt; patent-free audio codecs. VP8 is to my knowledge the only patent-free</span>
+<span class="msg-quote">&gt; video codec. Hence, WEBM is the only really free audio+video file</span>
+<span class="msg-quote">&gt; format. It might be that we see a WEBM2 or whatever format that replaces</span>
+<span class="msg-quote">&gt; Vorbis with Opus for the audio. I’m personally doing this with my video</span>
+<span class="msg-quote">&gt; files already and it plays just fine in VLC.</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; &gt; -Chris</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; Vale,</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; Quintus</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; -- </span>
+<span class="msg-quote">&gt; Blog: <a href="http://www.quintilianus.eu">http://www.quintilianus.eu</a> &lt;<a href="http://www.quintilianus.eu/">http://www.quintilianus.eu/</a>&gt;</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; I will reject HTML emails.    | Ich akzeptiere keine HTML-Nachrichten.</span>
+<span class="msg-quote">&gt;                               |</span>
+<span class="msg-quote">&gt; Use GnuPG for mail encryption: | GnuPG für Mail-Verschlüsselung:</span>
+<span class="msg-quote">&gt; <a href="http://www.gnupg.org">http://www.gnupg.org</a> &lt;<a href="http://www.gnupg.org/">http://www.gnupg.org/</a>&gt;         | </span>
+<span class="msg-quote">&gt; <a href="http://gnupg.org/index.de.html">http://gnupg.org/index.de.html</a></span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;</span>
+
+</pre>
+
+
+
+<div class="msg-nav">
+<div class="msg-thread-nav msg-thread-nav-bythread">
+<table>
+<caption>By Thread</caption>
+<tbody>
+<tr><td></td><td>2015-02-02 03:09:23</td><td>Chris Jacobsen</td><td class="msg-thread-level-0"><a href="/historic/tsc-devel-archive/2015/02/m6.html">[tsc-devel] Fw: mp3 -&gt; ogg command...</a></td></tr>
+<tr><td>▶</td><td>2015-02-02 21:38:38</td><td>Sydney Dykstra</td><td class="msg-thread-level-1"><a href="/historic/tsc-devel-archive/2015/02/m13.html">Re: [tsc-devel] Fw: mp3 -&gt; ogg command...</a></td></tr>
+
+</tbody>
+</table>
+</div>
+<div class="msg-thread-nav msg-thread-nav-bydate">
+<table>
+<caption>By Date</caption>
+<tbody>
+
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/02/m6.html">[tsc-devel] Fw: mp3 -&gt; ogg command...</a></td><td>Chris Jacobsen</td><td>2015-02-02 03:09:23</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/02/m13.html">Re: [tsc-devel] Fw: mp3 -&gt; ogg command...</a></td><td>Sydney Dykstra</td><td>2015-02-02 21:38:38</td><td class="msg-here">◀</td></tr>
+
+</tbody>
+</table>
+</div>
+</div>
+
+</main>
+<footer>
+<p>Mailing list archive generated by <a href="https://mg.guelker.eu/projects/postkasten/">Postkasten</a>.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8"/>
+  <title>[tsc-devel] SFML and further development process · tsc-devel@secretchronicles.org</title>
+  <style type="text/css">html, body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial Nova", "Arial", sans-serif;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  margin: 0px;
+}
+
+a {
+  color: #0b8ae1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #520ebb;
+}
+
+header {
+  margin: 0px;
+  padding: 12px 6px;
+  background-color: #0b8ae1;
+}
+
+header ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header ul li::after {
+  margin-left: 8px;
+  content: "|";
+  margin-right: 8px;
+}
+
+header ul li:last-child::after {
+  content: "";
+  margin-right: 0px;
+}
+
+header a {
+  color: white;
+}
+
+header a:hover {
+  color: black;
+}
+
+footer {
+  border-top: 1px solid #999999;
+  color: #999999;
+  font-size: 0.8rem;
+  padding: 8px;
+  text-align: center;
+  clear: both;
+}
+
+footer p {
+  margin: 0px;
+}
+
+main {
+  margin: 8px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+h1.msg-subject {
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+h2, caption {
+  font-size: 1rem;
+}
+
+
+.msg-meta {
+  margin-top: 0px;
+}
+
+.msg-from {
+  font-weight: bold;
+}
+
+.msg-cc {
+  color: #e1730a;
+}
+
+.msg-attachments h2 {
+  font-style: italic;
+}
+
+table, tr, td, th {
+  border: none;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #eeeeee;
+}
+
+thead tr {
+  border-bottom: 1px solid black;
+}
+
+.newyear {
+  font-style: italic;
+  text-align: center;
+  font-weight: bold;
+}
+
+.numreplies {
+  text-align: center;
+}
+
+.thread-ghost {
+  font-style: italic;
+}
+
+.lastreply {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+pre, code {
+  font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+.msg-body {
+  width: 80ch;
+}
+
+.msg-quote {
+  color: #698900;
+  font-style: italic;
+}
+
+.msg-nav {
+  clear: both;
+}
+
+.msg-thread-nav {
+  width: calc(50% - 4px);
+}
+
+.msg-thread-nav-bydate {
+  float: right;
+}
+
+.msg-thread-nav-bythread {
+  float: left;
+}
+
+.msg-thread-nav table caption {
+  background-color: #0b8ae1;
+  color: white;
+  border: none;
+  caption-side: top;
+  text-align: center;
+  font-weight: bold;
+}
+
+.msg-thread-nav tbody tr td {
+  padding: 2px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.msg-thread-nav-bydate table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bydate table td:nth-child(1) {
+  width: 55%;
+
+}
+
+.msg-thread-nav-bydate table td:nth-child(2) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bydate table td:nth-child(3) {
+  width:20%;
+  text-align: right;
+}
+
+.msg-thread-nav-bydate table td:nth-child(4) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+
+.msg-thread-nav-bythread table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bythread table td:nth-child(1) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+.msg-thread-nav-bythread table td:nth-child(2) {
+  width: 20%;
+
+}
+
+.msg-thread-nav-bythread table td:nth-child(3) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bythread table td:nth-child(4) {
+  width:55%;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-0 {
+  padding-left: 0px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-1 {
+  padding-left: 32px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-2 {
+  padding-left: 64px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-3 {
+  padding-left: 96px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-4 {
+  padding-left: 128px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-5 {
+  padding-left: 160px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-6 {
+  padding-left: 192px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-7 {
+  padding-left: 224px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-8 {
+  padding-left: 256px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-9 {
+  padding-left: 288px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-10 {
+  padding-left: 320px;
+}
+
+.threadindex {
+    table-layout: fixed;
+}
+
+.threadindex th:nth-child(1) {
+    width: 78%;
+}
+
+.threadindex th:nth-child(2) {
+    text-align: center;
+    width: 7%;
+}
+
+.threadindex th:nth-child(3) {
+    width: 15%;
+}
+
+.formatted-patch .patch-add {
+  color: #00CC00;
+}
+
+.formatted-patch .patch-del {
+  color: #FF0000;
+}
+
+.formatted-patch .patch-pos {
+  color: #0000FF;
+  background-color: #ddddFF;
+}
+
+div.formatted-patch {
+  border: 1px solid black;
+}
+
+div.formatted-patch pre {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'Inconsolata', 'DejaVu Sans Mono', monospace;
+  margin: 0px;
+}
+
+
+div.formatted-patch pre.linenos {
+  background-color: #0b8ae1;
+  float: left;
+  padding-right: 4px;
+  text-align: right;
+  margin-right: 4px;
+}
+
+.linenos a {
+  color: white;
+}
+
+.linenos a:hover {
+  color: black;
+}
+
+.linenos a:target {
+  color: #8b000e;
+}
+
+tracker-placeholder {
+  display: none;
+}
+
+.tracker-state-change {
+  font-style: italic;
+  color: #e1730a;
+}
+
+.ticket-state {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.ticket-state-open {
+  color: #00CC00;
+}
+
+.ticket-state-confirmed {
+  color: #e1730a;
+}
+
+.ticket-state-closed {
+  color: #FF0000;
+}
+
+.tracker-panel {
+  width: 450px;
+  float: right;
+  margin: 8px;
+  padding: 0px;
+  border: 2px solid #0b8ae1;
+  text-align: center;
+}
+
+.tracker-panel h2 {
+  background-color: #0b8ae1;
+  color: white;
+  margin-top: 0px;
+}
+
+.tracker-panel ul {
+  padding: 0px 8px;
+  margin: 8px;
+  text-align: left;
+  list-style-type: none;
+}
+
+.tracker-table {
+  table-layout: fixed;
+}
+
+.tracker-table tbody td:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tracker-table thead th:nth-child(1) {
+  width: 60%;
+}
+
+.tracker-table thead th:nth-child(2) {
+  width: 13%;
+}
+
+.tracker-table thead th:nth-child(3) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(4) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(5) {
+  width: 7%;
+  text-align: center;
+}
+
+.tracker-table tbody td:nth-child(5) {
+  text-align: center;
+}
+
+#tracker-filter-subject {
+  width: calc(100% - 8px);
+}
+
+.filter-hide {
+  display: none;
+}
+
+@media(max-width: 768px) {
+
+  html, body {
+    font-size: 18px;
+  }
+
+  .lastreply {
+    display: none;
+  }
+
+  .msg-body {
+    width: initial;
+  }
+
+  .msg-thread-nav-bydate {
+    float: none;
+  }
+
+  .msg-thread-nav-bythread {
+    float: none;
+  }
+
+  .threadindex .lastreply {
+      display: none;
+      width: 0%;
+  }
+
+  .threadindex th:nth-child(1) {
+      width: 80%;
+  }
+
+  .threadindex th:nth-child(2) {
+      width: 20%;
+  }
+
+  .tracker-panel {
+    width: 95%;
+    margin: 0px auto;
+    float: none;
+  }
+
+  .tracker-table thead th:nth-child(1) {
+  width: 80%;
+  }
+
+  .tracker-table thead th:nth-child(2), .tracker-table tbody td:nth-child(2) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(3), .tracker-table tbody td:nth-child(3) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(4), .tracker-table tbody td:nth-child(4) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(5) {
+    width: 20%;
+  }
+}
+</style>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<header>
+<ul><li><a href="/historic/tsc-devel-archive/">tsc-devel@secretchronicles.org</a></li><li><a href="/historic/tsc-devel-archive/about.html">About</a></li></ul>
+</header>
+<main>
+<h1 class="msg-subject">[tsc-devel] SFML and further development process</h1>
+<p class="msg-meta">
+  <span class="msg-from">Quintus</span> |
+
+ Mon, 05 Oct 2015 15:38:02 UTC
+</p>
+
+
+
+
+<div class="tracker-placeholder"></div>
+
+
+
+<pre class="msg-body">Hi everyone,
+
+it has become evident that the SFML port is a huge work that will still
+take a lot of time to be completed. Waiting for me doing it will slow
+down progress quite heavily. I thus want to make this a high-priority
+issue now and pursue it for one of the next releases, postponing each
+and every other issue on the tracker until it is done. simpletoon, Luiji,
+could you two please take a look at the SFML code I already wrote (and
+documented), and tell me if you think you can familiarise yourself with
+it, and then work on it together with me? The current state of affairs
+is that everyone of us does some rather little things on his own, but
+the SFML porting stuff is too large for me. I need help. And this means
+we need to coordinate our work so we don’t get into one another’s way of
+programming.
+
+Once you looked at it, please file tickets on the tracker regarding all
+tasks that you think are still pending, and tag them with the “SFML
+port” tag. This will give us a list of tasks that are outstanding. We
+then have to bring them into a useful dependency hierarchy (a shame that
+GitHub’s tracker doesn’t properly support issue dependencies; we need to
+simply put comments into the tickets), and then tackle them bottom-up
+one-by-one. I think if we three work together to systematically cut this
+down, we can succeed in a reasonable amount of time.
+
+The key to managing this huge task is the word “systematically”. Please
+do not simply start something. Let us first create all the tickets, then
+order them, and when this both is done, take whatever bottom-most task
+in the dependency hierarchy is unassigned, assign it to you, and
+implement it. It is desirable to have the tasks on the tracker be sized
+such a way that one ticket does not take more than a week to implement
+(roughly). This should allow everyone to get this into his free time,
+and most importantly, it allows to finish one ticket and then abstain
+for some time when real life issues are more important, afterwards then
+a new one-week task can be picked up. That means, if you assign a ticket
+with the “SFML port” tag to yourself, you have decided to dedicate the
+next week to this issue. Do not assign it to yourself if you don’t know
+whether you have time during the next week.
+
+That’s the theory. I know some issues come out more difficult then they
+go in. In that case please post a description of the problem into the
+ticket, and consider extracting a subproblem into a new ticket, if
+possible. If necessary, unassign yourself from the ticket again.
+
+datahead, I only mentioned Luiji and simpletoon above, because they have
+been rather quiet during the last time. However, of course you — and
+likewise anybody else who is able to program — are invited to join these
+efforts in getting the SFML port out of the door.
+
+I am available for any questions regarding the SFML-related code. You
+can find that code in the “feature-sfml-port” branch. I merged the
+separate “sfml_level_loading” branch I worked on lately into that branch
+to consolidate all SFML-related stuff into that one branch before we
+start off our joint work so that it is easier to familiarise yourself
+with the code. Please also read the documentation comments I left in the
+code.
+
+Please give feedback about this issue. We need to go forward.
+
+Valete,
+Quintus
+
+-- 
+#!/sbin/quintus
+Blog: <a href="http://www.guelkerdev.de">http://www.guelkerdev.de</a>
+
+GnuPG key: F1D8799FBCC8BC4F
+
+</pre>
+
+
+
+<div class="msg-nav">
+<div class="msg-thread-nav msg-thread-nav-bythread">
+<table>
+<caption>By Thread</caption>
+<tbody>
+<tr><td>▶</td><td>2015-10-05 15:38:02</td><td>Quintus</td><td class="msg-thread-level-0"><a href="/historic/tsc-devel-archive/2015/10/m1.html">[tsc-devel] SFML and further development process</a></td></tr>
+<tr><td></td><td>2015-10-06 01:06:40</td><td>datahead</td><td class="msg-thread-level-1"><a href="/historic/tsc-devel-archive/2015/10/m3.html">Re: [tsc-devel] SFML and further development process</a></td></tr>
+<tr><td></td><td>2015-10-06 11:11:53</td><td>Quintus</td><td class="msg-thread-level-2"><a href="/historic/tsc-devel-archive/2015/10/m5.html">Re: [tsc-devel] SFML and further development process</a></td></tr>
+<tr><td></td><td>2015-10-06 13:08:55</td><td>Chris Jacobsen</td><td class="msg-thread-level-3"><a href="/historic/tsc-devel-archive/2015/10/m7.html">Re: [tsc-devel] SFML and further development process</a></td></tr>
+<tr><td></td><td>2015-10-06 13:32:20</td><td>Lauri Ojansivu</td><td class="msg-thread-level-4"><a href="/historic/tsc-devel-archive/2015/10/m10.html">Re: [tsc-devel] SFML and further development process</a></td></tr>
+<tr><td></td><td>2015-10-06 13:32:27</td><td>datahead</td><td class="msg-thread-level-5"><a href="/historic/tsc-devel-archive/2015/10/m11.html">Re: [tsc-devel] SFML and further development process</a></td></tr>
+<tr><td></td><td>2015-10-06 16:23:35</td><td>Quintus</td><td class="msg-thread-level-6"><a href="/historic/tsc-devel-archive/2015/10/m13.html">Re: [tsc-devel] SFML and further development process</a></td></tr>
+<tr><td></td><td>2015-10-08 00:48:56</td><td>datahead</td><td class="msg-thread-level-7"><a href="/historic/tsc-devel-archive/2015/10/m21.html">Re: [tsc-devel] SFML and further development process</a></td></tr>
+<tr><td></td><td>2015-10-06 16:08:09</td><td>Quintus</td><td class="msg-thread-level-5"><a href="/historic/tsc-devel-archive/2015/10/m12.html">Re: [tsc-devel] SFML and further development process</a></td></tr>
+<tr><td></td><td>2015-10-06 16:56:55</td><td>Lauri Ojansivu</td><td class="msg-thread-level-6"><a href="/historic/tsc-devel-archive/2015/10/m14.html">Re: [tsc-devel] SFML and further development process</a></td></tr>
+
+</tbody>
+</table>
+</div>
+<div class="msg-thread-nav msg-thread-nav-bydate">
+<table>
+<caption>By Date</caption>
+<tbody>
+
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/10/m1.html">[tsc-devel] SFML and further development process</a></td><td>Quintus</td><td>2015-10-05 15:38:02</td><td class="msg-here">◀</td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/10/m3.html">Re: [tsc-devel] SFML and further development process</a></td><td>datahead</td><td>2015-10-06 01:06:40</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/10/m5.html">Re: [tsc-devel] SFML and further development process</a></td><td>Quintus</td><td>2015-10-06 11:11:53</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/10/m7.html">Re: [tsc-devel] SFML and further development process</a></td><td>Chris Jacobsen</td><td>2015-10-06 13:08:55</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/10/m10.html">Re: [tsc-devel] SFML and further development process</a></td><td>Lauri Ojansivu</td><td>2015-10-06 13:32:20</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/10/m11.html">Re: [tsc-devel] SFML and further development process</a></td><td>datahead</td><td>2015-10-06 13:32:27</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/10/m12.html">Re: [tsc-devel] SFML and further development process</a></td><td>Quintus</td><td>2015-10-06 16:08:09</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/10/m13.html">Re: [tsc-devel] SFML and further development process</a></td><td>Quintus</td><td>2015-10-06 16:23:35</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/10/m14.html">Re: [tsc-devel] SFML and further development process</a></td><td>Lauri Ojansivu</td><td>2015-10-06 16:56:55</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/10/m21.html">Re: [tsc-devel] SFML and further development process</a></td><td>datahead</td><td>2015-10-08 00:48:56</td><td class="msg-here"></td></tr>
+
+</tbody>
+</table>
+</div>
+</div>
+
+</main>
+<footer>
+<p>Mailing list archive generated by <a href="https://mg.guelker.eu/projects/postkasten/">Postkasten</a>.</p>
+</footer>
+</body>
+</html>

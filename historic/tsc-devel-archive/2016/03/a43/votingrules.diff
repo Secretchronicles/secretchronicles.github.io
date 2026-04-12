@@ -1,0 +1,65 @@
+diff --git a/votingrules/votingrules-2015-08-15.tex b/votingrules/votingrules-2015-08-15.tex
+index ba6a2a3..cd8ef4b 100644
+--- a/votingrules/votingrules-2015-08-15.tex
++++ b/votingrules/votingrules-2015-08-15.tex
+@@ -77,8 +77,8 @@ whole.
+   \item have been nominated by an existing team member.
+   \end{enumerate}
+ 
+-  The vote requires that two thirds of the existing team members vote
+-  in favour of adding the new person to the team.
++  The vote requires that two thirds of the team members voting are in
++  favour of adding the new person to the team.
+ 
+   In case of Nr. 1 above, as an exception to \ref{cl:voting}, the
+   person with this amount of commits included is also allowed to place
+@@ -101,10 +101,10 @@ whole.
+     be removed from the team.
+   \item The team reserves the right to remove any person at any time,
+     for any reason, through a vote.  This requires a two thirds
+-    majority, and the candidate for removal is not allowed to cast a
+-    vote.  The team is expected to try to follow fair criteria for
+-    such removals and consider changing the rules if repeated removals
+-    occur.
++    majority of those voting, and the candidate for removal is not
++    allowed to participate in the vote.  The team is expected to try to
++    follow fair criteria for such removals and consider changing the
++    rules if repeated removals occur.
+   \end{enumerate}
+ 
+   Upon removal a person will be removed from the GitHub organization.
+@@ -142,6 +142,24 @@ whole.
+   If the project lead is unavailable, the assistant lead guides the
+   process instead.
+ 
++  \SubClause{title=IRC Voting Announcement}
++
++  For votings held in \irc — as an exception to §\,5(2)(Nr.3) — it is
++  sufficient to announce all available voting options in \irc prior to
++  taking the votes.
++
++  If at least three team members are available in \irc and are not just
++  idling, it is possible to waive the two-week preparation interval
++  and vote immediately. The waiver requires all non-idling team
++  members in the chatroom to agree on it.
++
++
++  Any team member can challenge a voting made under the conditions of
++  (2) above until two weeks after the declaration of results have
++  passed by approaching the project lead accordingly. If the voting is
++  challenged, it is treated the same way as if it failed (\ref{failedvote}).
++
++
+   \Clause{title=Open Vote}
+ 
+   The default open vote happens openly on any of the project’s
+@@ -263,7 +281,8 @@ whole.
+   \Clause{title=Changes}
+ 
+   Changes to this document require a vote whose winning option passes
+-  with at least two thirds of the team members being in favour of it.
++  with at least two thirds of all existing team members being in
++  favour of it.
+ 
+   \Clause{title=First Date of Force}
+ 

@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Re: Fw: [tsc-devel] Signing-off commits on legal questions · tsc-devel@secretchronicles.org</title>
+  <style type="text/css">html, body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial Nova", "Arial", sans-serif;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  margin: 0px;
+}
+
+a {
+  color: #0b8ae1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #520ebb;
+}
+
+header {
+  margin: 0px;
+  padding: 12px 6px;
+  background-color: #0b8ae1;
+}
+
+header ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header ul li::after {
+  margin-left: 8px;
+  content: "|";
+  margin-right: 8px;
+}
+
+header ul li:last-child::after {
+  content: "";
+  margin-right: 0px;
+}
+
+header a {
+  color: white;
+}
+
+header a:hover {
+  color: black;
+}
+
+footer {
+  border-top: 1px solid #999999;
+  color: #999999;
+  font-size: 0.8rem;
+  padding: 8px;
+  text-align: center;
+  clear: both;
+}
+
+footer p {
+  margin: 0px;
+}
+
+main {
+  margin: 8px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+h1.msg-subject {
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+h2, caption {
+  font-size: 1rem;
+}
+
+
+.msg-meta {
+  margin-top: 0px;
+}
+
+.msg-from {
+  font-weight: bold;
+}
+
+.msg-cc {
+  color: #e1730a;
+}
+
+.msg-attachments h2 {
+  font-style: italic;
+}
+
+table, tr, td, th {
+  border: none;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #eeeeee;
+}
+
+thead tr {
+  border-bottom: 1px solid black;
+}
+
+.newyear {
+  font-style: italic;
+  text-align: center;
+  font-weight: bold;
+}
+
+.numreplies {
+  text-align: center;
+}
+
+.thread-ghost {
+  font-style: italic;
+}
+
+.lastreply {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+pre, code {
+  font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+.msg-body {
+  width: 80ch;
+}
+
+.msg-quote {
+  color: #698900;
+  font-style: italic;
+}
+
+.msg-nav {
+  clear: both;
+}
+
+.msg-thread-nav {
+  width: calc(50% - 4px);
+}
+
+.msg-thread-nav-bydate {
+  float: right;
+}
+
+.msg-thread-nav-bythread {
+  float: left;
+}
+
+.msg-thread-nav table caption {
+  background-color: #0b8ae1;
+  color: white;
+  border: none;
+  caption-side: top;
+  text-align: center;
+  font-weight: bold;
+}
+
+.msg-thread-nav tbody tr td {
+  padding: 2px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.msg-thread-nav-bydate table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bydate table td:nth-child(1) {
+  width: 55%;
+
+}
+
+.msg-thread-nav-bydate table td:nth-child(2) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bydate table td:nth-child(3) {
+  width:20%;
+  text-align: right;
+}
+
+.msg-thread-nav-bydate table td:nth-child(4) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+
+.msg-thread-nav-bythread table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bythread table td:nth-child(1) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+.msg-thread-nav-bythread table td:nth-child(2) {
+  width: 20%;
+
+}
+
+.msg-thread-nav-bythread table td:nth-child(3) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bythread table td:nth-child(4) {
+  width:55%;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-0 {
+  padding-left: 0px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-1 {
+  padding-left: 32px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-2 {
+  padding-left: 64px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-3 {
+  padding-left: 96px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-4 {
+  padding-left: 128px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-5 {
+  padding-left: 160px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-6 {
+  padding-left: 192px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-7 {
+  padding-left: 224px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-8 {
+  padding-left: 256px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-9 {
+  padding-left: 288px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-10 {
+  padding-left: 320px;
+}
+
+.threadindex {
+    table-layout: fixed;
+}
+
+.threadindex th:nth-child(1) {
+    width: 78%;
+}
+
+.threadindex th:nth-child(2) {
+    text-align: center;
+    width: 7%;
+}
+
+.threadindex th:nth-child(3) {
+    width: 15%;
+}
+
+.formatted-patch .patch-add {
+  color: #00CC00;
+}
+
+.formatted-patch .patch-del {
+  color: #FF0000;
+}
+
+.formatted-patch .patch-pos {
+  color: #0000FF;
+  background-color: #ddddFF;
+}
+
+div.formatted-patch {
+  border: 1px solid black;
+}
+
+div.formatted-patch pre {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'Inconsolata', 'DejaVu Sans Mono', monospace;
+  margin: 0px;
+}
+
+
+div.formatted-patch pre.linenos {
+  background-color: #0b8ae1;
+  float: left;
+  padding-right: 4px;
+  text-align: right;
+  margin-right: 4px;
+}
+
+.linenos a {
+  color: white;
+}
+
+.linenos a:hover {
+  color: black;
+}
+
+.linenos a:target {
+  color: #8b000e;
+}
+
+tracker-placeholder {
+  display: none;
+}
+
+.tracker-state-change {
+  font-style: italic;
+  color: #e1730a;
+}
+
+.ticket-state {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.ticket-state-open {
+  color: #00CC00;
+}
+
+.ticket-state-confirmed {
+  color: #e1730a;
+}
+
+.ticket-state-closed {
+  color: #FF0000;
+}
+
+.tracker-panel {
+  width: 450px;
+  float: right;
+  margin: 8px;
+  padding: 0px;
+  border: 2px solid #0b8ae1;
+  text-align: center;
+}
+
+.tracker-panel h2 {
+  background-color: #0b8ae1;
+  color: white;
+  margin-top: 0px;
+}
+
+.tracker-panel ul {
+  padding: 0px 8px;
+  margin: 8px;
+  text-align: left;
+  list-style-type: none;
+}
+
+.tracker-table {
+  table-layout: fixed;
+}
+
+.tracker-table tbody td:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tracker-table thead th:nth-child(1) {
+  width: 60%;
+}
+
+.tracker-table thead th:nth-child(2) {
+  width: 13%;
+}
+
+.tracker-table thead th:nth-child(3) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(4) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(5) {
+  width: 7%;
+  text-align: center;
+}
+
+.tracker-table tbody td:nth-child(5) {
+  text-align: center;
+}
+
+#tracker-filter-subject {
+  width: calc(100% - 8px);
+}
+
+.filter-hide {
+  display: none;
+}
+
+@media(max-width: 768px) {
+
+  html, body {
+    font-size: 18px;
+  }
+
+  .lastreply {
+    display: none;
+  }
+
+  .msg-body {
+    width: initial;
+  }
+
+  .msg-thread-nav-bydate {
+    float: none;
+  }
+
+  .msg-thread-nav-bythread {
+    float: none;
+  }
+
+  .threadindex .lastreply {
+      display: none;
+      width: 0%;
+  }
+
+  .threadindex th:nth-child(1) {
+      width: 80%;
+  }
+
+  .threadindex th:nth-child(2) {
+      width: 20%;
+  }
+
+  .tracker-panel {
+    width: 95%;
+    margin: 0px auto;
+    float: none;
+  }
+
+  .tracker-table thead th:nth-child(1) {
+  width: 80%;
+  }
+
+  .tracker-table thead th:nth-child(2), .tracker-table tbody td:nth-child(2) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(3), .tracker-table tbody td:nth-child(3) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(4), .tracker-table tbody td:nth-child(4) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(5) {
+    width: 20%;
+  }
+}
+</style>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<header>
+<ul><li><a href="/historic/tsc-devel-archive/">tsc-devel@secretchronicles.org</a></li><li><a href="/historic/tsc-devel-archive/about.html">About</a></li></ul>
+</header>
+<main>
+<h1 class="msg-subject">Re: Fw: [tsc-devel] Signing-off commits on legal questions</h1>
+<p class="msg-meta">
+  <span class="msg-from">Quintus</span> |
+
+ Thu, 05 Feb 2015 18:01:50 UTC
+</p>
+
+
+
+
+<div class="tracker-placeholder"></div>
+
+
+
+<pre class="msg-body">Chris Jacobsen &lt;…9@y…&gt; writes:
+
+<span class="msg-quote">&gt; For my understanding, if an artist learns git and uploads his files to</span>
+<span class="msg-quote">&gt; github, without specifyng a license, does it default to the exclusive</span>
+<span class="msg-quote">&gt; &#34;special&#34; license?</span>
+
+Urgh. Gotcha. You are right on this. If the circumstances wouldn’t be so
+evidently clear it would even be the default “all rights reserved”, but
+it would be nonsense to assume someone uploaded to the repository
+without wanting it to be used. And as far as I am concerned I do think
+this also allowed adaptions as I explained earlier.
+
+We should probably ask people who want Git access to confirm any assets
+they upload are under CC-BY 4.0. Well, next time we will do
+better.
+
+<span class="msg-quote">&gt; In this case, even the PNG&#39;s by Bugsbane are</span>
+<span class="msg-quote">&gt; &#34;special&#34;. Otherwise we&#39;re just dealing with an issue for the fruit</span>
+<span class="msg-quote">&gt; SVG&#39;s he didn&#39;t upload.</span>
+
+See above. You are correct with this.
+
+<span class="msg-quote">&gt; I just checked settings files for these items:* The title screen logo does not have a license specified</span>
+<span class="msg-quote">&gt; * The question block replacements do not have a license specified* The spin block replacements do not have a license specified</span>
+<span class="msg-quote">&gt; * The ground_3 image has no license specified* The coin hud image has no license specified* The jewel graphics do not have a license specified</span>
+<span class="msg-quote">&gt; * The power up replacements (fruit) do not have a license specified</span>
+
+Which even more proves we need a practical solution to the problem until
+he shows up again.
+
+<span class="msg-quote">&gt; * By extension, my stone fruit graphics would inherit any such</span>
+<span class="msg-quote">&gt; problems (from the SVG license)</span>
+
+This is a bit different as I tried to explain. Licenses are not
+“inherited” unless an author makes this a condition of giving you the
+permission to create an adaption. At least to my understanding. Don’t
+nail me on it, I have to look it up, but given the GPL and similar
+“copyleft” licenses are viewed as very rare and special constructs by
+most people dealing with copyright law this seems reasonable. Once you
+have the permission to create the adaption, you are free to license your
+adaption the way you want it. Still, I have to look that one up. I can
+do that next week, but not earlier as I need access to my university’s
+juridicial library for that and I won’t get there before next week.
+
+<span class="msg-quote">&gt;&gt; Our “special” license tag does not allow for adaptions, so the distributor can’t distribute</span>
+<span class="msg-quote">&gt; any assets licensed as “special”.</span>
+<span class="msg-quote">&gt; If a distributor becomes aware of this, they could actually refuse to</span>
+<span class="msg-quote">&gt; distribute our game, which is a very big problem.</span>
+
+Yes. That is the problem.
+
+<span class="msg-quote">&gt; Obviously, if we</span>
+<span class="msg-quote">&gt; don&#39;t mark the licenses as special, we&#39;ll probably never hear about</span>
+<span class="msg-quote">&gt; it, but this is a very confusing (and arguably dishonest) legal</span>
+<span class="msg-quote">&gt; situation.  Even Johan&#39;s songs may be a problem here.</span>
+
+I’ve mentioned this already in message
+&lt;<a href="/historic/tsc-devel-archive/2015/02/m18.html">87bnla6l2w.fsf@hades.cable.internal.immobilien-concepte.eu</a>&gt; [1].
+
+<span class="msg-quote">&gt;&gt; I have emailed Bugsbane (again) and asked him to clarify on the</span>
+<span class="msg-quote">&gt; licensing of the SVGs he created.</span>
+<span class="msg-quote">&gt; I don&#39;t doubt that we needed to email him, but I think it&#39;s best to</span>
+<span class="msg-quote">&gt; discuss it before sending an email to him, especially if you are using</span>
+<span class="msg-quote">&gt; the gmail account from the git log.</span>
+
+I’m sorry if this was surprising to you. I just thought that the topic
+is going in a direction where we really need clarification from him. I
+didn’t know you have some more questions to ask. Sorry.
+
+Yes, I used his Gmail address, but what’s special about that? It’s in
+the Git log, which as everybody knows is public.
+
+<span class="msg-quote">&gt; If he wants payment, let&#39;s just do it. These legal situations are</span>
+<span class="msg-quote">&gt; more severe than having paid someone money for Secret Chronicles</span>
+<span class="msg-quote">&gt; assets. We could even pay him unofficially, from 2 or 3 of us,</span>
+
+The problem we get is that once we start with such a thing it is obvious
+other artists will feel as second-class people. Why does he get money
+and they don’t? This is unjust. It may result in artists leaving the
+project over that topic, which will then leave us with him alone. That’s
+not how I imagine an open-source project.
+
+<span class="msg-quote">&gt; This means reintroducing</span>
+<span class="msg-quote">&gt; a lot of Mario based assets. These are derivative works of Nintendo</span>
+<span class="msg-quote">&gt; assets,</span>
+<span class="msg-quote">&gt; and we have already seen *historical evidence* of a Linux</span>
+<span class="msg-quote">&gt; distribution refusing to package SMC because of this sort of thing.</span>
+
+I don’t want them back. But we have a dilemma in this regard. Either way
+we go, the decision is wrong. I think the smaller issue is risking an
+infringement of Bugsbane’s copyright; I just can’t imagine he didn’t
+want us to use the graphics to the project’s benefit.
+
+<span class="msg-quote">&gt; I would go far as to say that having a replacement for the mushroom</span>
+<span class="msg-quote">&gt; graphics is a &#34;Blocker&#34; task and that we cannot ship release 2.0 with</span>
+<span class="msg-quote">&gt; Mario mushroom graphics present. I think we would be much better off</span>
+<span class="msg-quote">&gt; using Bugsbane&#39;s graphics in the release, even without a &#34;good&#34;</span>
+<span class="msg-quote">&gt; license.</span>
+
+Yes. With distributors being in trouble, but I think we cannot change
+this for now. We can provide packages for major distributions ourself (I
+looked into Debian packaging recently, doesn’t seem too difficult), and
+the big distributions don’t include new software into their running
+releases anyway. Thus we can postpone the problem until new releases of
+Ubuntu (LTS), Debian, or similar are planned.
+
+We could also split the project up (again). The code is clearly GPL,
+there can be no doubt about this. Distributors will happily ship that
+one. We can then have the assets in a separate package which
+distributors can choose to include or not to include depending on
+whether they think it’s legally safe (we can guarantee them that from
+our side as the TSC team there will be no claims). If they choose to not
+include it, the game could offer the user to download the graphics
+separately from us directly. This is awkward, but we circumvent any
+possible problems and could even keep the “special” licensing tags.
+
+Valete,
+Quintus
+
+[1]: <a href="http://lists.secretchronicles.de/tsc-devel/2015/02/0000017.html">http://lists.secretchronicles.de/tsc-devel/2015/02/0000017.html</a>
+
+-- 
+Blog: <a href="http://www.quintilianus.eu">http://www.quintilianus.eu</a>
+
+I will reject HTML emails.     | Ich akzeptiere keine HTML-Nachrichten.
+                               |
+Use GnuPG for mail encryption: | GnuPG für Mail-Verschlüsselung:
+<a href="http://www.gnupg.org">http://www.gnupg.org</a>           | <a href="http://gnupg.org/index.de.html">http://gnupg.org/index.de.html</a>
+
+</pre>
+
+
+
+<div class="msg-nav">
+<div class="msg-thread-nav msg-thread-nav-bythread">
+<table>
+<caption>By Thread</caption>
+<tbody>
+<tr><td></td><td>2015-02-01 21:13:59</td><td>Quintus</td><td class="msg-thread-level-0"><a href="/historic/tsc-devel-archive/2015/02/m4.html">[tsc-devel] Signing-off commits on legal questions</a></td></tr>
+<tr><td></td><td>2015-02-02 04:07:02</td><td>Luiji Maryo</td><td class="msg-thread-level-1"><a href="/historic/tsc-devel-archive/2015/02/m7.html">Re: [tsc-devel] Signing-off commits on legal questions</a></td></tr>
+<tr><td></td><td>2015-02-02 09:33:15</td><td>Quintus</td><td class="msg-thread-level-2"><a href="/historic/tsc-devel-archive/2015/02/m8.html">Re: [tsc-devel] Signing-off commits on legal questions</a></td></tr>
+<tr><td></td><td>2015-02-02 16:35:06</td><td>Luiji Maryo</td><td class="msg-thread-level-3"><a href="/historic/tsc-devel-archive/2015/02/m9.html">Re: [tsc-devel] Signing-off commits on legal questions</a></td></tr>
+<tr><td></td><td>2015-02-02 16:36:23</td><td>Luiji Maryo</td><td class="msg-thread-level-4"><a href="/historic/tsc-devel-archive/2015/02/m10.html">Re: [tsc-devel] Signing-off commits on legal questions</a></td></tr>
+<tr><td></td><td>2015-02-02 17:54:33</td><td>Chris Jacobsen</td><td class="msg-thread-level-5"><a href="/historic/tsc-devel-archive/2015/02/m11.html">Re: [tsc-devel] Signing-off commits on legal questions</a></td></tr>
+<tr><td></td><td>2015-02-02 22:53:34</td><td>Quintus</td><td class="msg-thread-level-6"><a href="/historic/tsc-devel-archive/2015/02/m14.html">Re: [tsc-devel] Signing-off commits on legal questions</a></td></tr>
+<tr><td></td><td>2015-02-03 20:48:04</td><td>Chris Jacobsen</td><td class="msg-thread-level-7"><a href="/historic/tsc-devel-archive/2015/02/m15.html">Fw: [tsc-devel] Signing-off commits on legal questions</a></td></tr>
+<tr><td></td><td>2015-02-04 00:56:32</td><td>Luiji Maryo</td><td class="msg-thread-level-8"><a href="/historic/tsc-devel-archive/2015/02/m16.html">Re: Fw: [tsc-devel] Signing-off commits on legal questions</a></td></tr>
+<tr><td></td><td>2015-02-04 10:13:27</td><td>Quintus</td><td class="msg-thread-level-9"><a href="/historic/tsc-devel-archive/2015/02/m18.html">Re: Fw: [tsc-devel] Signing-off commits on legal questions</a></td></tr>
+<tr><td></td><td>2015-02-04 18:50:58</td><td>Chris Jacobsen</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2015/02/m19.html">Re: Fw: [tsc-devel] Signing-off commits on legal questions</a></td></tr>
+<tr><td>▶</td><td>2015-02-05 18:01:50</td><td>Quintus</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2015/02/m22.html">Re: Fw: [tsc-devel] Signing-off commits on legal questions</a></td></tr>
+<tr><td></td><td>2015-02-06 02:10:35</td><td>Luiji Maryo</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2015/02/m23.html">Re: Fw: [tsc-devel] Signing-off commits on legal questions</a></td></tr>
+<tr><td></td><td>2015-02-06 06:00:55</td><td>Chris Jacobsen</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2015/02/m24.html">Re: Fw: [tsc-devel] Signing-off commits on legal questions</a></td></tr>
+<tr><td></td><td>2015-02-06 06:06:36</td><td>Chris Jacobsen</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2015/02/m25.html">Re: Fw: [tsc-devel] Signing-off commits on legal questions</a></td></tr>
+<tr><td></td><td>2015-02-06 11:25:00</td><td>Quintus</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2015/02/m27.html">Re: Fw: [tsc-devel] Signing-off commits on legal questions</a></td></tr>
+<tr><td></td><td>2015-02-07 03:16:10</td><td>Chris Jacobsen</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2015/02/m29.html">Re: Fw: [tsc-devel] Signing-off commits on legal questions</a></td></tr>
+<tr><td></td><td>2015-02-08 03:46:02</td><td>Luiji Maryo</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2015/02/m31.html">Re: Fw: [tsc-devel] Signing-off commits on legal questions</a></td></tr>
+<tr><td></td><td>2015-02-08 12:47:19</td><td>Quintus</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2015/02/m36.html">Re: [tsc-devel] Licensing handling (was: Signing-off commits on legal questions)</a></td></tr>
+<tr><td></td><td>2015-02-09 05:32:16</td><td>Chris Jacobsen</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2015/02/m38.html">Re: [tsc-devel] Licensing handling (was: Signing-off commits on legal questions)</a></td></tr>
+<tr><td></td><td>2015-02-09 05:41:23</td><td>Chris Jacobsen</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2015/02/m39.html">Re: [tsc-devel] Licensing handling (was: Signing-off commits on legal questions)</a></td></tr>
+<tr><td></td><td>2015-02-09 19:33:07</td><td>Quintus</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2015/02/m42.html">Re: [tsc-devel] Licensing handling</a></td></tr>
+<tr><td></td><td>2015-02-11 07:46:16</td><td>Chris Jacobsen</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2015/02/m43.html">Re: [tsc-devel] Licensing handling</a></td></tr>
+<tr><td></td><td>2015-02-12 10:18:46</td><td>Quintus</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2015/02/m45.html">Re: [tsc-devel] Licensing handling</a></td></tr>
+<tr><td></td><td>2015-02-13 08:19:09</td><td>Luiji Maryo</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2015/02/m46.html">Re: [tsc-devel] Licensing handling</a></td></tr>
+<tr><td></td><td>2015-02-09 19:28:24</td><td>Quintus</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2015/02/m41.html">Re: [tsc-devel] Licensing handling</a></td></tr>
+
+</tbody>
+</table>
+</div>
+<div class="msg-thread-nav msg-thread-nav-bydate">
+<table>
+<caption>By Date</caption>
+<tbody>
+
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/02/m4.html">[tsc-devel] Signing-off commits on legal questions</a></td><td>Quintus</td><td>2015-02-01 21:13:59</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/02/m7.html">Re: [tsc-devel] Signing-off commits on legal questions</a></td><td>Luiji Maryo</td><td>2015-02-02 04:07:02</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/02/m8.html">Re: [tsc-devel] Signing-off commits on legal questions</a></td><td>Quintus</td><td>2015-02-02 09:33:15</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/02/m9.html">Re: [tsc-devel] Signing-off commits on legal questions</a></td><td>Luiji Maryo</td><td>2015-02-02 16:35:06</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/02/m10.html">Re: [tsc-devel] Signing-off commits on legal questions</a></td><td>Luiji Maryo</td><td>2015-02-02 16:36:23</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/02/m11.html">Re: [tsc-devel] Signing-off commits on legal questions</a></td><td>Chris Jacobsen</td><td>2015-02-02 17:54:33</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/02/m14.html">Re: [tsc-devel] Signing-off commits on legal questions</a></td><td>Quintus</td><td>2015-02-02 22:53:34</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/02/m15.html">Fw: [tsc-devel] Signing-off commits on legal questions</a></td><td>Chris Jacobsen</td><td>2015-02-03 20:48:04</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/02/m16.html">Re: Fw: [tsc-devel] Signing-off commits on legal questions</a></td><td>Luiji Maryo</td><td>2015-02-04 00:56:32</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/02/m18.html">Re: Fw: [tsc-devel] Signing-off commits on legal questions</a></td><td>Quintus</td><td>2015-02-04 10:13:27</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/02/m19.html">Re: Fw: [tsc-devel] Signing-off commits on legal questions</a></td><td>Chris Jacobsen</td><td>2015-02-04 18:50:58</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/02/m22.html">Re: Fw: [tsc-devel] Signing-off commits on legal questions</a></td><td>Quintus</td><td>2015-02-05 18:01:50</td><td class="msg-here">◀</td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/02/m23.html">Re: Fw: [tsc-devel] Signing-off commits on legal questions</a></td><td>Luiji Maryo</td><td>2015-02-06 02:10:35</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/02/m24.html">Re: Fw: [tsc-devel] Signing-off commits on legal questions</a></td><td>Chris Jacobsen</td><td>2015-02-06 06:00:55</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/02/m25.html">Re: Fw: [tsc-devel] Signing-off commits on legal questions</a></td><td>Chris Jacobsen</td><td>2015-02-06 06:06:36</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/02/m27.html">Re: Fw: [tsc-devel] Signing-off commits on legal questions</a></td><td>Quintus</td><td>2015-02-06 11:25:00</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/02/m29.html">Re: Fw: [tsc-devel] Signing-off commits on legal questions</a></td><td>Chris Jacobsen</td><td>2015-02-07 03:16:10</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/02/m31.html">Re: Fw: [tsc-devel] Signing-off commits on legal questions</a></td><td>Luiji Maryo</td><td>2015-02-08 03:46:02</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/02/m36.html">Re: [tsc-devel] Licensing handling (was: Signing-off commits on legal questions)</a></td><td>Quintus</td><td>2015-02-08 12:47:19</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/02/m38.html">Re: [tsc-devel] Licensing handling (was: Signing-off commits on legal questions)</a></td><td>Chris Jacobsen</td><td>2015-02-09 05:32:16</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/02/m39.html">Re: [tsc-devel] Licensing handling (was: Signing-off commits on legal questions)</a></td><td>Chris Jacobsen</td><td>2015-02-09 05:41:23</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/02/m41.html">Re: [tsc-devel] Licensing handling</a></td><td>Quintus</td><td>2015-02-09 19:28:24</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/02/m42.html">Re: [tsc-devel] Licensing handling</a></td><td>Quintus</td><td>2015-02-09 19:33:07</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/02/m43.html">Re: [tsc-devel] Licensing handling</a></td><td>Chris Jacobsen</td><td>2015-02-11 07:46:16</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/02/m45.html">Re: [tsc-devel] Licensing handling</a></td><td>Quintus</td><td>2015-02-12 10:18:46</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/02/m46.html">Re: [tsc-devel] Licensing handling</a></td><td>Luiji Maryo</td><td>2015-02-13 08:19:09</td><td class="msg-here"></td></tr>
+
+</tbody>
+</table>
+</div>
+</div>
+
+</main>
+<footer>
+<p>Mailing list archive generated by <a href="https://mg.guelker.eu/projects/postkasten/">Postkasten</a>.</p>
+</footer>
+</body>
+</html>

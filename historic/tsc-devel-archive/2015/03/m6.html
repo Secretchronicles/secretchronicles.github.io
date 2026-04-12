@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Re: [tsc-devel] General Team Discussion in IRC · tsc-devel@secretchronicles.org</title>
+  <style type="text/css">html, body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial Nova", "Arial", sans-serif;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  margin: 0px;
+}
+
+a {
+  color: #0b8ae1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #520ebb;
+}
+
+header {
+  margin: 0px;
+  padding: 12px 6px;
+  background-color: #0b8ae1;
+}
+
+header ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header ul li::after {
+  margin-left: 8px;
+  content: "|";
+  margin-right: 8px;
+}
+
+header ul li:last-child::after {
+  content: "";
+  margin-right: 0px;
+}
+
+header a {
+  color: white;
+}
+
+header a:hover {
+  color: black;
+}
+
+footer {
+  border-top: 1px solid #999999;
+  color: #999999;
+  font-size: 0.8rem;
+  padding: 8px;
+  text-align: center;
+  clear: both;
+}
+
+footer p {
+  margin: 0px;
+}
+
+main {
+  margin: 8px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+h1.msg-subject {
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+h2, caption {
+  font-size: 1rem;
+}
+
+
+.msg-meta {
+  margin-top: 0px;
+}
+
+.msg-from {
+  font-weight: bold;
+}
+
+.msg-cc {
+  color: #e1730a;
+}
+
+.msg-attachments h2 {
+  font-style: italic;
+}
+
+table, tr, td, th {
+  border: none;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #eeeeee;
+}
+
+thead tr {
+  border-bottom: 1px solid black;
+}
+
+.newyear {
+  font-style: italic;
+  text-align: center;
+  font-weight: bold;
+}
+
+.numreplies {
+  text-align: center;
+}
+
+.thread-ghost {
+  font-style: italic;
+}
+
+.lastreply {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+pre, code {
+  font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+.msg-body {
+  width: 80ch;
+}
+
+.msg-quote {
+  color: #698900;
+  font-style: italic;
+}
+
+.msg-nav {
+  clear: both;
+}
+
+.msg-thread-nav {
+  width: calc(50% - 4px);
+}
+
+.msg-thread-nav-bydate {
+  float: right;
+}
+
+.msg-thread-nav-bythread {
+  float: left;
+}
+
+.msg-thread-nav table caption {
+  background-color: #0b8ae1;
+  color: white;
+  border: none;
+  caption-side: top;
+  text-align: center;
+  font-weight: bold;
+}
+
+.msg-thread-nav tbody tr td {
+  padding: 2px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.msg-thread-nav-bydate table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bydate table td:nth-child(1) {
+  width: 55%;
+
+}
+
+.msg-thread-nav-bydate table td:nth-child(2) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bydate table td:nth-child(3) {
+  width:20%;
+  text-align: right;
+}
+
+.msg-thread-nav-bydate table td:nth-child(4) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+
+.msg-thread-nav-bythread table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bythread table td:nth-child(1) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+.msg-thread-nav-bythread table td:nth-child(2) {
+  width: 20%;
+
+}
+
+.msg-thread-nav-bythread table td:nth-child(3) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bythread table td:nth-child(4) {
+  width:55%;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-0 {
+  padding-left: 0px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-1 {
+  padding-left: 32px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-2 {
+  padding-left: 64px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-3 {
+  padding-left: 96px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-4 {
+  padding-left: 128px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-5 {
+  padding-left: 160px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-6 {
+  padding-left: 192px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-7 {
+  padding-left: 224px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-8 {
+  padding-left: 256px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-9 {
+  padding-left: 288px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-10 {
+  padding-left: 320px;
+}
+
+.threadindex {
+    table-layout: fixed;
+}
+
+.threadindex th:nth-child(1) {
+    width: 78%;
+}
+
+.threadindex th:nth-child(2) {
+    text-align: center;
+    width: 7%;
+}
+
+.threadindex th:nth-child(3) {
+    width: 15%;
+}
+
+.formatted-patch .patch-add {
+  color: #00CC00;
+}
+
+.formatted-patch .patch-del {
+  color: #FF0000;
+}
+
+.formatted-patch .patch-pos {
+  color: #0000FF;
+  background-color: #ddddFF;
+}
+
+div.formatted-patch {
+  border: 1px solid black;
+}
+
+div.formatted-patch pre {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'Inconsolata', 'DejaVu Sans Mono', monospace;
+  margin: 0px;
+}
+
+
+div.formatted-patch pre.linenos {
+  background-color: #0b8ae1;
+  float: left;
+  padding-right: 4px;
+  text-align: right;
+  margin-right: 4px;
+}
+
+.linenos a {
+  color: white;
+}
+
+.linenos a:hover {
+  color: black;
+}
+
+.linenos a:target {
+  color: #8b000e;
+}
+
+tracker-placeholder {
+  display: none;
+}
+
+.tracker-state-change {
+  font-style: italic;
+  color: #e1730a;
+}
+
+.ticket-state {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.ticket-state-open {
+  color: #00CC00;
+}
+
+.ticket-state-confirmed {
+  color: #e1730a;
+}
+
+.ticket-state-closed {
+  color: #FF0000;
+}
+
+.tracker-panel {
+  width: 450px;
+  float: right;
+  margin: 8px;
+  padding: 0px;
+  border: 2px solid #0b8ae1;
+  text-align: center;
+}
+
+.tracker-panel h2 {
+  background-color: #0b8ae1;
+  color: white;
+  margin-top: 0px;
+}
+
+.tracker-panel ul {
+  padding: 0px 8px;
+  margin: 8px;
+  text-align: left;
+  list-style-type: none;
+}
+
+.tracker-table {
+  table-layout: fixed;
+}
+
+.tracker-table tbody td:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tracker-table thead th:nth-child(1) {
+  width: 60%;
+}
+
+.tracker-table thead th:nth-child(2) {
+  width: 13%;
+}
+
+.tracker-table thead th:nth-child(3) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(4) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(5) {
+  width: 7%;
+  text-align: center;
+}
+
+.tracker-table tbody td:nth-child(5) {
+  text-align: center;
+}
+
+#tracker-filter-subject {
+  width: calc(100% - 8px);
+}
+
+.filter-hide {
+  display: none;
+}
+
+@media(max-width: 768px) {
+
+  html, body {
+    font-size: 18px;
+  }
+
+  .lastreply {
+    display: none;
+  }
+
+  .msg-body {
+    width: initial;
+  }
+
+  .msg-thread-nav-bydate {
+    float: none;
+  }
+
+  .msg-thread-nav-bythread {
+    float: none;
+  }
+
+  .threadindex .lastreply {
+      display: none;
+      width: 0%;
+  }
+
+  .threadindex th:nth-child(1) {
+      width: 80%;
+  }
+
+  .threadindex th:nth-child(2) {
+      width: 20%;
+  }
+
+  .tracker-panel {
+    width: 95%;
+    margin: 0px auto;
+    float: none;
+  }
+
+  .tracker-table thead th:nth-child(1) {
+  width: 80%;
+  }
+
+  .tracker-table thead th:nth-child(2), .tracker-table tbody td:nth-child(2) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(3), .tracker-table tbody td:nth-child(3) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(4), .tracker-table tbody td:nth-child(4) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(5) {
+    width: 20%;
+  }
+}
+</style>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<header>
+<ul><li><a href="/historic/tsc-devel-archive/">tsc-devel@secretchronicles.org</a></li><li><a href="/historic/tsc-devel-archive/about.html">About</a></li></ul>
+</header>
+<main>
+<h1 class="msg-subject">Re: [tsc-devel] General Team Discussion in IRC</h1>
+<p class="msg-meta">
+  <span class="msg-from">Chris Jacobsen</span> |
+
+ Wed, 04 Mar 2015 23:40:28 UTC
+</p>
+
+
+
+
+<div class="tracker-placeholder"></div>
+
+
+
+<pre class="msg-body">Existing Discussion Points:
+* Release 2.0
+   * We need to confirm if Busgbane can or cannot do the moon and turtle boss replacements   * We need to make sure no one else has concerns about removing the turtle boss if needed (and decide what to do if we can&#39;t get a moon replacement).   * We need to agree upon what must be done for the release to be finished.  Can we set a date yet, or is it indeterminate?
+* Release 3.0  * What if we created brand new levels for the new release series?  This would cut down on our level conversion issues when dealing with new mechanics.  It would also allow more story integration and allow us to consider how power ups and enemies could better be introduced in new worlds.  * We would still want to write the level format conversion scripts - we would probably still want to use portions of old official levels, and users will be interested in converting old levels.
+*The Hedge Discussion (#298)   * I had originally suggested using eyes and a mouth on the hedge, and Sydney used these.   * A nose was also placed on the hedge, which Bugsbane and sauer2 objected to   * Bugsbane and Quintus had concerns about the use of eyes on a background object because this is similar to the Mario games.  Bugsbane also viewed it as deviation from the tentative plan for the style guide.   * sauer2 and Sydney felt eyes can work on some objects as long as the style is different and as long as the usage is limited.  Sydney does not want his face work to be discarded.
+   * The concern also has been raised that the eyes on objects were an important part of the cuteness on objects, and removing them has made our background scenery very bland.  This seems to be coming from several sources.
+   * The disagreement on this task is much stronger, so we should discuss this one carefully.
+
+New Discussion Points:
+
+* New item - suggested by sauer2 - OpenGL / SDL replacements - tickets #105, #55, #11    * The existing OpenGL API is deprecated and has somewhat questionable support on some devices.    * Our SDL version is also out of date
+    * Luiji has argued there is no rush to upgrade OpenGL
+    * We had tentatively decided to move towards removal of explicit OpenGL for most rendering.  This is in part because the newer versions of OpenGL require shaders (GLSL), which are even more difficult for most people to use  than the old OpenGL.  We would instead use a higher level API that does most OpenGL for us.  Exceptions would include tasks such as lighting systems (see #94).
+    * We had tentatively decided to move towards either Allegro/SFML/SDL 2
+    * grumbel from the Super Tux project said that the new SDL does not normally allow usage of OpenGL for tasks such as lighting systems.  I think you have to use an SDL rendering API instead.  My suggestion here is to instead use Allegro/SFML if it can be confirmed that GLSL (Open GL Shading language) can be used with them.  Our team probably has more experience with GLSL than SDL 2 for this specialized kind of task.    * I propose we replace #105, #55, and #11 with one ticket - 3 tickets is causing confusion.
+
+* New Item - Target Audience / Level of Cuteness in Graphics
+    * Concerns were raised that the &#34;cuteness factor&#34; is missing in the current game.  Various views have also been expressed for how cute the game should be.
+    * One item in particular that is probably creating a perception of lack of cuteness is the removal of eyes from background objects.  We have only added mouths to power up blocks at the moment.  The removal of waffles may have also contributed to this perception but may not be as major.  The industrialized pipes are an additional possibility here (though the current plan is to eventually have these only in the factories).
+    * How deep should the story be?  Do we want to continue with the deep story line or change to a &#34;thin wrapper story&#34;?    * What age group do we want to target?  Do we want to focus only on children or try to focus on both adults and children at the same time (ie have a game existing on two levels)?
+    * How similar do we want to be to Secret Maryo Chronicles?  Do we want to have a similar level of cuteness or try something different?  Do we want a similarly natured story?  We are changing mechanics, so game play would change.
+    * We have discussed changing Alex&#39;s graphics (#264).  What age should he be (if he has an age - multiple views have been expressed)?  What is his profession?  Lastly, how cute should the graphic be?  Should he be smiling at all times on the map?           * See also: <a href="http://wiki.secretchronicles.de/Story%20Development%20Document%20-%20Version%202">http://wiki.secretchronicles.de/Story%20Development%20Document%20-%20Version%202</a>
+--My suggestion is to use a deep story to appeal to both audiences on different levels, with an adult age defined for Alex, and keeping the game cute overall but a little less cute than SMC.  This is basically what we&#39;ve been doing except that it would be good to consider an alternative to just wiping out eyes on background objects -- I think this is how we could address the cuteness concerns.  The deep story approach may give us a chance to be different from other platformers.
+
+* New Item - Rules for Keeping Power ups    * We had discussed introducing a flight / hover power up in #31 - Ticket Name - Cape Maryo.    * Concerns were raised that the game would be too easy if you can bring the Cape power up from level to level because it would allow the user to hover or fly over obstacles    * I had suggested introducing signs that cancel out a given power up or class of power ups in order to moderate the above level-design-breaking concern.  One person objected, but no one else had taken a position.  My view is that allowing flight / hover power ups across levels helps moderate difficulty (one touch from a pit or lava kills Alex, and we all tend to create tricky jumps).  It also can be fun to bring a power up from level to level, and this is consistent with the ice/fire power up.
+    * Another suggestion was to make flight / hover power ups temporary only.
+    * Quintus had also thrown out the idea of pits not killing Alex instantly and warping him to the previous solid position.  This is basically what is done in the Zelda games and would be another way to moderate difficulty.    * We should also discuss shops and the possibility of item systems again.  How will these systems be defined?
+It is probably not possible to cover all of these topics (fully) in one meeting - we must prioritize.  Also, not all of them have to be completely decided.  Some, such as the release plan, do need to be decided.
+
+--datahead
+     On Tuesday, March 3, 2015 10:30 AM, Luiji Maryo &lt;…i@u…&gt; wrote:
+   
+
+ Marked the date/time on a sticky note.
+
+On Mon, Mar 2, 2015 at 2:56 PM, Chris Jacobsen &lt;…9@y…&gt; wrote:
+<span class="msg-quote">&gt; I think we need to add resolving</span>
+<span class="msg-quote">&gt; <a href="https://github.com/Secretchronicles/TSC/issues/298">https://github.com/Secretchronicles/TSC/issues/298</a></span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; to the discussion list.  We will also need to decide whether to allow eyes</span>
+<span class="msg-quote">&gt; on a handful of other scenery objects or not.  It is probably best to</span>
+<span class="msg-quote">&gt; resolve this before the release, since we will be making first impressions</span>
+<span class="msg-quote">&gt; then.</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; -datahead</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; On Monday, March 2, 2015 8:22 AM, Sydney Dykstra &lt;…d@o…&gt;</span>
+<span class="msg-quote">&gt; wrote:</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; That should work for me, but as always, i cannot garuntee anything.</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; -Sydney</span>
+<span class="msg-quote">&gt; On 03/02/2015 08:01 AM, Chris Jacobsen wrote:</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; We might consider posting this in a github ticket -- some people use neither</span>
+<span class="msg-quote">&gt; the forums nor the mailing list or check them infrequently.  Hopefully this</span>
+<span class="msg-quote">&gt; will start to be less of an issue when we move off github :)</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; -datahead</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; On Monday, March 2, 2015 6:19 AM, Quintus &lt;…s@q…&gt; wrote:</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; (I’m also going to post this on the forums)</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; Hi everyone,</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; it has turned out that there are some issues regarding TSC lying around</span>
+<span class="msg-quote">&gt; that should be resolved once and for all by having a larger general</span>
+<span class="msg-quote">&gt; discussion in IRC on them. The main issue is probably what has been</span>
+<span class="msg-quote">&gt; suggested by datahead in IRC recently, namely the handling of the 2.x</span>
+<span class="msg-quote">&gt; development branch after the 2.0.0 release. Apart from that there are</span>
+<span class="msg-quote">&gt; some further issues we ought to discuss, and I think best way to do that</span>
+<span class="msg-quote">&gt; is to have everyone from the team join an organised (i.e. ordered by</span>
+<span class="msg-quote">&gt; topics) IRC discussion session. This requires first and foremost to find</span>
+<span class="msg-quote">&gt; a date and time that allows every team member to join. I suggest the</span>
+<span class="msg-quote">&gt; following for now:</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;                    2015-03-21  20:00:00 UTC</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; Please object immediately if you know you are unavailable at this date</span>
+<span class="msg-quote">&gt; or time.</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; Discussion schedule until now:</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; 1. Determing the voting process (proponent: Quintus)</span>
+<span class="msg-quote">&gt; 2. Maintenance of the 2.x branch and opening of the 3.x branch</span>
+<span class="msg-quote">&gt;  (proponent: datahead)</span>
+<span class="msg-quote">&gt; 3. Release date of the 2.0.0 release (proponent: Quintus)</span>
+<span class="msg-quote">&gt; 4. Translation tools and services (proponent: Quintus)</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; PLEASE SUBMIT MORE TOPICS FOR DISCUSSION! We don’t have the entire team</span>
+<span class="msg-quote">&gt; in real-time chat that often. Take this opportunity and submit some</span>
+<span class="msg-quote">&gt; topic that needs discussion and a binding result.</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; As usual, for each topic we shall try to find a consent. If this isn’t</span>
+<span class="msg-quote">&gt; possible, we shall vote on the topic. As we’ve not yet defined a proper</span>
+<span class="msg-quote">&gt; voting process, I’ve put that topic first on the schedule, and am going</span>
+<span class="msg-quote">&gt; to propose a voting procedure. By popular demand I’ll make a hopefully</span>
+<span class="msg-quote">&gt; more easy suggestion than what I send to the mailinglist recently (needs</span>
+<span class="msg-quote">&gt; are different in IRC anyway).</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; I’ll post a more complete announcement with more detailed information on</span>
+<span class="msg-quote">&gt; each of the topics and IRC modalities once we have the topics list</span>
+<span class="msg-quote">&gt; complete by say, 2015-03-16. Please object if you don’t like this</span>
+<span class="msg-quote">&gt; deadline.</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; If you submit a topic, thus please give a short paragraph of overview</span>
+<span class="msg-quote">&gt; that I can include into that announcement then so that even those people</span>
+<span class="msg-quote">&gt; who don’t have followed this discussion can get a short overview of</span>
+<span class="msg-quote">&gt; what’s going to be going on.</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; PLEASE SUBMIT MORE TOPICS FOR DISCUSSION!</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; Valete,</span>
+<span class="msg-quote">&gt; Quintus</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; --</span>
+<span class="msg-quote">&gt; Blog: <a href="http://www.quintilianus.eu">http://www.quintilianus.eu</a></span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; I will reject HTML emails.    | Ich akzeptiere keine HTML-Nachrichten.</span>
+<span class="msg-quote">&gt;                              |</span>
+<span class="msg-quote">&gt; Use GnuPG for mail encryption: | GnuPG für Mail-Verschlüsselung:</span>
+<span class="msg-quote">&gt; <a href="https://www.gnupg.org">https://www.gnupg.org</a>         | <a href="https://de.wikipedia.org/wiki/GnuPG">https://de.wikipedia.org/wiki/GnuPG</a></span>
+<span class="msg-quote">&gt; My key fingerprint:            | Mein Schlüsselabdruck:</span>
+<span class="msg-quote">&gt; B1FE 958E D5E8 468E AA20      | B1FE 958E D5E8 468E AA20</span>
+<span class="msg-quote">&gt; 8F4B F1D8 799F BCC8 BC4F      | 8F4B F1D8 799F BCC8 BC4F</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;</span>
+
+
+
+-- 
+When Linus Torvalds dies, Linux is going to be forked.
+
+
+</pre>
+
+
+
+<div class="msg-nav">
+<div class="msg-thread-nav msg-thread-nav-bythread">
+<table>
+<caption>By Thread</caption>
+<tbody>
+<tr><td></td><td>2015-03-02 11:20:17</td><td>Quintus</td><td class="msg-thread-level-0"><a href="/historic/tsc-devel-archive/2015/03/m1.html">[tsc-devel] General Team Discussion in IRC</a></td></tr>
+<tr><td></td><td>2015-03-02 13:01:35</td><td>Chris Jacobsen</td><td class="msg-thread-level-1"><a href="/historic/tsc-devel-archive/2015/03/m2.html">Re: [tsc-devel] General Team Discussion in IRC</a></td></tr>
+<tr><td></td><td>2015-03-02 13:19:20</td><td>Sydney Dykstra</td><td class="msg-thread-level-2"><a href="/historic/tsc-devel-archive/2015/03/m3.html">Re: [tsc-devel] General Team Discussion in IRC</a></td></tr>
+<tr><td></td><td>2015-03-02 19:56:22</td><td>Chris Jacobsen</td><td class="msg-thread-level-3"><a href="/historic/tsc-devel-archive/2015/03/m4.html">Re: [tsc-devel] General Team Discussion in IRC</a></td></tr>
+<tr><td></td><td>2015-03-03 15:30:00</td><td>Luiji Maryo</td><td class="msg-thread-level-4"><a href="/historic/tsc-devel-archive/2015/03/m5.html">Re: [tsc-devel] General Team Discussion in IRC</a></td></tr>
+<tr><td>▶</td><td>2015-03-04 23:40:28</td><td>Chris Jacobsen</td><td class="msg-thread-level-5"><a href="/historic/tsc-devel-archive/2015/03/m6.html">Re: [tsc-devel] General Team Discussion in IRC</a></td></tr>
+<tr><td></td><td>2015-03-05 20:24:11</td><td>Quintus</td><td class="msg-thread-level-6"><a href="/historic/tsc-devel-archive/2015/03/m7.html">Re: [tsc-devel] General Team Discussion in IRC</a></td></tr>
+
+</tbody>
+</table>
+</div>
+<div class="msg-thread-nav msg-thread-nav-bydate">
+<table>
+<caption>By Date</caption>
+<tbody>
+
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/03/m1.html">[tsc-devel] General Team Discussion in IRC</a></td><td>Quintus</td><td>2015-03-02 11:20:17</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/03/m2.html">Re: [tsc-devel] General Team Discussion in IRC</a></td><td>Chris Jacobsen</td><td>2015-03-02 13:01:35</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/03/m3.html">Re: [tsc-devel] General Team Discussion in IRC</a></td><td>Sydney Dykstra</td><td>2015-03-02 13:19:20</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/03/m4.html">Re: [tsc-devel] General Team Discussion in IRC</a></td><td>Chris Jacobsen</td><td>2015-03-02 19:56:22</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/03/m5.html">Re: [tsc-devel] General Team Discussion in IRC</a></td><td>Luiji Maryo</td><td>2015-03-03 15:30:00</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/03/m6.html">Re: [tsc-devel] General Team Discussion in IRC</a></td><td>Chris Jacobsen</td><td>2015-03-04 23:40:28</td><td class="msg-here">◀</td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/03/m7.html">Re: [tsc-devel] General Team Discussion in IRC</a></td><td>Quintus</td><td>2015-03-05 20:24:11</td><td class="msg-here"></td></tr>
+
+</tbody>
+</table>
+</div>
+</div>
+
+</main>
+<footer>
+<p>Mailing list archive generated by <a href="https://mg.guelker.eu/projects/postkasten/">Postkasten</a>.</p>
+</footer>
+</body>
+</html>

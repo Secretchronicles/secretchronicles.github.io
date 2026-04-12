@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8"/>
+  <title>[tsc-devel] Voting rules change proposal (was: 2nd General Discussion - Request for Agenda) · tsc-devel@secretchronicles.org</title>
+  <style type="text/css">html, body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial Nova", "Arial", sans-serif;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  margin: 0px;
+}
+
+a {
+  color: #0b8ae1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #520ebb;
+}
+
+header {
+  margin: 0px;
+  padding: 12px 6px;
+  background-color: #0b8ae1;
+}
+
+header ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header ul li::after {
+  margin-left: 8px;
+  content: "|";
+  margin-right: 8px;
+}
+
+header ul li:last-child::after {
+  content: "";
+  margin-right: 0px;
+}
+
+header a {
+  color: white;
+}
+
+header a:hover {
+  color: black;
+}
+
+footer {
+  border-top: 1px solid #999999;
+  color: #999999;
+  font-size: 0.8rem;
+  padding: 8px;
+  text-align: center;
+  clear: both;
+}
+
+footer p {
+  margin: 0px;
+}
+
+main {
+  margin: 8px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+h1.msg-subject {
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+h2, caption {
+  font-size: 1rem;
+}
+
+
+.msg-meta {
+  margin-top: 0px;
+}
+
+.msg-from {
+  font-weight: bold;
+}
+
+.msg-cc {
+  color: #e1730a;
+}
+
+.msg-attachments h2 {
+  font-style: italic;
+}
+
+table, tr, td, th {
+  border: none;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #eeeeee;
+}
+
+thead tr {
+  border-bottom: 1px solid black;
+}
+
+.newyear {
+  font-style: italic;
+  text-align: center;
+  font-weight: bold;
+}
+
+.numreplies {
+  text-align: center;
+}
+
+.thread-ghost {
+  font-style: italic;
+}
+
+.lastreply {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+pre, code {
+  font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+.msg-body {
+  width: 80ch;
+}
+
+.msg-quote {
+  color: #698900;
+  font-style: italic;
+}
+
+.msg-nav {
+  clear: both;
+}
+
+.msg-thread-nav {
+  width: calc(50% - 4px);
+}
+
+.msg-thread-nav-bydate {
+  float: right;
+}
+
+.msg-thread-nav-bythread {
+  float: left;
+}
+
+.msg-thread-nav table caption {
+  background-color: #0b8ae1;
+  color: white;
+  border: none;
+  caption-side: top;
+  text-align: center;
+  font-weight: bold;
+}
+
+.msg-thread-nav tbody tr td {
+  padding: 2px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.msg-thread-nav-bydate table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bydate table td:nth-child(1) {
+  width: 55%;
+
+}
+
+.msg-thread-nav-bydate table td:nth-child(2) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bydate table td:nth-child(3) {
+  width:20%;
+  text-align: right;
+}
+
+.msg-thread-nav-bydate table td:nth-child(4) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+
+.msg-thread-nav-bythread table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bythread table td:nth-child(1) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+.msg-thread-nav-bythread table td:nth-child(2) {
+  width: 20%;
+
+}
+
+.msg-thread-nav-bythread table td:nth-child(3) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bythread table td:nth-child(4) {
+  width:55%;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-0 {
+  padding-left: 0px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-1 {
+  padding-left: 32px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-2 {
+  padding-left: 64px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-3 {
+  padding-left: 96px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-4 {
+  padding-left: 128px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-5 {
+  padding-left: 160px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-6 {
+  padding-left: 192px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-7 {
+  padding-left: 224px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-8 {
+  padding-left: 256px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-9 {
+  padding-left: 288px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-10 {
+  padding-left: 320px;
+}
+
+.threadindex {
+    table-layout: fixed;
+}
+
+.threadindex th:nth-child(1) {
+    width: 78%;
+}
+
+.threadindex th:nth-child(2) {
+    text-align: center;
+    width: 7%;
+}
+
+.threadindex th:nth-child(3) {
+    width: 15%;
+}
+
+.formatted-patch .patch-add {
+  color: #00CC00;
+}
+
+.formatted-patch .patch-del {
+  color: #FF0000;
+}
+
+.formatted-patch .patch-pos {
+  color: #0000FF;
+  background-color: #ddddFF;
+}
+
+div.formatted-patch {
+  border: 1px solid black;
+}
+
+div.formatted-patch pre {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'Inconsolata', 'DejaVu Sans Mono', monospace;
+  margin: 0px;
+}
+
+
+div.formatted-patch pre.linenos {
+  background-color: #0b8ae1;
+  float: left;
+  padding-right: 4px;
+  text-align: right;
+  margin-right: 4px;
+}
+
+.linenos a {
+  color: white;
+}
+
+.linenos a:hover {
+  color: black;
+}
+
+.linenos a:target {
+  color: #8b000e;
+}
+
+tracker-placeholder {
+  display: none;
+}
+
+.tracker-state-change {
+  font-style: italic;
+  color: #e1730a;
+}
+
+.ticket-state {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.ticket-state-open {
+  color: #00CC00;
+}
+
+.ticket-state-confirmed {
+  color: #e1730a;
+}
+
+.ticket-state-closed {
+  color: #FF0000;
+}
+
+.tracker-panel {
+  width: 450px;
+  float: right;
+  margin: 8px;
+  padding: 0px;
+  border: 2px solid #0b8ae1;
+  text-align: center;
+}
+
+.tracker-panel h2 {
+  background-color: #0b8ae1;
+  color: white;
+  margin-top: 0px;
+}
+
+.tracker-panel ul {
+  padding: 0px 8px;
+  margin: 8px;
+  text-align: left;
+  list-style-type: none;
+}
+
+.tracker-table {
+  table-layout: fixed;
+}
+
+.tracker-table tbody td:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tracker-table thead th:nth-child(1) {
+  width: 60%;
+}
+
+.tracker-table thead th:nth-child(2) {
+  width: 13%;
+}
+
+.tracker-table thead th:nth-child(3) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(4) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(5) {
+  width: 7%;
+  text-align: center;
+}
+
+.tracker-table tbody td:nth-child(5) {
+  text-align: center;
+}
+
+#tracker-filter-subject {
+  width: calc(100% - 8px);
+}
+
+.filter-hide {
+  display: none;
+}
+
+@media(max-width: 768px) {
+
+  html, body {
+    font-size: 18px;
+  }
+
+  .lastreply {
+    display: none;
+  }
+
+  .msg-body {
+    width: initial;
+  }
+
+  .msg-thread-nav-bydate {
+    float: none;
+  }
+
+  .msg-thread-nav-bythread {
+    float: none;
+  }
+
+  .threadindex .lastreply {
+      display: none;
+      width: 0%;
+  }
+
+  .threadindex th:nth-child(1) {
+      width: 80%;
+  }
+
+  .threadindex th:nth-child(2) {
+      width: 20%;
+  }
+
+  .tracker-panel {
+    width: 95%;
+    margin: 0px auto;
+    float: none;
+  }
+
+  .tracker-table thead th:nth-child(1) {
+  width: 80%;
+  }
+
+  .tracker-table thead th:nth-child(2), .tracker-table tbody td:nth-child(2) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(3), .tracker-table tbody td:nth-child(3) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(4), .tracker-table tbody td:nth-child(4) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(5) {
+    width: 20%;
+  }
+}
+</style>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<header>
+<ul><li><a href="/historic/tsc-devel-archive/">tsc-devel@secretchronicles.org</a></li><li><a href="/historic/tsc-devel-archive/about.html">About</a></li></ul>
+</header>
+<main>
+<h1 class="msg-subject">[tsc-devel] Voting rules change proposal (was: 2nd General Discussion - Request for Agenda)</h1>
+<p class="msg-meta">
+  <span class="msg-from">Quintus</span> |
+
+ Mon, 14 Mar 2016 21:31:45 UTC
+</p>
+
+
+
+
+<div class="tracker-placeholder"></div>
+
+
+
+<pre class="msg-body">datahead &lt;…r@f…&gt; writes:
+<span class="msg-quote">&gt; 10. Modify voting rules document at</span>
+<span class="msg-quote">&gt; <a href="https://github.com/Secretchronicles/documents/blob/master/votingrules/votingrules-2015-08-15.pdf">https://github.com/Secretchronicles/documents/blob/master/votingrules/votingrules-2015-08-15.pdf</a></span>
+<span class="msg-quote">&gt; so that additions of team members only require a 2/3rds majority of</span>
+<span class="msg-quote">&gt; people who actually voted, rather than all existing team members.</span>
+
+I make the following proposal for changing the voting rules’ wording:
+
+----------------------------------------------------------------------
+                                 Art. 1
+
+§2(2) is rephrased to read:
+
+<span class="msg-quote">&gt; The vote requires the Relative Qualified Majority in favour of adding</span>
+<span class="msg-quote">&gt; the new person to the team.</span>
+
+                                 Art. 2
+
+In §3(1)(Nr.3)(2) the words “This requires a two thirds majority” are
+replaced with “This requires the Relative Qualified Majority”.
+
+                                 Art. 3
+
+In §10, the words “simple majority” are capitalised so they read “Simple
+Majority”.
+
+                                 Art. 4
+
+§20 is rephrased to read:
+
+<span class="msg-quote">&gt; Changes to this document require a vote with the Absolute Qualified</span>
+<span class="msg-quote">&gt; Majority being in favour of the change.</span>
+
+                                 Art. 5
+
+A new §13a is introduced after the existing §13 and before the section
+III. heading with the following text:
+
+<span class="msg-quote">&gt; (1) Simple Majority is the majority of all team members who have</span>
+<span class="msg-quote">&gt; voted.</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; (2) Relative Qualified Majority is reached if two thirds of all team</span>
+<span class="msg-quote">&gt; members who have voted are in favour of the option in question.</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; (3) Absolute Qualified Majority is reached if two thirds of all team</span>
+<span class="msg-quote">&gt; members who have the right to vote are in favour of the option in</span>
+<span class="msg-quote">&gt; question.</span>
+
+                                 Art. 6
+
+These changes enter into force immediately after the Declaration of
+Results of the vote for accepting them.
+----------------------------------------------------------------------
+
+This proposal replaces all majority-related terms in the voting rules
+with clear terms, which are specifically normed in a new §13a: Simple
+Majority, Relative Qualified Majority, and Absolute Qualified
+Majority. The Simple Majority is the majority used for all ordinary
+votings, i.e. the one for deciding heated topics. The other two majority
+rules are for specific cases: acquisition and end of team membership,
+and changes to the voting rules document itself.
+
+The majority requirement for changing the voting rules themselves (§20)
+is not modified, but only made more clear so that there can be no doubt
+that it requires a 2/3 majority of all people allowed to vote.
+
+In the current version of the voting rules it is not clear whether
+acquisition of team membership requires a 2/3 majority of all people
+allowed to vote or only a 2/3 majority of the people who actually
+voted. To address this concern and to bring the acquisition of team
+membership voting process in sync with the team removal vote — which
+only requires 2/3 of the voting team members — the wording of the both
+vote requirements is adapted to the newly defined majority terms. By
+placing the team membership bar relatively (still a 2/3 majority!) low,
+lockup of the voting procedure by mass absence of team members is
+prevented. The hurdle for changing the voting rules themselves on the
+other hand is intentionally kept high as even if one doesn’t take part
+on a given vote that does not indicate one wants to voting rules to
+change behind one’s back. If someone permanently stays absent, it is
+still possible to remove him from the team by means of the regular
+removal procedure and thus cutting down the requirements for voting
+rules change if necessary. As voting rules changes should be kept at a
+minimum, a lengthy procedure is not a problem, but a feature.
+
+I was unsure on how to count people who have participated, but actively
+abstained (e.g. by posting &#34;I abstain&#34;). I think they should be included
+into the 2/3 qualified majorities calculation, but not into the Simple
+Majority one. This would mean that for the votes requiring a qualified
+majority (either relative or absolute), people actively abstaining
+(rather than nonparticipating) could bring the vote to failure even
+though they didn’t vote against it. The above proposal does not contain
+a clause for these actively abstaining people, but if someone provides a
+nice one, we should include it.
+
+As for the entering into force (Art. 6 of the proposal), I honoured the
+demand for a flexible voting process for this change. The way Art. 6 is
+phrased allows to get the proposal into force as soon as it has the
+required 2/3 majority of the entire team, regardless of whether this
+already happens here on the ML/forum or finally in the General
+Discussion.
+
+Feedback appreciated. If no objections are raised, I will announce
+voting as soon as possible so that we can have a result by April
+9th. The last day a vote announcement can be made before the GD is
+2015-03-25; I definitely want this specific change to be announced prior
+so we have a longer voting phase. 2015-03-25 is also the deadline for
+any other voting announcements for the GD, but I will explain this in a
+separate message.
+
+Valete,
+Quintus
+
+-- 
+#!/sbin/quintus
+Blog: <a href="http://www.guelkerdev.de">http://www.guelkerdev.de</a>
+
+GnuPG key: F1D8799FBCC8BC4F
+
+</pre>
+
+
+
+<div class="msg-nav">
+<div class="msg-thread-nav msg-thread-nav-bythread">
+<table>
+<caption>By Thread</caption>
+<tbody>
+<tr><td></td><td>2016-02-08 10:34:45</td><td>Quintus</td><td class="msg-thread-level-0"><a href="/historic/tsc-devel-archive/2016/02/m1.html">[tsc-devel] [ANN] 2nd General Discussion - Request for Agenda</a></td></tr>
+<tr><td></td><td>2016-02-21 18:52:24</td><td>Quintus</td><td class="msg-thread-level-1"><a href="/historic/tsc-devel-archive/2016/02/m2.html">Re: [tsc-devel] [ANN] 2nd General Discussion - Request for Agenda</a></td></tr>
+<tr><td></td><td>2016-02-21 18:52:46</td><td>Quintus</td><td class="msg-thread-level-1"><a href="/historic/tsc-devel-archive/2016/02/m3.html">Re: [tsc-devel] [ANN] 2nd General Discussion - Request for Agenda</a></td></tr>
+<tr><td></td><td>2016-02-25 06:08:10</td><td>Chris Jacobsen</td><td class="msg-thread-level-2"><a href="/historic/tsc-devel-archive/2016/02/m4.html">Re: [tsc-devel] [ANN] 2nd General Discussion - Request for Agenda</a></td></tr>
+<tr><td></td><td>2016-02-25 06:12:36</td><td>datahead</td><td class="msg-thread-level-2"><a href="/historic/tsc-devel-archive/2016/02/m5.html">Re: [tsc-devel] [ANN] 2nd General Discussion - Request for Agenda</a></td></tr>
+<tr><td></td><td>2016-02-28 07:28:43</td><td>datahead</td><td class="msg-thread-level-3"><a href="/historic/tsc-devel-archive/2016/02/m6.html">Re: [tsc-devel] [ANN] 2nd General Discussion - Request for Agenda</a></td></tr>
+<tr><td></td><td>2016-02-28 07:31:55</td><td>datahead</td><td class="msg-thread-level-4"><a href="/historic/tsc-devel-archive/2016/02/m7.html">Re: [tsc-devel] [ANN] 2nd General Discussion - Request for Agenda</a></td></tr>
+<tr><td></td><td>2016-03-04 03:46:30</td><td>datahead</td><td class="msg-thread-level-4"><a href="/historic/tsc-devel-archive/2016/03/m2.html">Re: [tsc-devel] [ANN] 2nd General Discussion - Request for Agenda</a></td></tr>
+<tr><td></td><td>2016-03-07 19:32:39</td><td>lambda-11235</td><td class="msg-thread-level-5"><a href="/historic/tsc-devel-archive/2016/03/m21.html">Re: [tsc-devel] [ANN] 2nd General Discussion - Request for Agenda</a></td></tr>
+<tr><td></td><td>2016-03-07 20:37:45</td><td>Quintus</td><td class="msg-thread-level-6"><a href="/historic/tsc-devel-archive/2016/03/m25.html">Re: [tsc-devel] [ANN] 2nd General Discussion - Request for Agenda</a></td></tr>
+<tr><td>▶</td><td>2016-03-14 21:31:45</td><td>Quintus</td><td class="msg-thread-level-5"><a href="/historic/tsc-devel-archive/2016/03/m39.html">[tsc-devel] Voting rules change proposal (was: 2nd General Discussion - Request for Agenda)</a></td></tr>
+<tr><td></td><td>2016-03-14 22:11:56</td><td>Quintus</td><td class="msg-thread-level-1"><a href="/historic/tsc-devel-archive/2016/03/m40.html">Re: [tsc-devel] [ANN] 2nd General Discussion - Request for Agenda</a></td></tr>
+<tr><td></td><td>2016-03-23 01:37:28</td><td>skarfester</td><td class="msg-thread-level-2"><a href="/historic/tsc-devel-archive/2016/03/m47.html">Re: [tsc-devel] [ANN] 2nd General Discussion - Request for Agenda</a></td></tr>
+<tr><td></td><td>2016-03-26 22:00:42</td><td>datahead</td><td class="msg-thread-level-3"><a href="/historic/tsc-devel-archive/2016/03/m54.html">Re: [tsc-devel] [ANN] 2nd General Discussion - Request for Agenda</a></td></tr>
+<tr><td></td><td>2016-03-27 20:34:09</td><td>Quintus</td><td class="msg-thread-level-3"><a href="/historic/tsc-devel-archive/2016/03/m63.html">Re: [tsc-devel] [ANN] 2nd General Discussion - Request for Agenda</a></td></tr>
+<tr><td></td><td>2016-03-27 21:20:28</td><td>Quintus</td><td class="msg-thread-level-3"><a href="/historic/tsc-devel-archive/2016/03/m64.html">Re: [tsc-devel] [ANN] 2nd General Discussion - Request for Agenda</a></td></tr>
+<tr><td></td><td>2016-03-29 17:33:24</td><td>skarfester</td><td class="msg-thread-level-4"><a href="/historic/tsc-devel-archive/2016/03/m65.html">Re: [tsc-devel] [ANN] 2nd General Discussion - Request for Agenda</a></td></tr>
+
+</tbody>
+</table>
+</div>
+<div class="msg-thread-nav msg-thread-nav-bydate">
+<table>
+<caption>By Date</caption>
+<tbody>
+
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/02/m1.html">[tsc-devel] [ANN] 2nd General Discussion - Request for Agenda</a></td><td>Quintus</td><td>2016-02-08 10:34:45</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/02/m2.html">Re: [tsc-devel] [ANN] 2nd General Discussion - Request for Agenda</a></td><td>Quintus</td><td>2016-02-21 18:52:24</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/02/m3.html">Re: [tsc-devel] [ANN] 2nd General Discussion - Request for Agenda</a></td><td>Quintus</td><td>2016-02-21 18:52:46</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/02/m4.html">Re: [tsc-devel] [ANN] 2nd General Discussion - Request for Agenda</a></td><td>Chris Jacobsen</td><td>2016-02-25 06:08:10</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/02/m5.html">Re: [tsc-devel] [ANN] 2nd General Discussion - Request for Agenda</a></td><td>datahead</td><td>2016-02-25 06:12:36</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/02/m6.html">Re: [tsc-devel] [ANN] 2nd General Discussion - Request for Agenda</a></td><td>datahead</td><td>2016-02-28 07:28:43</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/02/m7.html">Re: [tsc-devel] [ANN] 2nd General Discussion - Request for Agenda</a></td><td>datahead</td><td>2016-02-28 07:31:55</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/03/m2.html">Re: [tsc-devel] [ANN] 2nd General Discussion - Request for Agenda</a></td><td>datahead</td><td>2016-03-04 03:46:30</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/03/m21.html">Re: [tsc-devel] [ANN] 2nd General Discussion - Request for Agenda</a></td><td>lambda-11235</td><td>2016-03-07 19:32:39</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/03/m25.html">Re: [tsc-devel] [ANN] 2nd General Discussion - Request for Agenda</a></td><td>Quintus</td><td>2016-03-07 20:37:45</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/03/m39.html">[tsc-devel] Voting rules change proposal (was: 2nd General Discussion - Request for Agenda)</a></td><td>Quintus</td><td>2016-03-14 21:31:45</td><td class="msg-here">◀</td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/03/m40.html">Re: [tsc-devel] [ANN] 2nd General Discussion - Request for Agenda</a></td><td>Quintus</td><td>2016-03-14 22:11:56</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/03/m47.html">Re: [tsc-devel] [ANN] 2nd General Discussion - Request for Agenda</a></td><td>skarfester</td><td>2016-03-23 01:37:28</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/03/m54.html">Re: [tsc-devel] [ANN] 2nd General Discussion - Request for Agenda</a></td><td>datahead</td><td>2016-03-26 22:00:42</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/03/m63.html">Re: [tsc-devel] [ANN] 2nd General Discussion - Request for Agenda</a></td><td>Quintus</td><td>2016-03-27 20:34:09</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/03/m64.html">Re: [tsc-devel] [ANN] 2nd General Discussion - Request for Agenda</a></td><td>Quintus</td><td>2016-03-27 21:20:28</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/03/m65.html">Re: [tsc-devel] [ANN] 2nd General Discussion - Request for Agenda</a></td><td>skarfester</td><td>2016-03-29 17:33:24</td><td class="msg-here"></td></tr>
+
+</tbody>
+</table>
+</div>
+</div>
+
+</main>
+<footer>
+<p>Mailing list archive generated by <a href="https://mg.guelker.eu/projects/postkasten/">Postkasten</a>.</p>
+</footer>
+</body>
+</html>

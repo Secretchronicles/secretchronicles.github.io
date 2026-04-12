@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Re: [tsc-devel] Do we use sprite sheets at all? · tsc-devel@secretchronicles.org</title>
+  <style type="text/css">html, body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial Nova", "Arial", sans-serif;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  margin: 0px;
+}
+
+a {
+  color: #0b8ae1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #520ebb;
+}
+
+header {
+  margin: 0px;
+  padding: 12px 6px;
+  background-color: #0b8ae1;
+}
+
+header ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header ul li::after {
+  margin-left: 8px;
+  content: "|";
+  margin-right: 8px;
+}
+
+header ul li:last-child::after {
+  content: "";
+  margin-right: 0px;
+}
+
+header a {
+  color: white;
+}
+
+header a:hover {
+  color: black;
+}
+
+footer {
+  border-top: 1px solid #999999;
+  color: #999999;
+  font-size: 0.8rem;
+  padding: 8px;
+  text-align: center;
+  clear: both;
+}
+
+footer p {
+  margin: 0px;
+}
+
+main {
+  margin: 8px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+h1.msg-subject {
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+h2, caption {
+  font-size: 1rem;
+}
+
+
+.msg-meta {
+  margin-top: 0px;
+}
+
+.msg-from {
+  font-weight: bold;
+}
+
+.msg-cc {
+  color: #e1730a;
+}
+
+.msg-attachments h2 {
+  font-style: italic;
+}
+
+table, tr, td, th {
+  border: none;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #eeeeee;
+}
+
+thead tr {
+  border-bottom: 1px solid black;
+}
+
+.newyear {
+  font-style: italic;
+  text-align: center;
+  font-weight: bold;
+}
+
+.numreplies {
+  text-align: center;
+}
+
+.thread-ghost {
+  font-style: italic;
+}
+
+.lastreply {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+pre, code {
+  font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+.msg-body {
+  width: 80ch;
+}
+
+.msg-quote {
+  color: #698900;
+  font-style: italic;
+}
+
+.msg-nav {
+  clear: both;
+}
+
+.msg-thread-nav {
+  width: calc(50% - 4px);
+}
+
+.msg-thread-nav-bydate {
+  float: right;
+}
+
+.msg-thread-nav-bythread {
+  float: left;
+}
+
+.msg-thread-nav table caption {
+  background-color: #0b8ae1;
+  color: white;
+  border: none;
+  caption-side: top;
+  text-align: center;
+  font-weight: bold;
+}
+
+.msg-thread-nav tbody tr td {
+  padding: 2px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.msg-thread-nav-bydate table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bydate table td:nth-child(1) {
+  width: 55%;
+
+}
+
+.msg-thread-nav-bydate table td:nth-child(2) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bydate table td:nth-child(3) {
+  width:20%;
+  text-align: right;
+}
+
+.msg-thread-nav-bydate table td:nth-child(4) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+
+.msg-thread-nav-bythread table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bythread table td:nth-child(1) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+.msg-thread-nav-bythread table td:nth-child(2) {
+  width: 20%;
+
+}
+
+.msg-thread-nav-bythread table td:nth-child(3) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bythread table td:nth-child(4) {
+  width:55%;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-0 {
+  padding-left: 0px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-1 {
+  padding-left: 32px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-2 {
+  padding-left: 64px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-3 {
+  padding-left: 96px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-4 {
+  padding-left: 128px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-5 {
+  padding-left: 160px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-6 {
+  padding-left: 192px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-7 {
+  padding-left: 224px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-8 {
+  padding-left: 256px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-9 {
+  padding-left: 288px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-10 {
+  padding-left: 320px;
+}
+
+.threadindex {
+    table-layout: fixed;
+}
+
+.threadindex th:nth-child(1) {
+    width: 78%;
+}
+
+.threadindex th:nth-child(2) {
+    text-align: center;
+    width: 7%;
+}
+
+.threadindex th:nth-child(3) {
+    width: 15%;
+}
+
+.formatted-patch .patch-add {
+  color: #00CC00;
+}
+
+.formatted-patch .patch-del {
+  color: #FF0000;
+}
+
+.formatted-patch .patch-pos {
+  color: #0000FF;
+  background-color: #ddddFF;
+}
+
+div.formatted-patch {
+  border: 1px solid black;
+}
+
+div.formatted-patch pre {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'Inconsolata', 'DejaVu Sans Mono', monospace;
+  margin: 0px;
+}
+
+
+div.formatted-patch pre.linenos {
+  background-color: #0b8ae1;
+  float: left;
+  padding-right: 4px;
+  text-align: right;
+  margin-right: 4px;
+}
+
+.linenos a {
+  color: white;
+}
+
+.linenos a:hover {
+  color: black;
+}
+
+.linenos a:target {
+  color: #8b000e;
+}
+
+tracker-placeholder {
+  display: none;
+}
+
+.tracker-state-change {
+  font-style: italic;
+  color: #e1730a;
+}
+
+.ticket-state {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.ticket-state-open {
+  color: #00CC00;
+}
+
+.ticket-state-confirmed {
+  color: #e1730a;
+}
+
+.ticket-state-closed {
+  color: #FF0000;
+}
+
+.tracker-panel {
+  width: 450px;
+  float: right;
+  margin: 8px;
+  padding: 0px;
+  border: 2px solid #0b8ae1;
+  text-align: center;
+}
+
+.tracker-panel h2 {
+  background-color: #0b8ae1;
+  color: white;
+  margin-top: 0px;
+}
+
+.tracker-panel ul {
+  padding: 0px 8px;
+  margin: 8px;
+  text-align: left;
+  list-style-type: none;
+}
+
+.tracker-table {
+  table-layout: fixed;
+}
+
+.tracker-table tbody td:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tracker-table thead th:nth-child(1) {
+  width: 60%;
+}
+
+.tracker-table thead th:nth-child(2) {
+  width: 13%;
+}
+
+.tracker-table thead th:nth-child(3) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(4) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(5) {
+  width: 7%;
+  text-align: center;
+}
+
+.tracker-table tbody td:nth-child(5) {
+  text-align: center;
+}
+
+#tracker-filter-subject {
+  width: calc(100% - 8px);
+}
+
+.filter-hide {
+  display: none;
+}
+
+@media(max-width: 768px) {
+
+  html, body {
+    font-size: 18px;
+  }
+
+  .lastreply {
+    display: none;
+  }
+
+  .msg-body {
+    width: initial;
+  }
+
+  .msg-thread-nav-bydate {
+    float: none;
+  }
+
+  .msg-thread-nav-bythread {
+    float: none;
+  }
+
+  .threadindex .lastreply {
+      display: none;
+      width: 0%;
+  }
+
+  .threadindex th:nth-child(1) {
+      width: 80%;
+  }
+
+  .threadindex th:nth-child(2) {
+      width: 20%;
+  }
+
+  .tracker-panel {
+    width: 95%;
+    margin: 0px auto;
+    float: none;
+  }
+
+  .tracker-table thead th:nth-child(1) {
+  width: 80%;
+  }
+
+  .tracker-table thead th:nth-child(2), .tracker-table tbody td:nth-child(2) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(3), .tracker-table tbody td:nth-child(3) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(4), .tracker-table tbody td:nth-child(4) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(5) {
+    width: 20%;
+  }
+}
+</style>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<header>
+<ul><li><a href="/historic/tsc-devel-archive/">tsc-devel@secretchronicles.org</a></li><li><a href="/historic/tsc-devel-archive/about.html">About</a></li></ul>
+</header>
+<main>
+<h1 class="msg-subject">Re: [tsc-devel] Do we use sprite sheets at all?</h1>
+<p class="msg-meta">
+  <span class="msg-from">Luiji Maryo</span> |
+
+ Thu, 29 Oct 2015 16:25:27 UTC
+</p>
+
+
+
+
+<div class="tracker-placeholder"></div>
+
+
+
+<pre class="msg-body">-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+I remember back when this came up in the SMC days. It largely has to
+do with the fact that FluXy didn&#39;t see how the performance improvement
+would exist. At the time, I didn&#39;t understand OpenGL too well, so I
+didn&#39;t know either.
+
+Technically, the great benefit a sheet would have is that you could
+signal the processor once for every texture ever needed and only ever
+rely on one texture coordinate system, and that&#39;d reduce the
+information we have to pipe to the GPU.
+
+However, I&#39;m not sure if I&#39;d recommend this for TSC. For one, it seems
+like a pretty bad case of premature optimization, and it would require
+quite a bit of work to get the engine to use it. We also have to be
+more strict about graphics dimensions so that they could be tiled in a
+way that doesn&#39;t leave too many gaps, as the gaps would waste VRAM.
+
+If we *did* ever implement this, I&#39;d advise continuing with the
+current disk format and having the TSC executable create the sprite
+sheet dynamically. This way, people could dynamically add new graphics
+in their level extensions and they&#39;d still end up in the same sprite
+sheet with no extra work from them.
+
+In the past I&#39;ve experimented with the performance between sprite
+sheets and individual graphics via Allegro[1]. I found I could render
+a large number more tiles with it, but at the same time I found that
+simply rendering only the tiles that were actually on screen was far
+sufficient to achieve good performance. Unless we have a HUGE amount
+of tiles on screen at any one time, this isn&#39;t particularly important.
+
+Note that if particle effects come in mind that they are the same
+texture anyway and that we can achieve the same performance benefits
+for individual particle emitters just by calling glBindTexture only
+when necessary.
+
+[1] <a href="http://liballeg.org/a5docs/5.0.11/graphics.html#al_hold_bitmap_drawi">http://liballeg.org/a5docs/5.0.11/graphics.html#al_hold_bitmap_drawi</a>
+ng
+
+On 10/29/2015 10:30 AM, Quintus wrote:
+<span class="msg-quote">&gt; datahead &lt;…r@f…&gt; writes:</span>
+<span class="msg-quote">&gt;&gt; Post via forum by datahead &lt;…9@x…&gt;: Do we use</span>
+<span class="msg-quote">&gt;&gt; sprite sheets at all?  This basically means we would place an</span>
+<span class="msg-quote">&gt;&gt; entire set of sprites into one image and have that loaded from</span>
+<span class="msg-quote">&gt;&gt; the file system all at once.  It would then use the coordinates</span>
+<span class="msg-quote">&gt;&gt; on the image texture in order to properly render the sprites at </span>
+<span class="msg-quote">&gt;&gt; runtime. This tends to help with performance.</span>
+<span class="msg-quote">&gt; </span>
+<span class="msg-quote">&gt; Currently, we only use sprite sheets (which I know as “tilesets” or</span>
+<span class="msg-quote">&gt; “tile maps” or even “tile atlas”) for the GUI system, because </span>
+<span class="msg-quote">&gt; that’s how CEGUI requires its graphical input for styling the GUI </span>
+<span class="msg-quote">&gt; widgets. Everything in-game uses separate files. However, before </span>
+<span class="msg-quote">&gt; you draw a conclusion from that, consider we are using a caching </span>
+<span class="msg-quote">&gt; mechanism that only loads the sprite from a file once per level. </span>
+<span class="msg-quote">&gt; That is, if you have 500 “Door Yellow” sprites in a level, the </span>
+<span class="msg-quote">&gt; actual graphics file is loaded from the disk only once for the </span>
+<span class="msg-quote">&gt; first door found in the XML. Every further access to this graphic </span>
+<span class="msg-quote">&gt; will result in the already cached texture being returned from the </span>
+<span class="msg-quote">&gt; resource manager.</span>
+<span class="msg-quote">&gt; </span>
+<span class="msg-quote">&gt; I think we can achieve much greater performance improvements by </span>
+<span class="msg-quote">&gt; preloading all sublevels or even all levels on a world map in </span>
+<span class="msg-quote">&gt; separate threads.</span>
+<span class="msg-quote">&gt; </span>
+<span class="msg-quote">&gt; Vale, Quintus</span>
+<span class="msg-quote">&gt; </span>
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v2
+
+iQIcBAEBCAAGBQJWMkh3AAoJEHndR5mZinm6qUgP/RoDQf3bU79ckQIGX+6nhV3L
+KwCJvLS1fnABtQqdGFMieegco9HgloWFYitJY225ViiiqDzDLkTzfTH1rRMipw+e
+xPxIyRGJGUJmAbOUtZ/Gktxuvw5H3DKcaQ0f78vFlixjhL0vKnPCBr+4UrwCyEJh
+ae95zucAETR5WEiHoTYC7N4xDwmb3b+MeToFuq1xaV4pJOV/vijivBiGiecHKt+u
+bzsCXa8b9wwMRozj86idPiSsSTtPC+GGpJYCp1deRAa2oW3pW18ab55P2yX8SLM4
+YS9DYKFA8Q4nBUs7Q06wSymti7n+vg8O+zDPEOTicWgkMtsces9x0/NF5PDA+oq9
+d8K8EiujF1EQvNo936/gaoX42haqvXDQrw4Gwd8GK1kyRv42Vb62b2rif65uWaKL
+8ZPoBC3iTpxbhZUmUn39qm48384OEsKDmvEZfeT2uM0ZwMVjHEVLBLgSt0t60tZP
+gGqmoE+jEH1KfjHfev6pbM1coEENB4iiCfh3C1t8VY4nj3YCK3cdoTjhNF/iiVb2
+irg9nvtq5TkJc+m84hIXfdEj2FPONqbVexukY9VYfIx8IfnYjOoln8EdveUx52hT
+x4AGFqk5zaFL6nO6zwt2l70gnmi83g072Z/ptDrBxFLL/8MGAJ6N8V7ZK97SILbs
+SOQH7+ee0r64k0Jg1/I3
+=ILEr
+-----END PGP SIGNATURE-----
+
+</pre>
+
+
+
+<div class="msg-nav">
+<div class="msg-thread-nav msg-thread-nav-bythread">
+<table>
+<caption>By Thread</caption>
+<tbody>
+<tr><td></td><td>2015-10-29 11:21:53</td><td>datahead</td><td class="msg-thread-level-0"><a href="/historic/tsc-devel-archive/2015/10/m84.html">[tsc-devel] Do we use sprite sheets at all?</a></td></tr>
+<tr><td></td><td>2015-10-29 14:30:16</td><td>Quintus</td><td class="msg-thread-level-1"><a href="/historic/tsc-devel-archive/2015/10/m85.html">Re: [tsc-devel] Do we use sprite sheets at all?</a></td></tr>
+<tr><td>▶</td><td>2015-10-29 16:25:27</td><td>Luiji Maryo</td><td class="msg-thread-level-2"><a href="/historic/tsc-devel-archive/2015/10/m87.html">Re: [tsc-devel] Do we use sprite sheets at all?</a></td></tr>
+<tr><td></td><td>2016-01-20 07:44:49</td><td>Bugsbane</td><td class="msg-thread-level-3"><a href="/historic/tsc-devel-archive/2016/01/m18.html">[tsc-devel] Re: Do we use sprite sheets at all?</a></td></tr>
+<tr><td></td><td>2016-01-20 09:02:30</td><td>Quintus</td><td class="msg-thread-level-4"><a href="/historic/tsc-devel-archive/2016/01/m23.html">Re: [tsc-devel] Re: Do we use sprite sheets at all?</a></td></tr>
+<tr><td></td><td>2016-01-27 22:44:42</td><td>datahead</td><td class="msg-thread-level-5"><a href="/historic/tsc-devel-archive/2016/01/m31.html">[tsc-devel] Re: Do we use sprite sheets at all?</a></td></tr>
+<tr><td></td><td>2016-01-28 19:51:15</td><td>Quintus</td><td class="msg-thread-level-6"><a href="/historic/tsc-devel-archive/2016/01/m34.html">Re: [tsc-devel] Re: Do we use sprite sheets at all?</a></td></tr>
+<tr><td></td><td>2016-01-28 20:01:33</td><td>datahead</td><td class="msg-thread-level-7"><a href="/historic/tsc-devel-archive/2016/01/m35.html">[tsc-devel] Re: Do we use sprite sheets at all?</a></td></tr>
+
+</tbody>
+</table>
+</div>
+<div class="msg-thread-nav msg-thread-nav-bydate">
+<table>
+<caption>By Date</caption>
+<tbody>
+
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/10/m84.html">[tsc-devel] Do we use sprite sheets at all?</a></td><td>datahead</td><td>2015-10-29 11:21:53</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/10/m85.html">Re: [tsc-devel] Do we use sprite sheets at all?</a></td><td>Quintus</td><td>2015-10-29 14:30:16</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/10/m87.html">Re: [tsc-devel] Do we use sprite sheets at all?</a></td><td>Luiji Maryo</td><td>2015-10-29 16:25:27</td><td class="msg-here">◀</td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/01/m18.html">[tsc-devel] Re: Do we use sprite sheets at all?</a></td><td>Bugsbane</td><td>2016-01-20 07:44:49</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/01/m23.html">Re: [tsc-devel] Re: Do we use sprite sheets at all?</a></td><td>Quintus</td><td>2016-01-20 09:02:30</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/01/m31.html">[tsc-devel] Re: Do we use sprite sheets at all?</a></td><td>datahead</td><td>2016-01-27 22:44:42</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/01/m34.html">Re: [tsc-devel] Re: Do we use sprite sheets at all?</a></td><td>Quintus</td><td>2016-01-28 19:51:15</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/01/m35.html">[tsc-devel] Re: Do we use sprite sheets at all?</a></td><td>datahead</td><td>2016-01-28 20:01:33</td><td class="msg-here"></td></tr>
+
+</tbody>
+</table>
+</div>
+</div>
+
+</main>
+<footer>
+<p>Mailing list archive generated by <a href="https://mg.guelker.eu/projects/postkasten/">Postkasten</a>.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Re: [tsc-devel] RFC: Voting rules draft · tsc-devel@secretchronicles.org</title>
+  <style type="text/css">html, body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial Nova", "Arial", sans-serif;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  margin: 0px;
+}
+
+a {
+  color: #0b8ae1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #520ebb;
+}
+
+header {
+  margin: 0px;
+  padding: 12px 6px;
+  background-color: #0b8ae1;
+}
+
+header ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header ul li::after {
+  margin-left: 8px;
+  content: "|";
+  margin-right: 8px;
+}
+
+header ul li:last-child::after {
+  content: "";
+  margin-right: 0px;
+}
+
+header a {
+  color: white;
+}
+
+header a:hover {
+  color: black;
+}
+
+footer {
+  border-top: 1px solid #999999;
+  color: #999999;
+  font-size: 0.8rem;
+  padding: 8px;
+  text-align: center;
+  clear: both;
+}
+
+footer p {
+  margin: 0px;
+}
+
+main {
+  margin: 8px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+h1.msg-subject {
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+h2, caption {
+  font-size: 1rem;
+}
+
+
+.msg-meta {
+  margin-top: 0px;
+}
+
+.msg-from {
+  font-weight: bold;
+}
+
+.msg-cc {
+  color: #e1730a;
+}
+
+.msg-attachments h2 {
+  font-style: italic;
+}
+
+table, tr, td, th {
+  border: none;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #eeeeee;
+}
+
+thead tr {
+  border-bottom: 1px solid black;
+}
+
+.newyear {
+  font-style: italic;
+  text-align: center;
+  font-weight: bold;
+}
+
+.numreplies {
+  text-align: center;
+}
+
+.thread-ghost {
+  font-style: italic;
+}
+
+.lastreply {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+pre, code {
+  font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+.msg-body {
+  width: 80ch;
+}
+
+.msg-quote {
+  color: #698900;
+  font-style: italic;
+}
+
+.msg-nav {
+  clear: both;
+}
+
+.msg-thread-nav {
+  width: calc(50% - 4px);
+}
+
+.msg-thread-nav-bydate {
+  float: right;
+}
+
+.msg-thread-nav-bythread {
+  float: left;
+}
+
+.msg-thread-nav table caption {
+  background-color: #0b8ae1;
+  color: white;
+  border: none;
+  caption-side: top;
+  text-align: center;
+  font-weight: bold;
+}
+
+.msg-thread-nav tbody tr td {
+  padding: 2px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.msg-thread-nav-bydate table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bydate table td:nth-child(1) {
+  width: 55%;
+
+}
+
+.msg-thread-nav-bydate table td:nth-child(2) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bydate table td:nth-child(3) {
+  width:20%;
+  text-align: right;
+}
+
+.msg-thread-nav-bydate table td:nth-child(4) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+
+.msg-thread-nav-bythread table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bythread table td:nth-child(1) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+.msg-thread-nav-bythread table td:nth-child(2) {
+  width: 20%;
+
+}
+
+.msg-thread-nav-bythread table td:nth-child(3) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bythread table td:nth-child(4) {
+  width:55%;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-0 {
+  padding-left: 0px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-1 {
+  padding-left: 32px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-2 {
+  padding-left: 64px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-3 {
+  padding-left: 96px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-4 {
+  padding-left: 128px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-5 {
+  padding-left: 160px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-6 {
+  padding-left: 192px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-7 {
+  padding-left: 224px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-8 {
+  padding-left: 256px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-9 {
+  padding-left: 288px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-10 {
+  padding-left: 320px;
+}
+
+.threadindex {
+    table-layout: fixed;
+}
+
+.threadindex th:nth-child(1) {
+    width: 78%;
+}
+
+.threadindex th:nth-child(2) {
+    text-align: center;
+    width: 7%;
+}
+
+.threadindex th:nth-child(3) {
+    width: 15%;
+}
+
+.formatted-patch .patch-add {
+  color: #00CC00;
+}
+
+.formatted-patch .patch-del {
+  color: #FF0000;
+}
+
+.formatted-patch .patch-pos {
+  color: #0000FF;
+  background-color: #ddddFF;
+}
+
+div.formatted-patch {
+  border: 1px solid black;
+}
+
+div.formatted-patch pre {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'Inconsolata', 'DejaVu Sans Mono', monospace;
+  margin: 0px;
+}
+
+
+div.formatted-patch pre.linenos {
+  background-color: #0b8ae1;
+  float: left;
+  padding-right: 4px;
+  text-align: right;
+  margin-right: 4px;
+}
+
+.linenos a {
+  color: white;
+}
+
+.linenos a:hover {
+  color: black;
+}
+
+.linenos a:target {
+  color: #8b000e;
+}
+
+tracker-placeholder {
+  display: none;
+}
+
+.tracker-state-change {
+  font-style: italic;
+  color: #e1730a;
+}
+
+.ticket-state {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.ticket-state-open {
+  color: #00CC00;
+}
+
+.ticket-state-confirmed {
+  color: #e1730a;
+}
+
+.ticket-state-closed {
+  color: #FF0000;
+}
+
+.tracker-panel {
+  width: 450px;
+  float: right;
+  margin: 8px;
+  padding: 0px;
+  border: 2px solid #0b8ae1;
+  text-align: center;
+}
+
+.tracker-panel h2 {
+  background-color: #0b8ae1;
+  color: white;
+  margin-top: 0px;
+}
+
+.tracker-panel ul {
+  padding: 0px 8px;
+  margin: 8px;
+  text-align: left;
+  list-style-type: none;
+}
+
+.tracker-table {
+  table-layout: fixed;
+}
+
+.tracker-table tbody td:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tracker-table thead th:nth-child(1) {
+  width: 60%;
+}
+
+.tracker-table thead th:nth-child(2) {
+  width: 13%;
+}
+
+.tracker-table thead th:nth-child(3) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(4) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(5) {
+  width: 7%;
+  text-align: center;
+}
+
+.tracker-table tbody td:nth-child(5) {
+  text-align: center;
+}
+
+#tracker-filter-subject {
+  width: calc(100% - 8px);
+}
+
+.filter-hide {
+  display: none;
+}
+
+@media(max-width: 768px) {
+
+  html, body {
+    font-size: 18px;
+  }
+
+  .lastreply {
+    display: none;
+  }
+
+  .msg-body {
+    width: initial;
+  }
+
+  .msg-thread-nav-bydate {
+    float: none;
+  }
+
+  .msg-thread-nav-bythread {
+    float: none;
+  }
+
+  .threadindex .lastreply {
+      display: none;
+      width: 0%;
+  }
+
+  .threadindex th:nth-child(1) {
+      width: 80%;
+  }
+
+  .threadindex th:nth-child(2) {
+      width: 20%;
+  }
+
+  .tracker-panel {
+    width: 95%;
+    margin: 0px auto;
+    float: none;
+  }
+
+  .tracker-table thead th:nth-child(1) {
+  width: 80%;
+  }
+
+  .tracker-table thead th:nth-child(2), .tracker-table tbody td:nth-child(2) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(3), .tracker-table tbody td:nth-child(3) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(4), .tracker-table tbody td:nth-child(4) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(5) {
+    width: 20%;
+  }
+}
+</style>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<header>
+<ul><li><a href="/historic/tsc-devel-archive/">tsc-devel@secretchronicles.org</a></li><li><a href="/historic/tsc-devel-archive/about.html">About</a></li></ul>
+</header>
+<main>
+<h1 class="msg-subject">Re: [tsc-devel] RFC: Voting rules draft</h1>
+<p class="msg-meta">
+  <span class="msg-from">Quintus</span> |
+
+ Mon, 27 Jul 2015 09:31:26 UTC
+</p>
+
+
+
+
+<div class="tracker-placeholder"></div>
+
+
+
+<pre class="msg-body">Chris Jacobsen &lt;…9@y…&gt; writes:
+
+<span class="msg-quote">&gt; In reference to the published document, I had noticed its emphasis on</span>
+<span class="msg-quote">&gt; democratic procedures.  Thus,in order to be a document for a &#34;pure</span>
+<span class="msg-quote">&gt; democracy&#34;, there should be a formal procedure to electnew project</span>
+<span class="msg-quote">&gt; leads, assistant project leads, or other positions that we create.</span>
+
+This is basically what my former, unpublished document was outlining. It
+laid down basically everything related to the project, but it was about
+six pages long. I was under the impression that so much formality is
+more hindering to the project rather than benefiting it. Thus, I
+extracted the part that was most important in my mind (voting rules),
+and concluded that the rest might be doable just by talking and
+developing an informal consent.
+
+I still think so. We’re not the size of the Debian project with their
+comitees, project secretary, a complicated algorithm for computing a
+vote result, General Resolutions, and what not. I just want to take the
+heat out of the most controversial area, and leave the rest open to a
+set of not even a dozen rational human beings :-). If TSC unexpectedly
+grows to a giant community and development team, we can still evaluate
+the need for more extensive formal guidelines. Until then, we can
+probably resolve any issue on a case-by-case base by some postings on
+this ML or in IRC, except as said for the voting permissions, which are
+pretty guaranteed to cause problems if not well defined.
+
+
+<span class="msg-quote">&gt; The document says, &#34;It is a binding decision that determines how to</span>
+<span class="msg-quote">&gt; proceed in the given topic andprevents any further vote on the topic</span>
+<span class="msg-quote">&gt; given all circumstances equal.&#34;  I assume all circumstances being</span>
+<span class="msg-quote">&gt; equal means the conditions that led to the vote have not changed</span>
+<span class="msg-quote">&gt; andthat a new vote could be held if conditions do again change.</span>
+
+Yes, that was it was intended to say. Simple example: We vote on a set
+of story documents and decide document 2 is to be used. Three years
+later we want to add a new campaign to the game with a new story. Shall
+the vote still bind us? I think no, which is why I added this “given all
+circumstances equal” clause.
+
+I realise it is a bit vague, but I wasn’t able to come up with a more
+clear statement, which might indeed be useful. Do you have something in
+mind that would fit the purpose better?
+
+<span class="msg-quote">&gt; The posted document otherwise looks very good (and detailed), except</span>
+<span class="msg-quote">&gt; for the prior question on how to addnew team members to the github</span>
+<span class="msg-quote">&gt; organization.</span>
+
+Okay, maybe we need to add this then indeed. How about inserting another
+paragraph after §1 like this:
+
+        -------------------------------------------------------
+                       §2 Acquisition of membership
+
+The team decides by vote whether any person should be granted team
+membership by adding him to the GitHub organisation. Before this vote
+can be called for, the person in question has to either
+
+  1. have five commits included into the main development branch of the
+     game, or
+  2. have been nominated by an existing team member.
+
+The vote requires that two thirds of the existing team members vote in
+favour of adding the new person to the team.
+
+In case of Nr. 1 above, as an exception to §4(1) [= current §3(1)] the
+person with this amount of commits included is also allowed to place the
+vote request on the project lead.
+        -------------------------------------------------------
+
+The following §§ will then just get a higher number. Alternatively, we
+move this towards the end of the document, next to the current §18. That
+would have the benefit that all votings demanded by the document itself
+are grouped at one place, which may systematically be nicer. Might also
+be useful as the exception in the third paragraph above would then not
+point to a § that actually comes later.
+
+The document should be well-structued in any case, so it is more easy to
+read and to comprehend.
+
+<span class="msg-quote">&gt; We should seek out feedbackfrom other team members before defining</span>
+<span class="msg-quote">&gt; this rule, however.   We should probably define this inthe document,</span>
+<span class="msg-quote">&gt; too.</span>
+
+So it gets long and longer... :-). Still I see the need. I made a
+suggestion on the acquisition, so I think you can now make a suggestion
+for removal drawing from the points we have already mentioned (like
+inactivity for one year or so).
+
+<span class="msg-quote">&gt; I don&#39;t think we&#39;re going toget much feedback</span>
+<span class="msg-quote">&gt; from the team on this or the other questions over the mailing list,</span>
+
+Remember that this ML is mirrored to the forum. Everybody can particpate
+from there just fine.
+
+Valete,
+Quintus
+
+-- 
+#!/sbin/quintus
+Blog: <a href="http://www.guelkerdev.de">http://www.guelkerdev.de</a>
+
+GnuPG key: F1D8799FBCC8BC4F
+
+</pre>
+
+
+
+<div class="msg-nav">
+<div class="msg-thread-nav msg-thread-nav-bythread">
+<table>
+<caption>By Thread</caption>
+<tbody>
+<tr><td></td><td>2015-07-16 14:07:22</td><td>Quintus</td><td class="msg-thread-level-0"><a href="/historic/tsc-devel-archive/2015/07/m1.html">[tsc-devel] RFC: Voting rules draft</a></td></tr>
+<tr><td></td><td>2015-07-16 22:23:56</td><td>Chris Jacobsen</td><td class="msg-thread-level-1"><a href="/historic/tsc-devel-archive/2015/07/m2.html">Re: [tsc-devel] RFC: Voting rules draft</a></td></tr>
+<tr><td></td><td>2015-07-17 07:48:56</td><td>Quintus</td><td class="msg-thread-level-2"><a href="/historic/tsc-devel-archive/2015/07/m3.html">Re: [tsc-devel] RFC: Voting rules draft</a></td></tr>
+<tr><td></td><td>2015-07-19 16:50:18</td><td>Chris Jacobsen</td><td class="msg-thread-level-3"><a href="/historic/tsc-devel-archive/2015/07/m4.html">Re: [tsc-devel] RFC: Voting rules draft</a></td></tr>
+<tr><td></td><td>2015-07-19 17:42:02</td><td>Quintus</td><td class="msg-thread-level-4"><a href="/historic/tsc-devel-archive/2015/07/m5.html">Re: [tsc-devel] RFC: Voting rules draft</a></td></tr>
+<tr><td></td><td>2015-07-21 06:48:24</td><td>Chris Jacobsen</td><td class="msg-thread-level-5"><a href="/historic/tsc-devel-archive/2015/07/m6.html">Re: [tsc-devel] RFC: Voting rules draft</a></td></tr>
+<tr><td></td><td>2015-07-21 18:22:07</td><td>Quintus</td><td class="msg-thread-level-6"><a href="/historic/tsc-devel-archive/2015/07/m7.html">Re: [tsc-devel] RFC: Voting rules draft</a></td></tr>
+<tr><td></td><td>2015-07-23 17:06:39</td><td>Quintus</td><td class="msg-thread-level-7"><a href="/historic/tsc-devel-archive/2015/07/m8.html">Re: [tsc-devel] RFC: Voting rules draft</a></td></tr>
+<tr><td></td><td>2015-07-26 15:26:42</td><td>Chris Jacobsen</td><td class="msg-thread-level-8"><a href="/historic/tsc-devel-archive/2015/07/m9.html">Re: [tsc-devel] RFC: Voting rules draft</a></td></tr>
+<tr><td>▶</td><td>2015-07-27 09:31:26</td><td>Quintus</td><td class="msg-thread-level-9"><a href="/historic/tsc-devel-archive/2015/07/m10.html">Re: [tsc-devel] RFC: Voting rules draft</a></td></tr>
+<tr><td></td><td>2015-07-27 15:31:45</td><td>Quintus</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2015/07/m14.html">Re: [tsc-devel] RFC: Voting rules draft</a></td></tr>
+<tr><td></td><td>2015-07-28 03:52:34</td><td>Justin Rissler</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2015/07/m15.html">Re: [tsc-devel] RFC: Voting rules draft</a></td></tr>
+<tr><td></td><td>2015-07-30 00:39:58</td><td>Luiji Maryo</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2015/07/m20.html">Re: [tsc-devel] RFC: Voting rules draft</a></td></tr>
+<tr><td></td><td>2015-07-30 00:40:49</td><td>Luiji Maryo</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2015/07/m21.html">Re: [tsc-devel] RFC: Voting rules draft</a></td></tr>
+<tr><td></td><td>2015-07-30 07:44:32</td><td>Quintus</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2015/07/m22.html">Re: [tsc-devel] RFC: Voting rules draft</a></td></tr>
+<tr><td></td><td>2015-07-30 14:28:04</td><td>Luiji Maryo</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2015/07/m23.html">Re: [tsc-devel] RFC: Voting rules draft</a></td></tr>
+<tr><td></td><td>2015-08-02 12:31:06</td><td>Chris Jacobsen</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2015/08/m1.html">Re: [tsc-devel] RFC: Voting rules draft</a></td></tr>
+<tr><td></td><td>2015-08-02 19:19:44</td><td>Quintus</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2015/08/m4.html">Re: [tsc-devel] RFC: Voting rules draft</a></td></tr>
+<tr><td></td><td>2015-08-07 17:23:49</td><td>Chris Jacobsen</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2015/08/m5.html">Re: [tsc-devel] RFC: Voting rules draft</a></td></tr>
+<tr><td></td><td>2015-08-08 20:38:09</td><td>Quintus</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2015/08/m6.html">[tsc-devel] 2nd voting rules draft (was: RFC: Voting rules draft)</a></td></tr>
+<tr><td></td><td>2015-08-12 00:27:37</td><td>Chris Jacobsen</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2015/08/m7.html">Re: [tsc-devel] 2nd voting rules draft (was: RFC: Voting rules draft)</a></td></tr>
+<tr><td></td><td>2015-08-15 06:29:13</td><td>Quintus</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2015/08/m10.html">Re: [tsc-devel] 2nd voting rules draft</a></td></tr>
+
+</tbody>
+</table>
+</div>
+<div class="msg-thread-nav msg-thread-nav-bydate">
+<table>
+<caption>By Date</caption>
+<tbody>
+
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/07/m1.html">[tsc-devel] RFC: Voting rules draft</a></td><td>Quintus</td><td>2015-07-16 14:07:22</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/07/m2.html">Re: [tsc-devel] RFC: Voting rules draft</a></td><td>Chris Jacobsen</td><td>2015-07-16 22:23:56</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/07/m3.html">Re: [tsc-devel] RFC: Voting rules draft</a></td><td>Quintus</td><td>2015-07-17 07:48:56</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/07/m4.html">Re: [tsc-devel] RFC: Voting rules draft</a></td><td>Chris Jacobsen</td><td>2015-07-19 16:50:18</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/07/m5.html">Re: [tsc-devel] RFC: Voting rules draft</a></td><td>Quintus</td><td>2015-07-19 17:42:02</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/07/m6.html">Re: [tsc-devel] RFC: Voting rules draft</a></td><td>Chris Jacobsen</td><td>2015-07-21 06:48:24</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/07/m7.html">Re: [tsc-devel] RFC: Voting rules draft</a></td><td>Quintus</td><td>2015-07-21 18:22:07</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/07/m8.html">Re: [tsc-devel] RFC: Voting rules draft</a></td><td>Quintus</td><td>2015-07-23 17:06:39</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/07/m9.html">Re: [tsc-devel] RFC: Voting rules draft</a></td><td>Chris Jacobsen</td><td>2015-07-26 15:26:42</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/07/m10.html">Re: [tsc-devel] RFC: Voting rules draft</a></td><td>Quintus</td><td>2015-07-27 09:31:26</td><td class="msg-here">◀</td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/07/m14.html">Re: [tsc-devel] RFC: Voting rules draft</a></td><td>Quintus</td><td>2015-07-27 15:31:45</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/07/m15.html">Re: [tsc-devel] RFC: Voting rules draft</a></td><td>Justin Rissler</td><td>2015-07-28 03:52:34</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/07/m20.html">Re: [tsc-devel] RFC: Voting rules draft</a></td><td>Luiji Maryo</td><td>2015-07-30 00:39:58</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/07/m21.html">Re: [tsc-devel] RFC: Voting rules draft</a></td><td>Luiji Maryo</td><td>2015-07-30 00:40:49</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/07/m22.html">Re: [tsc-devel] RFC: Voting rules draft</a></td><td>Quintus</td><td>2015-07-30 07:44:32</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/07/m23.html">Re: [tsc-devel] RFC: Voting rules draft</a></td><td>Luiji Maryo</td><td>2015-07-30 14:28:04</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/08/m1.html">Re: [tsc-devel] RFC: Voting rules draft</a></td><td>Chris Jacobsen</td><td>2015-08-02 12:31:06</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/08/m4.html">Re: [tsc-devel] RFC: Voting rules draft</a></td><td>Quintus</td><td>2015-08-02 19:19:44</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/08/m5.html">Re: [tsc-devel] RFC: Voting rules draft</a></td><td>Chris Jacobsen</td><td>2015-08-07 17:23:49</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/08/m6.html">[tsc-devel] 2nd voting rules draft (was: RFC: Voting rules draft)</a></td><td>Quintus</td><td>2015-08-08 20:38:09</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/08/m7.html">Re: [tsc-devel] 2nd voting rules draft (was: RFC: Voting rules draft)</a></td><td>Chris Jacobsen</td><td>2015-08-12 00:27:37</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/08/m10.html">Re: [tsc-devel] 2nd voting rules draft</a></td><td>Quintus</td><td>2015-08-15 06:29:13</td><td class="msg-here"></td></tr>
+
+</tbody>
+</table>
+</div>
+</div>
+
+</main>
+<footer>
+<p>Mailing list archive generated by <a href="https://mg.guelker.eu/projects/postkasten/">Postkasten</a>.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8"/>
+  <title>[tsc-devel] Re: Would you be interested in rejoining our project... · tsc-devel@secretchronicles.org</title>
+  <style type="text/css">html, body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial Nova", "Arial", sans-serif;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  margin: 0px;
+}
+
+a {
+  color: #0b8ae1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #520ebb;
+}
+
+header {
+  margin: 0px;
+  padding: 12px 6px;
+  background-color: #0b8ae1;
+}
+
+header ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header ul li::after {
+  margin-left: 8px;
+  content: "|";
+  margin-right: 8px;
+}
+
+header ul li:last-child::after {
+  content: "";
+  margin-right: 0px;
+}
+
+header a {
+  color: white;
+}
+
+header a:hover {
+  color: black;
+}
+
+footer {
+  border-top: 1px solid #999999;
+  color: #999999;
+  font-size: 0.8rem;
+  padding: 8px;
+  text-align: center;
+  clear: both;
+}
+
+footer p {
+  margin: 0px;
+}
+
+main {
+  margin: 8px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+h1.msg-subject {
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+h2, caption {
+  font-size: 1rem;
+}
+
+
+.msg-meta {
+  margin-top: 0px;
+}
+
+.msg-from {
+  font-weight: bold;
+}
+
+.msg-cc {
+  color: #e1730a;
+}
+
+.msg-attachments h2 {
+  font-style: italic;
+}
+
+table, tr, td, th {
+  border: none;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #eeeeee;
+}
+
+thead tr {
+  border-bottom: 1px solid black;
+}
+
+.newyear {
+  font-style: italic;
+  text-align: center;
+  font-weight: bold;
+}
+
+.numreplies {
+  text-align: center;
+}
+
+.thread-ghost {
+  font-style: italic;
+}
+
+.lastreply {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+pre, code {
+  font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+.msg-body {
+  width: 80ch;
+}
+
+.msg-quote {
+  color: #698900;
+  font-style: italic;
+}
+
+.msg-nav {
+  clear: both;
+}
+
+.msg-thread-nav {
+  width: calc(50% - 4px);
+}
+
+.msg-thread-nav-bydate {
+  float: right;
+}
+
+.msg-thread-nav-bythread {
+  float: left;
+}
+
+.msg-thread-nav table caption {
+  background-color: #0b8ae1;
+  color: white;
+  border: none;
+  caption-side: top;
+  text-align: center;
+  font-weight: bold;
+}
+
+.msg-thread-nav tbody tr td {
+  padding: 2px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.msg-thread-nav-bydate table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bydate table td:nth-child(1) {
+  width: 55%;
+
+}
+
+.msg-thread-nav-bydate table td:nth-child(2) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bydate table td:nth-child(3) {
+  width:20%;
+  text-align: right;
+}
+
+.msg-thread-nav-bydate table td:nth-child(4) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+
+.msg-thread-nav-bythread table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bythread table td:nth-child(1) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+.msg-thread-nav-bythread table td:nth-child(2) {
+  width: 20%;
+
+}
+
+.msg-thread-nav-bythread table td:nth-child(3) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bythread table td:nth-child(4) {
+  width:55%;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-0 {
+  padding-left: 0px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-1 {
+  padding-left: 32px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-2 {
+  padding-left: 64px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-3 {
+  padding-left: 96px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-4 {
+  padding-left: 128px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-5 {
+  padding-left: 160px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-6 {
+  padding-left: 192px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-7 {
+  padding-left: 224px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-8 {
+  padding-left: 256px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-9 {
+  padding-left: 288px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-10 {
+  padding-left: 320px;
+}
+
+.threadindex {
+    table-layout: fixed;
+}
+
+.threadindex th:nth-child(1) {
+    width: 78%;
+}
+
+.threadindex th:nth-child(2) {
+    text-align: center;
+    width: 7%;
+}
+
+.threadindex th:nth-child(3) {
+    width: 15%;
+}
+
+.formatted-patch .patch-add {
+  color: #00CC00;
+}
+
+.formatted-patch .patch-del {
+  color: #FF0000;
+}
+
+.formatted-patch .patch-pos {
+  color: #0000FF;
+  background-color: #ddddFF;
+}
+
+div.formatted-patch {
+  border: 1px solid black;
+}
+
+div.formatted-patch pre {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'Inconsolata', 'DejaVu Sans Mono', monospace;
+  margin: 0px;
+}
+
+
+div.formatted-patch pre.linenos {
+  background-color: #0b8ae1;
+  float: left;
+  padding-right: 4px;
+  text-align: right;
+  margin-right: 4px;
+}
+
+.linenos a {
+  color: white;
+}
+
+.linenos a:hover {
+  color: black;
+}
+
+.linenos a:target {
+  color: #8b000e;
+}
+
+tracker-placeholder {
+  display: none;
+}
+
+.tracker-state-change {
+  font-style: italic;
+  color: #e1730a;
+}
+
+.ticket-state {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.ticket-state-open {
+  color: #00CC00;
+}
+
+.ticket-state-confirmed {
+  color: #e1730a;
+}
+
+.ticket-state-closed {
+  color: #FF0000;
+}
+
+.tracker-panel {
+  width: 450px;
+  float: right;
+  margin: 8px;
+  padding: 0px;
+  border: 2px solid #0b8ae1;
+  text-align: center;
+}
+
+.tracker-panel h2 {
+  background-color: #0b8ae1;
+  color: white;
+  margin-top: 0px;
+}
+
+.tracker-panel ul {
+  padding: 0px 8px;
+  margin: 8px;
+  text-align: left;
+  list-style-type: none;
+}
+
+.tracker-table {
+  table-layout: fixed;
+}
+
+.tracker-table tbody td:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tracker-table thead th:nth-child(1) {
+  width: 60%;
+}
+
+.tracker-table thead th:nth-child(2) {
+  width: 13%;
+}
+
+.tracker-table thead th:nth-child(3) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(4) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(5) {
+  width: 7%;
+  text-align: center;
+}
+
+.tracker-table tbody td:nth-child(5) {
+  text-align: center;
+}
+
+#tracker-filter-subject {
+  width: calc(100% - 8px);
+}
+
+.filter-hide {
+  display: none;
+}
+
+@media(max-width: 768px) {
+
+  html, body {
+    font-size: 18px;
+  }
+
+  .lastreply {
+    display: none;
+  }
+
+  .msg-body {
+    width: initial;
+  }
+
+  .msg-thread-nav-bydate {
+    float: none;
+  }
+
+  .msg-thread-nav-bythread {
+    float: none;
+  }
+
+  .threadindex .lastreply {
+      display: none;
+      width: 0%;
+  }
+
+  .threadindex th:nth-child(1) {
+      width: 80%;
+  }
+
+  .threadindex th:nth-child(2) {
+      width: 20%;
+  }
+
+  .tracker-panel {
+    width: 95%;
+    margin: 0px auto;
+    float: none;
+  }
+
+  .tracker-table thead th:nth-child(1) {
+  width: 80%;
+  }
+
+  .tracker-table thead th:nth-child(2), .tracker-table tbody td:nth-child(2) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(3), .tracker-table tbody td:nth-child(3) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(4), .tracker-table tbody td:nth-child(4) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(5) {
+    width: 20%;
+  }
+}
+</style>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<header>
+<ul><li><a href="/historic/tsc-devel-archive/">tsc-devel@secretchronicles.org</a></li><li><a href="/historic/tsc-devel-archive/about.html">About</a></li></ul>
+</header>
+<main>
+<h1 class="msg-subject">[tsc-devel] Re: Would you be interested in rejoining our project...</h1>
+<p class="msg-meta">
+  <span class="msg-from">Chris Jacobsen</span> |
+
+ Tue, 28 Oct 2014 02:13:10 UTC
+</p>
+
+
+
+
+<div class="tracker-placeholder"></div>
+
+
+
+<pre class="msg-body">Okay, I&#39;ll check them out as I get some time over the next week or so.
+
+Our programming tasks are listed at Secretchronicles/TSC (along with other tasks such as art tasks and music tasks).
+
+I may talk to Quintus about breaking &#34;Art and Music&#34; into &#34;Art&#34; and &#34;Music&#34; task categories.
+
+The big focus for programming now is bug fixing for release 2.0.  These are signified with the &#34;Bug&#34; label in github.  Bugs needed in order to make release 2.0 acceptable are also marked as &#34;release 2.0&#34; for the milestone.  Anything with release 2.0 on the label is needed in order to complete the release faster.
+
+The Release 2.0 branch in github corresponds to changes slated to go into the release (we have a feature freeze for code changes for this).  The devel branch is where new features go, which will be in subsequent versions of the game.
+
+-datahead
+
+ 
+  
+ 
+ 
+ 
+ 
+ 
+Secretchronicles/TSC
+TSC - An open source two-dimensional platform game.  
+View on github.com Preview by Yahoo  
+ 
+  
+
+
+On Monday, October 27, 2014 10:05 PM, Norbu Tsering &lt;…1@g…&gt; wrote:
+  
+
+
+I don&#39;t have anything recent. The last songs I uploaded were these corrosiveeye.newgrounds.com/audio 
+On Oct 27, 2014 8:08 PM, &#34;Chris Jacobsen&#34; &lt;…9@y…&gt; wrote:
+
+Naerbu,
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;Thank you for your interest in composing for Secret Chronicles again.  Do you have links to any new music we can check out?  I really enjoy checking out people&#39;s music myself.</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;Yes, you are welcome to help out with coding or anything in the game you want.  There are some guidelines for contributing in the read me file for coding and artwork you might want to check out:</span>
+<span class="msg-quote">&gt;<a href="https://github.com/Secretchronicles/TSC/blob/devel/README.md">https://github.com/Secretchronicles/TSC/blob/devel/README.md</a></span>
+<span class="msg-quote">&gt;--We use git for development, so the git manual linked to there will be really, really helpful.</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;We look forward to seeing you around.</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;--datahead </span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;On Monday, October 27, 2014 4:12 PM, Naerbu . &lt;…u@g…&gt; wrote:</span>
+<span class="msg-quote">&gt;  </span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;Hey data head,</span>
+<span class="msg-quote">&gt;I would love to join your project. </span>
+<span class="msg-quote">&gt;You can reach me more easily at …1@g… </span>
+<span class="msg-quote">&gt;BTW, I have experience coding and I would very much like to get better. Could I also work with you guys on the code as well? </span>
+<span class="msg-quote">&gt;<a href="http://github.com/redft">http://github.com/redft</a></span>
+<span class="msg-quote">&gt; </span>
+<span class="msg-quote">&gt;Norbu Tsering (RedFT) (formerly Naerbu) </span>
+<span class="msg-quote">&gt;On Oct 26, 2014 3:53 AM, &#34;Chris Jacobsen&#34; &lt;…9@y…&gt; wrote:</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;Naerbu,</span>
+<span class="msg-quote">&gt;&gt;</span>
+<span class="msg-quote">&gt;&gt;We have been working to add your contributed music to the upcoming release 2.0 of the SMC game.</span>
+<span class="msg-quote">&gt;&gt;Some of your music is very good -- the &#34;Snowy Mountain&#34; and medieval style music are helping us to find a new style.</span>
+<span class="msg-quote">&gt;&gt;</span>
+<span class="msg-quote">&gt;&gt;To be more exact we are changing the name of the game to &#34;The Secret</span>
+ Chronicles of Dr. M&#34;.  This is in order to remove &#34;Maryo&#34;, a clear reference to &#34;Mario&#34;.  We are likewise aggressively swapping out other Mario graphics with new, original graphics.
+<span class="msg-quote">&gt;&gt;</span>
+<span class="msg-quote">&gt;&gt;We currently have about 4 programmers, 2-3 artists, and a number of beta testers.  Quintus is the project lead, and Luiji is second in command.  Besides doing coding, I am also leading the story development effort.</span>
+<span class="msg-quote">&gt;&gt;</span>
+<span class="msg-quote">&gt;&gt;We are, however, with limited musician / sound artist resources. </span>
+ We have reached aakburns by email, but we still need more team members to make the project keep going.  We need to find replacements for Mario music that is being removed, and we are also interested in brand new music.
+<span class="msg-quote">&gt;&gt;</span>
+<span class="msg-quote">&gt;&gt;</span>
+<span class="msg-quote">&gt;&gt;</span>
+<span class="msg-quote">&gt;&gt;Our code and assets are maintained at: <a href="https://github.com/Secretchronicles/TSC">https://github.com/Secretchronicles/TSC</a></span>
+<span class="msg-quote">&gt;&gt;Our new website (being developed) is at: <a href="http://www.secretchronicles.de/en/">http://www.secretchronicles.de/en/</a></span>
+<span class="msg-quote">&gt;&gt;Windows betas of the game are published at: <a href="http://www.secretchronicles.de/en/download/">http://www.secretchronicles.de/en/download/</a></span>
+<span class="msg-quote">&gt;&gt;Our IRC Channel is #secretchronicles on freenode.net</span>
+<span class="msg-quote">&gt;&gt;Our mailing list is …l@l…</span>
+<span class="msg-quote">&gt;&gt;</span>
+<span class="msg-quote">&gt;&gt;</span>
+<span class="msg-quote">&gt;&gt;</span>
+<span class="msg-quote">&gt;&gt;I found your email by finding your YouTube page using google and then adding @gmail.com after your YouTube name.  I did not think I would reach you on the old secretmaryo.org site.</span>
+<span class="msg-quote">&gt;&gt;</span>
+<span class="msg-quote">&gt;&gt;Thank you,</span>
+<span class="msg-quote">&gt;&gt;Chris Jacobsen (datahead)</span>
+<span class="msg-quote">&gt;&gt;</span>
+<span class="msg-quote">&gt;&gt;</span>
+<span class="msg-quote">&gt;&gt;</span>
+<span class="msg-quote">&gt;&gt;</span>
+<span class="msg-quote">&gt;&gt;</span>
+<span class="msg-quote">&gt;&gt;</span>
+<span class="msg-quote">&gt;&gt;</span>
+<span class="msg-quote">&gt;&gt; </span>
+<span class="msg-quote">&gt;&gt;</span>
+<span class="msg-quote">&gt;&gt;  </span>
+<span class="msg-quote">&gt;&gt; </span>
+<span class="msg-quote">&gt;&gt; </span>
+<span class="msg-quote">&gt;&gt; </span>
+<span class="msg-quote">&gt;&gt; </span>
+<span class="msg-quote">&gt;&gt; </span>
+<span class="msg-quote">&gt;&gt;Naerbu</span>
+<span class="msg-quote">&gt;&gt;Every morning is the dawn of a new error.  </span>
+<span class="msg-quote">&gt;&gt;View on www.youtube.com Preview by Yahoo  </span>
+<span class="msg-quote">&gt;&gt;</span>
+<span class="msg-quote">&gt;&gt; </span>
+<span class="msg-quote">&gt;&gt; </span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;    </span>
+</pre>
+
+
+
+<div class="msg-nav">
+<div class="msg-thread-nav msg-thread-nav-bythread">
+<table>
+<caption>By Thread</caption>
+<tbody>
+<tr><td></td><td>1970-01-01 00:00:00</td><td>(unknown)</td><td class="msg-thread-level-0"><a href="/historic/tsc-devel-archive/1970/01/m3.html">[tsc-devel] Fw: Would you be interested in rejoining our project...</a></td></tr>
+<tr><td></td><td>2014-10-27 15:08:11</td><td>Chris Jacobsen</td><td class="msg-thread-level-1"><a href="/historic/tsc-devel-archive/2014/10/m50.html">[tsc-devel] Fw: Would you be interested in rejoining our project...</a></td></tr>
+<tr><td></td><td>2014-10-27 23:03:45</td><td>Chris Jacobsen</td><td class="msg-thread-level-1"><a href="/historic/tsc-devel-archive/2014/10/m51.html">[tsc-devel] Fw: Would you be interested in rejoining our project...</a></td></tr>
+<tr><td></td><td>2014-10-28 00:08:39</td><td>Chris Jacobsen</td><td class="msg-thread-level-1"><a href="/historic/tsc-devel-archive/2014/10/m54.html">[tsc-devel] Re: Would you be interested in rejoining our project...</a></td></tr>
+<tr><td>▶</td><td>2014-10-28 02:13:10</td><td>Chris Jacobsen</td><td class="msg-thread-level-2"><a href="/historic/tsc-devel-archive/2014/10/m55.html">[tsc-devel] Re: Would you be interested in rejoining our project...</a></td></tr>
+
+</tbody>
+</table>
+</div>
+<div class="msg-thread-nav msg-thread-nav-bydate">
+<table>
+<caption>By Date</caption>
+<tbody>
+
+
+<tr><td><a href="/historic/tsc-devel-archive/1970/01/m3.html">[tsc-devel] Fw: Would you be interested in rejoining our project...</a></td><td>(unknown)</td><td>1970-01-01 00:00:00</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2014/10/m50.html">[tsc-devel] Fw: Would you be interested in rejoining our project...</a></td><td>Chris Jacobsen</td><td>2014-10-27 15:08:11</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2014/10/m51.html">[tsc-devel] Fw: Would you be interested in rejoining our project...</a></td><td>Chris Jacobsen</td><td>2014-10-27 23:03:45</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2014/10/m54.html">[tsc-devel] Re: Would you be interested in rejoining our project...</a></td><td>Chris Jacobsen</td><td>2014-10-28 00:08:39</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2014/10/m55.html">[tsc-devel] Re: Would you be interested in rejoining our project...</a></td><td>Chris Jacobsen</td><td>2014-10-28 02:13:10</td><td class="msg-here">◀</td></tr>
+
+</tbody>
+</table>
+</div>
+</div>
+
+</main>
+<footer>
+<p>Mailing list archive generated by <a href="https://mg.guelker.eu/projects/postkasten/">Postkasten</a>.</p>
+</footer>
+</body>
+</html>

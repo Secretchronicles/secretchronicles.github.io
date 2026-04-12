@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Re: [tsc-devel] Repository has been renamed · tsc-devel@secretchronicles.org</title>
+  <style type="text/css">html, body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial Nova", "Arial", sans-serif;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  margin: 0px;
+}
+
+a {
+  color: #0b8ae1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #520ebb;
+}
+
+header {
+  margin: 0px;
+  padding: 12px 6px;
+  background-color: #0b8ae1;
+}
+
+header ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header ul li::after {
+  margin-left: 8px;
+  content: "|";
+  margin-right: 8px;
+}
+
+header ul li:last-child::after {
+  content: "";
+  margin-right: 0px;
+}
+
+header a {
+  color: white;
+}
+
+header a:hover {
+  color: black;
+}
+
+footer {
+  border-top: 1px solid #999999;
+  color: #999999;
+  font-size: 0.8rem;
+  padding: 8px;
+  text-align: center;
+  clear: both;
+}
+
+footer p {
+  margin: 0px;
+}
+
+main {
+  margin: 8px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+h1.msg-subject {
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+h2, caption {
+  font-size: 1rem;
+}
+
+
+.msg-meta {
+  margin-top: 0px;
+}
+
+.msg-from {
+  font-weight: bold;
+}
+
+.msg-cc {
+  color: #e1730a;
+}
+
+.msg-attachments h2 {
+  font-style: italic;
+}
+
+table, tr, td, th {
+  border: none;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #eeeeee;
+}
+
+thead tr {
+  border-bottom: 1px solid black;
+}
+
+.newyear {
+  font-style: italic;
+  text-align: center;
+  font-weight: bold;
+}
+
+.numreplies {
+  text-align: center;
+}
+
+.thread-ghost {
+  font-style: italic;
+}
+
+.lastreply {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+pre, code {
+  font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+.msg-body {
+  width: 80ch;
+}
+
+.msg-quote {
+  color: #698900;
+  font-style: italic;
+}
+
+.msg-nav {
+  clear: both;
+}
+
+.msg-thread-nav {
+  width: calc(50% - 4px);
+}
+
+.msg-thread-nav-bydate {
+  float: right;
+}
+
+.msg-thread-nav-bythread {
+  float: left;
+}
+
+.msg-thread-nav table caption {
+  background-color: #0b8ae1;
+  color: white;
+  border: none;
+  caption-side: top;
+  text-align: center;
+  font-weight: bold;
+}
+
+.msg-thread-nav tbody tr td {
+  padding: 2px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.msg-thread-nav-bydate table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bydate table td:nth-child(1) {
+  width: 55%;
+
+}
+
+.msg-thread-nav-bydate table td:nth-child(2) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bydate table td:nth-child(3) {
+  width:20%;
+  text-align: right;
+}
+
+.msg-thread-nav-bydate table td:nth-child(4) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+
+.msg-thread-nav-bythread table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bythread table td:nth-child(1) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+.msg-thread-nav-bythread table td:nth-child(2) {
+  width: 20%;
+
+}
+
+.msg-thread-nav-bythread table td:nth-child(3) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bythread table td:nth-child(4) {
+  width:55%;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-0 {
+  padding-left: 0px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-1 {
+  padding-left: 32px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-2 {
+  padding-left: 64px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-3 {
+  padding-left: 96px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-4 {
+  padding-left: 128px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-5 {
+  padding-left: 160px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-6 {
+  padding-left: 192px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-7 {
+  padding-left: 224px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-8 {
+  padding-left: 256px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-9 {
+  padding-left: 288px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-10 {
+  padding-left: 320px;
+}
+
+.threadindex {
+    table-layout: fixed;
+}
+
+.threadindex th:nth-child(1) {
+    width: 78%;
+}
+
+.threadindex th:nth-child(2) {
+    text-align: center;
+    width: 7%;
+}
+
+.threadindex th:nth-child(3) {
+    width: 15%;
+}
+
+.formatted-patch .patch-add {
+  color: #00CC00;
+}
+
+.formatted-patch .patch-del {
+  color: #FF0000;
+}
+
+.formatted-patch .patch-pos {
+  color: #0000FF;
+  background-color: #ddddFF;
+}
+
+div.formatted-patch {
+  border: 1px solid black;
+}
+
+div.formatted-patch pre {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'Inconsolata', 'DejaVu Sans Mono', monospace;
+  margin: 0px;
+}
+
+
+div.formatted-patch pre.linenos {
+  background-color: #0b8ae1;
+  float: left;
+  padding-right: 4px;
+  text-align: right;
+  margin-right: 4px;
+}
+
+.linenos a {
+  color: white;
+}
+
+.linenos a:hover {
+  color: black;
+}
+
+.linenos a:target {
+  color: #8b000e;
+}
+
+tracker-placeholder {
+  display: none;
+}
+
+.tracker-state-change {
+  font-style: italic;
+  color: #e1730a;
+}
+
+.ticket-state {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.ticket-state-open {
+  color: #00CC00;
+}
+
+.ticket-state-confirmed {
+  color: #e1730a;
+}
+
+.ticket-state-closed {
+  color: #FF0000;
+}
+
+.tracker-panel {
+  width: 450px;
+  float: right;
+  margin: 8px;
+  padding: 0px;
+  border: 2px solid #0b8ae1;
+  text-align: center;
+}
+
+.tracker-panel h2 {
+  background-color: #0b8ae1;
+  color: white;
+  margin-top: 0px;
+}
+
+.tracker-panel ul {
+  padding: 0px 8px;
+  margin: 8px;
+  text-align: left;
+  list-style-type: none;
+}
+
+.tracker-table {
+  table-layout: fixed;
+}
+
+.tracker-table tbody td:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tracker-table thead th:nth-child(1) {
+  width: 60%;
+}
+
+.tracker-table thead th:nth-child(2) {
+  width: 13%;
+}
+
+.tracker-table thead th:nth-child(3) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(4) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(5) {
+  width: 7%;
+  text-align: center;
+}
+
+.tracker-table tbody td:nth-child(5) {
+  text-align: center;
+}
+
+#tracker-filter-subject {
+  width: calc(100% - 8px);
+}
+
+.filter-hide {
+  display: none;
+}
+
+@media(max-width: 768px) {
+
+  html, body {
+    font-size: 18px;
+  }
+
+  .lastreply {
+    display: none;
+  }
+
+  .msg-body {
+    width: initial;
+  }
+
+  .msg-thread-nav-bydate {
+    float: none;
+  }
+
+  .msg-thread-nav-bythread {
+    float: none;
+  }
+
+  .threadindex .lastreply {
+      display: none;
+      width: 0%;
+  }
+
+  .threadindex th:nth-child(1) {
+      width: 80%;
+  }
+
+  .threadindex th:nth-child(2) {
+      width: 20%;
+  }
+
+  .tracker-panel {
+    width: 95%;
+    margin: 0px auto;
+    float: none;
+  }
+
+  .tracker-table thead th:nth-child(1) {
+  width: 80%;
+  }
+
+  .tracker-table thead th:nth-child(2), .tracker-table tbody td:nth-child(2) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(3), .tracker-table tbody td:nth-child(3) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(4), .tracker-table tbody td:nth-child(4) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(5) {
+    width: 20%;
+  }
+}
+</style>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<header>
+<ul><li><a href="/historic/tsc-devel-archive/">tsc-devel@secretchronicles.org</a></li><li><a href="/historic/tsc-devel-archive/about.html">About</a></li></ul>
+</header>
+<main>
+<h1 class="msg-subject">Re: [tsc-devel] Repository has been renamed</h1>
+<p class="msg-meta">
+  <span class="msg-from">Quintus</span> |
+
+ Fri, 03 Oct 2014 17:29:15 UTC
+</p>
+
+
+
+
+<div class="tracker-placeholder"></div>
+
+
+
+<pre class="msg-body">Hi Brian,
+
+Brian Allen Vanderburg II &lt;…2@a…&gt; writes:
+<span class="msg-quote">&gt;  I had some</span>
+<span class="msg-quote">&gt; problems fetching with the origin you specified (something about public</span>
+<span class="msg-quote">&gt; key issue), so I just used <a href="https://github.com/Secretchonicles/TSC.git">https://github.com/Secretchonicles/TSC.git</a></span>
+<span class="msg-quote">&gt; and it seems to be working.</span>
+
+You can also use the HTTPS URL of course. The remote URL I posted was an
+SSH one, as I was under the impression that SSH was the normal way to
+push to Git repositories; GitHub has supported pushing over SSH much
+longer than pushing over HTTPS. In the end it does not matter which way
+you choose to push to the repository, use whatever you are fine with.
+
+<span class="msg-quote">&gt; I imagine later we will eventually update the source code namespace for</span>
+<span class="msg-quote">&gt; both C++ and scripting and the binary to be called tsc or something</span>
+<span class="msg-quote">&gt; like that?</span>
+
+Of course. The main namespace has to be renamed from “SMC” to “TSC”, and
+the occurences of “Maryo” and similar have to be removed. The executable
+has to be renamed as well (editing CMakeLists.txt). datahead had some
+concerns against doing so if I remember; datahead, would you be so kind
+and repeat them?
+
+In any case, when renaming is due, it should be done on the release
+branch first, which will then get merged into the devel branch. I
+remember the merging nightmare on the coding style changes too good as
+to do the same mistake again.
+
+On that matter, we have some really old naming in our
+sourcecode. There’s still “jPiranha” for example in the Flyon code. This
+has also to be removed sometime.
+
+<span class="msg-quote">&gt; Thanks,</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; Brian Allen Vanderburg II</span>
+
+Vale,
+Quintus
+
+-- 
+Blog: <a href="http://www.quintilianus.eu">http://www.quintilianus.eu</a>
+
+I will reject HTML emails.     | Ich akzeptiere keine HTML-Nachrichten.
+                               |
+Use GnuPG for mail encryption: | GnuPG für Mail-Verschlüsselung:
+<a href="http://www.gnupg.org">http://www.gnupg.org</a>           | <a href="http://gnupg.org/index.de.html">http://gnupg.org/index.de.html</a>
+
+</pre>
+
+
+
+<div class="msg-nav">
+<div class="msg-thread-nav msg-thread-nav-bythread">
+<table>
+<caption>By Thread</caption>
+<tbody>
+<tr><td></td><td>2014-10-02 07:52:28</td><td>Quintus</td><td class="msg-thread-level-0"><a href="/historic/tsc-devel-archive/2014/10/m6.html">[tsc-devel] Repository has been renamed</a></td></tr>
+<tr><td></td><td>2014-10-03 16:45:53</td><td>Brian Allen Vanderburg II</td><td class="msg-thread-level-1"><a href="/historic/tsc-devel-archive/2014/10/m7.html">Re: [tsc-devel] Repository has been renamed</a></td></tr>
+<tr><td>▶</td><td>2014-10-03 17:29:15</td><td>Quintus</td><td class="msg-thread-level-2"><a href="/historic/tsc-devel-archive/2014/10/m8.html">Re: [tsc-devel] Repository has been renamed</a></td></tr>
+<tr><td></td><td>2014-10-04 01:36:50</td><td>Chris Jacobsen</td><td class="msg-thread-level-2"><a href="/historic/tsc-devel-archive/2014/10/m9.html">Re: [tsc-devel] Repository has been renamed</a></td></tr>
+<tr><td></td><td>2014-10-04 01:42:03</td><td>Chris Jacobsen</td><td class="msg-thread-level-3"><a href="/historic/tsc-devel-archive/2014/10/m10.html">Re: [tsc-devel] Repository has been renamed</a></td></tr>
+<tr><td></td><td>2014-10-04 07:31:23</td><td>Quintus</td><td class="msg-thread-level-4"><a href="/historic/tsc-devel-archive/2014/10/m11.html">Re: [tsc-devel] Repository has been renamed</a></td></tr>
+<tr><td></td><td>2014-10-04 09:03:26</td><td>Chris Jacobsen</td><td class="msg-thread-level-5"><a href="/historic/tsc-devel-archive/2014/10/m12.html">Re: [tsc-devel] Repository has been renamed</a></td></tr>
+<tr><td></td><td>2014-10-04 10:52:03</td><td>Quintus</td><td class="msg-thread-level-6"><a href="/historic/tsc-devel-archive/2014/10/m13.html">Re: [tsc-devel] Repository has been renamed</a></td></tr>
+
+</tbody>
+</table>
+</div>
+<div class="msg-thread-nav msg-thread-nav-bydate">
+<table>
+<caption>By Date</caption>
+<tbody>
+
+
+<tr><td><a href="/historic/tsc-devel-archive/2014/10/m6.html">[tsc-devel] Repository has been renamed</a></td><td>Quintus</td><td>2014-10-02 07:52:28</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2014/10/m7.html">Re: [tsc-devel] Repository has been renamed</a></td><td>Brian Allen Vanderburg II</td><td>2014-10-03 16:45:53</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2014/10/m8.html">Re: [tsc-devel] Repository has been renamed</a></td><td>Quintus</td><td>2014-10-03 17:29:15</td><td class="msg-here">◀</td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2014/10/m9.html">Re: [tsc-devel] Repository has been renamed</a></td><td>Chris Jacobsen</td><td>2014-10-04 01:36:50</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2014/10/m10.html">Re: [tsc-devel] Repository has been renamed</a></td><td>Chris Jacobsen</td><td>2014-10-04 01:42:03</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2014/10/m11.html">Re: [tsc-devel] Repository has been renamed</a></td><td>Quintus</td><td>2014-10-04 07:31:23</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2014/10/m12.html">Re: [tsc-devel] Repository has been renamed</a></td><td>Chris Jacobsen</td><td>2014-10-04 09:03:26</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2014/10/m13.html">Re: [tsc-devel] Repository has been renamed</a></td><td>Quintus</td><td>2014-10-04 10:52:03</td><td class="msg-here"></td></tr>
+
+</tbody>
+</table>
+</div>
+</div>
+
+</main>
+<footer>
+<p>Mailing list archive generated by <a href="https://mg.guelker.eu/projects/postkasten/">Postkasten</a>.</p>
+</footer>
+</body>
+</html>

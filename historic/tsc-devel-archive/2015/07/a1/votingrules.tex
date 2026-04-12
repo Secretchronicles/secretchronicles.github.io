@@ -1,0 +1,232 @@
+% Secretchronicles Voting Rules Draft
+% Copyright © 2015 The TSC developers
+% All Rights Reserved.
+%
+% This document is intended to be processed by LuaLaTeX, any other TeX
+% engines most likely won’t work.
+%
+%   $ lualatex votingrules.tex
+%   (multiple times if needed)
+%
+% Note you need to have the Libertine font family (Linux Libertine
+% and Linux Biolinum) installed; modern Linux distros should provide
+% a “otf-libertine” or “ttf-libertine” (OTF preferred) package. See
+% the \setmainfont and \setsansfont commands below for changing the
+% font if you need to.
+%
+% The default paper size is ISO A4. Change “a4paper” in the
+% documentclass options to “letter” or whatever your printer can do
+% if this is not the correct format for you.
+%
+% Changelog:
+% - YYYY-MM-DD: First accepted version of this document.
+
+\documentclass[10pt,a4paper,DIV=calc,headings=medium,twocolumn,draft]{scrartcl}
+\usepackage[english]{babel}
+\usepackage{fontspec}
+\usepackage{scrjura}
+\usepackage{xspace}
+\usepackage{draftwatermark}
+
+\SetWatermarkText{DRAFT}
+
+\newcommand\irc{\textsc{irc}\xspace}
+\newcommand\eg{e.\,g.\xspace}
+\newcommand\ie{i.\,e.\xspace}
+
+\renewcommand\thesection{\Roman{section}}
+\addtokomafont{disposition}{\centering}
+
+\setmainfont{Linux Libertine O}
+\setsansfont{Linux Biolinum O}
+
+\KOMAoptions{DIV=last}
+
+\begin{document}
+\title{Secretchronicles Project Voting Rules}
+\date{\today}
+\maketitle{}
+
+\section*{Preamble}
+
+This document outlines the modus, rules, and majority requirements for
+any votes taken in the course of the development of the
+Secretchronicles project. It is intended to minimise possible
+conflicts due to disagreements on the voting procedure by being a
+democratically legitimated, definitive description.
+
+\section{General}
+
+\begin{contract}
+  \Clause{title=Team member}
+
+  Team member is for the sake of this document who is listed
+  publically as a member of the “Secretchronicles” GitHub
+  organisation.
+
+  \Clause{title=General Rule of Consent}
+
+  All decisions are to be made in consent of all team members. Only if
+  it is impossible to reach a consent even by means of compromises, a
+  voting shall be held.
+\end{contract}
+
+\section{Voting process}
+
+\begin{contract}
+
+  \Clause{title=Announcement of Vote}
+
+  Any team member (proponent) can request the project lead to organise
+  a vote on a subject the member deems impossible to decide on in
+  consent. The project lead then announces the upcoming vote
+  sufficiently early so that every team member has time to prepare, at
+  least two weeks in advance (Announcement of Vote).
+
+  The announcement must include:
+
+  \begin{enumerate}
+  \item The proponent,
+  \item The vote subject,
+  \item The vote options, and
+  \item The beginning and ending dates of the voting period.
+  \end{enumerate}
+
+  If the project lead is unavailable, the assistant lead guides the
+  process instead.
+
+  \Clause{title=Open Vote}
+
+  The default open vote happens openly on any of the project’s
+  communication channels, \eg in \irc or on the tracker. Each team
+  member votes by stating the option he wants to vote for.
+
+  \Clause{title=Covert Vote}
+
+  After the Announcement of Vote has been published, any one team
+  member can request a covert vote. The request must be honoured by
+  public announcement.
+
+  In the covert vote each member votes by means of a technical
+  procedure that ensures nobody can find out later who voted on which
+  option.
+
+  \Clause{title=Technical details}
+
+  The technical details of the open and covert vote are worked out by
+  the project lead and announced prior to each vote.
+
+  \Clause{title=Call for Votes}
+
+  When the voting period has started, the project lead publishes this
+  fact in all communication channels where the original Announcement
+  of Vote was posted (Call for Votes).
+
+  The Call for Votes must repeat the termination date of the voting
+  period.
+
+  Any votes made before the Call for Votes has been published are
+  invalid.
+
+  \Clause{title=Results}
+
+  Unless otherwise demanded by this document, the option that receives
+  the simple majority (\ie most votes) is the winner option. It is a
+  binding decision that determines how to proceed in the given topic
+  and prevents any further vote on the topic given all circumstances
+  equal.
+
+  \Clause{title=Second Vote}
+
+  If no single option receives the most votes, a second vote is held
+  with the set of options reduced to those options that received the
+  most votes. The preceeding clauses are in force accordingly.
+
+  \Clause{title=Failed vote}\label{failedvote}
+
+  A vote is failed if nobody participates, no single option receives
+  the most votes in the second vote, the proponent revokes the
+  voting suggestion, or the winning option does not receive the
+  majority required.
+
+  A failed vote has no binding effects; the same subject might be
+  voted over again.
+
+  \Clause{title={Declaration of Results}}
+
+  After the vote is over, the project lead announces the result, if
+  any.
+\end{contract}
+
+\section{Complaints}
+
+\begin{contract}
+  \Clause{title=Right to Complain}
+
+  Until 14 days since the declaration of results have passed, each
+  team member has the right to request a check as to whether the
+  voting procedure outined by this document was followed properly.
+
+  \Clause{title=Procedure}
+
+  The team member directs his complaint to the project lead or to the
+  project assistant lead (examiner) and has to state why he thinks
+  this document has been violated. The project lead and the assistant
+  lead may not decide about their own complaints; if they’re both
+  involved, a person is randomly chosen from a set of noninvolved
+  volunteers.
+
+  The examiner has to forward it to the team member being complained
+  about without further comment, and has to ask him for a statement on
+  the issue within a reasonable timeframe. This statement, and any
+  further replies, must be made available to all parties involved.
+
+  If the examiner deems it necessary, he can request a live chat in
+  \irc in which all parties participate prior to a decision.
+
+  \Clause{title=Decision}
+
+  The examiner has to decide within reasonable time, but at most
+  within two months after the complaint was filed.
+
+  The decision needs to contain the reasons for why or why not the
+  complaint is valid.
+
+  \Clause{title=Effect}
+
+  A successful complaint results in the vote being failed as per
+  \ref{failedvote}. The examiner should state this effect in his
+  decision.
+
+  \Clause{title=Ne bis in idem}
+
+  The same vote may only be complained about once. If multiple persons
+  complain about the same vote, the examiner has to merge all
+  complaints into one and decide on all of them together.
+\end{contract}
+
+\section{Final clauses}
+
+\begin{contract}
+  \Clause{title=Archive}
+
+  All votes, their results, and their associated complaints and their
+  results, are for reference archived publically by the project lead.
+
+  \Clause{title=Changes}
+
+  Changes to this document require a vote whose winning option passes
+  with at least two thirds of the team members being in favour of it.
+
+  \Clause{title=First Date of Force}
+
+  This document is in force from 2015-07-20 midnight UTC.
+\end{contract}
+
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

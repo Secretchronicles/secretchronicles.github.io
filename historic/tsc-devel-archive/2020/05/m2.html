@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8"/>
+  <title>[tsc-devel] [ANN] TSC 2.1.0 released · tsc-devel@secretchronicles.org</title>
+  <style type="text/css">html, body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial Nova", "Arial", sans-serif;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  margin: 0px;
+}
+
+a {
+  color: #0b8ae1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #520ebb;
+}
+
+header {
+  margin: 0px;
+  padding: 12px 6px;
+  background-color: #0b8ae1;
+}
+
+header ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header ul li::after {
+  margin-left: 8px;
+  content: "|";
+  margin-right: 8px;
+}
+
+header ul li:last-child::after {
+  content: "";
+  margin-right: 0px;
+}
+
+header a {
+  color: white;
+}
+
+header a:hover {
+  color: black;
+}
+
+footer {
+  border-top: 1px solid #999999;
+  color: #999999;
+  font-size: 0.8rem;
+  padding: 8px;
+  text-align: center;
+  clear: both;
+}
+
+footer p {
+  margin: 0px;
+}
+
+main {
+  margin: 8px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+h1.msg-subject {
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+h2, caption {
+  font-size: 1rem;
+}
+
+
+.msg-meta {
+  margin-top: 0px;
+}
+
+.msg-from {
+  font-weight: bold;
+}
+
+.msg-cc {
+  color: #e1730a;
+}
+
+.msg-attachments h2 {
+  font-style: italic;
+}
+
+table, tr, td, th {
+  border: none;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #eeeeee;
+}
+
+thead tr {
+  border-bottom: 1px solid black;
+}
+
+.newyear {
+  font-style: italic;
+  text-align: center;
+  font-weight: bold;
+}
+
+.numreplies {
+  text-align: center;
+}
+
+.thread-ghost {
+  font-style: italic;
+}
+
+.lastreply {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+pre, code {
+  font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+.msg-body {
+  width: 80ch;
+}
+
+.msg-quote {
+  color: #698900;
+  font-style: italic;
+}
+
+.msg-nav {
+  clear: both;
+}
+
+.msg-thread-nav {
+  width: calc(50% - 4px);
+}
+
+.msg-thread-nav-bydate {
+  float: right;
+}
+
+.msg-thread-nav-bythread {
+  float: left;
+}
+
+.msg-thread-nav table caption {
+  background-color: #0b8ae1;
+  color: white;
+  border: none;
+  caption-side: top;
+  text-align: center;
+  font-weight: bold;
+}
+
+.msg-thread-nav tbody tr td {
+  padding: 2px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.msg-thread-nav-bydate table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bydate table td:nth-child(1) {
+  width: 55%;
+
+}
+
+.msg-thread-nav-bydate table td:nth-child(2) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bydate table td:nth-child(3) {
+  width:20%;
+  text-align: right;
+}
+
+.msg-thread-nav-bydate table td:nth-child(4) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+
+.msg-thread-nav-bythread table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bythread table td:nth-child(1) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+.msg-thread-nav-bythread table td:nth-child(2) {
+  width: 20%;
+
+}
+
+.msg-thread-nav-bythread table td:nth-child(3) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bythread table td:nth-child(4) {
+  width:55%;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-0 {
+  padding-left: 0px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-1 {
+  padding-left: 32px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-2 {
+  padding-left: 64px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-3 {
+  padding-left: 96px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-4 {
+  padding-left: 128px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-5 {
+  padding-left: 160px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-6 {
+  padding-left: 192px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-7 {
+  padding-left: 224px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-8 {
+  padding-left: 256px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-9 {
+  padding-left: 288px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-10 {
+  padding-left: 320px;
+}
+
+.threadindex {
+    table-layout: fixed;
+}
+
+.threadindex th:nth-child(1) {
+    width: 78%;
+}
+
+.threadindex th:nth-child(2) {
+    text-align: center;
+    width: 7%;
+}
+
+.threadindex th:nth-child(3) {
+    width: 15%;
+}
+
+.formatted-patch .patch-add {
+  color: #00CC00;
+}
+
+.formatted-patch .patch-del {
+  color: #FF0000;
+}
+
+.formatted-patch .patch-pos {
+  color: #0000FF;
+  background-color: #ddddFF;
+}
+
+div.formatted-patch {
+  border: 1px solid black;
+}
+
+div.formatted-patch pre {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'Inconsolata', 'DejaVu Sans Mono', monospace;
+  margin: 0px;
+}
+
+
+div.formatted-patch pre.linenos {
+  background-color: #0b8ae1;
+  float: left;
+  padding-right: 4px;
+  text-align: right;
+  margin-right: 4px;
+}
+
+.linenos a {
+  color: white;
+}
+
+.linenos a:hover {
+  color: black;
+}
+
+.linenos a:target {
+  color: #8b000e;
+}
+
+tracker-placeholder {
+  display: none;
+}
+
+.tracker-state-change {
+  font-style: italic;
+  color: #e1730a;
+}
+
+.ticket-state {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.ticket-state-open {
+  color: #00CC00;
+}
+
+.ticket-state-confirmed {
+  color: #e1730a;
+}
+
+.ticket-state-closed {
+  color: #FF0000;
+}
+
+.tracker-panel {
+  width: 450px;
+  float: right;
+  margin: 8px;
+  padding: 0px;
+  border: 2px solid #0b8ae1;
+  text-align: center;
+}
+
+.tracker-panel h2 {
+  background-color: #0b8ae1;
+  color: white;
+  margin-top: 0px;
+}
+
+.tracker-panel ul {
+  padding: 0px 8px;
+  margin: 8px;
+  text-align: left;
+  list-style-type: none;
+}
+
+.tracker-table {
+  table-layout: fixed;
+}
+
+.tracker-table tbody td:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tracker-table thead th:nth-child(1) {
+  width: 60%;
+}
+
+.tracker-table thead th:nth-child(2) {
+  width: 13%;
+}
+
+.tracker-table thead th:nth-child(3) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(4) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(5) {
+  width: 7%;
+  text-align: center;
+}
+
+.tracker-table tbody td:nth-child(5) {
+  text-align: center;
+}
+
+#tracker-filter-subject {
+  width: calc(100% - 8px);
+}
+
+.filter-hide {
+  display: none;
+}
+
+@media(max-width: 768px) {
+
+  html, body {
+    font-size: 18px;
+  }
+
+  .lastreply {
+    display: none;
+  }
+
+  .msg-body {
+    width: initial;
+  }
+
+  .msg-thread-nav-bydate {
+    float: none;
+  }
+
+  .msg-thread-nav-bythread {
+    float: none;
+  }
+
+  .threadindex .lastreply {
+      display: none;
+      width: 0%;
+  }
+
+  .threadindex th:nth-child(1) {
+      width: 80%;
+  }
+
+  .threadindex th:nth-child(2) {
+      width: 20%;
+  }
+
+  .tracker-panel {
+    width: 95%;
+    margin: 0px auto;
+    float: none;
+  }
+
+  .tracker-table thead th:nth-child(1) {
+  width: 80%;
+  }
+
+  .tracker-table thead th:nth-child(2), .tracker-table tbody td:nth-child(2) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(3), .tracker-table tbody td:nth-child(3) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(4), .tracker-table tbody td:nth-child(4) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(5) {
+    width: 20%;
+  }
+}
+</style>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<header>
+<ul><li><a href="/historic/tsc-devel-archive/">tsc-devel@secretchronicles.org</a></li><li><a href="/historic/tsc-devel-archive/about.html">About</a></li></ul>
+</header>
+<main>
+<h1 class="msg-subject">[tsc-devel] [ANN] TSC 2.1.0 released</h1>
+<p class="msg-meta">
+  <span class="msg-from">Marvin Gülker</span> |
+
+ Sun, 17 May 2020 12:04:28 UTC
+</p>
+
+
+
+
+<div class="tracker-placeholder"></div>
+
+
+
+<pre class="msg-body">Dear List,
+
+as the project lead of The Secret Chronicles of Dr. M. (TSC), I am 
+pleased to announce that -- finally, after so many delays -- the new 
+stable version of TSC has been released today!
+
+Welcome version 2.1.0, the first stable release of TSC 2 after version 
+2.0.0 was released back in 2015. I would like to take this as an 
+opportunity to thank every single contributor to the new TSC version. We 
+know that there are still so many things that could be improved, but we 
+believe that after five years, it is more than overdue to issue a new 
+release even if some features did not make it into 2.1.0 which we would 
+have liked to (for instance, there is still no replacement for turtle 
+boss that was removed in 2.0.0). But still, this release is in many 
+parts better than the preceeding 2.0.0 release from 2015. New enemies, 
+an improved level editor interface, new music, and several bugs fixed. 
+And last but not least, this is the first stable version of TSC that 
+finally compiles again on current Linux distributions.
+
+If you want to help TSC now for the next release, please note: we are 
+urgently looking for a graphics artist. There are numerous tickets on the 
+tracker open that require someone to draw SVGs for TSC, but as of now, 
+there is no graphic artist in our team anymore. If you are one or know 
+one, please speak up here on the mailing list, on the forum at 
+<a href="https://lists.secretchronicles.org/hyperkitty/list/tsc-devel@lists.secretchronicles.org">https://lists.secretchronicles.org/hyperkitty/list/tsc-devel@lists.secretchronicles.org</a> 
+or in our IRC channel #secretchronicles on Freenode! There will be no 
+new enemies or other graphical additions until we find a graphics artist.
+
+The release has been tagged on the Git repository as v2.1.0 and has 
+been uploaded to our web server. The source code can be found at the 
+following URLs:
+
+Source code:     <a href="https://ftp.secretchronicles.org/releases/TSC-2.1.0.tar.gz">https://ftp.secretchronicles.org/releases/TSC-2.1.0.tar.gz</a>
+PGP signature:   <a href="https://ftp.secretchronicles.org/releases/TSC-2.1.0.tar.gz.sig">https://ftp.secretchronicles.org/releases/TSC-2.1.0.tar.gz.sig</a>
+MD5 checksum:    1f598a39667ff979d1b9075e173eac9b
+SHA256 checksum: 6a16765b4951e3d5d1ea2b84e6da8f67b0271460f0c570b53ccdab80d7396261
+
+The TGZ file has a total size of slightly more than 240 MiB. Please 
+consider this before downloading.
+
+Precompiled versions will be made available soon via the website.
+
+Let me note that we would welcome Linux distributions to package TSC
+again. If you would like to package TSC and find problems with it, 
+please report those problems on our tracker at 
+<a href="https://github.com/Secretchronicles/TSC/issues">https://github.com/Secretchronicles/TSC/issues</a> and we&#39;ll see if we can 
+resolve them for the next release.
+
+                             Future of TSC
+
+The 2.1.0 release terminates an effort of many years to finally get TSC 
+into a distributable state again. We have fought with numerous API break 
+and backward compatibility break issues from our dependencies for this 
+release (SDL1 was deprecated, CEGUI 0.8 broke its API heavily, libxml++ 
+came out with a new breaking API, and I think there were other issues 
+that I do not even know off the top of my head), which probably are the 
+largest part of source code changes between version 2.0.0 and 2.1.0. TSC 
+still has a large number of dependencies, and it is a goal for future 
+versions to reduce this number of dependencies, so that such problems 
+may not occur again.
+
+It is too early to give definitive statements about TSC&#39;s future, but we 
+expect there to be some maintenance releases and probably smaller 
+feature releases over the next years. The large overhaul that should at 
+some point result in TSC3 however is not anywhere near to see.
+
+                     What has changed since RC2?
+
+* A compilation error in Release mode was fixed
+* A misuse of the save dialog that could crash TSC was fixed (ticket #687 by datahead)
+* Default campaign description updated to make our plans more clear
+* The Desert Break In and Desert Fortress levels received updates by datahead
+* The &#34;Reset progress&#34; dialogue can now be confirmed with a joystick in
+  addition to keyboard and mouse
+
+                 What has changed since version 2.0.0?
+
+If you followed the beta and RC phase, you already know this, but for 
+completeness&#39; sake I give the list from the beta1 announcement here 
+again, with additions from the beta and RC announcements:
+
+* Several new background music tracks
+* Switched some SMC graphics for original TSC ones
+* New enemies: Larry and Doom Larry, which fuse and ultimately explode
+  if hit
+* Improvements to level scripting
+* Editor UI overhauled
+* Multiple level exits with different overworld pathes possible now
+* Levels load much faster compared to 2.0.0
+* Secret Area markers are available in the editor
+* New in-game scripting console on pressing [F7]
+* Several bugfixes, including some crash fixes
+* Several build fixes
+* Several scripting API documentation fixes, and build documentation fixes
+* Upgrade CEGUI dependency from 0.7.9 to 0.8.7
+* Support for and requirement of a C++11-capable C++ compiler
+* It compiles again on modern Linux distributions!
+* New desert levels by datahead. They were added to the campaign in
+  world 3.
+* Scripting documentation system was overhauled and the dependency on
+  RubyGems for the scripting API generation was dropped
+* Level music is now stopped rather than faded out on death
+* New great title theme music by refi64
+* Scripting expansion packs are back
+* Experimental build support for FreeBSD/OpenBSD
+
+The CEGUI upgrade deserves a separate mention. CEGUI 0.8.x broke their 
+API and as more and more people do not have access to the outdated 
+CEGUI 0.7.9, it was necessary to conduct this upgrade. This upgrade 
+however bound so many of TSC&#39;s team resources that the 2.1.0 release 
+ultimately ended up with fewer new features than it was originally 
+intended. Now that the upgrade has been done it should be much easier 
+to compile TSC on modern Linux distributions than it was the case with 
+the old 2.0.0 stable release.
+
+A feature that did sadly not make it into 2.1.0 is a story. We have 
+adopted a final story draft for the future of the game, though. It 
+can be found here: <a href="https://github.com/Secretchronicles/documents/raw/master/gd/documents/pdf/18-001.pdf">https://github.com/Secretchronicles/documents/raw/master/gd/documents/pdf/18-001.pdf</a>
+
+The levels contained in version 2.1.0 are mostly equivalent to those in 
+2.0.0. Some small changes have been made to the levels, and a few new 
+levels included. We encourage users to provide quality levels here on 
+the mailing list for inclusion into TSC. Levels that implement parts of 
+the story mentioned above are preferred.
+
+  -quintus
+  On behalf of the TSC team.
+
+-- 
+Blog: <a href="https://mg.guelker.eu">https://mg.guelker.eu</a>
+_______________________________________________
+tsc-devel mailing list -- …l@l…
+To unsubscribe send an email to …e@l…
+</pre>
+
+
+
+<div class="msg-nav">
+<div class="msg-thread-nav msg-thread-nav-bythread">
+<table>
+<caption>By Thread</caption>
+<tbody>
+<tr><td>▶</td><td>2020-05-17 12:04:28</td><td>Marvin Gülker</td><td class="msg-thread-level-0"><a href="/historic/tsc-devel-archive/2020/05/m2.html">[tsc-devel] [ANN] TSC 2.1.0 released</a></td></tr>
+<tr><td></td><td>2020-05-17 15:23:07</td><td>Lauri Ojansivu</td><td class="msg-thread-level-1"><a href="/historic/tsc-devel-archive/2020/05/m3.html">[tsc-devel] Re: [ANN] TSC 2.1.0 released</a></td></tr>
+<tr><td></td><td>2020-05-17 22:55:22</td><td>Lauri Ojansivu</td><td class="msg-thread-level-1"><a href="/historic/tsc-devel-archive/2020/05/m4.html">[tsc-devel] Re: [ANN] TSC 2.1.0 released</a></td></tr>
+<tr><td></td><td>2020-05-19 04:57:38</td><td>Chris Jacobsen</td><td class="msg-thread-level-2"><a href="/historic/tsc-devel-archive/2020/05/m5.html">[tsc-devel] Re: [ANN] TSC 2.1.0 released</a></td></tr>
+
+</tbody>
+</table>
+</div>
+<div class="msg-thread-nav msg-thread-nav-bydate">
+<table>
+<caption>By Date</caption>
+<tbody>
+
+
+<tr><td><a href="/historic/tsc-devel-archive/2020/05/m2.html">[tsc-devel] [ANN] TSC 2.1.0 released</a></td><td>Marvin Gülker</td><td>2020-05-17 12:04:28</td><td class="msg-here">◀</td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2020/05/m3.html">[tsc-devel] Re: [ANN] TSC 2.1.0 released</a></td><td>Lauri Ojansivu</td><td>2020-05-17 15:23:07</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2020/05/m4.html">[tsc-devel] Re: [ANN] TSC 2.1.0 released</a></td><td>Lauri Ojansivu</td><td>2020-05-17 22:55:22</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2020/05/m5.html">[tsc-devel] Re: [ANN] TSC 2.1.0 released</a></td><td>Chris Jacobsen</td><td>2020-05-19 04:57:38</td><td class="msg-here"></td></tr>
+
+</tbody>
+</table>
+</div>
+</div>
+
+</main>
+<footer>
+<p>Mailing list archive generated by <a href="https://mg.guelker.eu/projects/postkasten/">Postkasten</a>.</p>
+</footer>
+</body>
+</html>

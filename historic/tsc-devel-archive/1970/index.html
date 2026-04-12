@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Thread Index for 1970 ·  tsc-devel@secretchronicles.org</title>
+  <style type="text/css">html, body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial Nova", "Arial", sans-serif;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  margin: 0px;
+}
+
+a {
+  color: #0b8ae1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #520ebb;
+}
+
+header {
+  margin: 0px;
+  padding: 12px 6px;
+  background-color: #0b8ae1;
+}
+
+header ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header ul li::after {
+  margin-left: 8px;
+  content: "|";
+  margin-right: 8px;
+}
+
+header ul li:last-child::after {
+  content: "";
+  margin-right: 0px;
+}
+
+header a {
+  color: white;
+}
+
+header a:hover {
+  color: black;
+}
+
+footer {
+  border-top: 1px solid #999999;
+  color: #999999;
+  font-size: 0.8rem;
+  padding: 8px;
+  text-align: center;
+  clear: both;
+}
+
+footer p {
+  margin: 0px;
+}
+
+main {
+  margin: 8px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+h1.msg-subject {
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+h2, caption {
+  font-size: 1rem;
+}
+
+
+.msg-meta {
+  margin-top: 0px;
+}
+
+.msg-from {
+  font-weight: bold;
+}
+
+.msg-cc {
+  color: #e1730a;
+}
+
+.msg-attachments h2 {
+  font-style: italic;
+}
+
+table, tr, td, th {
+  border: none;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #eeeeee;
+}
+
+thead tr {
+  border-bottom: 1px solid black;
+}
+
+.newyear {
+  font-style: italic;
+  text-align: center;
+  font-weight: bold;
+}
+
+.numreplies {
+  text-align: center;
+}
+
+.thread-ghost {
+  font-style: italic;
+}
+
+.lastreply {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+pre, code {
+  font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+.msg-body {
+  width: 80ch;
+}
+
+.msg-quote {
+  color: #698900;
+  font-style: italic;
+}
+
+.msg-nav {
+  clear: both;
+}
+
+.msg-thread-nav {
+  width: calc(50% - 4px);
+}
+
+.msg-thread-nav-bydate {
+  float: right;
+}
+
+.msg-thread-nav-bythread {
+  float: left;
+}
+
+.msg-thread-nav table caption {
+  background-color: #0b8ae1;
+  color: white;
+  border: none;
+  caption-side: top;
+  text-align: center;
+  font-weight: bold;
+}
+
+.msg-thread-nav tbody tr td {
+  padding: 2px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.msg-thread-nav-bydate table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bydate table td:nth-child(1) {
+  width: 55%;
+
+}
+
+.msg-thread-nav-bydate table td:nth-child(2) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bydate table td:nth-child(3) {
+  width:20%;
+  text-align: right;
+}
+
+.msg-thread-nav-bydate table td:nth-child(4) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+
+.msg-thread-nav-bythread table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bythread table td:nth-child(1) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+.msg-thread-nav-bythread table td:nth-child(2) {
+  width: 20%;
+
+}
+
+.msg-thread-nav-bythread table td:nth-child(3) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bythread table td:nth-child(4) {
+  width:55%;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-0 {
+  padding-left: 0px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-1 {
+  padding-left: 32px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-2 {
+  padding-left: 64px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-3 {
+  padding-left: 96px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-4 {
+  padding-left: 128px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-5 {
+  padding-left: 160px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-6 {
+  padding-left: 192px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-7 {
+  padding-left: 224px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-8 {
+  padding-left: 256px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-9 {
+  padding-left: 288px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-10 {
+  padding-left: 320px;
+}
+
+.threadindex {
+    table-layout: fixed;
+}
+
+.threadindex th:nth-child(1) {
+    width: 78%;
+}
+
+.threadindex th:nth-child(2) {
+    text-align: center;
+    width: 7%;
+}
+
+.threadindex th:nth-child(3) {
+    width: 15%;
+}
+
+.formatted-patch .patch-add {
+  color: #00CC00;
+}
+
+.formatted-patch .patch-del {
+  color: #FF0000;
+}
+
+.formatted-patch .patch-pos {
+  color: #0000FF;
+  background-color: #ddddFF;
+}
+
+div.formatted-patch {
+  border: 1px solid black;
+}
+
+div.formatted-patch pre {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'Inconsolata', 'DejaVu Sans Mono', monospace;
+  margin: 0px;
+}
+
+
+div.formatted-patch pre.linenos {
+  background-color: #0b8ae1;
+  float: left;
+  padding-right: 4px;
+  text-align: right;
+  margin-right: 4px;
+}
+
+.linenos a {
+  color: white;
+}
+
+.linenos a:hover {
+  color: black;
+}
+
+.linenos a:target {
+  color: #8b000e;
+}
+
+tracker-placeholder {
+  display: none;
+}
+
+.tracker-state-change {
+  font-style: italic;
+  color: #e1730a;
+}
+
+.ticket-state {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.ticket-state-open {
+  color: #00CC00;
+}
+
+.ticket-state-confirmed {
+  color: #e1730a;
+}
+
+.ticket-state-closed {
+  color: #FF0000;
+}
+
+.tracker-panel {
+  width: 450px;
+  float: right;
+  margin: 8px;
+  padding: 0px;
+  border: 2px solid #0b8ae1;
+  text-align: center;
+}
+
+.tracker-panel h2 {
+  background-color: #0b8ae1;
+  color: white;
+  margin-top: 0px;
+}
+
+.tracker-panel ul {
+  padding: 0px 8px;
+  margin: 8px;
+  text-align: left;
+  list-style-type: none;
+}
+
+.tracker-table {
+  table-layout: fixed;
+}
+
+.tracker-table tbody td:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tracker-table thead th:nth-child(1) {
+  width: 60%;
+}
+
+.tracker-table thead th:nth-child(2) {
+  width: 13%;
+}
+
+.tracker-table thead th:nth-child(3) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(4) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(5) {
+  width: 7%;
+  text-align: center;
+}
+
+.tracker-table tbody td:nth-child(5) {
+  text-align: center;
+}
+
+#tracker-filter-subject {
+  width: calc(100% - 8px);
+}
+
+.filter-hide {
+  display: none;
+}
+
+@media(max-width: 768px) {
+
+  html, body {
+    font-size: 18px;
+  }
+
+  .lastreply {
+    display: none;
+  }
+
+  .msg-body {
+    width: initial;
+  }
+
+  .msg-thread-nav-bydate {
+    float: none;
+  }
+
+  .msg-thread-nav-bythread {
+    float: none;
+  }
+
+  .threadindex .lastreply {
+      display: none;
+      width: 0%;
+  }
+
+  .threadindex th:nth-child(1) {
+      width: 80%;
+  }
+
+  .threadindex th:nth-child(2) {
+      width: 20%;
+  }
+
+  .tracker-panel {
+    width: 95%;
+    margin: 0px auto;
+    float: none;
+  }
+
+  .tracker-table thead th:nth-child(1) {
+  width: 80%;
+  }
+
+  .tracker-table thead th:nth-child(2), .tracker-table tbody td:nth-child(2) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(3), .tracker-table tbody td:nth-child(3) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(4), .tracker-table tbody td:nth-child(4) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(5) {
+    width: 20%;
+  }
+}
+</style>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+  <header>
+    <ul><li><a href="/historic/tsc-devel-archive/">tsc-devel@secretchronicles.org</a></li><li><a href="/historic/tsc-devel-archive/about.html">About</a></li></ul>
+  </header>
+  <main>
+    <h1>Archive of tsc-devel@secretchronicles.org – Thread Index for 1970</h1>
+    
+      <table class="threadindex">
+        <thead>
+          <tr><th>Subject</th><th>Replies</th><th class="lastreply">Last Reply</th></tr>
+        </thead>
+        <tbody>
+          
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m1.html">[tsc-devel] Additional Meeting Topic Suggestions...</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">1</td><td class="lastreply">Sat, 02 Apr 2016 19:55:20 UTC<br/>
+                  by <span class="msg-from">Chris Jacobsen</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m2.html">[tsc-devel] Fw: Secret Chronicles Music...</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">1</td><td class="lastreply">Sat, 17 Jan 2015 09:15:55 UTC<br/>
+                  by <span class="msg-from">Chris Jacobsen</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m3.html">[tsc-devel] Fw: Would you be interested in rejoining our project...</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">4</td><td class="lastreply">Tue, 28 Oct 2014 02:13:10 UTC<br/>
+                  by <span class="msg-from">Chris Jacobsen</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m4.html">[tsc-devel] Fw: Secret Chronicles Music...</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">3</td><td class="lastreply">Sun, 01 Feb 2015 05:31:07 UTC<br/>
+                  by <span class="msg-from">Chris Jacobsen</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m5.html">[tsc-devel] Fw: Fwd: Vanilla Dome Replacement...</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">3</td><td class="lastreply">Sun, 01 Feb 2015 18:09:45 UTC<br/>
+                  by <span class="msg-from">Quintus</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m6.html">[tsc-devel] Re: Forum &lt;-&gt; mailinglist gateway</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">3</td><td class="lastreply">Sat, 27 Jun 2015 11:32:00 UTC<br/>
+                  by <span class="msg-from">Quintus</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m7.html">[tsc-devel] Fw: Would you be interested in rejoining our project...</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">1</td><td class="lastreply">Tue, 28 Oct 2014 00:03:30 UTC<br/>
+                  by <span class="msg-from">Chris Jacobsen</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m8.html">[tsc-devel] Fw: 170 Jam Song and Other Music...</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">5</td><td class="lastreply">Fri, 24 Oct 2014 06:57:53 UTC<br/>
+                  by <span class="msg-from">Chris Jacobsen</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m9.html">Re: Re: [tsc-devel] Rewrite: Programming language</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">14</td><td class="lastreply">Sun, 15 Oct 2017 22:49:12 UTC<br/>
+                  by <span class="msg-from">Ryan Gonzalez</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m10.html">Re: Re: [tsc-devel] Assistant lead position rotation</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">10</td><td class="lastreply">Wed, 28 Jun 2017 08:28:21 UTC<br/>
+                  by <span class="msg-from">xet7</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m11.html">[tsc-devel] Re:  Bouncing messages from tsc-devel@lists.secretchronicles.de</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">2</td><td class="lastreply">Wed, 21 Oct 2015 00:25:13 UTC<br/>
+                  by <span class="msg-from">datahead</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m12.html">[tsc-devel] Emailed Patrick...</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">1</td><td class="lastreply">Tue, 24 Feb 2015 06:03:40 UTC<br/>
+                  by <span class="msg-from">Chris Jacobsen</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m13.html">[tsc-devel] Re: Bad build?</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">7</td><td class="lastreply">Tue, 09 Aug 2016 12:16:14 UTC<br/>
+                  by <span class="msg-from">Cleverboy 1604</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m14.html">[tsc-devel] Fw: I went ahead and cleaned up some of the version 2.0 markings in github...</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">1</td><td class="lastreply">Fri, 10 Oct 2014 10:01:43 UTC<br/>
+                  by <span class="msg-from">Chris Jacobsen</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m15.html">Fwd: Re: [tsc-devel] Assistant lead position rotation</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">1</td><td class="lastreply">Thu, 29 Jun 2017 02:29:58 UTC<br/>
+                  by <span class="msg-from">Chris Jacobsen</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m16.html">Re: [tsc-devel] Backward compatibility and 2.x / 3.x series</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">1</td><td class="lastreply">Sun, 22 Feb 2015 23:42:20 UTC<br/>
+                  by <span class="msg-from">Chris Jacobsen</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m17.html">[tsc-devel] Fw: Fwd: patrickfriel@hotmail.com has sent you a file via WeTransfer</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">1</td><td class="lastreply">Tue, 24 Feb 2015 05:45:04 UTC<br/>
+                  by <span class="msg-from">Chris Jacobsen</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m18.html">[tsc-devel] Fw: mp3 -&gt; ogg command...</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">2</td><td class="lastreply">Mon, 02 Feb 2015 21:38:38 UTC<br/>
+                  by <span class="msg-from">Sydney Dykstra</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m19.html">[tsc-devel] Fw: Fwd: Vanilla Dome Replacement...</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">2</td><td class="lastreply">Sun, 01 Feb 2015 18:09:45 UTC<br/>
+                  by <span class="msg-from">Quintus</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m20.html">[tsc-devel] Fw: Would you be interested in rejoining the (SMC) project...</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">2</td><td class="lastreply">Sat, 17 Jan 2015 16:31:06 UTC<br/>
+                  by <span class="msg-from">Chris Jacobsen</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m21.html">[tsc-devel] Re: Secret Chronicles Music...</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">2</td><td class="lastreply">Wed, 25 Feb 2015 18:27:02 UTC<br/>
+                  by <span class="msg-from">Chris Jacobsen</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m22.html">[tsc-devel] Additional Meeting Topic Suggestions...</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">2</td><td class="lastreply">Sat, 02 Apr 2016 19:55:20 UTC<br/>
+                  by <span class="msg-from">Chris Jacobsen</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m23.html">Re: Re: [tsc-devel] On the Continuation of TSC</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">6</td><td class="lastreply">Fri, 22 Sep 2017 09:06:00 UTC<br/>
+                  by <span class="msg-from">Marvin Gülker</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m24.html">[tsc-devel] Fwd: dying music</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">3</td><td class="lastreply">Thu, 15 Jan 2015 21:33:14 UTC<br/>
+                  by <span class="msg-from">Chris Jacobsen</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m25.html">[tsc-devel] Re: Switch directory name change impacts level scripts...</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">3</td><td class="lastreply">Tue, 08 Nov 2016 01:53:21 UTC<br/>
+                  by <span class="msg-from">datahead</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m26.html">[tsc-devel] Fw: Fwd: Vanilla Dome Replacement...</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">3</td><td class="lastreply">Sun, 01 Feb 2015 18:09:45 UTC<br/>
+                  by <span class="msg-from">Quintus</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m27.html">[tsc-devel] Fw: Would you be interested in rejoining our (SMC) project?</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">2</td><td class="lastreply">Fri, 09 Jan 2015 22:39:12 UTC<br/>
+                  by <span class="msg-from">Chris Jacobsen</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m28.html">[tsc-devel] Fw: Fwd: New Vanilla Dome Music Replacement Submission by Patrick Friel...</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">4</td><td class="lastreply">Mon, 02 Feb 2015 00:23:33 UTC<br/>
+                  by <span class="msg-from">Chris Jacobsen</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m29.html">[tsc-devel] Re: Server problems with systemd</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">9</td><td class="lastreply">Thu, 07 Jun 2018 17:09:22 UTC<br/>
+                  by <span class="msg-from">Marvin Gülker</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m30.html">Re: [tsc-devel] Testing forum mailinglist software</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">1</td><td class="lastreply">Sat, 30 May 2015 23:53:06 UTC<br/>
+                  by <span class="msg-from">datahead</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m31.html">[tsc-devel] Test</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">4</td><td class="lastreply">Tue, 10 Apr 2018 11:25:36 UTC<br/>
+                  by <span class="msg-from">Marvin Gülker</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m32.html">[tsc-devel] Camera problems in TSC [was: 170jam music in TSC]</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">5</td><td class="lastreply">Sun, 07 Dec 2014 12:31:17 UTC<br/>
+                  by <span class="msg-from">Quintus</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m33.html">[tsc-devel] Re: Remove world editor in 2.1.0?</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">5</td><td class="lastreply">Sat, 23 Jun 2018 19:57:54 UTC<br/>
+                  by <span class="msg-from">…8@g…</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m34.html">Re: [tsc-devel] On the Continuation of TSC</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">8</td><td class="lastreply">Fri, 22 Sep 2017 09:06:00 UTC<br/>
+                  by <span class="msg-from">Marvin Gülker</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m35.html">[tsc-devel] Re:  Bouncing messages from tsc-devel@lists.secretchronicles.de</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">1</td><td class="lastreply">Wed, 21 Oct 2015 00:25:13 UTC<br/>
+                  by <span class="msg-from">datahead</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m36.html">[tsc-devel] Re:  Bouncing messages from tsc-devel@lists.secretchronicles.de</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">2</td><td class="lastreply">Wed, 21 Oct 2015 00:25:13 UTC<br/>
+                  by <span class="msg-from">datahead</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m37.html">[tsc-devel] Fw: The Secret Chronicles of Dr. M - Urgent Need for Music...</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">1</td><td class="lastreply">Tue, 13 Jan 2015 13:04:47 UTC<br/>
+                  by <span class="msg-from">Chris Jacobsen</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m38.html">[tsc-devel] Tiny Clipboard...</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">2</td><td class="lastreply">Wed, 23 Mar 2016 03:24:45 UTC<br/>
+                  by <span class="msg-from">datahead</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m39.html">Fwd: [Quintus] Re: [tsc-devel] SFML and further development process</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">1</td><td class="lastreply">Wed, 07 Oct 2015 18:39:35 UTC<br/>
+                  by <span class="msg-from">Luiji Maryo</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m40.html">[tsc-devel] Re: [ANN] First RC of TSC 2.1.0 released</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">19</td><td class="lastreply">Sun, 26 Apr 2020 14:11:07 UTC<br/>
+                  by <span class="msg-from">Marvin Gülker</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject  thread-ghost "><a href="/historic/tsc-devel-archive/1970/01/m41.html">[tsc-devel] Fw: Fwd: Dying Music Just Opened Up as a Needed Replacement...</a></span><br/>by <span class="msg-from">(unknown)</span></td>
+                <td class="numreplies">1</td><td class="lastreply">Sat, 14 Feb 2015 05:17:30 UTC<br/>
+                  by <span class="msg-from">Chris Jacobsen</span>
+                </td></tr>
+          
+        </tbody>
+      </table>
+    
+  </main>
+  <footer>
+    <p>Mailing list archive generated by <a href="https://mg.guelker.eu/projects/postkasten/">Postkasten</a>.</p>
+  </footer>
+</body>
+</html>

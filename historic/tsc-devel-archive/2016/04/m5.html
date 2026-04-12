@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8"/>
+  <title>[tsc-devel] [ANN] Schedule for the 2nd General Discussion · tsc-devel@secretchronicles.org</title>
+  <style type="text/css">html, body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial Nova", "Arial", sans-serif;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  margin: 0px;
+}
+
+a {
+  color: #0b8ae1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #520ebb;
+}
+
+header {
+  margin: 0px;
+  padding: 12px 6px;
+  background-color: #0b8ae1;
+}
+
+header ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header ul li::after {
+  margin-left: 8px;
+  content: "|";
+  margin-right: 8px;
+}
+
+header ul li:last-child::after {
+  content: "";
+  margin-right: 0px;
+}
+
+header a {
+  color: white;
+}
+
+header a:hover {
+  color: black;
+}
+
+footer {
+  border-top: 1px solid #999999;
+  color: #999999;
+  font-size: 0.8rem;
+  padding: 8px;
+  text-align: center;
+  clear: both;
+}
+
+footer p {
+  margin: 0px;
+}
+
+main {
+  margin: 8px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+h1.msg-subject {
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+h2, caption {
+  font-size: 1rem;
+}
+
+
+.msg-meta {
+  margin-top: 0px;
+}
+
+.msg-from {
+  font-weight: bold;
+}
+
+.msg-cc {
+  color: #e1730a;
+}
+
+.msg-attachments h2 {
+  font-style: italic;
+}
+
+table, tr, td, th {
+  border: none;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #eeeeee;
+}
+
+thead tr {
+  border-bottom: 1px solid black;
+}
+
+.newyear {
+  font-style: italic;
+  text-align: center;
+  font-weight: bold;
+}
+
+.numreplies {
+  text-align: center;
+}
+
+.thread-ghost {
+  font-style: italic;
+}
+
+.lastreply {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+pre, code {
+  font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+.msg-body {
+  width: 80ch;
+}
+
+.msg-quote {
+  color: #698900;
+  font-style: italic;
+}
+
+.msg-nav {
+  clear: both;
+}
+
+.msg-thread-nav {
+  width: calc(50% - 4px);
+}
+
+.msg-thread-nav-bydate {
+  float: right;
+}
+
+.msg-thread-nav-bythread {
+  float: left;
+}
+
+.msg-thread-nav table caption {
+  background-color: #0b8ae1;
+  color: white;
+  border: none;
+  caption-side: top;
+  text-align: center;
+  font-weight: bold;
+}
+
+.msg-thread-nav tbody tr td {
+  padding: 2px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.msg-thread-nav-bydate table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bydate table td:nth-child(1) {
+  width: 55%;
+
+}
+
+.msg-thread-nav-bydate table td:nth-child(2) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bydate table td:nth-child(3) {
+  width:20%;
+  text-align: right;
+}
+
+.msg-thread-nav-bydate table td:nth-child(4) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+
+.msg-thread-nav-bythread table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bythread table td:nth-child(1) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+.msg-thread-nav-bythread table td:nth-child(2) {
+  width: 20%;
+
+}
+
+.msg-thread-nav-bythread table td:nth-child(3) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bythread table td:nth-child(4) {
+  width:55%;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-0 {
+  padding-left: 0px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-1 {
+  padding-left: 32px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-2 {
+  padding-left: 64px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-3 {
+  padding-left: 96px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-4 {
+  padding-left: 128px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-5 {
+  padding-left: 160px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-6 {
+  padding-left: 192px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-7 {
+  padding-left: 224px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-8 {
+  padding-left: 256px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-9 {
+  padding-left: 288px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-10 {
+  padding-left: 320px;
+}
+
+.threadindex {
+    table-layout: fixed;
+}
+
+.threadindex th:nth-child(1) {
+    width: 78%;
+}
+
+.threadindex th:nth-child(2) {
+    text-align: center;
+    width: 7%;
+}
+
+.threadindex th:nth-child(3) {
+    width: 15%;
+}
+
+.formatted-patch .patch-add {
+  color: #00CC00;
+}
+
+.formatted-patch .patch-del {
+  color: #FF0000;
+}
+
+.formatted-patch .patch-pos {
+  color: #0000FF;
+  background-color: #ddddFF;
+}
+
+div.formatted-patch {
+  border: 1px solid black;
+}
+
+div.formatted-patch pre {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'Inconsolata', 'DejaVu Sans Mono', monospace;
+  margin: 0px;
+}
+
+
+div.formatted-patch pre.linenos {
+  background-color: #0b8ae1;
+  float: left;
+  padding-right: 4px;
+  text-align: right;
+  margin-right: 4px;
+}
+
+.linenos a {
+  color: white;
+}
+
+.linenos a:hover {
+  color: black;
+}
+
+.linenos a:target {
+  color: #8b000e;
+}
+
+tracker-placeholder {
+  display: none;
+}
+
+.tracker-state-change {
+  font-style: italic;
+  color: #e1730a;
+}
+
+.ticket-state {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.ticket-state-open {
+  color: #00CC00;
+}
+
+.ticket-state-confirmed {
+  color: #e1730a;
+}
+
+.ticket-state-closed {
+  color: #FF0000;
+}
+
+.tracker-panel {
+  width: 450px;
+  float: right;
+  margin: 8px;
+  padding: 0px;
+  border: 2px solid #0b8ae1;
+  text-align: center;
+}
+
+.tracker-panel h2 {
+  background-color: #0b8ae1;
+  color: white;
+  margin-top: 0px;
+}
+
+.tracker-panel ul {
+  padding: 0px 8px;
+  margin: 8px;
+  text-align: left;
+  list-style-type: none;
+}
+
+.tracker-table {
+  table-layout: fixed;
+}
+
+.tracker-table tbody td:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tracker-table thead th:nth-child(1) {
+  width: 60%;
+}
+
+.tracker-table thead th:nth-child(2) {
+  width: 13%;
+}
+
+.tracker-table thead th:nth-child(3) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(4) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(5) {
+  width: 7%;
+  text-align: center;
+}
+
+.tracker-table tbody td:nth-child(5) {
+  text-align: center;
+}
+
+#tracker-filter-subject {
+  width: calc(100% - 8px);
+}
+
+.filter-hide {
+  display: none;
+}
+
+@media(max-width: 768px) {
+
+  html, body {
+    font-size: 18px;
+  }
+
+  .lastreply {
+    display: none;
+  }
+
+  .msg-body {
+    width: initial;
+  }
+
+  .msg-thread-nav-bydate {
+    float: none;
+  }
+
+  .msg-thread-nav-bythread {
+    float: none;
+  }
+
+  .threadindex .lastreply {
+      display: none;
+      width: 0%;
+  }
+
+  .threadindex th:nth-child(1) {
+      width: 80%;
+  }
+
+  .threadindex th:nth-child(2) {
+      width: 20%;
+  }
+
+  .tracker-panel {
+    width: 95%;
+    margin: 0px auto;
+    float: none;
+  }
+
+  .tracker-table thead th:nth-child(1) {
+  width: 80%;
+  }
+
+  .tracker-table thead th:nth-child(2), .tracker-table tbody td:nth-child(2) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(3), .tracker-table tbody td:nth-child(3) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(4), .tracker-table tbody td:nth-child(4) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(5) {
+    width: 20%;
+  }
+}
+</style>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<header>
+<ul><li><a href="/historic/tsc-devel-archive/">tsc-devel@secretchronicles.org</a></li><li><a href="/historic/tsc-devel-archive/about.html">About</a></li></ul>
+</header>
+<main>
+<h1 class="msg-subject">[tsc-devel] [ANN] Schedule for the 2nd General Discussion</h1>
+<p class="msg-meta">
+  <span class="msg-from">Quintus</span> |
+
+ Sat, 02 Apr 2016 20:52:50 UTC
+</p>
+
+
+
+
+<div class="tracker-placeholder"></div>
+
+
+
+<pre class="msg-body">-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+      ************************************************************
+      *######################## 2nd #############################*
+      *######### G E N E R A L   D I S C U S S I O N ############*
+      *###### OF THE SECRETCHRONICCLES DEVELOPMENT TEAM #########*
+      ************************************************************
+
+                       - OFFICIAL ANNOUNCEMENT -
+                            April 2nd, 2016
+
+After the release of the 2.0.0 version after some years of development
+and fixing several amounts of legacy code we now stand before the
+decision to incorporate some kind of story into our favourite game. As
+of now several story suggestions have been made, but because no story
+guidelines have been decided on, they naturally diverge a lot. Likewise,
+we have not decided on what a consistent style of the game should look
+like, and what target age group TSC actually has. Answering these
+questions is the main goal of the 2nd General Discussion of the TSC
+team, which, interestingly, happens slightly more than one year after
+the 1st General Discussion (which was on 2015-03-21).
+
+Another topic focused on is our project infrastructure. It has been
+consent among the developers for a longer time that we ought to move off
+the GitHub platform and selfhost instead, but it is unclear which
+bugtracking software should be used. This will be decided on in this
+meeting as well.
+
+As a special celebration, we will vote on including two new members into
+the TSC core team.
+
+For further topics, please consult the schedule you find further below
+in this message.
+
+                      T I M E   A N D   P L A C E
+
+The discussion will be conducted in Internet Relay Chat (IRC). It will
+be held on:
+
+                            April 9th, 2016
+                              17:00:00 UTC
+
+The discussion will be held at the following place:
+
+                       #secretchronicles channel
+                          on chat.freenode.net
+
+It is highly recommended to install a real IRC client program to
+participate. Freenode provides a web chat functionality on their
+website[1], but it is known to frequently freeze, miss messages, abort
+the connection, be uncomfortable to use and may be under high load at
+any time. If you do not know which IRC client you should install, it
+is recommended to use the platform-independant HexChat program[2]. If
+you never used an IRC client before, it is recommended to experiment
+with it prior to the discussion. The channel will be open before the
+beginning of the discussion (it always is open) so you can try it out
+there and have some informal chatting.
+
+                 W H O   C A N   P A R T I C I P A T E
+
+Everyone is welcome in the discussion. You do not have to be a TSC
+team member to participate, but _if_ you are a TSC team member, you
+are urged to take part in the discussion.
+
+			  D O C U M E N T S
+
+In preparation of this General Discussion, some documents have been
+submitted. Documents are long texts with complex contents that you
+will *not* be able to quickly read through during the discussion
+itself, hence you have to read them in advance. The submitted
+documents are available online here:
+
+  <a href="https://github.com/Secretchronicles/documents/tree/master/gd/documents/pdf">https://github.com/Secretchronicles/documents/tree/master/gd/documents/pdf</a>
+
+Click the &#34;raw&#34; button in a document view to download it in PDF
+format.
+
+                           P R O C E D U R E
+
+The discussion will be opened by the project lead with a short
+introduction, then the discussion topics as outlined further below
+will be taken on one by one. Each topic is shortly introduced, then
+everyone is free to bring to public his point of view and/or arguments
+he deems especially important. IRC voicing will be used to ensure that
+during this presentation period the speaker is not interrupted and can
+fully concentrate on his arguments and presentation. Nobody is
+obligued to speak up, but when the discussion phase is entered later
+you will frequently be interrupted or otherwise be distracted by
+multiple lines of discussion. It is thus highly recommended that you
+bring up the points that are of importance for you during the
+presentation phase so you can be (relatively) sure everyone has
+recognised them.
+
+After the speaker has ended, a short question pause shall be held,
+which is not intended for deeper discussion. Use a command like
+“/query &lt;nick&gt; my question here” to submit a question while being
+devoiced to one of the discussion moderators (replace “&lt;nick&gt;” with
+the nick of the moderator). Questions can be submitted while the
+speaker is still talking, but will not be handled until he has
+ended. The question will be repeated to the public, and then the
+speaker has time to answer.
+
+The procedure is repeated for everyone who wants to present his view
+and/or main arguments on a topic. When all speakers are done,
+discussion phase is entered. In that phase, the voicing restriction is
+removed and open discussion can take place in any depth that is
+required.
+
+Ideally, the discussion phase ends with a consent that all TSC team
+members agree with, probably having to take back a few of his original
+points. A team agreement will most likely never be a one-fits-all
+result, but some kind of compromise, which is fine and intended. In
+case no consent/compromise can be found, a voting shall be held (see
+below).
+
+After the discussion result, be it achieved by consent or by voting,
+the topic is closed. If it is deemed useful, a break can be taken now
+(please tell the moderators if they don’t announce one and you need
+one, it is appreciated). After a possible break, the discussion
+continues with the next topic.
+
+                            S P E A K I N G
+
+Everyone is free to outline his views and arguments as explained in
+the previous section. To allow all participants to estimate the
+duration of the whole event, it is recommended though not required to
+announce your intention to speak to the project lead. Either email
+&lt;…s@q…&gt;, or post to the mailinglist or web
+forum. You do not have to disclose what you are going to say, just
+announce you would like to make your position clear. You will be added
+to the list of speakers on the online site of the event[3].
+
+You don’t have to hold a great speech as already described. Come to
+the point and outline your arguments and views. However, it is
+certainly useful to prepare yourself a bit.
+
+If all of a sudden it overcomes you to speak on a topic during the
+discussion, please use a command like “/query &lt;nick&gt; I want to speak
+on &lt;insert topic&gt;!” to send a PM to one of the discussion moderators
+(replace “&lt;nick&gt;” with the name of the moderator) who can then
+arrange it.
+
+The order of all announced speakers is determined by means of the True
+Random Number Generator available at &lt;<a href="https://www.random.org/lists/">https://www.random.org/lists/</a>&gt;
+separately for each topic after the deadline has passed (see
+below). See their main website[4] for further information on why this
+is _really_ random). Speakers who were not announced previously and
+told the moderators as mentioned above will speak after the announced
+speakers in the order their presentation requests were received.
+
+There is no hard time limit for any presentation, but excessively long
+monologues tend to get boring sooner or later, so you should try to
+come to the point without narrating the Neverending Story (which is a
+very good book by the way).
+
+furbot is available during presentation phase, so you can post links
+which will be subtitled automatically and make use of all other
+features furbot has available. furbot will also log as usual to the
+public channel log[5] in case you experience a network outage.
+
+You can also make use of IRC color codes to emphasize or explain stuff
+if you deem that useful. Please read up in your IRC client’s manual on
+how to enter these color codes.
+
+If you want to show code snippets or long blocks of texts, please do
+not post them into the channel directly. You may get flood-blocked by
+the IRC server if you do, and it is hard to read for the other
+participants. Instead, use an online pasting service of your choice;
+if you intend to post source code, please use a pasting service that
+supports code highlighting. In case you don’t know one, you can use
+the CodeRay library’s online pasting service[6], which supports
+highlighting a good number of programming languages and plain text
+(i.e. no highlighting). Post the resulting URL into the channel
+instead of your raw code then. This goes for non-speakers in the
+discussion phase as well.
+
+                           O F F - T O P I C
+
+During the presentation phase everyone but the speaker and the
+moderators (and furbot) are devoiced and thus can’t speak in the
+channel. This is so that the speaker doesn’t have to fear to be
+interrupted during his presentation. You can join the channel
+##secretchronicles-ot (note two # signs) for any off-topic discussion
+while someone speaks or doesn’t, but note that if someone strains
+himself with explaining his view to you, you should listen to him
+rather than post cat videos in the off-topic channel.
+
+                      V O T I N G   P R O C E S S
+
+The voting process’ legal framework is formed by the Secretchronicles
+Project’s voting rules[7] (VotR). This is the detailed description as
+per §8 VotR:
+
+Each vote on the schedule is called for in chat by the moderator. He
+announces the voting options and then asks whether a covert vote is
+requested (see below). If no such request is made, everybody votes by
+posting &#34;I vote &lt;option number&gt;&#34; or &#34;I abstain&#34;. The moderator then
+closes the voting window, counts the votes, and declares the result.
+
+A covert vote is a measure to prevent social conflicts. Only request
+one if you really deem it necessary; any such request must be honoured
+as per the voting rules. In covert voting everybody receives by email a
+cryptographically signed voting permission containing a unique character
+combination. Place it in a text file together with the option you vote
+for and upload that one to the service that will listen on
+<a href="http://alexandria.secretchronicles.de:5555.">http://alexandria.secretchronicles.de:5555.</a> On
+<a href="http://alexandria.secretchronicles.de:5555/results">http://alexandria.secretchronicles.de:5555/results</a> you will be able to
+see the results.
+
+                 D I S C U S S I O N   S C H E D U L E
+
+- -- Block I: Introduction --
+
+1. Introduction, Greetings, Explanation of How It Works
+
+- -- Block II: Organisational --
+
+2. Voting Rules changes voting
+3. Team membership votings
+
+- -- Block III: Project infrastructure --
+
+4. Bugtracker software
+5. Translation software
+
+15-minute break
+
+- -- Block IV: Game content --
+
+6. Audience + Target Age Group
+7. Depth of Story
+8. Themes
+9. Level of Cuteness
+
+15-minute break
+
+10. Narration, cinematic scenes, and story formatted text
+
+- -- Block V: Game Mechanics --
+
+11. Life energy system
+12. GUI system to use (CEGUI / SFGUI)
+
+- -- Block VI: Closing --
+
+13. Closing
+
+1. Introduction
+°°°°°°°°°°°°°°°
+
+The moderator will open the discussion and explain the main points of
+what has been outlined in this document. IRC voicing is explained. Then
+discussion starts with the first topic below.
+
+2. Voting Rules changes voting
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+
+Proponents: Quintus and datahead
+
+Speakers: (none)
+
+If it has not already been completed on the mailinglist, we will vote on
+the acceptance of the new voting rules.
+
+3. Team membership votings
+°°°°°°°°°°°°°°°°°°°°°°°°°°
+
+Proponent: datahead
+
+Speakers: (none)
+
+We will vote on the addition of skarfester and kirbyfan to the TSC core
+team.
+
+4. Bugtracker software
+°°°°°°°°°°°°°°°°°°°°°°
+
+Proponents: Quintus and xet7
+
+Speakers: Quintus, xet7
+
+Since we want to move off GitHub, it needs to be determined where to
+move to. In this topic we will be discussing the different alternatives
+and decide on which one to host on alexandria.
+
+5. Translation software
+°°°°°°°°°°°°°°°°°°°°°°°
+
+Proponent: datahead
+
+Speakers: (none)
+
+This topic has already been on the last GD’s schedule without
+result. The conflict mainly cycles around the question whether the
+proprietary Transifex website is a tool we should endorse by using it for
+TSC.
+
+6. Audience + Target Age Group
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+
+Proponent: datahead
+Speakers: datahead, Quintus
+
+Old SMC was mainly perceived as a children’s game, and TSC currently
+still is. It has long been in the discussion to introduce a story into
+the game and make the levels (and styling) fit that story. However, a
+story greatly depends on which target age group is focused, as young
+children often have problems following a complex story. This topic is
+thus to decide which target age group to focus on.
+
+7. Depth of Story
+°°°°°°°°°°°°°°°°°
+
+Proponent: datahead
+Speakers: datahead, Quintus
+
+Likewise, once the target group is defined, we need to define the
+depth of the story. Even for adults, different levels of story depths
+are enjoyable.
+
+8. Themes
+°°°°°°°°°
+
+Proponent: datahead
+Speakers: datahead, Quintus
+
+Once the general direction of the story is decided on, we ought to
+find guidelines for theming to use. Repeatedly suggested have been
+Shakespeare quotes and Food theming. There might also be other themes,
+which to discover this topic is set out to.
+
+9. Level of Cuteness
+°°°°°°°°°°°°°°°°°°°°
+
+Proponent: datahead
+Speakers: datahead, Bugsbane
+
+This is a topic specifically directed at the graphical appearance of
+TSC, which currently has a rather cute and inconsistent style. When
+fixing the styling, we need to determine how cute the result shall be,
+which is at least partly depandant on the kind of story the game is
+heading for.
+
+10. Narration, cinematic scenes, and story formatted text
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+
+Proponent: datahead
+Speakers: datahead
+
+Whatever the story might be, it needs to be conveyed. It has been
+discussed to use voice narration, cut scenes, text boxes, and a kind
+of visual novel without texts.
+
+11. Life energy system
+°°°°°°°°°°°°°°°°°°°°°°
+
+Proponent: datahead
+Speakers: (none)
+
+The current life and powerup system in TSC is basically still what the
+Super Mario games use. In an effort to depart from this heritage, we
+intend to move to another system based on hitpoints, life bars, or
+similar. Other suggestions are welcome and are to be discussed in this
+topic.
+
+12. GUI system to use (CEGUI / SFGUI)
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+
+Proponent: lambda
+Speakers: (none)
+
+Currently TSC depends on CEGUI 0.7.9. This is clearly
+undesirable. Shall we upgrade to CEGUI 0.8.x or move away from it
+entirely and instead employ SFGUI?
+
+13. Closing
+°°°°°°°°°°°
+
+Finishing of the discussion.
+
+                           F O O T N O T E S
+
+
+[1]: <a href="https://webchat.freenode.net/">https://webchat.freenode.net/</a>
+[2]: <a href="https://hexchat.github.io/">https://hexchat.github.io/</a>
+[3]: <a href="http://team.secretchronicles.de/~quintus/general-discussions/2nd-general-discussion.txt">http://team.secretchronicles.de/~quintus/general-discussions/2nd-general-discussion.txt</a>
+[4]: <a href="https://www.random.org/">https://www.random.org/</a>
+[5]: <a href="http://chatlogs.secretchronicles.de/">http://chatlogs.secretchronicles.de/</a>
+[6]: <a href="http://coderay.rubychan.de/rays">http://coderay.rubychan.de/rays</a>
+[7]: <a href="https://github.com/Secretchronicles/documents/raw/master/votingrules/votingrules-2015-08-15.pdf">https://github.com/Secretchronicles/documents/raw/master/votingrules/votingrules-2015-08-15.pdf</a>
+
+- -- 
+#!/sbin/quintus
+Blog: <a href="http://www.guelkerdev.de">http://www.guelkerdev.de</a>
+
+GnuPG key: F1D8799FBCC8BC4F
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v2
+
+iQEcBAEBCAAGBQJXADDoAAoJEPHYeZ+8yLxPsEEH/jM/LBZdhTDtNE7JFb+In1x0
+L47RKpeQ2RYQPa9bgnSzCSRFqyMyyVxTUv3JVdiCDjWNZs6VSKFXv3SVj9p6jL6o
+IDNH0TG0swc8nKlKoPgJoPVaZX64Q0dog72WgROrxDnQTs/JNOrnQEF6mTksoLE/
+8Hoit2C8vd1+jaNGjC+zxyUJbj5di+cwvI74o9hjiw0Pu/cbDYiwTdeubCL9hIyv
+u6vuNSvHePeKZ5no2TiAt0eGYPW9zJweskTcNeEyFvRuZXLp/PjIVKNpkujL7T3s
+mpB69FNSDc/cxYRHAB7N8mRCfUoaL0I82fv4tOePw1D5bN4Me+k2bX1GBbOTYc8=
+=mbM5
+-----END PGP SIGNATURE-----
+
+</pre>
+
+
+
+<div class="msg-nav">
+<div class="msg-thread-nav msg-thread-nav-bythread">
+<table>
+<caption>By Thread</caption>
+<tbody>
+<tr><td>▶</td><td>2016-04-02 20:52:50</td><td>Quintus</td><td class="msg-thread-level-0"><a href="/historic/tsc-devel-archive/2016/04/m5.html">[tsc-devel] [ANN] Schedule for the 2nd General Discussion</a></td></tr>
+
+</tbody>
+</table>
+</div>
+<div class="msg-thread-nav msg-thread-nav-bydate">
+<table>
+<caption>By Date</caption>
+<tbody>
+
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/04/m5.html">[tsc-devel] [ANN] Schedule for the 2nd General Discussion</a></td><td>Quintus</td><td>2016-04-02 20:52:50</td><td class="msg-here">◀</td></tr>
+
+</tbody>
+</table>
+</div>
+</div>
+
+</main>
+<footer>
+<p>Mailing list archive generated by <a href="https://mg.guelker.eu/projects/postkasten/">Postkasten</a>.</p>
+</footer>
+</body>
+</html>

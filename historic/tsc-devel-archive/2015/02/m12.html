@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8"/>
+  <title>[tsc-devel] Re: Secret Chronicles Music... · tsc-devel@secretchronicles.org</title>
+  <style type="text/css">html, body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial Nova", "Arial", sans-serif;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  margin: 0px;
+}
+
+a {
+  color: #0b8ae1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #520ebb;
+}
+
+header {
+  margin: 0px;
+  padding: 12px 6px;
+  background-color: #0b8ae1;
+}
+
+header ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header ul li::after {
+  margin-left: 8px;
+  content: "|";
+  margin-right: 8px;
+}
+
+header ul li:last-child::after {
+  content: "";
+  margin-right: 0px;
+}
+
+header a {
+  color: white;
+}
+
+header a:hover {
+  color: black;
+}
+
+footer {
+  border-top: 1px solid #999999;
+  color: #999999;
+  font-size: 0.8rem;
+  padding: 8px;
+  text-align: center;
+  clear: both;
+}
+
+footer p {
+  margin: 0px;
+}
+
+main {
+  margin: 8px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+h1.msg-subject {
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+h2, caption {
+  font-size: 1rem;
+}
+
+
+.msg-meta {
+  margin-top: 0px;
+}
+
+.msg-from {
+  font-weight: bold;
+}
+
+.msg-cc {
+  color: #e1730a;
+}
+
+.msg-attachments h2 {
+  font-style: italic;
+}
+
+table, tr, td, th {
+  border: none;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #eeeeee;
+}
+
+thead tr {
+  border-bottom: 1px solid black;
+}
+
+.newyear {
+  font-style: italic;
+  text-align: center;
+  font-weight: bold;
+}
+
+.numreplies {
+  text-align: center;
+}
+
+.thread-ghost {
+  font-style: italic;
+}
+
+.lastreply {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+pre, code {
+  font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+.msg-body {
+  width: 80ch;
+}
+
+.msg-quote {
+  color: #698900;
+  font-style: italic;
+}
+
+.msg-nav {
+  clear: both;
+}
+
+.msg-thread-nav {
+  width: calc(50% - 4px);
+}
+
+.msg-thread-nav-bydate {
+  float: right;
+}
+
+.msg-thread-nav-bythread {
+  float: left;
+}
+
+.msg-thread-nav table caption {
+  background-color: #0b8ae1;
+  color: white;
+  border: none;
+  caption-side: top;
+  text-align: center;
+  font-weight: bold;
+}
+
+.msg-thread-nav tbody tr td {
+  padding: 2px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.msg-thread-nav-bydate table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bydate table td:nth-child(1) {
+  width: 55%;
+
+}
+
+.msg-thread-nav-bydate table td:nth-child(2) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bydate table td:nth-child(3) {
+  width:20%;
+  text-align: right;
+}
+
+.msg-thread-nav-bydate table td:nth-child(4) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+
+.msg-thread-nav-bythread table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bythread table td:nth-child(1) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+.msg-thread-nav-bythread table td:nth-child(2) {
+  width: 20%;
+
+}
+
+.msg-thread-nav-bythread table td:nth-child(3) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bythread table td:nth-child(4) {
+  width:55%;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-0 {
+  padding-left: 0px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-1 {
+  padding-left: 32px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-2 {
+  padding-left: 64px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-3 {
+  padding-left: 96px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-4 {
+  padding-left: 128px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-5 {
+  padding-left: 160px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-6 {
+  padding-left: 192px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-7 {
+  padding-left: 224px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-8 {
+  padding-left: 256px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-9 {
+  padding-left: 288px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-10 {
+  padding-left: 320px;
+}
+
+.threadindex {
+    table-layout: fixed;
+}
+
+.threadindex th:nth-child(1) {
+    width: 78%;
+}
+
+.threadindex th:nth-child(2) {
+    text-align: center;
+    width: 7%;
+}
+
+.threadindex th:nth-child(3) {
+    width: 15%;
+}
+
+.formatted-patch .patch-add {
+  color: #00CC00;
+}
+
+.formatted-patch .patch-del {
+  color: #FF0000;
+}
+
+.formatted-patch .patch-pos {
+  color: #0000FF;
+  background-color: #ddddFF;
+}
+
+div.formatted-patch {
+  border: 1px solid black;
+}
+
+div.formatted-patch pre {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'Inconsolata', 'DejaVu Sans Mono', monospace;
+  margin: 0px;
+}
+
+
+div.formatted-patch pre.linenos {
+  background-color: #0b8ae1;
+  float: left;
+  padding-right: 4px;
+  text-align: right;
+  margin-right: 4px;
+}
+
+.linenos a {
+  color: white;
+}
+
+.linenos a:hover {
+  color: black;
+}
+
+.linenos a:target {
+  color: #8b000e;
+}
+
+tracker-placeholder {
+  display: none;
+}
+
+.tracker-state-change {
+  font-style: italic;
+  color: #e1730a;
+}
+
+.ticket-state {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.ticket-state-open {
+  color: #00CC00;
+}
+
+.ticket-state-confirmed {
+  color: #e1730a;
+}
+
+.ticket-state-closed {
+  color: #FF0000;
+}
+
+.tracker-panel {
+  width: 450px;
+  float: right;
+  margin: 8px;
+  padding: 0px;
+  border: 2px solid #0b8ae1;
+  text-align: center;
+}
+
+.tracker-panel h2 {
+  background-color: #0b8ae1;
+  color: white;
+  margin-top: 0px;
+}
+
+.tracker-panel ul {
+  padding: 0px 8px;
+  margin: 8px;
+  text-align: left;
+  list-style-type: none;
+}
+
+.tracker-table {
+  table-layout: fixed;
+}
+
+.tracker-table tbody td:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tracker-table thead th:nth-child(1) {
+  width: 60%;
+}
+
+.tracker-table thead th:nth-child(2) {
+  width: 13%;
+}
+
+.tracker-table thead th:nth-child(3) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(4) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(5) {
+  width: 7%;
+  text-align: center;
+}
+
+.tracker-table tbody td:nth-child(5) {
+  text-align: center;
+}
+
+#tracker-filter-subject {
+  width: calc(100% - 8px);
+}
+
+.filter-hide {
+  display: none;
+}
+
+@media(max-width: 768px) {
+
+  html, body {
+    font-size: 18px;
+  }
+
+  .lastreply {
+    display: none;
+  }
+
+  .msg-body {
+    width: initial;
+  }
+
+  .msg-thread-nav-bydate {
+    float: none;
+  }
+
+  .msg-thread-nav-bythread {
+    float: none;
+  }
+
+  .threadindex .lastreply {
+      display: none;
+      width: 0%;
+  }
+
+  .threadindex th:nth-child(1) {
+      width: 80%;
+  }
+
+  .threadindex th:nth-child(2) {
+      width: 20%;
+  }
+
+  .tracker-panel {
+    width: 95%;
+    margin: 0px auto;
+    float: none;
+  }
+
+  .tracker-table thead th:nth-child(1) {
+  width: 80%;
+  }
+
+  .tracker-table thead th:nth-child(2), .tracker-table tbody td:nth-child(2) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(3), .tracker-table tbody td:nth-child(3) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(4), .tracker-table tbody td:nth-child(4) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(5) {
+    width: 20%;
+  }
+}
+</style>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<header>
+<ul><li><a href="/historic/tsc-devel-archive/">tsc-devel@secretchronicles.org</a></li><li><a href="/historic/tsc-devel-archive/about.html">About</a></li></ul>
+</header>
+<main>
+<h1 class="msg-subject">[tsc-devel] Re: Secret Chronicles Music...</h1>
+<p class="msg-meta">
+  <span class="msg-from">Chris Jacobsen</span> |
+
+ Mon, 02 Feb 2015 18:05:39 UTC
+</p>
+
+
+
+
+<div class="tracker-placeholder"></div>
+
+
+
+<pre class="msg-body">Okay, thanks for clarifying on the Pangeo soundtracks.  We won&#39;t use them without your permission.
+We&#39;d definitely be up for more music if you can compose it.  A similar sound to the Pangeo soundtracks sounds like a good idea.  If you are composing a replacement for the Mario tracks, just be sure to make sure the new music should work as a replacement.  I&#39;ll continue to discuss the other songs on soundcloud with the team and see if we can reach agreement on some more posted songs we can use in the game.  Some of the team members have been out, so when they are available again, it will help with this discussion.
+
+By the way, we may have found a replacement for the Bob-Omb battlefield song.  We already have a replacement for the Mario dying music, though we can&#39;t get a license confirmation at the moment in order to use that one.  We have a possible submission for a Vanilla Dome replacement, but it was composed as an underground song whereas the Mario remix was used above ground.  Thus we may have to seek out another replacement --- we&#39;re still discussing that one.  The remaining two of the original 5 songs are still open for replacements.
+We&#39;ll also gladly accept new music that does not consitute a Mario music replacement -- it will help build our story and game experience.
+Yes, I think the forums are the best way to submit music if you can.  It turned out I wasn&#39;t suggesting the best license for email confirmations.  Using the forums avoids confusion like this.  We&#39;d be glad to work with you, though, to find an easy solution to confirm licensing.
+-datahead
+
+
+     On Monday, February 2, 2015 8:29 AM, Brett Cahill &lt;…s@l…&gt; wrote:
+   
+
+ #yiv3716028067 #yiv3716028067 --.yiv3716028067hmmessage P{margin:0px;padding:0px;}#yiv3716028067 body.yiv3716028067hmmessage{font-size:12pt;font-family:Calibri;}#yiv3716028067 Hey,
+
+Unfortunately I can&#39;t let you use the Pangeo soundtracks, but the others you mentioned are fine. I can also create something with a similar sound if that&#39;s what you want. I&#39;ll give the permission to use the music via the forum link you posted.
+
+Regards,
+Brett
+
+Date: Sun, 1 Feb 2015 05:31:07 +0000
+From: …9@y…
+To: …s@l…; …l@l…
+Subject: Re: Secret Chronicles Music...
+
+Brett,
+We&#39;ve been discussing your music that is posted on soundcloud.  Here are the ones that the team is interested in using:* Steady Tension - A suspenseful interlude for a cinematic scene -- we don&#39;t have direct support for cinematic scenes, but getting some music in the game would pave the way for this* Cinematic Entrance - This could work for a cinematic scene with a major villain approaching
+We also liked these songs.  They are already used in the Pangeo game, so we will need to talk some more amongst ourselves before adding them (assuming you are good with this).* Pangeo Winter - We could use another ice level song* Pangeo Water - Either underwater music or underground music.  We don&#39;t have support for underwater levels, but adding music might encourage some programmers :)* Pangeo Toxic Biome - Might work well for an enemy fortress where there is a bit of a covert mission feel
+As I said, your music has a good style.  More requested songs should come out of further discussions.  Some of the team members have been unavailable for these discussions recently.  Combat and General Fischer are examples of songs I&#39;m interested in.  Let us know if you you compose any new replacements.  We just got a submission from Patrick Friel for a possible Vanilla Dome replacement, but it probably will end up being used as a brand new underground song instead (because the Vanilla Dome music is used in overworld levels).
+
+In order for us to use any song, you must confirm that we have permission to use it and state the license.  We usually use CC-By-SA-4.0 now, but you can also request that only we use the song with an exclusive license.  Alternatively, you can post on <a href="http://forum.secretchronicles.de/forums">http://forum.secretchronicles.de/forums</a>, in which case it will default to a CC-By-SA-4.0 license unless you state in your post that you are not giving us the music for the game or that you want to use a different license.  I know licensing can be a pain, but copyright issues have caused us problems before (even though we&#39;re an open source game).
+--datahead   
+
+     On Saturday, January 17, 2015 11:31 AM, Chris Jacobsen &lt;…9@y…&gt; wrote:
+   
+
+ Okay, thanks Brett.
+ 
+
+     On Saturday, January 17, 2015 5:32 AM, Brett &lt;…s@l…&gt; wrote:
+   
+
+ Hey again, Just to clarify, all of the pangeo uploads play through the loop twice so you do hear it repeat from the start about half way through with all of them. It&#39;s just that I didn&#39;t want them to end abruptly on soundcloud. I&#39;ll let you know later which song I pick. Sent from my Sony Xperia™ smartphone
+
+---- Chris Jacobsen wrote ----
+
+Okay, that&#39;d be really good.  If you can let me know which song you choose to work on, it&#39;ll really help to coordinate with the team.  I&#39;m looking forward to hearing it.
+The Pango Introduction (Loop) seems to have an ending, playing a last note and fading out.  This doesn&#39;t seem to be a loop, though it&#39;s a little hard to tell because soundcloud jumps to the next song when it finishes.
+Thank you,
+Chris
+
+
+
+
+ 
+
+     On Friday, January 16, 2015 7:49 AM, Brett Cahill &lt;…s@l…&gt; wrote:
+   
+
+ #yiv3716028067 #yiv3716028067 --.yiv3716028067ExternalClass #yiv3716028067ecxyiv9861888265 body.yiv3716028067ecxyiv9861888265hmmessage {font-size:12pt;font-family:Calibri;}#yiv3716028067 Hey there,
+
+Thanks for the response,
+If it would work for you, I could go over one of the mario songs from the list and come up with something more orchestral sounding, but influenced by the particular mario song. That way, you still get the same feel and hopefully triggers a connection between the two. Obviously though, it will be a different song and not a copy.
+
+In terms of making loops, I don&#39;t have a problem with that. If you look at this playlist: <a href="https://soundcloud.com/in-contrast/sets/pangeo">https://soundcloud.com/in-contrast/sets/pangeo</a>
+
+All of the compositions there are loops, so I should be able to make more loopable music for you :)
+
+Let me know if this sounds good to you,
+
+Regards,
+Brett
+
+Date: Fri, 16 Jan 2015 05:13:27 +0000
+From: …9@y…
+To: …s@l…
+CC: …l@l…
+Subject: Secret Chronicles Music...
+
+incontrast, I had replied to you on Game Jolt, but I figured I should reply by email, too.
+
+Usually Secret Chronicles doesn&#39;t really use a retro style for music.  Even the 2D images tend to try and simulate 3D lighting in some way.  Your orchestral sound could work really well in the game.  We&#39;ve been working on a new draft of the story and are wanting to eventually add cinematic scenes (using sprites) to the game.  Cinematic orchestral music will really work well with these goals.  I especially enjoyed your combat piece -- it was well composed. We actually do a have a military theme song task (<a href="https://github.com/Secretchronicles/TSC/issues/239">https://github.com/Secretchronicles/TSC/issues/239</a>).  The big priority right now is, of course, knocking out the Mario remixes for the release.  Ideally replacements would have the same feel or elicit the same reaction from people when they listen to them but would not sound at all like Mario music.  Generally level music needs to be loopable.
+ If you start on something, let us know if you could so that we can keep track of work being done.  Someone else just responded to the game jolt posting and created a dying music replacement, but the other songs are still pending at the moment.  We also could try an iterative approach, listening to each version as it&#39;s further developed, but it&#39;s up to you what work style works best for you.
+-Chris (I also go by datahead)...
+ 
+
+    
+
+    
+
+     
+
+</pre>
+
+
+
+<div class="msg-nav">
+<div class="msg-thread-nav msg-thread-nav-bythread">
+<table>
+<caption>By Thread</caption>
+<tbody>
+<tr><td>▶</td><td>2015-02-02 18:05:39</td><td>Chris Jacobsen</td><td class="msg-thread-level-0"><a href="/historic/tsc-devel-archive/2015/02/m12.html">[tsc-devel] Re: Secret Chronicles Music...</a></td></tr>
+<tr><td></td><td>2015-02-25 18:27:02</td><td>Chris Jacobsen</td><td class="msg-thread-level-1"><a href="/historic/tsc-devel-archive/2015/02/m55.html">[tsc-devel] Re: Secret Chronicles Music...</a></td></tr>
+
+</tbody>
+</table>
+</div>
+<div class="msg-thread-nav msg-thread-nav-bydate">
+<table>
+<caption>By Date</caption>
+<tbody>
+
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/02/m12.html">[tsc-devel] Re: Secret Chronicles Music...</a></td><td>Chris Jacobsen</td><td>2015-02-02 18:05:39</td><td class="msg-here">◀</td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/02/m55.html">[tsc-devel] Re: Secret Chronicles Music...</a></td><td>Chris Jacobsen</td><td>2015-02-25 18:27:02</td><td class="msg-here"></td></tr>
+
+</tbody>
+</table>
+</div>
+</div>
+
+</main>
+<footer>
+<p>Mailing list archive generated by <a href="https://mg.guelker.eu/projects/postkasten/">Postkasten</a>.</p>
+</footer>
+</body>
+</html>

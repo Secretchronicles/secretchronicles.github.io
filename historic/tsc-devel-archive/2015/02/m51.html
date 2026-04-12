@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Re: [tsc-devel] Backward compatibility and 2.x / 3.x series · tsc-devel@secretchronicles.org</title>
+  <style type="text/css">html, body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial Nova", "Arial", sans-serif;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  margin: 0px;
+}
+
+a {
+  color: #0b8ae1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #520ebb;
+}
+
+header {
+  margin: 0px;
+  padding: 12px 6px;
+  background-color: #0b8ae1;
+}
+
+header ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header ul li::after {
+  margin-left: 8px;
+  content: "|";
+  margin-right: 8px;
+}
+
+header ul li:last-child::after {
+  content: "";
+  margin-right: 0px;
+}
+
+header a {
+  color: white;
+}
+
+header a:hover {
+  color: black;
+}
+
+footer {
+  border-top: 1px solid #999999;
+  color: #999999;
+  font-size: 0.8rem;
+  padding: 8px;
+  text-align: center;
+  clear: both;
+}
+
+footer p {
+  margin: 0px;
+}
+
+main {
+  margin: 8px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+h1.msg-subject {
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+h2, caption {
+  font-size: 1rem;
+}
+
+
+.msg-meta {
+  margin-top: 0px;
+}
+
+.msg-from {
+  font-weight: bold;
+}
+
+.msg-cc {
+  color: #e1730a;
+}
+
+.msg-attachments h2 {
+  font-style: italic;
+}
+
+table, tr, td, th {
+  border: none;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #eeeeee;
+}
+
+thead tr {
+  border-bottom: 1px solid black;
+}
+
+.newyear {
+  font-style: italic;
+  text-align: center;
+  font-weight: bold;
+}
+
+.numreplies {
+  text-align: center;
+}
+
+.thread-ghost {
+  font-style: italic;
+}
+
+.lastreply {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+pre, code {
+  font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+.msg-body {
+  width: 80ch;
+}
+
+.msg-quote {
+  color: #698900;
+  font-style: italic;
+}
+
+.msg-nav {
+  clear: both;
+}
+
+.msg-thread-nav {
+  width: calc(50% - 4px);
+}
+
+.msg-thread-nav-bydate {
+  float: right;
+}
+
+.msg-thread-nav-bythread {
+  float: left;
+}
+
+.msg-thread-nav table caption {
+  background-color: #0b8ae1;
+  color: white;
+  border: none;
+  caption-side: top;
+  text-align: center;
+  font-weight: bold;
+}
+
+.msg-thread-nav tbody tr td {
+  padding: 2px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.msg-thread-nav-bydate table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bydate table td:nth-child(1) {
+  width: 55%;
+
+}
+
+.msg-thread-nav-bydate table td:nth-child(2) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bydate table td:nth-child(3) {
+  width:20%;
+  text-align: right;
+}
+
+.msg-thread-nav-bydate table td:nth-child(4) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+
+.msg-thread-nav-bythread table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bythread table td:nth-child(1) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+.msg-thread-nav-bythread table td:nth-child(2) {
+  width: 20%;
+
+}
+
+.msg-thread-nav-bythread table td:nth-child(3) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bythread table td:nth-child(4) {
+  width:55%;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-0 {
+  padding-left: 0px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-1 {
+  padding-left: 32px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-2 {
+  padding-left: 64px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-3 {
+  padding-left: 96px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-4 {
+  padding-left: 128px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-5 {
+  padding-left: 160px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-6 {
+  padding-left: 192px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-7 {
+  padding-left: 224px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-8 {
+  padding-left: 256px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-9 {
+  padding-left: 288px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-10 {
+  padding-left: 320px;
+}
+
+.threadindex {
+    table-layout: fixed;
+}
+
+.threadindex th:nth-child(1) {
+    width: 78%;
+}
+
+.threadindex th:nth-child(2) {
+    text-align: center;
+    width: 7%;
+}
+
+.threadindex th:nth-child(3) {
+    width: 15%;
+}
+
+.formatted-patch .patch-add {
+  color: #00CC00;
+}
+
+.formatted-patch .patch-del {
+  color: #FF0000;
+}
+
+.formatted-patch .patch-pos {
+  color: #0000FF;
+  background-color: #ddddFF;
+}
+
+div.formatted-patch {
+  border: 1px solid black;
+}
+
+div.formatted-patch pre {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'Inconsolata', 'DejaVu Sans Mono', monospace;
+  margin: 0px;
+}
+
+
+div.formatted-patch pre.linenos {
+  background-color: #0b8ae1;
+  float: left;
+  padding-right: 4px;
+  text-align: right;
+  margin-right: 4px;
+}
+
+.linenos a {
+  color: white;
+}
+
+.linenos a:hover {
+  color: black;
+}
+
+.linenos a:target {
+  color: #8b000e;
+}
+
+tracker-placeholder {
+  display: none;
+}
+
+.tracker-state-change {
+  font-style: italic;
+  color: #e1730a;
+}
+
+.ticket-state {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.ticket-state-open {
+  color: #00CC00;
+}
+
+.ticket-state-confirmed {
+  color: #e1730a;
+}
+
+.ticket-state-closed {
+  color: #FF0000;
+}
+
+.tracker-panel {
+  width: 450px;
+  float: right;
+  margin: 8px;
+  padding: 0px;
+  border: 2px solid #0b8ae1;
+  text-align: center;
+}
+
+.tracker-panel h2 {
+  background-color: #0b8ae1;
+  color: white;
+  margin-top: 0px;
+}
+
+.tracker-panel ul {
+  padding: 0px 8px;
+  margin: 8px;
+  text-align: left;
+  list-style-type: none;
+}
+
+.tracker-table {
+  table-layout: fixed;
+}
+
+.tracker-table tbody td:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tracker-table thead th:nth-child(1) {
+  width: 60%;
+}
+
+.tracker-table thead th:nth-child(2) {
+  width: 13%;
+}
+
+.tracker-table thead th:nth-child(3) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(4) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(5) {
+  width: 7%;
+  text-align: center;
+}
+
+.tracker-table tbody td:nth-child(5) {
+  text-align: center;
+}
+
+#tracker-filter-subject {
+  width: calc(100% - 8px);
+}
+
+.filter-hide {
+  display: none;
+}
+
+@media(max-width: 768px) {
+
+  html, body {
+    font-size: 18px;
+  }
+
+  .lastreply {
+    display: none;
+  }
+
+  .msg-body {
+    width: initial;
+  }
+
+  .msg-thread-nav-bydate {
+    float: none;
+  }
+
+  .msg-thread-nav-bythread {
+    float: none;
+  }
+
+  .threadindex .lastreply {
+      display: none;
+      width: 0%;
+  }
+
+  .threadindex th:nth-child(1) {
+      width: 80%;
+  }
+
+  .threadindex th:nth-child(2) {
+      width: 20%;
+  }
+
+  .tracker-panel {
+    width: 95%;
+    margin: 0px auto;
+    float: none;
+  }
+
+  .tracker-table thead th:nth-child(1) {
+  width: 80%;
+  }
+
+  .tracker-table thead th:nth-child(2), .tracker-table tbody td:nth-child(2) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(3), .tracker-table tbody td:nth-child(3) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(4), .tracker-table tbody td:nth-child(4) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(5) {
+    width: 20%;
+  }
+}
+</style>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<header>
+<ul><li><a href="/historic/tsc-devel-archive/">tsc-devel@secretchronicles.org</a></li><li><a href="/historic/tsc-devel-archive/about.html">About</a></li></ul>
+</header>
+<main>
+<h1 class="msg-subject">Re: [tsc-devel] Backward compatibility and 2.x / 3.x series</h1>
+<p class="msg-meta">
+  <span class="msg-from">Chris Jacobsen</span> |
+
+ Sun, 22 Feb 2015 23:42:20 UTC
+</p>
+
+
+
+
+<div class="tracker-placeholder"></div>
+
+
+
+<pre class="msg-body">Here&#39;s a little bit different option than what we&#39;ve discussed:
+
+A Different Possible Work Flow:* Sydney works on the moon replacement.  We would focus on just getting something reasonable -- shading, shape, etc.  Speed is important here.
+* Bugsbane works on a Turtle Boss replacement.  We ask him to just come up with something &#34;that works&#34; for now and do the really good replacement later.  This is done in parallel.
+    * He also might look into resizing some of the existing army SVG sprites into Army boss sprites.  There may not be a 1:1 correspondence, in which case gaps would need to be filled.
+* We continue following up on Johan&#39;s licensing and anything else deemed critical or high priority in parallel
+* A better moon replacement is done later.* A better army boss replacement is done later.
+Before this effort is started, we&#39;d have to get:* Time estimates for both the Army boss and moon replacements.  It should take less time if we use a quick replacement option.* Availability estimates - how much time do Sydney and Bugsbane have now, and when is it likely to be completed (we won&#39;t hold them to the fire at all of course -- it&#39;s all volunteer)?
+I think it&#39;s worth asking this question before dropping the turtle boss from release 2.0.  I&#39;d like to be done with the release, too, but I think we really should ask these questions before purging long standing features that were in SMC 1.9.
+
+It&#39;s also worth asking what the likelihood of a Nintendo lawyer or Linux distributor complaining about the existing turtle boss or moon sprite graphics are.
+We really should post this discussion in a ticket in github - not everyone uses the mailing list (ie Bugsbane does not use mailing lists).  People may not check IRC logs, either.  github seems to get more responses right now than the other venues we use.
+
+-datahead 
+
+     On Sunday, February 22, 2015 4:56 AM, Chris Jacobsen &lt;…9@y…&gt; wrote:
+   
+
+ Two corrections:
+
+&#34;datahead wants to make 2.0.0 a really good release with lots of new  features.&#34;    --No, I don&#39;t want to add new features to release 2.0.  I was concerned about removing existing features such as the turtle boss in the release.  We should think carefully before doing this.  I also had reasoned we&#39;d want to be reasonably deMarioized before the release as much as feasibel (and not look over-buggy).  This release is the first in 5 years and the first TSC series release -- this is why I thought this is worth considering.
+&#34;Luiji wants to take the opportunity to wipe out the backward   compatibility code right now.&#34;--As I understand it, he had last suggested having .smclvl files use the old data format and .tsclvl&#39;s use the new format, which would not break compatibility.  Before suggesting this, yes, he did suggest breaking compatibility in release 2.0.  Luiji can correct me on any of this as needed.
+
+--datahead
+ 
+
+     On Sunday, February 22, 2015 4:42 AM, Quintus &lt;…s@q…&gt; wrote:
+   
+
+ So this discussion has come up on IRC again, with the additional aspect
+of what to make of 2.0.0 at all. and I would like to sort it
+out properly. So far, I have seen the following positions:
+
+* datahead wants to make 2.0.0 a really good release with lots of new
+  features.
+* Luiji wants to take the opportunity to wipe out the backward
+  compatibility code right now.
+* Bugsbane would like to have a larger time frame to submit more
+  graphics for 2.0.0
+* I want a release as soon as possible so we have something to show.
+
+I repeat we are already in beta phase for 2.0.0 and I’m strictly against
+introducing new code features. How would you manage to do this? The
+devel branch has been changed by Brian heavily (in very good ways!), so
+it is unfeasable to introduce that into 2.0.0 as it’s lots of unstable
+development code. Also, allowing new features albeit we froze the 2.0.0
+version earlier already would delay the release probably somewhere into
+2016 or later. That can’t be really the goal. Breaking the beta plan we
+had out there also looks inconsistent.
+
+On the other hand I don’t want to have all the previous SMC users
+refrain from switching to TSC, so some degree of backward compatibility
+to at least 1.9 seems warranted.
+
+Expanding the time frame even more doesn’t seem useful to me neither. We
+have been in beta phase for several months now, and we ought to release
+something now. We can’t roll on in beta eternally. After the 2.0.0
+release, we have the window open again for any new features, and may be
+able to do some more or less quick series of followup releases.
+
+Luiji suggested doing prereleases, but thinking about that, how is this
+different from beta releases actually? In fact, beta releases _are_
+prereleases, thus we have beein doing prereleases all the time already.
+
+As far as I am concerned, I would like to confirm licensing with Johan,
+replace the moon with something else, and then do the release, probably
+removing the turtle boss as I have suggested on IRC. There are no
+critical code bugs left that would prevent that.
+
+Please, followup on this. We really need to come to a conclusion.
+
+Valete,
+Quintus
+
+Quintus &lt;…s@q…&gt; writes:
+
+<span class="msg-quote">&gt; Hi everyone,</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; I have noticed we have some problem with regard to our backward</span>
+<span class="msg-quote">&gt; compatibility conception. Last evidence was in ticket #354[1].</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; We are in the beta phase of 2.0.0 already and I don’t want to throw it</span>
+<span class="msg-quote">&gt; all around and introduce major code changes now while we are bugfixing</span>
+<span class="msg-quote">&gt; mainly (and replacing Marioesk music). The 2.0.0 release is basically</span>
+<span class="msg-quote">&gt; the completion of the SMC series, and for our first release I think it</span>
+<span class="msg-quote">&gt; is important to allow users of the old SMC game to easily “upgrade”. Old</span>
+<span class="msg-quote">&gt; SMC is, as far as I can tell, still pretty commonly used so I think it’s</span>
+<span class="msg-quote">&gt; better if we take those people with us without having them to guide</span>
+<span class="msg-quote">&gt; through some level format conversion tool for now.</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; I don’t think the 2.x series will last long anyway. Our tracker is full</span>
+<span class="msg-quote">&gt; of feature requests[2], some of which require breaking existing code,</span>
+<span class="msg-quote">&gt; and we still have too much legacy code in the codebase as too just</span>
+<span class="msg-quote">&gt; shifting it around with us. After the 2.0.0 release, I imagine we’re</span>
+<span class="msg-quote">&gt; going to implement features for 2.1.0 quickly, and simultaneously start</span>
+<span class="msg-quote">&gt; a 3.0.0 development branch in which we implement the</span>
+<span class="msg-quote">&gt; backward-compatibility breaks. Under this conception we probably only</span>
+<span class="msg-quote">&gt; have some few releases in the 2.x series.</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; We will also probably suffer from a credibility damage if we stopped</span>
+<span class="msg-quote">&gt; beta and went back into development again. Who has ever seen such a</span>
+<span class="msg-quote">&gt; thing?</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; Valete,</span>
+<span class="msg-quote">&gt; Quintus</span>
+<span class="msg-quote">&gt; (whose email signature is becoming far too long)</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; [1]: <a href="https://github.com/Secretchronicles/TSC/issues/354">https://github.com/Secretchronicles/TSC/issues/354</a></span>
+<span class="msg-quote">&gt; [2]: <a href="https://github.com/Secretchronicles/TSC/labels/Feature">https://github.com/Secretchronicles/TSC/labels/Feature</a></span>
+
+-- 
+Blog: <a href="http://www.quintilianus.eu">http://www.quintilianus.eu</a>
+
+I will reject HTML emails.    | Ich akzeptiere keine HTML-Nachrichten.
+                              |
+Use GnuPG for mail encryption: | GnuPG für Mail-Verschlüsselung:
+<a href="https://www.gnupg.org">https://www.gnupg.org</a>         | <a href="https://de.wikipedia.org/wiki/GnuPG">https://de.wikipedia.org/wiki/GnuPG</a>
+My key fingerprint:            | Mein Schlüsselabdruck:
+B1FE 958E D5E8 468E AA20      | B1FE 958E D5E8 468E AA20
+8F4B F1D8 799F BCC8 BC4F      | 8F4B F1D8 799F BCC8 BC4F
+
+
+    
+
+</pre>
+
+
+
+<div class="msg-nav">
+<div class="msg-thread-nav msg-thread-nav-bythread">
+<table>
+<caption>By Thread</caption>
+<tbody>
+<tr><td></td><td>2015-02-11 23:02:29</td><td>Quintus</td><td class="msg-thread-level-0"><a href="/historic/tsc-devel-archive/2015/02/m44.html">[tsc-devel] Backward compatibility and 2.x / 3.x series</a></td></tr>
+<tr><td>▶</td><td>2015-02-22 23:42:20</td><td>Chris Jacobsen</td><td class="msg-thread-level-1"><a href="/historic/tsc-devel-archive/2015/02/m51.html">Re: [tsc-devel] Backward compatibility and 2.x / 3.x series</a></td></tr>
+
+</tbody>
+</table>
+</div>
+<div class="msg-thread-nav msg-thread-nav-bydate">
+<table>
+<caption>By Date</caption>
+<tbody>
+
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/02/m44.html">[tsc-devel] Backward compatibility and 2.x / 3.x series</a></td><td>Quintus</td><td>2015-02-11 23:02:29</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/02/m51.html">Re: [tsc-devel] Backward compatibility and 2.x / 3.x series</a></td><td>Chris Jacobsen</td><td>2015-02-22 23:42:20</td><td class="msg-here">◀</td></tr>
+
+</tbody>
+</table>
+</div>
+</div>
+
+</main>
+<footer>
+<p>Mailing list archive generated by <a href="https://mg.guelker.eu/projects/postkasten/">Postkasten</a>.</p>
+</footer>
+</body>
+</html>

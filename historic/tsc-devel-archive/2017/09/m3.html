@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Re: [tsc-devel] On the Continuation of TSC · tsc-devel@secretchronicles.org</title>
+  <style type="text/css">html, body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial Nova", "Arial", sans-serif;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  margin: 0px;
+}
+
+a {
+  color: #0b8ae1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #520ebb;
+}
+
+header {
+  margin: 0px;
+  padding: 12px 6px;
+  background-color: #0b8ae1;
+}
+
+header ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header ul li::after {
+  margin-left: 8px;
+  content: "|";
+  margin-right: 8px;
+}
+
+header ul li:last-child::after {
+  content: "";
+  margin-right: 0px;
+}
+
+header a {
+  color: white;
+}
+
+header a:hover {
+  color: black;
+}
+
+footer {
+  border-top: 1px solid #999999;
+  color: #999999;
+  font-size: 0.8rem;
+  padding: 8px;
+  text-align: center;
+  clear: both;
+}
+
+footer p {
+  margin: 0px;
+}
+
+main {
+  margin: 8px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+h1.msg-subject {
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+h2, caption {
+  font-size: 1rem;
+}
+
+
+.msg-meta {
+  margin-top: 0px;
+}
+
+.msg-from {
+  font-weight: bold;
+}
+
+.msg-cc {
+  color: #e1730a;
+}
+
+.msg-attachments h2 {
+  font-style: italic;
+}
+
+table, tr, td, th {
+  border: none;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #eeeeee;
+}
+
+thead tr {
+  border-bottom: 1px solid black;
+}
+
+.newyear {
+  font-style: italic;
+  text-align: center;
+  font-weight: bold;
+}
+
+.numreplies {
+  text-align: center;
+}
+
+.thread-ghost {
+  font-style: italic;
+}
+
+.lastreply {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+pre, code {
+  font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+.msg-body {
+  width: 80ch;
+}
+
+.msg-quote {
+  color: #698900;
+  font-style: italic;
+}
+
+.msg-nav {
+  clear: both;
+}
+
+.msg-thread-nav {
+  width: calc(50% - 4px);
+}
+
+.msg-thread-nav-bydate {
+  float: right;
+}
+
+.msg-thread-nav-bythread {
+  float: left;
+}
+
+.msg-thread-nav table caption {
+  background-color: #0b8ae1;
+  color: white;
+  border: none;
+  caption-side: top;
+  text-align: center;
+  font-weight: bold;
+}
+
+.msg-thread-nav tbody tr td {
+  padding: 2px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.msg-thread-nav-bydate table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bydate table td:nth-child(1) {
+  width: 55%;
+
+}
+
+.msg-thread-nav-bydate table td:nth-child(2) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bydate table td:nth-child(3) {
+  width:20%;
+  text-align: right;
+}
+
+.msg-thread-nav-bydate table td:nth-child(4) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+
+.msg-thread-nav-bythread table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bythread table td:nth-child(1) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+.msg-thread-nav-bythread table td:nth-child(2) {
+  width: 20%;
+
+}
+
+.msg-thread-nav-bythread table td:nth-child(3) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bythread table td:nth-child(4) {
+  width:55%;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-0 {
+  padding-left: 0px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-1 {
+  padding-left: 32px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-2 {
+  padding-left: 64px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-3 {
+  padding-left: 96px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-4 {
+  padding-left: 128px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-5 {
+  padding-left: 160px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-6 {
+  padding-left: 192px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-7 {
+  padding-left: 224px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-8 {
+  padding-left: 256px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-9 {
+  padding-left: 288px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-10 {
+  padding-left: 320px;
+}
+
+.threadindex {
+    table-layout: fixed;
+}
+
+.threadindex th:nth-child(1) {
+    width: 78%;
+}
+
+.threadindex th:nth-child(2) {
+    text-align: center;
+    width: 7%;
+}
+
+.threadindex th:nth-child(3) {
+    width: 15%;
+}
+
+.formatted-patch .patch-add {
+  color: #00CC00;
+}
+
+.formatted-patch .patch-del {
+  color: #FF0000;
+}
+
+.formatted-patch .patch-pos {
+  color: #0000FF;
+  background-color: #ddddFF;
+}
+
+div.formatted-patch {
+  border: 1px solid black;
+}
+
+div.formatted-patch pre {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'Inconsolata', 'DejaVu Sans Mono', monospace;
+  margin: 0px;
+}
+
+
+div.formatted-patch pre.linenos {
+  background-color: #0b8ae1;
+  float: left;
+  padding-right: 4px;
+  text-align: right;
+  margin-right: 4px;
+}
+
+.linenos a {
+  color: white;
+}
+
+.linenos a:hover {
+  color: black;
+}
+
+.linenos a:target {
+  color: #8b000e;
+}
+
+tracker-placeholder {
+  display: none;
+}
+
+.tracker-state-change {
+  font-style: italic;
+  color: #e1730a;
+}
+
+.ticket-state {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.ticket-state-open {
+  color: #00CC00;
+}
+
+.ticket-state-confirmed {
+  color: #e1730a;
+}
+
+.ticket-state-closed {
+  color: #FF0000;
+}
+
+.tracker-panel {
+  width: 450px;
+  float: right;
+  margin: 8px;
+  padding: 0px;
+  border: 2px solid #0b8ae1;
+  text-align: center;
+}
+
+.tracker-panel h2 {
+  background-color: #0b8ae1;
+  color: white;
+  margin-top: 0px;
+}
+
+.tracker-panel ul {
+  padding: 0px 8px;
+  margin: 8px;
+  text-align: left;
+  list-style-type: none;
+}
+
+.tracker-table {
+  table-layout: fixed;
+}
+
+.tracker-table tbody td:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tracker-table thead th:nth-child(1) {
+  width: 60%;
+}
+
+.tracker-table thead th:nth-child(2) {
+  width: 13%;
+}
+
+.tracker-table thead th:nth-child(3) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(4) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(5) {
+  width: 7%;
+  text-align: center;
+}
+
+.tracker-table tbody td:nth-child(5) {
+  text-align: center;
+}
+
+#tracker-filter-subject {
+  width: calc(100% - 8px);
+}
+
+.filter-hide {
+  display: none;
+}
+
+@media(max-width: 768px) {
+
+  html, body {
+    font-size: 18px;
+  }
+
+  .lastreply {
+    display: none;
+  }
+
+  .msg-body {
+    width: initial;
+  }
+
+  .msg-thread-nav-bydate {
+    float: none;
+  }
+
+  .msg-thread-nav-bythread {
+    float: none;
+  }
+
+  .threadindex .lastreply {
+      display: none;
+      width: 0%;
+  }
+
+  .threadindex th:nth-child(1) {
+      width: 80%;
+  }
+
+  .threadindex th:nth-child(2) {
+      width: 20%;
+  }
+
+  .tracker-panel {
+    width: 95%;
+    margin: 0px auto;
+    float: none;
+  }
+
+  .tracker-table thead th:nth-child(1) {
+  width: 80%;
+  }
+
+  .tracker-table thead th:nth-child(2), .tracker-table tbody td:nth-child(2) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(3), .tracker-table tbody td:nth-child(3) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(4), .tracker-table tbody td:nth-child(4) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(5) {
+    width: 20%;
+  }
+}
+</style>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<header>
+<ul><li><a href="/historic/tsc-devel-archive/">tsc-devel@secretchronicles.org</a></li><li><a href="/historic/tsc-devel-archive/about.html">About</a></li></ul>
+</header>
+<main>
+<h1 class="msg-subject">Re: [tsc-devel] On the Continuation of TSC</h1>
+<p class="msg-meta">
+  <span class="msg-from">rymg19@gmail.com</span> |
+
+ Wed, 20 Sep 2017 22:16:47 UTC
+</p>
+
+
+
+
+<div class="tracker-placeholder"></div>
+
+
+
+<pre class="msg-body">FWIW I *have* been doing some work on trying to make AppImages, though I
+got stuck at finding a hosting provider that would handle ~200MB
+Travis-generated images...
+
+
+--
+Ryan (ライアン)
+Yoko Shimomura, ryo (supercell/EGOIST), Hiroyuki Sawano &gt;&gt; everyone
+else<a href="http://refi64.com">http://refi64.com</a>
+
+On Sep 20, 2017 at 9:47 AM, &lt;Marvin Gülker &lt;…r@p…&gt;&gt;
+wrote:
+
+Hi everyone,
+
+since I retired from the lead position, there has not been much move in
+TSC&#39;s development; taking a look at `$ git log&#39; for `devel&#39; proofs
+that. xet7 and I have recently met in Finland (physically) and have
+spoken about the matter; in that, xet7 outlined that his main focus is
+-- rightly, as he commercially uses it -- on Wekan. kirbyfan has assumed
+the position as assistant lead, but that was about it (no offense; I
+know this is free time).
+
+During the last months, I have observed what happens around TSC when I
+abstain from it mostly, and found that it wasn&#39;t much. This inevitably
+must lead to the project&#39;s death.
+
+This finding entitles me to make a suggestion. I cannot and will not
+return to work on TSC as intensly as I did earlier, for my studies have
+taken over most of my time. I however intend to do *something*, which is
+more in any case than what has happened here in the last months. I have
+often enough made my position towards the current codebase clear and
+have been met with opposition by people who are now not working on
+materialising their view of TSC. I feel the desire to experiment with
+something new. My suggestion is that therefore, I will start the
+previously mentioned rewrite. I invite everyone to join or to oppose,
+but in order to have a word in the decisions made in that rewrite I
+think you should actually contribute to it in the part you want to
+decide something on[1].
+
+Someone is going to point out that this is fruitless effort, as I don&#39;t
+have the time I used to have and a rewrite takes time. Surely this
+person is correct, but this is not the entire story. If I don&#39;t do the
+rewrite, I won&#39;t work on the current state of TSC either because --
+sorry -- I don&#39;t feel like doing so; it is my hobby free time after
+all. Thus, nobody would work on it. This would be fruitless as well. TSC
+is not meant to fulfill any kind of commercial requirement; the coding
+on it should be hobby, thus fun and goal in itself.
+
+I want to blow some fresh air into the stalled development. Accept the
+rewrite as a baseline, come and sit down with me scatching how the new
+TSC should be coded. If you don&#39;t want, I will fork.
+
+Marvin
+
+[1] Personally, I have come to the conclusion that the Voting Rules are
+too formal for a small project. The idea of a law student in early
+semestres. We should abandon them in favour of the mentioned approach;
+if you want it formally, we can vote on the abondonment of the Voting
+Rules (which would require a 2/3 majority as outlined in the Voting
+Rules).
+
+--
+Blog: <a href="https://www.guelkerdev.de">https://www.guelkerdev.de</a>
+PGP/GPG ID: F1D8799FBCC8BC4F
+</pre>
+
+
+
+<div class="msg-nav">
+<div class="msg-thread-nav msg-thread-nav-bythread">
+<table>
+<caption>By Thread</caption>
+<tbody>
+<tr><td></td><td>2017-09-20 14:47:15</td><td>Marvin Gülker</td><td class="msg-thread-level-0"><a href="/historic/tsc-devel-archive/2017/09/m1.html">[tsc-devel] On the Continuation of TSC</a></td></tr>
+<tr><td></td><td>2017-09-20 22:13:07</td><td>Lauri Ojansivu</td><td class="msg-thread-level-1"><a href="/historic/tsc-devel-archive/2017/09/m2.html">Re: [tsc-devel] On the Continuation of TSC</a></td></tr>
+<tr><td>▶</td><td>2017-09-20 22:16:47</td><td>rymg19@gmail.com</td><td class="msg-thread-level-1"><a href="/historic/tsc-devel-archive/2017/09/m3.html">Re: [tsc-devel] On the Continuation of TSC</a></td></tr>
+<tr><td></td><td>2017-09-21 00:43:02</td><td>Sydney Dykstra</td><td class="msg-thread-level-2"><a href="/historic/tsc-devel-archive/2017/09/m4.html">Re: [tsc-devel] On the Continuation of TSC</a></td></tr>
+<tr><td></td><td>2017-09-21 02:09:19</td><td>rymg19@gmail.com</td><td class="msg-thread-level-1"><a href="/historic/tsc-devel-archive/2017/09/m5.html">Re: Re: [tsc-devel] On the Continuation of TSC</a></td></tr>
+<tr><td></td><td>2017-09-21 03:05:36</td><td>Chris Jacobsen</td><td class="msg-thread-level-2"><a href="/historic/tsc-devel-archive/2017/09/m6.html">Re: [tsc-devel] On the Continuation of TSC</a></td></tr>
+<tr><td></td><td>2017-09-22 09:06:00</td><td>Marvin Gülker</td><td class="msg-thread-level-3"><a href="/historic/tsc-devel-archive/2017/09/m10.html">Re: [tsc-devel] On the Continuation of TSC</a></td></tr>
+<tr><td></td><td>2017-09-21 03:10:04</td><td>Sydney Dykstra</td><td class="msg-thread-level-2"><a href="/historic/tsc-devel-archive/2017/09/m7.html">[tsc-devel] Hosting Travis Images</a></td></tr>
+<tr><td></td><td>2017-09-22 08:49:03</td><td>Marvin Gülker</td><td class="msg-thread-level-3"><a href="/historic/tsc-devel-archive/2017/09/m8.html">Re: [tsc-devel] Hosting Travis Images</a></td></tr>
+<tr><td></td><td>2017-09-22 09:04:30</td><td>Lauri Ojansivu</td><td class="msg-thread-level-3"><a href="/historic/tsc-devel-archive/2017/09/m9.html">Re: [tsc-devel] Hosting Travis Images</a></td></tr>
+
+</tbody>
+</table>
+</div>
+<div class="msg-thread-nav msg-thread-nav-bydate">
+<table>
+<caption>By Date</caption>
+<tbody>
+
+
+<tr><td><a href="/historic/tsc-devel-archive/2017/09/m1.html">[tsc-devel] On the Continuation of TSC</a></td><td>Marvin Gülker</td><td>2017-09-20 14:47:15</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2017/09/m2.html">Re: [tsc-devel] On the Continuation of TSC</a></td><td>Lauri Ojansivu</td><td>2017-09-20 22:13:07</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2017/09/m3.html">Re: [tsc-devel] On the Continuation of TSC</a></td><td>rymg19@gmail.com</td><td>2017-09-20 22:16:47</td><td class="msg-here">◀</td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2017/09/m4.html">Re: [tsc-devel] On the Continuation of TSC</a></td><td>Sydney Dykstra</td><td>2017-09-21 00:43:02</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2017/09/m5.html">Re: Re: [tsc-devel] On the Continuation of TSC</a></td><td>rymg19@gmail.com</td><td>2017-09-21 02:09:19</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2017/09/m6.html">Re: [tsc-devel] On the Continuation of TSC</a></td><td>Chris Jacobsen</td><td>2017-09-21 03:05:36</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2017/09/m7.html">[tsc-devel] Hosting Travis Images</a></td><td>Sydney Dykstra</td><td>2017-09-21 03:10:04</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2017/09/m8.html">Re: [tsc-devel] Hosting Travis Images</a></td><td>Marvin Gülker</td><td>2017-09-22 08:49:03</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2017/09/m9.html">Re: [tsc-devel] Hosting Travis Images</a></td><td>Lauri Ojansivu</td><td>2017-09-22 09:04:30</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2017/09/m10.html">Re: [tsc-devel] On the Continuation of TSC</a></td><td>Marvin Gülker</td><td>2017-09-22 09:06:00</td><td class="msg-here"></td></tr>
+
+</tbody>
+</table>
+</div>
+</div>
+
+</main>
+<footer>
+<p>Mailing list archive generated by <a href="https://mg.guelker.eu/projects/postkasten/">Postkasten</a>.</p>
+</footer>
+</body>
+</html>

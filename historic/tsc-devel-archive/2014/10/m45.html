@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8"/>
+  <title>[tsc-devel] Re: 170 Jam Song and Other Music... · tsc-devel@secretchronicles.org</title>
+  <style type="text/css">html, body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial Nova", "Arial", sans-serif;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  margin: 0px;
+}
+
+a {
+  color: #0b8ae1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #520ebb;
+}
+
+header {
+  margin: 0px;
+  padding: 12px 6px;
+  background-color: #0b8ae1;
+}
+
+header ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header ul li::after {
+  margin-left: 8px;
+  content: "|";
+  margin-right: 8px;
+}
+
+header ul li:last-child::after {
+  content: "";
+  margin-right: 0px;
+}
+
+header a {
+  color: white;
+}
+
+header a:hover {
+  color: black;
+}
+
+footer {
+  border-top: 1px solid #999999;
+  color: #999999;
+  font-size: 0.8rem;
+  padding: 8px;
+  text-align: center;
+  clear: both;
+}
+
+footer p {
+  margin: 0px;
+}
+
+main {
+  margin: 8px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+h1.msg-subject {
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+h2, caption {
+  font-size: 1rem;
+}
+
+
+.msg-meta {
+  margin-top: 0px;
+}
+
+.msg-from {
+  font-weight: bold;
+}
+
+.msg-cc {
+  color: #e1730a;
+}
+
+.msg-attachments h2 {
+  font-style: italic;
+}
+
+table, tr, td, th {
+  border: none;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #eeeeee;
+}
+
+thead tr {
+  border-bottom: 1px solid black;
+}
+
+.newyear {
+  font-style: italic;
+  text-align: center;
+  font-weight: bold;
+}
+
+.numreplies {
+  text-align: center;
+}
+
+.thread-ghost {
+  font-style: italic;
+}
+
+.lastreply {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+pre, code {
+  font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+.msg-body {
+  width: 80ch;
+}
+
+.msg-quote {
+  color: #698900;
+  font-style: italic;
+}
+
+.msg-nav {
+  clear: both;
+}
+
+.msg-thread-nav {
+  width: calc(50% - 4px);
+}
+
+.msg-thread-nav-bydate {
+  float: right;
+}
+
+.msg-thread-nav-bythread {
+  float: left;
+}
+
+.msg-thread-nav table caption {
+  background-color: #0b8ae1;
+  color: white;
+  border: none;
+  caption-side: top;
+  text-align: center;
+  font-weight: bold;
+}
+
+.msg-thread-nav tbody tr td {
+  padding: 2px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.msg-thread-nav-bydate table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bydate table td:nth-child(1) {
+  width: 55%;
+
+}
+
+.msg-thread-nav-bydate table td:nth-child(2) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bydate table td:nth-child(3) {
+  width:20%;
+  text-align: right;
+}
+
+.msg-thread-nav-bydate table td:nth-child(4) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+
+.msg-thread-nav-bythread table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bythread table td:nth-child(1) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+.msg-thread-nav-bythread table td:nth-child(2) {
+  width: 20%;
+
+}
+
+.msg-thread-nav-bythread table td:nth-child(3) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bythread table td:nth-child(4) {
+  width:55%;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-0 {
+  padding-left: 0px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-1 {
+  padding-left: 32px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-2 {
+  padding-left: 64px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-3 {
+  padding-left: 96px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-4 {
+  padding-left: 128px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-5 {
+  padding-left: 160px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-6 {
+  padding-left: 192px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-7 {
+  padding-left: 224px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-8 {
+  padding-left: 256px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-9 {
+  padding-left: 288px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-10 {
+  padding-left: 320px;
+}
+
+.threadindex {
+    table-layout: fixed;
+}
+
+.threadindex th:nth-child(1) {
+    width: 78%;
+}
+
+.threadindex th:nth-child(2) {
+    text-align: center;
+    width: 7%;
+}
+
+.threadindex th:nth-child(3) {
+    width: 15%;
+}
+
+.formatted-patch .patch-add {
+  color: #00CC00;
+}
+
+.formatted-patch .patch-del {
+  color: #FF0000;
+}
+
+.formatted-patch .patch-pos {
+  color: #0000FF;
+  background-color: #ddddFF;
+}
+
+div.formatted-patch {
+  border: 1px solid black;
+}
+
+div.formatted-patch pre {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'Inconsolata', 'DejaVu Sans Mono', monospace;
+  margin: 0px;
+}
+
+
+div.formatted-patch pre.linenos {
+  background-color: #0b8ae1;
+  float: left;
+  padding-right: 4px;
+  text-align: right;
+  margin-right: 4px;
+}
+
+.linenos a {
+  color: white;
+}
+
+.linenos a:hover {
+  color: black;
+}
+
+.linenos a:target {
+  color: #8b000e;
+}
+
+tracker-placeholder {
+  display: none;
+}
+
+.tracker-state-change {
+  font-style: italic;
+  color: #e1730a;
+}
+
+.ticket-state {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.ticket-state-open {
+  color: #00CC00;
+}
+
+.ticket-state-confirmed {
+  color: #e1730a;
+}
+
+.ticket-state-closed {
+  color: #FF0000;
+}
+
+.tracker-panel {
+  width: 450px;
+  float: right;
+  margin: 8px;
+  padding: 0px;
+  border: 2px solid #0b8ae1;
+  text-align: center;
+}
+
+.tracker-panel h2 {
+  background-color: #0b8ae1;
+  color: white;
+  margin-top: 0px;
+}
+
+.tracker-panel ul {
+  padding: 0px 8px;
+  margin: 8px;
+  text-align: left;
+  list-style-type: none;
+}
+
+.tracker-table {
+  table-layout: fixed;
+}
+
+.tracker-table tbody td:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tracker-table thead th:nth-child(1) {
+  width: 60%;
+}
+
+.tracker-table thead th:nth-child(2) {
+  width: 13%;
+}
+
+.tracker-table thead th:nth-child(3) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(4) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(5) {
+  width: 7%;
+  text-align: center;
+}
+
+.tracker-table tbody td:nth-child(5) {
+  text-align: center;
+}
+
+#tracker-filter-subject {
+  width: calc(100% - 8px);
+}
+
+.filter-hide {
+  display: none;
+}
+
+@media(max-width: 768px) {
+
+  html, body {
+    font-size: 18px;
+  }
+
+  .lastreply {
+    display: none;
+  }
+
+  .msg-body {
+    width: initial;
+  }
+
+  .msg-thread-nav-bydate {
+    float: none;
+  }
+
+  .msg-thread-nav-bythread {
+    float: none;
+  }
+
+  .threadindex .lastreply {
+      display: none;
+      width: 0%;
+  }
+
+  .threadindex th:nth-child(1) {
+      width: 80%;
+  }
+
+  .threadindex th:nth-child(2) {
+      width: 20%;
+  }
+
+  .tracker-panel {
+    width: 95%;
+    margin: 0px auto;
+    float: none;
+  }
+
+  .tracker-table thead th:nth-child(1) {
+  width: 80%;
+  }
+
+  .tracker-table thead th:nth-child(2), .tracker-table tbody td:nth-child(2) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(3), .tracker-table tbody td:nth-child(3) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(4), .tracker-table tbody td:nth-child(4) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(5) {
+    width: 20%;
+  }
+}
+</style>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<header>
+<ul><li><a href="/historic/tsc-devel-archive/">tsc-devel@secretchronicles.org</a></li><li><a href="/historic/tsc-devel-archive/about.html">About</a></li></ul>
+</header>
+<main>
+<h1 class="msg-subject">[tsc-devel] Re: 170 Jam Song and Other Music...</h1>
+<p class="msg-meta">
+  <span class="msg-from">Chris Jacobsen</span> |
+
+ Fri, 24 Oct 2014 06:57:53 UTC
+</p>
+
+
+
+
+<div class="tracker-placeholder"></div>
+
+
+
+<pre class="msg-body">This is my current analysis of the songs and how we might use them in Secret Chronicles.  Keep in mind we still will need to get feedback from other team members, which will take some time.
+
+Sources:
+1. <a href="https://soundcloud.com/aakburns">https://soundcloud.com/aakburns</a> -- this is where all new songs Arik cited were
+2. <a href="http://www.arikburns.com/Music.html">http://www.arikburns.com/Music.html</a> -- these are older songs, but it has a handy copy of 170Jam
+
+New songs that Arik listed in his email:
+New Format - This is my favorite.  It might be appropriate for a super computer room in the monster factory if we implement that.  The only problem is that it does not loop (or end properly).  It ends abruptly in the middle of playing.  Ideally, we&#39;d probably want it to loop for use in a level.
+Rethink Life - This could be used for level music - it has a good beat and flow.
+Virus - It sounds a bit like something I&#39;d expect to hear out of a space fighter game, but we might be able to use it in a climatic level shortly before a boss.
+DownGoesTheBubbleGum - This could work for a level.  It starts a &#34;little&#34; like a dance song at the very start, but some of the instrument choices a bit into the song make me think of a mountain level.  If we add Bowser Jr&#39;s Mountain Trials Level (with scripting added), this might work.
+RoyDub - This could work for a level.  I would see it in a night level or other level that solicits a little self reflection while keeping a beat going.
+--Many of the other new songs have a bit more of a dance sound to them.  There&#39;s nothing wrong with this at all, but I&#39;m not sure how we could use them in Secret Chronicles now.  Adding a level that takes place on a dance floor is an interesting discussion, but we&#39;d need a story or side story to back it up.
+
+Previously submitted song on secretmaryo.org:
+170Jam - It needs to have the pause at the end reduced to be used.  It also might be good to consider increasing the volume at the little at the beginning, since it&#39;s hard to hear one of the instruments there.  I could see this being used as menu music or for something where the player is waiting or making decisions.
+
+Old songs from his website (I&#39;m not sure if these might have been used in another game or not or if Arik wants to submit them):
+GoodBye - This song also has a long pause at the end that would have to be removed.  This has a very nice symphonic sound and would work well for credits or anything conclusive.
+Big Times - This would work well if we have an ancient ruins level.
+Orchestral Rythms - This might be interesting in a large library that looks like it came out of the 1700&#39;s.
+
+-Chris Jacobsen (datahead)
+ 
+On Monday, October 20, 2014 1:55 AM, Chris Jacobsen &lt;…9@y…&gt; wrote:
+  
+
+
+I was just listening to &#34;170 Jam&#34; again (it had been a while).  You might also consider increasing the volume a little toward the start and/or adding another instrument toward the beginning.  It&#39;s just a possible thought.
+
+I&#39;ll be heavily tied up through at least Wednesday of this week with an exam and a lot of grading.  At least I&#39;ll have some new music to listen to while I study :)
+
+There were 2/3 songs I just listened to that might work really well in the game out of the new ones.  I&#39;ll think on it a little more and get back to you in some days.  I&#39;ve also sent the links to the rest of the team (at the tsc-devel address on this email) so that they too can give feedback.
+
+Thanks for offering to help - we definitely appreciate it!
+
+-Chris (datahead) 
+
+
+On Monday, October 20, 2014 12:00 AM, Arik Burns &lt;…s@g…&gt; wrote:
+  
+
+
+I will cut the song down tomorrow for you.  I&#39;ll have a bunch of newer material and can make more.  Here&#39;s some newer stuff, if you&#39;d like any of these, let me know and I&#39;ll send them to you.
+
+<a href="https://soundcloud.com/aakburns/roydub">https://soundcloud.com/aakburns/roydub</a>
+
+
+<a href="https://soundcloud.com/aakburns/downgoesthebubblegum">https://soundcloud.com/aakburns/downgoesthebubblegum</a>
+
+
+<a href="https://soundcloud.com/aakburns/roy-has-to-be-in-the-name">https://soundcloud.com/aakburns/roy-has-to-be-in-the-name</a>
+
+
+<a href="https://soundcloud.com/aakburns/roy-goes-to-the-club">https://soundcloud.com/aakburns/roy-goes-to-the-club</a>
+
+
+<a href="https://soundcloud.com/aakburns/roys-flight-to-space">https://soundcloud.com/aakburns/roys-flight-to-space</a>
+
+
+<a href="https://soundcloud.com/aakburns/roys-incredible-journey">https://soundcloud.com/aakburns/roys-incredible-journey</a>
+
+
+<a href="https://soundcloud.com/aakburns/virus">https://soundcloud.com/aakburns/virus</a>
+
+
+<a href="https://soundcloud.com/aakburns/rethink-life">https://soundcloud.com/aakburns/rethink-life</a>  (I&#39;d have to make this one have louder output volume)
+
+
+<a href="https://soundcloud.com/aakburns/new-format">https://soundcloud.com/aakburns/new-format</a>
+
+
+<a href="https://soundcloud.com/aakburns/03-08-2014">https://soundcloud.com/aakburns/03-08-2014</a>  (not finished)
+
+
+
+
+
+On Sun, Oct 19, 2014 at 10:21 PM, Chris Jacobsen &lt;…9@y…&gt; wrote:
+
+Hello,
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;I saw you used to compose music for Secret Maryo Chronicles.</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;You had submitted &#34;170 Jam&#34; at secretmaryo.org • View topic - Music [partly in upstream].</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; </span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;  </span>
+<span class="msg-quote">&gt; </span>
+<span class="msg-quote">&gt; </span>
+<span class="msg-quote">&gt; </span>
+<span class="msg-quote">&gt; </span>
+<span class="msg-quote">&gt; </span>
+<span class="msg-quote">&gt;secretmaryo.org • View topic - Music [partly in upstream...</span>
+<span class="msg-quote">&gt;vencabot_teppoo wrote:Excellent. All of the tracks are great. Maximie is sufficiently evil, although I wish it were longer.   </span>
+<span class="msg-quote">&gt;View on www.secretmaryo.org Preview by Yahoo  </span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; </span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;We&#39;ve been gathering music and getting it into the game for release 2.0 of the game.  We can&#39;t use the &#34;170 Jam&#34; song at the moment, however, because it has a bit too long of a pause at the end.  Do you think you might be able to remove this pause from the track?</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;We are greatly in need of new music because we are removing all remixes of Mario music to eliminate copyright issues.  Aside from the &#34;170 Jam&#34; song, we will welcome any other music you can write for the game.  Also, we are renaming the game as &#34;The Secret Chronicles of Dr. M&#34; in order to eliminate Maryo (which sounds like Mario).</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;Quintus is leading the project and Luiji is the V.P. of the project.  The info for the project is below.</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;Our code and assets are maintained at: <a href="https://github.com/Secretchronicles/TSC">https://github.com/Secretchronicles/TSC</a></span>
+<span class="msg-quote">&gt;Our new website (being developed) is at: <a href="http://www.secretchronicles.de/en/">http://www.secretchronicles.de/en/</a></span>
+<span class="msg-quote">&gt;Windows betas of the game are published at: <a href="http://www.secretchronicles.de/en/download/">http://www.secretchronicles.de/en/download/</a></span>
+<span class="msg-quote">&gt;Our IRC channel is #secretchronicles, under freenode.net.</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;--Chris Jacobsen (datahead)</span>
+<span class="msg-quote">&gt;</span>
+</pre>
+
+
+
+<div class="msg-nav">
+<div class="msg-thread-nav msg-thread-nav-bythread">
+<table>
+<caption>By Thread</caption>
+<tbody>
+<tr><td></td><td>1970-01-01 00:00:00</td><td>(unknown)</td><td class="msg-thread-level-0"><a href="/historic/tsc-devel-archive/1970/01/m8.html">[tsc-devel] Fw: 170 Jam Song and Other Music...</a></td></tr>
+<tr><td></td><td>2014-10-20 04:08:45</td><td>Chris Jacobsen</td><td class="msg-thread-level-1"><a href="/historic/tsc-devel-archive/2014/10/m36.html">[tsc-devel] Fw: 170 Jam Song and Other Music...</a></td></tr>
+<tr><td></td><td>2014-10-20 06:57:07</td><td>Quintus</td><td class="msg-thread-level-2"><a href="/historic/tsc-devel-archive/2014/10/m39.html">Re: [tsc-devel] Fw: 170 Jam Song and Other Music...</a></td></tr>
+<tr><td></td><td>2014-10-20 07:02:33</td><td>Chris Jacobsen</td><td class="msg-thread-level-3"><a href="/historic/tsc-devel-archive/2014/10/m40.html">Re: [tsc-devel] Fw: 170 Jam Song and Other Music...</a></td></tr>
+<tr><td></td><td>2014-10-20 05:55:16</td><td>Chris Jacobsen</td><td class="msg-thread-level-1"><a href="/historic/tsc-devel-archive/2014/10/m37.html">[tsc-devel] Re: 170 Jam Song and Other Music...</a></td></tr>
+<tr><td>▶</td><td>2014-10-24 06:57:53</td><td>Chris Jacobsen</td><td class="msg-thread-level-2"><a href="/historic/tsc-devel-archive/2014/10/m45.html">[tsc-devel] Re: 170 Jam Song and Other Music...</a></td></tr>
+
+</tbody>
+</table>
+</div>
+<div class="msg-thread-nav msg-thread-nav-bydate">
+<table>
+<caption>By Date</caption>
+<tbody>
+
+
+<tr><td><a href="/historic/tsc-devel-archive/1970/01/m8.html">[tsc-devel] Fw: 170 Jam Song and Other Music...</a></td><td>(unknown)</td><td>1970-01-01 00:00:00</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2014/10/m36.html">[tsc-devel] Fw: 170 Jam Song and Other Music...</a></td><td>Chris Jacobsen</td><td>2014-10-20 04:08:45</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2014/10/m37.html">[tsc-devel] Re: 170 Jam Song and Other Music...</a></td><td>Chris Jacobsen</td><td>2014-10-20 05:55:16</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2014/10/m39.html">Re: [tsc-devel] Fw: 170 Jam Song and Other Music...</a></td><td>Quintus</td><td>2014-10-20 06:57:07</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2014/10/m40.html">Re: [tsc-devel] Fw: 170 Jam Song and Other Music...</a></td><td>Chris Jacobsen</td><td>2014-10-20 07:02:33</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2014/10/m45.html">[tsc-devel] Re: 170 Jam Song and Other Music...</a></td><td>Chris Jacobsen</td><td>2014-10-24 06:57:53</td><td class="msg-here">◀</td></tr>
+
+</tbody>
+</table>
+</div>
+</div>
+
+</main>
+<footer>
+<p>Mailing list archive generated by <a href="https://mg.guelker.eu/projects/postkasten/">Postkasten</a>.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Re: [tsc-devel] 2.0.0 release and SFML branch · tsc-devel@secretchronicles.org</title>
+  <style type="text/css">html, body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial Nova", "Arial", sans-serif;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  margin: 0px;
+}
+
+a {
+  color: #0b8ae1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #520ebb;
+}
+
+header {
+  margin: 0px;
+  padding: 12px 6px;
+  background-color: #0b8ae1;
+}
+
+header ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header ul li::after {
+  margin-left: 8px;
+  content: "|";
+  margin-right: 8px;
+}
+
+header ul li:last-child::after {
+  content: "";
+  margin-right: 0px;
+}
+
+header a {
+  color: white;
+}
+
+header a:hover {
+  color: black;
+}
+
+footer {
+  border-top: 1px solid #999999;
+  color: #999999;
+  font-size: 0.8rem;
+  padding: 8px;
+  text-align: center;
+  clear: both;
+}
+
+footer p {
+  margin: 0px;
+}
+
+main {
+  margin: 8px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+h1.msg-subject {
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+h2, caption {
+  font-size: 1rem;
+}
+
+
+.msg-meta {
+  margin-top: 0px;
+}
+
+.msg-from {
+  font-weight: bold;
+}
+
+.msg-cc {
+  color: #e1730a;
+}
+
+.msg-attachments h2 {
+  font-style: italic;
+}
+
+table, tr, td, th {
+  border: none;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #eeeeee;
+}
+
+thead tr {
+  border-bottom: 1px solid black;
+}
+
+.newyear {
+  font-style: italic;
+  text-align: center;
+  font-weight: bold;
+}
+
+.numreplies {
+  text-align: center;
+}
+
+.thread-ghost {
+  font-style: italic;
+}
+
+.lastreply {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+pre, code {
+  font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+.msg-body {
+  width: 80ch;
+}
+
+.msg-quote {
+  color: #698900;
+  font-style: italic;
+}
+
+.msg-nav {
+  clear: both;
+}
+
+.msg-thread-nav {
+  width: calc(50% - 4px);
+}
+
+.msg-thread-nav-bydate {
+  float: right;
+}
+
+.msg-thread-nav-bythread {
+  float: left;
+}
+
+.msg-thread-nav table caption {
+  background-color: #0b8ae1;
+  color: white;
+  border: none;
+  caption-side: top;
+  text-align: center;
+  font-weight: bold;
+}
+
+.msg-thread-nav tbody tr td {
+  padding: 2px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.msg-thread-nav-bydate table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bydate table td:nth-child(1) {
+  width: 55%;
+
+}
+
+.msg-thread-nav-bydate table td:nth-child(2) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bydate table td:nth-child(3) {
+  width:20%;
+  text-align: right;
+}
+
+.msg-thread-nav-bydate table td:nth-child(4) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+
+.msg-thread-nav-bythread table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bythread table td:nth-child(1) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+.msg-thread-nav-bythread table td:nth-child(2) {
+  width: 20%;
+
+}
+
+.msg-thread-nav-bythread table td:nth-child(3) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bythread table td:nth-child(4) {
+  width:55%;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-0 {
+  padding-left: 0px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-1 {
+  padding-left: 32px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-2 {
+  padding-left: 64px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-3 {
+  padding-left: 96px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-4 {
+  padding-left: 128px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-5 {
+  padding-left: 160px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-6 {
+  padding-left: 192px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-7 {
+  padding-left: 224px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-8 {
+  padding-left: 256px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-9 {
+  padding-left: 288px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-10 {
+  padding-left: 320px;
+}
+
+.threadindex {
+    table-layout: fixed;
+}
+
+.threadindex th:nth-child(1) {
+    width: 78%;
+}
+
+.threadindex th:nth-child(2) {
+    text-align: center;
+    width: 7%;
+}
+
+.threadindex th:nth-child(3) {
+    width: 15%;
+}
+
+.formatted-patch .patch-add {
+  color: #00CC00;
+}
+
+.formatted-patch .patch-del {
+  color: #FF0000;
+}
+
+.formatted-patch .patch-pos {
+  color: #0000FF;
+  background-color: #ddddFF;
+}
+
+div.formatted-patch {
+  border: 1px solid black;
+}
+
+div.formatted-patch pre {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'Inconsolata', 'DejaVu Sans Mono', monospace;
+  margin: 0px;
+}
+
+
+div.formatted-patch pre.linenos {
+  background-color: #0b8ae1;
+  float: left;
+  padding-right: 4px;
+  text-align: right;
+  margin-right: 4px;
+}
+
+.linenos a {
+  color: white;
+}
+
+.linenos a:hover {
+  color: black;
+}
+
+.linenos a:target {
+  color: #8b000e;
+}
+
+tracker-placeholder {
+  display: none;
+}
+
+.tracker-state-change {
+  font-style: italic;
+  color: #e1730a;
+}
+
+.ticket-state {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.ticket-state-open {
+  color: #00CC00;
+}
+
+.ticket-state-confirmed {
+  color: #e1730a;
+}
+
+.ticket-state-closed {
+  color: #FF0000;
+}
+
+.tracker-panel {
+  width: 450px;
+  float: right;
+  margin: 8px;
+  padding: 0px;
+  border: 2px solid #0b8ae1;
+  text-align: center;
+}
+
+.tracker-panel h2 {
+  background-color: #0b8ae1;
+  color: white;
+  margin-top: 0px;
+}
+
+.tracker-panel ul {
+  padding: 0px 8px;
+  margin: 8px;
+  text-align: left;
+  list-style-type: none;
+}
+
+.tracker-table {
+  table-layout: fixed;
+}
+
+.tracker-table tbody td:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tracker-table thead th:nth-child(1) {
+  width: 60%;
+}
+
+.tracker-table thead th:nth-child(2) {
+  width: 13%;
+}
+
+.tracker-table thead th:nth-child(3) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(4) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(5) {
+  width: 7%;
+  text-align: center;
+}
+
+.tracker-table tbody td:nth-child(5) {
+  text-align: center;
+}
+
+#tracker-filter-subject {
+  width: calc(100% - 8px);
+}
+
+.filter-hide {
+  display: none;
+}
+
+@media(max-width: 768px) {
+
+  html, body {
+    font-size: 18px;
+  }
+
+  .lastreply {
+    display: none;
+  }
+
+  .msg-body {
+    width: initial;
+  }
+
+  .msg-thread-nav-bydate {
+    float: none;
+  }
+
+  .msg-thread-nav-bythread {
+    float: none;
+  }
+
+  .threadindex .lastreply {
+      display: none;
+      width: 0%;
+  }
+
+  .threadindex th:nth-child(1) {
+      width: 80%;
+  }
+
+  .threadindex th:nth-child(2) {
+      width: 20%;
+  }
+
+  .tracker-panel {
+    width: 95%;
+    margin: 0px auto;
+    float: none;
+  }
+
+  .tracker-table thead th:nth-child(1) {
+  width: 80%;
+  }
+
+  .tracker-table thead th:nth-child(2), .tracker-table tbody td:nth-child(2) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(3), .tracker-table tbody td:nth-child(3) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(4), .tracker-table tbody td:nth-child(4) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(5) {
+    width: 20%;
+  }
+}
+</style>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<header>
+<ul><li><a href="/historic/tsc-devel-archive/">tsc-devel@secretchronicles.org</a></li><li><a href="/historic/tsc-devel-archive/about.html">About</a></li></ul>
+</header>
+<main>
+<h1 class="msg-subject">Re: [tsc-devel] 2.0.0 release and SFML branch</h1>
+<p class="msg-meta">
+  <span class="msg-from">Brian Allen Vanderburg II</span> |
+
+ Sun, 31 May 2015 19:12:43 UTC
+</p>
+
+
+
+
+<div class="tracker-placeholder"></div>
+
+
+
+<pre class="msg-body">On 05/31/2015 06:08 AM, Quintus wrote:
+<span class="msg-quote">&gt; Hi Brian,</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;&gt; I normally sign my messages but it seems that some mailing lists have a</span>
+<span class="msg-quote">&gt;&gt; problem handling the PGP/MIME attachments.  Does this mailing list have</span>
+<span class="msg-quote">&gt;&gt; a problem with that?  For now I&#39;ll send this unsigned.</span>
+<span class="msg-quote">&gt; No, it should not have a problem. The ML itself (i.e. mlmmj) will</span>
+<span class="msg-quote">&gt; deliver the mail to everyone subscribed as-is. The mail archive</span>
+<span class="msg-quote">&gt; (i.e. MHonArc) will cut off the PGP signature if you use PGP/MIME and</span>
+<span class="msg-quote">&gt; place a link to it in the message instead. The forum (i.e. my code :-))</span>
+<span class="msg-quote">&gt; should completely ignore the MIME part with the PGP signature as it</span>
+<span class="msg-quote">&gt; actively searches for the text/plain MIME part. However, my code is</span>
+<span class="msg-quote">&gt; young and may produce bugs as could be seen recently with datahead’s</span>
+<span class="msg-quote">&gt; mail. That’s not an excuse to not sign your mail — if a problem occurs I</span>
+<span class="msg-quote">&gt; must fix it. GPG ftw :-).</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; Would you mind to send me your public key so I can encrypt my mail to</span>
+<span class="msg-quote">&gt; you next time? If I have asked you this before, I apologise. I recently</span>
+<span class="msg-quote">&gt; reorganised my keyring and it seems I lose some public keys in the</span>
+<span class="msg-quote">&gt; procedure.</span>
+No problem. I&#39;ve attached my public key to this email.
+
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; Also please note you sent this email only to me and not to the</span>
+<span class="msg-quote">&gt; mailinglist. You might want to resend your mail to the ML.</span>
+<span class="msg-quote">&gt;</span>
+Oops.  I must have clicked Reply instead of Reply List.  I&#39;ll send this
+to the mailing list.
+
+<span class="msg-quote">&gt;&gt; Sorry I haven&#39;t been able to follow the development much.  I&#39;ve</span>
+<span class="msg-quote">&gt;&gt; currently got a full school workload and a coop, as well as some family</span>
+<span class="msg-quote">&gt;&gt; obligations and when I can a couple personal projects keeping me busy.</span>
+<span class="msg-quote">&gt; This is fine. If you look at my activity you’ll notice I haven’t been</span>
+<span class="msg-quote">&gt; doing much lately either. This is an open-source project, and we are all</span>
+<span class="msg-quote">&gt; under time constraints. Just be sure to drop the ML (or someone else</span>
+<span class="msg-quote">&gt; - From the team) a short note when you can predict you’re going to be</span>
+<span class="msg-quote">&gt; unavailable for a long time (e.g. several months). Would be nice to know</span>
+<span class="msg-quote">&gt; in advance when you decide to live half a year without Internet in the</span>
+<span class="msg-quote">&gt; Brazilian Jungle so we don’t wait for you to reply on the tracker :-P</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; Also, feel free to show up in IRC more often.</span>
+I may try to do that.  I&#39;m at my computer most of my free time.
+<span class="msg-quote">&gt;&gt; I think that approach would be a good idea, especially since there the</span>
+<span class="msg-quote">&gt;&gt; change are pretty extensive.  Either way would require someone to do</span>
+<span class="msg-quote">&gt;&gt; conflict fixes.  If changes are made to devel, then you&#39;d have to do</span>
+<span class="msg-quote">&gt;&gt; conflict fixes when merging in the SFML changes.  If they aren&#39;t made</span>
+<span class="msg-quote">&gt;&gt; until the SFML changes have been merged, anyone with existing feature</span>
+<span class="msg-quote">&gt;&gt; branches started before that merge will probably have to do conflict</span>
+<span class="msg-quote">&gt;&gt; resolution.  It may be a good idea for anyone doing planning on doing</span>
+<span class="msg-quote">&gt;&gt; feature branches to wait until the SFML changes are merged in.</span>
+<span class="msg-quote">&gt; I completely agree with this approach. This is how I imagine things to</span>
+<span class="msg-quote">&gt; be done. Maybe we should even introduce a separate milestone “SFML port”</span>
+<span class="msg-quote">&gt; to the tracker so we can keep track of the porting process and group</span>
+<span class="msg-quote">&gt; issues related to it.</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; Valete,</span>
+<span class="msg-quote">&gt; Quintus</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; PS: I apologise for this message being late. Your mailserver is still</span>
+<span class="msg-quote">&gt; blocking my mail as spam, and I have not yet had the time to look into</span>
+<span class="msg-quote">&gt; DKIM signatures.</span>
+<span class="msg-quote">&gt;</span>
+Funny it seems the AIM servers have been having this issue lately with
+some other email lists I&#39;m on.  I was almost removed from a list due to
+excessive bounces our something.  I&#39;m not familiar with DKIM or DMARC. 
+You can also send to my personal email server at …n@m…  It
+shouldn&#39;t have any problems.  I may eventually try to get spf/dkim/dmarc
+checks set up.
+
+Thanks,
+
+Brian Allen Vanderburg II
+
+</pre>
+
+
+<div class="msg-attachments">
+<h2>Attachments:</h2>
+<ul><li><a href="/historic/tsc-devel-archive/2015/05/a38/20140712_pub.key">20140712_pub.key</a> (application/x-iwork-keynote-sffkey, 12.38 KiB)</li><li><a href="/historic/tsc-devel-archive/2015/05/a38/0x0402D8BF.asc">0x0402D8BF.asc</a> (application/pgp-keys, 12.36 KiB)</li></ul>
+</div>
+
+
+<div class="msg-nav">
+<div class="msg-thread-nav msg-thread-nav-bythread">
+<table>
+<caption>By Thread</caption>
+<tbody>
+<tr><td></td><td>2015-05-19 22:29:09</td><td>Quintus</td><td class="msg-thread-level-0"><a href="/historic/tsc-devel-archive/2015/05/m12.html">[tsc-devel] 2.0.0 release and SFML branch</a></td></tr>
+<tr><td></td><td>2015-05-28 10:51:58</td><td>Quintus</td><td class="msg-thread-level-1"><a href="/historic/tsc-devel-archive/2015/05/m30.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td></tr>
+<tr><td></td><td>2015-05-29 03:57:57</td><td>Chris Jacobsen</td><td class="msg-thread-level-2"><a href="/historic/tsc-devel-archive/2015/05/m31.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td></tr>
+<tr><td></td><td>2015-05-29 07:13:33</td><td>Quintus</td><td class="msg-thread-level-3"><a href="/historic/tsc-devel-archive/2015/05/m33.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td></tr>
+<tr><td></td><td>2015-05-29 07:32:58</td><td>Chris Jacobsen</td><td class="msg-thread-level-4"><a href="/historic/tsc-devel-archive/2015/05/m34.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td></tr>
+<tr><td></td><td>2015-05-29 16:00:26</td><td>Quintus</td><td class="msg-thread-level-5"><a href="/historic/tsc-devel-archive/2015/05/m35.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td></tr>
+<tr><td></td><td>2015-05-30 05:16:26</td><td>Chris Jacobsen</td><td class="msg-thread-level-6"><a href="/historic/tsc-devel-archive/2015/05/m36.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td></tr>
+<tr><td>▶</td><td>2015-05-31 19:12:43</td><td>Brian Allen Vanderburg II</td><td class="msg-thread-level-2"><a href="/historic/tsc-devel-archive/2015/05/m38.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td></tr>
+<tr><td></td><td>2015-05-31 21:01:59</td><td>Quintus</td><td class="msg-thread-level-3"><a href="/historic/tsc-devel-archive/2015/05/m39.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td></tr>
+
+</tbody>
+</table>
+</div>
+<div class="msg-thread-nav msg-thread-nav-bydate">
+<table>
+<caption>By Date</caption>
+<tbody>
+
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/05/m12.html">[tsc-devel] 2.0.0 release and SFML branch</a></td><td>Quintus</td><td>2015-05-19 22:29:09</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/05/m30.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td><td>Quintus</td><td>2015-05-28 10:51:58</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/05/m31.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td><td>Chris Jacobsen</td><td>2015-05-29 03:57:57</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/05/m33.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td><td>Quintus</td><td>2015-05-29 07:13:33</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/05/m34.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td><td>Chris Jacobsen</td><td>2015-05-29 07:32:58</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/05/m35.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td><td>Quintus</td><td>2015-05-29 16:00:26</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/05/m36.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td><td>Chris Jacobsen</td><td>2015-05-30 05:16:26</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/05/m38.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td><td>Brian Allen Vanderburg II</td><td>2015-05-31 19:12:43</td><td class="msg-here">◀</td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/05/m39.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td><td>Quintus</td><td>2015-05-31 21:01:59</td><td class="msg-here"></td></tr>
+
+</tbody>
+</table>
+</div>
+</div>
+
+</main>
+<footer>
+<p>Mailing list archive generated by <a href="https://mg.guelker.eu/projects/postkasten/">Postkasten</a>.</p>
+</footer>
+</body>
+</html>

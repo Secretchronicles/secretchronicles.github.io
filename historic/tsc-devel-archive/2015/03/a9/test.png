@@ -1,0 +1,38 @@
+digraph {
+	node [label="\N"];
+	edge [dir=back];
+	graph [bb="0,0,1003,180"];
+	{
+		graph [bb=""];
+		node [color=red];
+		"[CORE]" [pos="90,162", width="1.2778", height="0.5"];
+		"tsc-core-v1" [pos="90,90", width="1.7778", height="0.5"];
+		"tsc-core-v2" [pos="486,90", width="1.7778", height="0.5"];
+		"custom-resource-v1" [pos="897,90", width="2.9444", height="0.5"];
+	}
+	{
+		graph [bb=""];
+		node [color=blue,
+			rankdir=LR];
+		"tsc-scenario1-v1" [pos="90,18", width="2.5", height="0.5"];
+		"tsc-scenario1-v2" [pos="288,18", width="2.5", height="0.5"];
+		"tsc-scenario2-v1" [pos="486,18", width="2.5", height="0.5"];
+		"tsc-scenario3-v1" [pos="684,18", width="2.5", height="0.5"];
+		"custom-scenario-v1" [pos="897,18", width="2.9167", height="0.5"];
+	}
+	{
+		graph [rank=same,
+			bb=""];
+		"tsc-core-v1";
+		"tsc-core-v2";
+		"custom-resource-v1";
+	}
+	"[CORE]" -> "tsc-core-v1" [pos="s,90,143.83 90,133.57 90,125.11 90,116.06 90,108.41"];
+	"tsc-core-v1" -> "tsc-core-v2" [pos="s,154.2,90 164.39,90 250.21,90 336.02,90 421.84,90"];
+	"tsc-core-v1" -> "tsc-scenario1-v1" [pos="s,90,71.831 90,61.573 90,53.108 90,44.059 90,36.413"];
+	"tsc-core-v2" -> "tsc-scenario1-v2" [pos="s,446.41,75.603 436.73,72.082 404.47,60.354 362.71,45.167 331.65,33.874"];
+	"tsc-core-v2" -> "tsc-scenario2-v1" [pos="s,486,71.831 486,61.573 486,53.108 486,44.059 486,36.413"];
+	"tsc-core-v2" -> "tsc-scenario3-v1" [pos="s,525.59,75.603 535.27,72.082 567.53,60.354 609.29,45.167 640.35,33.874"];
+	"tsc-core-v2" -> "custom-resource-v1" [pos="s,550.22,90 560.55,90 637.25,90 713.96,90 790.66,90"];
+	"custom-resource-v1" -> "custom-scenario-v1" [pos="s,897,71.831 897,61.573 897,53.108 897,44.059 897,36.413"];
+}

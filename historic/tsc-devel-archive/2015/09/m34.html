@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8"/>
+  <title>[tsc-devel] Self-hosting the project · tsc-devel@secretchronicles.org</title>
+  <style type="text/css">html, body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial Nova", "Arial", sans-serif;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  margin: 0px;
+}
+
+a {
+  color: #0b8ae1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #520ebb;
+}
+
+header {
+  margin: 0px;
+  padding: 12px 6px;
+  background-color: #0b8ae1;
+}
+
+header ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header ul li::after {
+  margin-left: 8px;
+  content: "|";
+  margin-right: 8px;
+}
+
+header ul li:last-child::after {
+  content: "";
+  margin-right: 0px;
+}
+
+header a {
+  color: white;
+}
+
+header a:hover {
+  color: black;
+}
+
+footer {
+  border-top: 1px solid #999999;
+  color: #999999;
+  font-size: 0.8rem;
+  padding: 8px;
+  text-align: center;
+  clear: both;
+}
+
+footer p {
+  margin: 0px;
+}
+
+main {
+  margin: 8px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+h1.msg-subject {
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+h2, caption {
+  font-size: 1rem;
+}
+
+
+.msg-meta {
+  margin-top: 0px;
+}
+
+.msg-from {
+  font-weight: bold;
+}
+
+.msg-cc {
+  color: #e1730a;
+}
+
+.msg-attachments h2 {
+  font-style: italic;
+}
+
+table, tr, td, th {
+  border: none;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #eeeeee;
+}
+
+thead tr {
+  border-bottom: 1px solid black;
+}
+
+.newyear {
+  font-style: italic;
+  text-align: center;
+  font-weight: bold;
+}
+
+.numreplies {
+  text-align: center;
+}
+
+.thread-ghost {
+  font-style: italic;
+}
+
+.lastreply {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+pre, code {
+  font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+.msg-body {
+  width: 80ch;
+}
+
+.msg-quote {
+  color: #698900;
+  font-style: italic;
+}
+
+.msg-nav {
+  clear: both;
+}
+
+.msg-thread-nav {
+  width: calc(50% - 4px);
+}
+
+.msg-thread-nav-bydate {
+  float: right;
+}
+
+.msg-thread-nav-bythread {
+  float: left;
+}
+
+.msg-thread-nav table caption {
+  background-color: #0b8ae1;
+  color: white;
+  border: none;
+  caption-side: top;
+  text-align: center;
+  font-weight: bold;
+}
+
+.msg-thread-nav tbody tr td {
+  padding: 2px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.msg-thread-nav-bydate table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bydate table td:nth-child(1) {
+  width: 55%;
+
+}
+
+.msg-thread-nav-bydate table td:nth-child(2) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bydate table td:nth-child(3) {
+  width:20%;
+  text-align: right;
+}
+
+.msg-thread-nav-bydate table td:nth-child(4) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+
+.msg-thread-nav-bythread table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bythread table td:nth-child(1) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+.msg-thread-nav-bythread table td:nth-child(2) {
+  width: 20%;
+
+}
+
+.msg-thread-nav-bythread table td:nth-child(3) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bythread table td:nth-child(4) {
+  width:55%;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-0 {
+  padding-left: 0px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-1 {
+  padding-left: 32px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-2 {
+  padding-left: 64px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-3 {
+  padding-left: 96px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-4 {
+  padding-left: 128px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-5 {
+  padding-left: 160px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-6 {
+  padding-left: 192px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-7 {
+  padding-left: 224px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-8 {
+  padding-left: 256px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-9 {
+  padding-left: 288px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-10 {
+  padding-left: 320px;
+}
+
+.threadindex {
+    table-layout: fixed;
+}
+
+.threadindex th:nth-child(1) {
+    width: 78%;
+}
+
+.threadindex th:nth-child(2) {
+    text-align: center;
+    width: 7%;
+}
+
+.threadindex th:nth-child(3) {
+    width: 15%;
+}
+
+.formatted-patch .patch-add {
+  color: #00CC00;
+}
+
+.formatted-patch .patch-del {
+  color: #FF0000;
+}
+
+.formatted-patch .patch-pos {
+  color: #0000FF;
+  background-color: #ddddFF;
+}
+
+div.formatted-patch {
+  border: 1px solid black;
+}
+
+div.formatted-patch pre {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'Inconsolata', 'DejaVu Sans Mono', monospace;
+  margin: 0px;
+}
+
+
+div.formatted-patch pre.linenos {
+  background-color: #0b8ae1;
+  float: left;
+  padding-right: 4px;
+  text-align: right;
+  margin-right: 4px;
+}
+
+.linenos a {
+  color: white;
+}
+
+.linenos a:hover {
+  color: black;
+}
+
+.linenos a:target {
+  color: #8b000e;
+}
+
+tracker-placeholder {
+  display: none;
+}
+
+.tracker-state-change {
+  font-style: italic;
+  color: #e1730a;
+}
+
+.ticket-state {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.ticket-state-open {
+  color: #00CC00;
+}
+
+.ticket-state-confirmed {
+  color: #e1730a;
+}
+
+.ticket-state-closed {
+  color: #FF0000;
+}
+
+.tracker-panel {
+  width: 450px;
+  float: right;
+  margin: 8px;
+  padding: 0px;
+  border: 2px solid #0b8ae1;
+  text-align: center;
+}
+
+.tracker-panel h2 {
+  background-color: #0b8ae1;
+  color: white;
+  margin-top: 0px;
+}
+
+.tracker-panel ul {
+  padding: 0px 8px;
+  margin: 8px;
+  text-align: left;
+  list-style-type: none;
+}
+
+.tracker-table {
+  table-layout: fixed;
+}
+
+.tracker-table tbody td:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tracker-table thead th:nth-child(1) {
+  width: 60%;
+}
+
+.tracker-table thead th:nth-child(2) {
+  width: 13%;
+}
+
+.tracker-table thead th:nth-child(3) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(4) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(5) {
+  width: 7%;
+  text-align: center;
+}
+
+.tracker-table tbody td:nth-child(5) {
+  text-align: center;
+}
+
+#tracker-filter-subject {
+  width: calc(100% - 8px);
+}
+
+.filter-hide {
+  display: none;
+}
+
+@media(max-width: 768px) {
+
+  html, body {
+    font-size: 18px;
+  }
+
+  .lastreply {
+    display: none;
+  }
+
+  .msg-body {
+    width: initial;
+  }
+
+  .msg-thread-nav-bydate {
+    float: none;
+  }
+
+  .msg-thread-nav-bythread {
+    float: none;
+  }
+
+  .threadindex .lastreply {
+      display: none;
+      width: 0%;
+  }
+
+  .threadindex th:nth-child(1) {
+      width: 80%;
+  }
+
+  .threadindex th:nth-child(2) {
+      width: 20%;
+  }
+
+  .tracker-panel {
+    width: 95%;
+    margin: 0px auto;
+    float: none;
+  }
+
+  .tracker-table thead th:nth-child(1) {
+  width: 80%;
+  }
+
+  .tracker-table thead th:nth-child(2), .tracker-table tbody td:nth-child(2) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(3), .tracker-table tbody td:nth-child(3) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(4), .tracker-table tbody td:nth-child(4) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(5) {
+    width: 20%;
+  }
+}
+</style>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<header>
+<ul><li><a href="/historic/tsc-devel-archive/">tsc-devel@secretchronicles.org</a></li><li><a href="/historic/tsc-devel-archive/about.html">About</a></li></ul>
+</header>
+<main>
+<h1 class="msg-subject">[tsc-devel] Self-hosting the project</h1>
+<p class="msg-meta">
+  <span class="msg-from">Quintus</span> |
+
+ Fri, 11 Sep 2015 15:40:58 UTC
+</p>
+
+
+
+
+<div class="tracker-placeholder"></div>
+
+
+
+<pre class="msg-body">Hi everyone,
+
+                              I. Overview
+
+as has been disussed before in IRC for months, we want to switch our
+project infrastructure completely over to alexandria, because GitHub
+
+1) asks people to censor stuff
+2) is not an open platform
+3) tries to get a monopoly
+4) may change their business model affecting all depandent projects
+5) more reasons we mentioned in IRC I can’t think of right now.
+
+For this to happen, we’re going to have to choose a project management
+software setup. There will be quite some stuff for sydney to learn
+during that course :-)
+
+                            II. Requirements
+
+It is fairly obvious that we’re going to host a Git daemon (see
+git-daemon(1)) for read-only access to our repositories, but apart from
+that we need to select the software we want. Before making suggestions
+for that, we need to determine what we actually need. Looking at the
+project, I think I derived the following requirements:
+
+1. Repository source browser, including Git revision history. Best if it
+   contains syntax highlighting.
+2. Ticket system, for bugs, feature requests, pull requests.
+
+There are more requirements, but our existing infrastructure already
+satisfies them:
+
+3. Wiki for community content (Moinmoin).
+4. Mailing lists and forum, best interconnected (mlmmj, Chessboard)
+5. Main website including news posts with RSS (static HTML).
+6. File upload/download facility for releases and for every team member
+   (project FTP and SFTP services).
+
+I think points 4-6 work well enough that there’s no need to replace
+them. If the software we chose has such facilities, they’d thus have to
+be disabled; on the other hand, if it doesn’t have such facilities, this
+is fine.
+
+Point 3 is an eternal source of frustration currently. The old Moinmoin
+wiki version we have wreaks havoc every now and then, requiring a hard
+restart of the apache httpd daemon each time. Newer versions of Moinmoin
+may not have that issue, so we shouldn’t ditch it without further
+thought.
+
+Regarding the tickets, GitHub appears to have a fairly good API that
+allows to programmatically retrieve these[1]. The ticket system we use
+should thus allow for automated import of existing tickets of some kind;
+a quick one-time hack suffices. We won’t do that more often than once,
+and can then forget about that. Writing a little script that fetches the
+tickets from GitHub’s API and importing them into the new system
+shouldn’t be too much effort.
+
+Since our server sponsor extended our server’ſ capabilities a lot
+(thanks for that again), we will have no resource shortage.
+
+                             III. Software
+
+I will not use Mantis.
+
+Okay, that being said, the following software comes to mind. This list
+is neither meant to be exhaustive, nor exclusive; there is more
+software out there, and we may run some of these in parallel. Please
+discuss.
+
+1) Redmine: <a href="http://www.redmine.org/">http://www.redmine.org/</a>
+2) Bugzilla: <a href="https://www.bugzilla.org/">https://www.bugzilla.org/</a>
+3) Git’s builtin-repository browser, Gitweb.
+4) Trac: <a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a>
+5) Flyspray: <a href="http://www.flyspray.org/">http://www.flyspray.org/</a>
+6) Selfhosted Gitlab: <a href="https://gitlab.com">https://gitlab.com</a>
+
+I have experience with Redmine, and can say that it has some nice
+features (like customisable ticket statuses, subprojects, private
+projects and a milestone system. It is written in Ruby and licensed as
+GPL, which is why I have a slight preference towards this.
+
+Bugzilla (written in Perl, licensed as MPL) is known to very nicely
+integrate with mailinglists for discussion and with bugzilla.mozilla.org
+there is a really large power-user of this software that guarantees it
+is rock-solid. I’d absolutely be fine with this one; Bugzilla to my
+knowledge only provides the ticket system, though, so no builtin
+repository browser (but there are separate ones like Gitweb). AFAIK
+RedHat also uses Bugzilla for their bugtrackers.
+
+Gitweb recently got syntax highlighting, so don’t say we can’t use it
+because it has none. This should be considered if we use a tickets-only
+software like Bugzilla or Flyspray. Gitweb is written in C and comes
+with Git itself.
+
+Trac is similar to Redmine, but I have never used it. It’ſ Python
+software under the BSD license. Can someone elaborate?
+
+Flyspray like Bugzilla is only a ticket system. It was used by our
+server sponsor (now replaced by their own solution) and by the ArchLinux
+development team. No stable release since 2012, though. PHP software,
+but I was unable to determine the license.
+
+Gitlab is basically like GitHub. It even looks similar. The software is
+written in Ruby and licensed under BSD; you must sign a CLA to
+contribute. Note Gitlab is a commercial company (not necessaryly bad),
+and the version one can selfhost is a stripped-down “community
+version”. Gitlab recently bought and shut down the popular Gitorious
+service, which was a free (GPL!) alternative to GitHub. This generated a
+lot of critical comments on their announcement, which they appear to
+have simply deleted by now. I don’t want to work with a company with
+such an attitude.
+
+These are the things that come to my mind; Bugzilla and Flyspray are
+lightweight solutions that only solve one problem and nothing more; the
+others are fully-fledeged project management software programs that try
+to be the one-size-fits-all solution. I have a preference towards
+Redmine or Bugzilla, but please feel free to discuss the issue. Also
+please mention more software, even if it is not directly related to the
+core infrastructure.
+
+Valete,
+Quintus
+
+[1]: <a href="https://developer.github.com/">https://developer.github.com/</a>
+
+-- 
+#!/sbin/quintus
+Blog: <a href="http://www.guelkerdev.de">http://www.guelkerdev.de</a>
+
+GnuPG key: F1D8799FBCC8BC4F
+
+</pre>
+
+
+
+<div class="msg-nav">
+<div class="msg-thread-nav msg-thread-nav-bythread">
+<table>
+<caption>By Thread</caption>
+<tbody>
+<tr><td>▶</td><td>2015-09-11 15:40:58</td><td>Quintus</td><td class="msg-thread-level-0"><a href="/historic/tsc-devel-archive/2015/09/m34.html">[tsc-devel] Self-hosting the project</a></td></tr>
+<tr><td></td><td>2015-09-11 16:07:08</td><td>Lauri Ojansivu</td><td class="msg-thread-level-1"><a href="/historic/tsc-devel-archive/2015/09/m35.html">Re: [tsc-devel] Self-hosting the project</a></td></tr>
+<tr><td></td><td>2015-09-11 21:07:33</td><td>Lauri Ojansivu</td><td class="msg-thread-level-2"><a href="/historic/tsc-devel-archive/2015/09/m36.html">Re: [tsc-devel] Self-hosting the project</a></td></tr>
+<tr><td></td><td>2015-09-11 21:25:51</td><td>Lauri Ojansivu</td><td class="msg-thread-level-3"><a href="/historic/tsc-devel-archive/2015/09/m37.html">Re: [tsc-devel] Self-hosting the project</a></td></tr>
+<tr><td></td><td>2015-09-12 06:21:42</td><td>Quintus</td><td class="msg-thread-level-4"><a href="/historic/tsc-devel-archive/2015/09/m38.html">Re: [tsc-devel] Self-hosting the project</a></td></tr>
+<tr><td></td><td>2015-09-12 07:02:08</td><td>Quintus</td><td class="msg-thread-level-5"><a href="/historic/tsc-devel-archive/2015/09/m39.html">Re: [tsc-devel] Self-hosting the project</a></td></tr>
+<tr><td></td><td>2015-09-12 07:23:48</td><td>Lauri Ojansivu</td><td class="msg-thread-level-6"><a href="/historic/tsc-devel-archive/2015/09/m40.html">Re: [tsc-devel] Self-hosting the project</a></td></tr>
+<tr><td></td><td>2015-09-12 10:04:35</td><td>Quintus</td><td class="msg-thread-level-7"><a href="/historic/tsc-devel-archive/2015/09/m41.html">Re: [tsc-devel] Self-hosting the project</a></td></tr>
+<tr><td></td><td>2015-09-12 10:17:52</td><td>Lauri Ojansivu</td><td class="msg-thread-level-8"><a href="/historic/tsc-devel-archive/2015/09/m42.html">Re: [tsc-devel] Self-hosting the project</a></td></tr>
+<tr><td></td><td>2015-09-12 10:43:42</td><td>Lauri Ojansivu</td><td class="msg-thread-level-9"><a href="/historic/tsc-devel-archive/2015/09/m43.html">Re: [tsc-devel] Self-hosting the project</a></td></tr>
+<tr><td></td><td>2015-10-06 18:03:05</td><td>Quintus</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2015/10/m15.html">Re: [tsc-devel] Self-hosting the project</a></td></tr>
+<tr><td></td><td>2015-10-06 18:21:03</td><td>Chris Jacobsen</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2015/10/m16.html">Re: [tsc-devel] Self-hosting the project</a></td></tr>
+<tr><td></td><td>2015-10-06 18:28:10</td><td>Quintus</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2015/10/m17.html">Re: [tsc-devel] Self-hosting the project</a></td></tr>
+<tr><td></td><td>2015-10-06 18:31:37</td><td>Chris Jacobsen</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2015/10/m18.html">Re: [tsc-devel] Self-hosting the project</a></td></tr>
+
+</tbody>
+</table>
+</div>
+<div class="msg-thread-nav msg-thread-nav-bydate">
+<table>
+<caption>By Date</caption>
+<tbody>
+
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/09/m34.html">[tsc-devel] Self-hosting the project</a></td><td>Quintus</td><td>2015-09-11 15:40:58</td><td class="msg-here">◀</td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/09/m35.html">Re: [tsc-devel] Self-hosting the project</a></td><td>Lauri Ojansivu</td><td>2015-09-11 16:07:08</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/09/m36.html">Re: [tsc-devel] Self-hosting the project</a></td><td>Lauri Ojansivu</td><td>2015-09-11 21:07:33</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/09/m37.html">Re: [tsc-devel] Self-hosting the project</a></td><td>Lauri Ojansivu</td><td>2015-09-11 21:25:51</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/09/m38.html">Re: [tsc-devel] Self-hosting the project</a></td><td>Quintus</td><td>2015-09-12 06:21:42</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/09/m39.html">Re: [tsc-devel] Self-hosting the project</a></td><td>Quintus</td><td>2015-09-12 07:02:08</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/09/m40.html">Re: [tsc-devel] Self-hosting the project</a></td><td>Lauri Ojansivu</td><td>2015-09-12 07:23:48</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/09/m41.html">Re: [tsc-devel] Self-hosting the project</a></td><td>Quintus</td><td>2015-09-12 10:04:35</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/09/m42.html">Re: [tsc-devel] Self-hosting the project</a></td><td>Lauri Ojansivu</td><td>2015-09-12 10:17:52</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/09/m43.html">Re: [tsc-devel] Self-hosting the project</a></td><td>Lauri Ojansivu</td><td>2015-09-12 10:43:42</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/10/m15.html">Re: [tsc-devel] Self-hosting the project</a></td><td>Quintus</td><td>2015-10-06 18:03:05</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/10/m16.html">Re: [tsc-devel] Self-hosting the project</a></td><td>Chris Jacobsen</td><td>2015-10-06 18:21:03</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/10/m17.html">Re: [tsc-devel] Self-hosting the project</a></td><td>Quintus</td><td>2015-10-06 18:28:10</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/10/m18.html">Re: [tsc-devel] Self-hosting the project</a></td><td>Chris Jacobsen</td><td>2015-10-06 18:31:37</td><td class="msg-here"></td></tr>
+
+</tbody>
+</table>
+</div>
+</div>
+
+</main>
+<footer>
+<p>Mailing list archive generated by <a href="https://mg.guelker.eu/projects/postkasten/">Postkasten</a>.</p>
+</footer>
+</body>
+</html>

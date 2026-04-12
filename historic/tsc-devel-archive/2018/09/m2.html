@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8"/>
+  <title>[tsc-devel] Re: TSC Boost Build Issues · tsc-devel@secretchronicles.org</title>
+  <style type="text/css">html, body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial Nova", "Arial", sans-serif;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  margin: 0px;
+}
+
+a {
+  color: #0b8ae1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #520ebb;
+}
+
+header {
+  margin: 0px;
+  padding: 12px 6px;
+  background-color: #0b8ae1;
+}
+
+header ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header ul li::after {
+  margin-left: 8px;
+  content: "|";
+  margin-right: 8px;
+}
+
+header ul li:last-child::after {
+  content: "";
+  margin-right: 0px;
+}
+
+header a {
+  color: white;
+}
+
+header a:hover {
+  color: black;
+}
+
+footer {
+  border-top: 1px solid #999999;
+  color: #999999;
+  font-size: 0.8rem;
+  padding: 8px;
+  text-align: center;
+  clear: both;
+}
+
+footer p {
+  margin: 0px;
+}
+
+main {
+  margin: 8px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+h1.msg-subject {
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+h2, caption {
+  font-size: 1rem;
+}
+
+
+.msg-meta {
+  margin-top: 0px;
+}
+
+.msg-from {
+  font-weight: bold;
+}
+
+.msg-cc {
+  color: #e1730a;
+}
+
+.msg-attachments h2 {
+  font-style: italic;
+}
+
+table, tr, td, th {
+  border: none;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #eeeeee;
+}
+
+thead tr {
+  border-bottom: 1px solid black;
+}
+
+.newyear {
+  font-style: italic;
+  text-align: center;
+  font-weight: bold;
+}
+
+.numreplies {
+  text-align: center;
+}
+
+.thread-ghost {
+  font-style: italic;
+}
+
+.lastreply {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+pre, code {
+  font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+.msg-body {
+  width: 80ch;
+}
+
+.msg-quote {
+  color: #698900;
+  font-style: italic;
+}
+
+.msg-nav {
+  clear: both;
+}
+
+.msg-thread-nav {
+  width: calc(50% - 4px);
+}
+
+.msg-thread-nav-bydate {
+  float: right;
+}
+
+.msg-thread-nav-bythread {
+  float: left;
+}
+
+.msg-thread-nav table caption {
+  background-color: #0b8ae1;
+  color: white;
+  border: none;
+  caption-side: top;
+  text-align: center;
+  font-weight: bold;
+}
+
+.msg-thread-nav tbody tr td {
+  padding: 2px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.msg-thread-nav-bydate table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bydate table td:nth-child(1) {
+  width: 55%;
+
+}
+
+.msg-thread-nav-bydate table td:nth-child(2) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bydate table td:nth-child(3) {
+  width:20%;
+  text-align: right;
+}
+
+.msg-thread-nav-bydate table td:nth-child(4) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+
+.msg-thread-nav-bythread table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bythread table td:nth-child(1) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+.msg-thread-nav-bythread table td:nth-child(2) {
+  width: 20%;
+
+}
+
+.msg-thread-nav-bythread table td:nth-child(3) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bythread table td:nth-child(4) {
+  width:55%;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-0 {
+  padding-left: 0px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-1 {
+  padding-left: 32px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-2 {
+  padding-left: 64px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-3 {
+  padding-left: 96px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-4 {
+  padding-left: 128px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-5 {
+  padding-left: 160px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-6 {
+  padding-left: 192px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-7 {
+  padding-left: 224px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-8 {
+  padding-left: 256px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-9 {
+  padding-left: 288px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-10 {
+  padding-left: 320px;
+}
+
+.threadindex {
+    table-layout: fixed;
+}
+
+.threadindex th:nth-child(1) {
+    width: 78%;
+}
+
+.threadindex th:nth-child(2) {
+    text-align: center;
+    width: 7%;
+}
+
+.threadindex th:nth-child(3) {
+    width: 15%;
+}
+
+.formatted-patch .patch-add {
+  color: #00CC00;
+}
+
+.formatted-patch .patch-del {
+  color: #FF0000;
+}
+
+.formatted-patch .patch-pos {
+  color: #0000FF;
+  background-color: #ddddFF;
+}
+
+div.formatted-patch {
+  border: 1px solid black;
+}
+
+div.formatted-patch pre {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'Inconsolata', 'DejaVu Sans Mono', monospace;
+  margin: 0px;
+}
+
+
+div.formatted-patch pre.linenos {
+  background-color: #0b8ae1;
+  float: left;
+  padding-right: 4px;
+  text-align: right;
+  margin-right: 4px;
+}
+
+.linenos a {
+  color: white;
+}
+
+.linenos a:hover {
+  color: black;
+}
+
+.linenos a:target {
+  color: #8b000e;
+}
+
+tracker-placeholder {
+  display: none;
+}
+
+.tracker-state-change {
+  font-style: italic;
+  color: #e1730a;
+}
+
+.ticket-state {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.ticket-state-open {
+  color: #00CC00;
+}
+
+.ticket-state-confirmed {
+  color: #e1730a;
+}
+
+.ticket-state-closed {
+  color: #FF0000;
+}
+
+.tracker-panel {
+  width: 450px;
+  float: right;
+  margin: 8px;
+  padding: 0px;
+  border: 2px solid #0b8ae1;
+  text-align: center;
+}
+
+.tracker-panel h2 {
+  background-color: #0b8ae1;
+  color: white;
+  margin-top: 0px;
+}
+
+.tracker-panel ul {
+  padding: 0px 8px;
+  margin: 8px;
+  text-align: left;
+  list-style-type: none;
+}
+
+.tracker-table {
+  table-layout: fixed;
+}
+
+.tracker-table tbody td:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tracker-table thead th:nth-child(1) {
+  width: 60%;
+}
+
+.tracker-table thead th:nth-child(2) {
+  width: 13%;
+}
+
+.tracker-table thead th:nth-child(3) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(4) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(5) {
+  width: 7%;
+  text-align: center;
+}
+
+.tracker-table tbody td:nth-child(5) {
+  text-align: center;
+}
+
+#tracker-filter-subject {
+  width: calc(100% - 8px);
+}
+
+.filter-hide {
+  display: none;
+}
+
+@media(max-width: 768px) {
+
+  html, body {
+    font-size: 18px;
+  }
+
+  .lastreply {
+    display: none;
+  }
+
+  .msg-body {
+    width: initial;
+  }
+
+  .msg-thread-nav-bydate {
+    float: none;
+  }
+
+  .msg-thread-nav-bythread {
+    float: none;
+  }
+
+  .threadindex .lastreply {
+      display: none;
+      width: 0%;
+  }
+
+  .threadindex th:nth-child(1) {
+      width: 80%;
+  }
+
+  .threadindex th:nth-child(2) {
+      width: 20%;
+  }
+
+  .tracker-panel {
+    width: 95%;
+    margin: 0px auto;
+    float: none;
+  }
+
+  .tracker-table thead th:nth-child(1) {
+  width: 80%;
+  }
+
+  .tracker-table thead th:nth-child(2), .tracker-table tbody td:nth-child(2) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(3), .tracker-table tbody td:nth-child(3) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(4), .tracker-table tbody td:nth-child(4) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(5) {
+    width: 20%;
+  }
+}
+</style>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<header>
+<ul><li><a href="/historic/tsc-devel-archive/">tsc-devel@secretchronicles.org</a></li><li><a href="/historic/tsc-devel-archive/about.html">About</a></li></ul>
+</header>
+<main>
+<h1 class="msg-subject">[tsc-devel] Re: TSC Boost Build Issues</h1>
+<p class="msg-meta">
+  <span class="msg-from">Ryan Gonzalez</span> |
+
+ Sat, 01 Sep 2018 19:39:59 UTC
+</p>
+
+
+
+
+<div class="tracker-placeholder"></div>
+
+
+
+<pre class="msg-body">- What CMake version are you using?
+- &#34;GNU 4.8.4&#34; oh my gosh I&#39;m so sorry
+
+On Sat, Sep 1, 2018 at 2:22 PM &lt;…8@g…&gt; wrote:
+
+<span class="msg-quote">&gt; I seem to be getting boost build issues when I try to build the TSC source</span>
+<span class="msg-quote">&gt; code.</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; I do have Kirbyfan64&#39;s boost fix commit present, the fix for issue #633.</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; What I tried is below.  What else might I need to do to get TSC building</span>
+<span class="msg-quote">&gt; again?</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; ===============</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; I first tried a basic cmake, after purging my build directory:</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; …d@d…:~/TSCX/TSC/tsc/build$ cmake ..</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; -- The C compiler identification is GNU 4.8.4</span>
+<span class="msg-quote">&gt; -- The CXX compiler identification is GNU 4.8.4</span>
+<span class="msg-quote">&gt; -- Check for working C compiler: /usr/bin/cc</span>
+<span class="msg-quote">&gt; -- Check for working C compiler: /usr/bin/cc -- works</span>
+<span class="msg-quote">&gt; -- Detecting C compiler ABI info</span>
+<span class="msg-quote">&gt; -- Detecting C compiler ABI info - done</span>
+<span class="msg-quote">&gt; -- Detecting C compile features</span>
+<span class="msg-quote">&gt; -- Detecting C compile features - done</span>
+<span class="msg-quote">&gt; -- Check for working CXX compiler: /usr/bin/c++</span>
+<span class="msg-quote">&gt; -- Check for working CXX compiler: /usr/bin/c++ -- works</span>
+<span class="msg-quote">&gt; -- Detecting CXX compiler ABI info</span>
+<span class="msg-quote">&gt; -- Detecting CXX compiler ABI info - done</span>
+<span class="msg-quote">&gt; -- Detecting CXX compile features</span>
+<span class="msg-quote">&gt; -- Detecting CXX compile features - done</span>
+<span class="msg-quote">&gt; -- Found PkgConfig: /usr/bin/pkg-config (found version &#34;0.26&#34;)</span>
+<span class="msg-quote">&gt; -- Found Ruby: /usr/local/bin/ruby</span>
+<span class="msg-quote">&gt; -- Found Gettext: /usr/bin/msgmerge (found version &#34;0.18.3&#34;)</span>
+<span class="msg-quote">&gt; -- Searching for SFML audio library</span>
+<span class="msg-quote">&gt; --   found: /usr/local/lib/libsfml-audio.so</span>
+<span class="msg-quote">&gt; -- Searching for SFML graphics library</span>
+<span class="msg-quote">&gt; --   found: /usr/local/lib/libsfml-graphics.so</span>
+<span class="msg-quote">&gt; -- Searching for SFML window library</span>
+<span class="msg-quote">&gt; --   found: /usr/local/lib/libsfml-window.so</span>
+<span class="msg-quote">&gt; -- Searching for SFML system library</span>
+<span class="msg-quote">&gt; --   found: /usr/local/lib/libsfml-system.so</span>
+<span class="msg-quote">&gt; -- Found SFML: /usr/local/include/SFML</span>
+<span class="msg-quote">&gt; -- Searching for Base CEGUI library</span>
+<span class="msg-quote">&gt; --   found: /usr/local/lib/libCEGUIBase-0.so</span>
+<span class="msg-quote">&gt; -- Searching for CoreWindowRendererSet CEGUI library</span>
+<span class="msg-quote">&gt; --   found: /usr/local/lib/cegui-0.8/libCEGUICoreWindowRendererSet.so</span>
+<span class="msg-quote">&gt; -- Searching for DevILImageCodec CEGUI library</span>
+<span class="msg-quote">&gt; --   found: /usr/local/lib/cegui-0.8/libCEGUIDevILImageCodec.so</span>
+<span class="msg-quote">&gt; -- Searching for LibXMLParser CEGUI library</span>
+<span class="msg-quote">&gt; --   found: /usr/local/lib/cegui-0.8/libCEGUILibXMLParser.so</span>
+<span class="msg-quote">&gt; -- Searching for OpenGLRenderer CEGUI library</span>
+<span class="msg-quote">&gt; --   found: /usr/local/lib/libCEGUIOpenGLRenderer-0.so</span>
+<span class="msg-quote">&gt; -- Found CEGUI: /usr/local/include/cegui-0</span>
+<span class="msg-quote">&gt; -- Found OpenGL: /usr/lib/x86_64-linux-gnu/libGL.so</span>
+<span class="msg-quote">&gt; -- Found ZLIB: /usr/lib/x86_64-linux-gnu/libz.so (found version &#34;1.2.8&#34;)</span>
+<span class="msg-quote">&gt; -- Found PNG: /usr/lib/x86_64-linux-gnu/libpng.so (found version &#34;1.2.50&#34;)</span>
+<span class="msg-quote">&gt; -- Found PCRE: /usr/include</span>
+<span class="msg-quote">&gt; -- Found LibXmlPP: /usr/lib/libxml++-2.6.so (found suitable version</span>
+<span class="msg-quote">&gt; &#34;2.36.0&#34;, minimum required is &#34;2.6&#34;)</span>
+<span class="msg-quote">&gt; -- Looking for XOpenDisplay in</span>
+<span class="msg-quote">&gt; /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so</span>
+<span class="msg-quote">&gt; -- Looking for XOpenDisplay in</span>
+<span class="msg-quote">&gt; /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so -</span>
+<span class="msg-quote">&gt; found</span>
+<span class="msg-quote">&gt; -- Looking for gethostbyname</span>
+<span class="msg-quote">&gt; -- Looking for gethostbyname - found</span>
+<span class="msg-quote">&gt; -- Looking for connect</span>
+<span class="msg-quote">&gt; -- Looking for connect - found</span>
+<span class="msg-quote">&gt; -- Looking for remove</span>
+<span class="msg-quote">&gt; -- Looking for remove - found</span>
+<span class="msg-quote">&gt; -- Looking for shmat</span>
+<span class="msg-quote">&gt; -- Looking for shmat - found</span>
+<span class="msg-quote">&gt; -- Looking for IceConnectionNumber in ICE</span>
+<span class="msg-quote">&gt; -- Looking for IceConnectionNumber in ICE - found</span>
+<span class="msg-quote">&gt; -- Found X11: /usr/lib/x86_64-linux-gnu/libX11.so</span>
+<span class="msg-quote">&gt; CMake Error at /usr/local/share/cmake-3.2/Modules/FindBoost.cmake:1182</span>
+<span class="msg-quote">&gt; (message):</span>
+<span class="msg-quote">&gt;   Unable to find the requested Boost libraries.</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;   Boost version: 1.54.0</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;   Boost include path: /usr/include</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;   Could not find the following Boost libraries:</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;           boost_filesystem</span>
+<span class="msg-quote">&gt;           boost_chrono</span>
+<span class="msg-quote">&gt;           boost_thread</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;   No Boost libraries were found.  You may need to set BOOST_LIBRARYDIR to</span>
+<span class="msg-quote">&gt; the</span>
+<span class="msg-quote">&gt;   directory containing Boost libraries or BOOST_ROOT to the location of</span>
+<span class="msg-quote">&gt;   Boost.</span>
+<span class="msg-quote">&gt; Call Stack (most recent call first):</span>
+<span class="msg-quote">&gt;   CMakeLists.txt:141 (find_package)</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; -- Building tinyclipboard statically</span>
+<span class="msg-quote">&gt; -- Scripting engine enabled: building mruby statically</span>
+<span class="msg-quote">&gt; -- Found BISON: /usr/bin/bison (found version &#34;3.0.2&#34;)</span>
+<span class="msg-quote">&gt; -- --------------- Build info summary ----------------</span>
+<span class="msg-quote">&gt; -- TSC version:    2.1.0dev</span>
+<span class="msg-quote">&gt; -- Build type:</span>
+<span class="msg-quote">&gt; -- Crosscompiling: No</span>
+<span class="msg-quote">&gt; -- --------------- Configuration summary -------------</span>
+<span class="msg-quote">&gt; -- Enable the in-game editor:         ON</span>
+<span class="msg-quote">&gt; -- Enable the mruby scripting engine: ON</span>
+<span class="msg-quote">&gt; -- Enable native language support:    ON</span>
+<span class="msg-quote">&gt; -- Use system-provided tinyclipboard: OFF</span>
+<span class="msg-quote">&gt; -- --------------- Path configuration -----------------</span>
+<span class="msg-quote">&gt; -- Install prefix:        /usr/local</span>
+<span class="msg-quote">&gt; -- Binary directory:      bin</span>
+<span class="msg-quote">&gt; -- Shared data directory: share</span>
+<span class="msg-quote">&gt; -- Manpage directory:     share/man</span>
+<span class="msg-quote">&gt; -- (relative pathes are relative to the install prefix;</span>
+<span class="msg-quote">&gt; -- the directory /tsc will be appended to the shared</span>
+<span class="msg-quote">&gt; -- data directory indicated above.)</span>
+<span class="msg-quote">&gt; -- ----------------------------------------------------</span>
+<span class="msg-quote">&gt; -- Configuring incomplete, errors occurred!</span>
+<span class="msg-quote">&gt; See also &#34;/home/datahead/TSCX/TSC/tsc/build/CMakeFiles/CMakeOutput.log&#34;.</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; -------</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; I clearly have the include files in /usr/include:</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; …d@d…:/usr/include/boost$ ls | egrep</span>
+<span class="msg-quote">&gt; &#34;(filesystem|chrono|thread)&#34;</span>
+<span class="msg-quote">&gt; chrono</span>
+<span class="msg-quote">&gt; chrono.hpp</span>
+<span class="msg-quote">&gt; filesystem</span>
+<span class="msg-quote">&gt; filesystem.hpp</span>
+<span class="msg-quote">&gt; thread</span>
+<span class="msg-quote">&gt; thread.hpp</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; There are no boost library files in /usr/lib or /usr/local/lib.</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; -------</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; I then tried pointing to the copy of boost I build a while back, after</span>
+<span class="msg-quote">&gt; purging my TSC build directory again.  I used -DBOOST_ROOT to point it:</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; …d@d…:~/TSCX/TSC/tsc/build$ cmake</span>
+<span class="msg-quote">&gt; -DBOOST_ROOT=/home/datahead/boost_libs ..-- The C compiler identification</span>
+<span class="msg-quote">&gt; is GNU 4.8.4</span>
+<span class="msg-quote">&gt; -- The CXX compiler identification is GNU 4.8.4</span>
+<span class="msg-quote">&gt; -- Check for working C compiler: /usr/bin/cc</span>
+<span class="msg-quote">&gt; -- Check for working C compiler: /usr/bin/cc -- works</span>
+<span class="msg-quote">&gt; -- Detecting C compiler ABI info</span>
+<span class="msg-quote">&gt; -- Detecting C compiler ABI info - done</span>
+<span class="msg-quote">&gt; -- Detecting C compile features</span>
+<span class="msg-quote">&gt; -- Detecting C compile features - done</span>
+<span class="msg-quote">&gt; -- Check for working CXX compiler: /usr/bin/c++</span>
+<span class="msg-quote">&gt; -- Check for working CXX compiler: /usr/bin/c++ -- works</span>
+<span class="msg-quote">&gt; -- Detecting CXX compiler ABI info</span>
+<span class="msg-quote">&gt; -- Detecting CXX compiler ABI info - done</span>
+<span class="msg-quote">&gt; -- Detecting CXX compile features</span>
+<span class="msg-quote">&gt; -- Detecting CXX compile features - done</span>
+<span class="msg-quote">&gt; -- Found PkgConfig: /usr/bin/pkg-config (found version &#34;0.26&#34;)</span>
+<span class="msg-quote">&gt; -- Found Ruby: /usr/local/bin/ruby</span>
+<span class="msg-quote">&gt; -- Found Gettext: /usr/bin/msgmerge (found version &#34;0.18.3&#34;)</span>
+<span class="msg-quote">&gt; -- Searching for SFML audio library</span>
+<span class="msg-quote">&gt; --   found: /usr/local/lib/libsfml-audio.so</span>
+<span class="msg-quote">&gt; -- Searching for SFML graphics library</span>
+<span class="msg-quote">&gt; --   found: /usr/local/lib/libsfml-graphics.so</span>
+<span class="msg-quote">&gt; -- Searching for SFML window library</span>
+<span class="msg-quote">&gt; --   found: /usr/local/lib/libsfml-window.so</span>
+<span class="msg-quote">&gt; -- Searching for SFML system library</span>
+<span class="msg-quote">&gt; --   found: /usr/local/lib/libsfml-system.so</span>
+<span class="msg-quote">&gt; -- Found SFML: /usr/local/include/SFML</span>
+<span class="msg-quote">&gt; -- Searching for Base CEGUI library</span>
+<span class="msg-quote">&gt; --   found: /usr/local/lib/libCEGUIBase-0.so</span>
+<span class="msg-quote">&gt; -- Searching for CoreWindowRendererSet CEGUI library</span>
+<span class="msg-quote">&gt; --   found: /usr/local/lib/cegui-0.8/libCEGUICoreWindowRendererSet.so</span>
+<span class="msg-quote">&gt; -- Searching for DevILImageCodec CEGUI library</span>
+<span class="msg-quote">&gt; --   found: /usr/local/lib/cegui-0.8/libCEGUIDevILImageCodec.so</span>
+<span class="msg-quote">&gt; -- Searching for LibXMLParser CEGUI library</span>
+<span class="msg-quote">&gt; --   found: /usr/local/lib/cegui-0.8/libCEGUILibXMLParser.so</span>
+<span class="msg-quote">&gt; -- Searching for OpenGLRenderer CEGUI library</span>
+<span class="msg-quote">&gt; --   found: /usr/local/lib/libCEGUIOpenGLRenderer-0.so</span>
+<span class="msg-quote">&gt; -- Found CEGUI: /usr/local/include/cegui-0</span>
+<span class="msg-quote">&gt; -- Found OpenGL: /usr/lib/x86_64-linux-gnu/libGL.so</span>
+<span class="msg-quote">&gt; -- Found ZLIB: /usr/lib/x86_64-linux-gnu/libz.so (found version &#34;1.2.8&#34;)</span>
+<span class="msg-quote">&gt; -- Found PNG: /usr/lib/x86_64-linux-gnu/libpng.so (found version &#34;1.2.50&#34;)</span>
+<span class="msg-quote">&gt; -- Found PCRE: /usr/include</span>
+<span class="msg-quote">&gt; -- Found LibXmlPP: /usr/lib/libxml++-2.6.so (found suitable version</span>
+<span class="msg-quote">&gt; &#34;2.36.0&#34;, minimum required is &#34;2.6&#34;)</span>
+<span class="msg-quote">&gt; -- Looking for XOpenDisplay in</span>
+<span class="msg-quote">&gt; /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so</span>
+<span class="msg-quote">&gt; -- Looking for XOpenDisplay in</span>
+<span class="msg-quote">&gt; /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so -</span>
+<span class="msg-quote">&gt; found</span>
+<span class="msg-quote">&gt; -- Looking for gethostbyname</span>
+<span class="msg-quote">&gt; -- Looking for gethostbyname - found</span>
+<span class="msg-quote">&gt; -- Looking for connect</span>
+<span class="msg-quote">&gt; -- Looking for connect - found</span>
+<span class="msg-quote">&gt; -- Looking for remove</span>
+<span class="msg-quote">&gt; -- Looking for remove - found</span>
+<span class="msg-quote">&gt; -- Looking for shmat</span>
+<span class="msg-quote">&gt; -- Looking for shmat - found</span>
+<span class="msg-quote">&gt; -- Looking for IceConnectionNumber in ICE</span>
+<span class="msg-quote">&gt; -- Looking for IceConnectionNumber in ICE - found</span>
+<span class="msg-quote">&gt; -- Found X11: /usr/lib/x86_64-linux-gnu/libX11.so</span>
+<span class="msg-quote">&gt; -- Boost version: 1.55.0</span>
+<span class="msg-quote">&gt; -- Found the following Boost libraries:</span>
+<span class="msg-quote">&gt; --   filesystem</span>
+<span class="msg-quote">&gt; --   chrono</span>
+<span class="msg-quote">&gt; --   thread</span>
+<span class="msg-quote">&gt; -- Building tinyclipboard statically</span>
+<span class="msg-quote">&gt; -- Scripting engine enabled: building mruby statically</span>
+<span class="msg-quote">&gt; -- Found BISON: /usr/bin/bison (found version &#34;3.0.2&#34;)</span>
+<span class="msg-quote">&gt; -- --------------- Build info summary ----------------</span>
+<span class="msg-quote">&gt; -- TSC version:    2.1.0dev</span>
+<span class="msg-quote">&gt; -- Build type:</span>
+<span class="msg-quote">&gt; -- Crosscompiling: No</span>
+<span class="msg-quote">&gt; -- --------------- Configuration summary -------------</span>
+<span class="msg-quote">&gt; -- Enable the in-game editor:         ON</span>
+<span class="msg-quote">&gt; -- Enable the mruby scripting engine: ON</span>
+<span class="msg-quote">&gt; -- Enable native language support:    ON</span>
+<span class="msg-quote">&gt; -- Use system-provided tinyclipboard: OFF</span>
+<span class="msg-quote">&gt; -- --------------- Path configuration -----------------</span>
+<span class="msg-quote">&gt; -- Install prefix:        /usr/local</span>
+<span class="msg-quote">&gt; -- Binary directory:      bin</span>
+<span class="msg-quote">&gt; -- Shared data directory: share</span>
+<span class="msg-quote">&gt; -- Manpage directory:     share/man</span>
+<span class="msg-quote">&gt; -- (relative pathes are relative to the install prefix;</span>
+<span class="msg-quote">&gt; -- the directory /tsc will be appended to the shared</span>
+<span class="msg-quote">&gt; -- data directory indicated above.)</span>
+<span class="msg-quote">&gt; -- ----------------------------------------------------</span>
+<span class="msg-quote">&gt; -- Configuring done</span>
+<span class="msg-quote">&gt; CMake Error at CMakeLists.txt:219 (add_executable):</span>
+<span class="msg-quote">&gt;   Target &#34;tsc&#34; links to target &#34;Boost::filesystem&#34; but the target was not</span>
+<span class="msg-quote">&gt;   found.  Perhaps a find_package() call is missing for an IMPORTED target,</span>
+<span class="msg-quote">&gt; or</span>
+<span class="msg-quote">&gt;   an ALIAS target is missing?</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; CMake Error at CMakeLists.txt:219 (add_executable):</span>
+<span class="msg-quote">&gt;   Target &#34;tsc&#34; links to target &#34;Boost::chrono&#34; but the target was not</span>
+<span class="msg-quote">&gt; found.</span>
+<span class="msg-quote">&gt;   Perhaps a find_package() call is missing for an IMPORTED target, or an</span>
+<span class="msg-quote">&gt;   ALIAS target is missing?</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; CMake Error at CMakeLists.txt:219 (add_executable):</span>
+<span class="msg-quote">&gt;   Target &#34;tsc&#34; links to target &#34;Boost::thread&#34; but the target was not</span>
+<span class="msg-quote">&gt; found.</span>
+<span class="msg-quote">&gt;   Perhaps a find_package() call is missing for an IMPORTED target, or an</span>
+<span class="msg-quote">&gt;   ALIAS target is missing?</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; -- Generating done</span>
+<span class="msg-quote">&gt; -- Build files have been written to: /home/datahead/TSCX/TSC/tsc/build</span>
+<span class="msg-quote">&gt; -----------------------</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; This installation has both the library files and the header files:</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; …d@d…:~/boost_libs/include/boost$ ls | egrep</span>
+<span class="msg-quote">&gt; &#34;(filesystem|chrono|thread)&#34;</span>
+<span class="msg-quote">&gt; chrono</span>
+<span class="msg-quote">&gt; chrono.hpp</span>
+<span class="msg-quote">&gt; filesystem</span>
+<span class="msg-quote">&gt; filesystem.hpp</span>
+<span class="msg-quote">&gt; thread</span>
+<span class="msg-quote">&gt; thread.hpp</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; …d@d…:~/boost_libs/lib$ ls | egrep</span>
+<span class="msg-quote">&gt; &#34;(filesystem|chrono|thread)&#34;</span>
+<span class="msg-quote">&gt; libboost_chrono.a</span>
+<span class="msg-quote">&gt; libboost_chrono.so</span>
+<span class="msg-quote">&gt; libboost_chrono.so.1.55.0</span>
+<span class="msg-quote">&gt; libboost_filesystem.a</span>
+<span class="msg-quote">&gt; libboost_filesystem.so</span>
+<span class="msg-quote">&gt; libboost_filesystem.so.1.55.0</span>
+<span class="msg-quote">&gt; libboost_thread.a</span>
+<span class="msg-quote">&gt; libboost_thread.so</span>
+<span class="msg-quote">&gt; libboost_thread.so.1.55.0</span>
+<span class="msg-quote">&gt; _______________________________________________</span>
+<span class="msg-quote">&gt; tsc-devel mailing list -- …l@l…</span>
+<span class="msg-quote">&gt; To unsubscribe send an email to …e@l…</span>
+<span class="msg-quote">&gt;</span>
+
+
+-- 
+Ryan (ライアン)
+Yoko Shimomura, ryo (supercell/EGOIST), Hiroyuki Sawano &gt;&gt; everyone else
+<a href="https://refi64.com/">https://refi64.com/</a>
+_______________________________________________
+tsc-devel mailing list -- …l@l…
+To unsubscribe send an email to …e@l…
+</pre>
+
+
+
+<div class="msg-nav">
+<div class="msg-thread-nav msg-thread-nav-bythread">
+<table>
+<caption>By Thread</caption>
+<tbody>
+<tr><td></td><td>2018-09-01 19:22:10</td><td>…8@g…</td><td class="msg-thread-level-0"><a href="/historic/tsc-devel-archive/2018/09/m1.html">[tsc-devel] TSC Boost Build Issues</a></td></tr>
+<tr><td>▶</td><td>2018-09-01 19:39:59</td><td>Ryan Gonzalez</td><td class="msg-thread-level-1"><a href="/historic/tsc-devel-archive/2018/09/m2.html">[tsc-devel] Re: TSC Boost Build Issues</a></td></tr>
+<tr><td></td><td>2018-09-01 21:27:32</td><td>Marvin Gülker</td><td class="msg-thread-level-1"><a href="/historic/tsc-devel-archive/2018/09/m3.html">[tsc-devel] Re: TSC Boost Build Issues</a></td></tr>
+
+</tbody>
+</table>
+</div>
+<div class="msg-thread-nav msg-thread-nav-bydate">
+<table>
+<caption>By Date</caption>
+<tbody>
+
+
+<tr><td><a href="/historic/tsc-devel-archive/2018/09/m1.html">[tsc-devel] TSC Boost Build Issues</a></td><td>…8@g…</td><td>2018-09-01 19:22:10</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2018/09/m2.html">[tsc-devel] Re: TSC Boost Build Issues</a></td><td>Ryan Gonzalez</td><td>2018-09-01 19:39:59</td><td class="msg-here">◀</td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2018/09/m3.html">[tsc-devel] Re: TSC Boost Build Issues</a></td><td>Marvin Gülker</td><td>2018-09-01 21:27:32</td><td class="msg-here"></td></tr>
+
+</tbody>
+</table>
+</div>
+</div>
+
+</main>
+<footer>
+<p>Mailing list archive generated by <a href="https://mg.guelker.eu/projects/postkasten/">Postkasten</a>.</p>
+</footer>
+</body>
+</html>

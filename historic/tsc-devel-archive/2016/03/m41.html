@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Re: [tsc-devel] Team Nominations... · tsc-devel@secretchronicles.org</title>
+  <style type="text/css">html, body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial Nova", "Arial", sans-serif;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  margin: 0px;
+}
+
+a {
+  color: #0b8ae1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #520ebb;
+}
+
+header {
+  margin: 0px;
+  padding: 12px 6px;
+  background-color: #0b8ae1;
+}
+
+header ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header ul li::after {
+  margin-left: 8px;
+  content: "|";
+  margin-right: 8px;
+}
+
+header ul li:last-child::after {
+  content: "";
+  margin-right: 0px;
+}
+
+header a {
+  color: white;
+}
+
+header a:hover {
+  color: black;
+}
+
+footer {
+  border-top: 1px solid #999999;
+  color: #999999;
+  font-size: 0.8rem;
+  padding: 8px;
+  text-align: center;
+  clear: both;
+}
+
+footer p {
+  margin: 0px;
+}
+
+main {
+  margin: 8px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+h1.msg-subject {
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+h2, caption {
+  font-size: 1rem;
+}
+
+
+.msg-meta {
+  margin-top: 0px;
+}
+
+.msg-from {
+  font-weight: bold;
+}
+
+.msg-cc {
+  color: #e1730a;
+}
+
+.msg-attachments h2 {
+  font-style: italic;
+}
+
+table, tr, td, th {
+  border: none;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #eeeeee;
+}
+
+thead tr {
+  border-bottom: 1px solid black;
+}
+
+.newyear {
+  font-style: italic;
+  text-align: center;
+  font-weight: bold;
+}
+
+.numreplies {
+  text-align: center;
+}
+
+.thread-ghost {
+  font-style: italic;
+}
+
+.lastreply {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+pre, code {
+  font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+.msg-body {
+  width: 80ch;
+}
+
+.msg-quote {
+  color: #698900;
+  font-style: italic;
+}
+
+.msg-nav {
+  clear: both;
+}
+
+.msg-thread-nav {
+  width: calc(50% - 4px);
+}
+
+.msg-thread-nav-bydate {
+  float: right;
+}
+
+.msg-thread-nav-bythread {
+  float: left;
+}
+
+.msg-thread-nav table caption {
+  background-color: #0b8ae1;
+  color: white;
+  border: none;
+  caption-side: top;
+  text-align: center;
+  font-weight: bold;
+}
+
+.msg-thread-nav tbody tr td {
+  padding: 2px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.msg-thread-nav-bydate table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bydate table td:nth-child(1) {
+  width: 55%;
+
+}
+
+.msg-thread-nav-bydate table td:nth-child(2) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bydate table td:nth-child(3) {
+  width:20%;
+  text-align: right;
+}
+
+.msg-thread-nav-bydate table td:nth-child(4) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+
+.msg-thread-nav-bythread table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bythread table td:nth-child(1) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+.msg-thread-nav-bythread table td:nth-child(2) {
+  width: 20%;
+
+}
+
+.msg-thread-nav-bythread table td:nth-child(3) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bythread table td:nth-child(4) {
+  width:55%;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-0 {
+  padding-left: 0px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-1 {
+  padding-left: 32px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-2 {
+  padding-left: 64px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-3 {
+  padding-left: 96px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-4 {
+  padding-left: 128px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-5 {
+  padding-left: 160px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-6 {
+  padding-left: 192px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-7 {
+  padding-left: 224px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-8 {
+  padding-left: 256px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-9 {
+  padding-left: 288px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-10 {
+  padding-left: 320px;
+}
+
+.threadindex {
+    table-layout: fixed;
+}
+
+.threadindex th:nth-child(1) {
+    width: 78%;
+}
+
+.threadindex th:nth-child(2) {
+    text-align: center;
+    width: 7%;
+}
+
+.threadindex th:nth-child(3) {
+    width: 15%;
+}
+
+.formatted-patch .patch-add {
+  color: #00CC00;
+}
+
+.formatted-patch .patch-del {
+  color: #FF0000;
+}
+
+.formatted-patch .patch-pos {
+  color: #0000FF;
+  background-color: #ddddFF;
+}
+
+div.formatted-patch {
+  border: 1px solid black;
+}
+
+div.formatted-patch pre {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'Inconsolata', 'DejaVu Sans Mono', monospace;
+  margin: 0px;
+}
+
+
+div.formatted-patch pre.linenos {
+  background-color: #0b8ae1;
+  float: left;
+  padding-right: 4px;
+  text-align: right;
+  margin-right: 4px;
+}
+
+.linenos a {
+  color: white;
+}
+
+.linenos a:hover {
+  color: black;
+}
+
+.linenos a:target {
+  color: #8b000e;
+}
+
+tracker-placeholder {
+  display: none;
+}
+
+.tracker-state-change {
+  font-style: italic;
+  color: #e1730a;
+}
+
+.ticket-state {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.ticket-state-open {
+  color: #00CC00;
+}
+
+.ticket-state-confirmed {
+  color: #e1730a;
+}
+
+.ticket-state-closed {
+  color: #FF0000;
+}
+
+.tracker-panel {
+  width: 450px;
+  float: right;
+  margin: 8px;
+  padding: 0px;
+  border: 2px solid #0b8ae1;
+  text-align: center;
+}
+
+.tracker-panel h2 {
+  background-color: #0b8ae1;
+  color: white;
+  margin-top: 0px;
+}
+
+.tracker-panel ul {
+  padding: 0px 8px;
+  margin: 8px;
+  text-align: left;
+  list-style-type: none;
+}
+
+.tracker-table {
+  table-layout: fixed;
+}
+
+.tracker-table tbody td:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tracker-table thead th:nth-child(1) {
+  width: 60%;
+}
+
+.tracker-table thead th:nth-child(2) {
+  width: 13%;
+}
+
+.tracker-table thead th:nth-child(3) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(4) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(5) {
+  width: 7%;
+  text-align: center;
+}
+
+.tracker-table tbody td:nth-child(5) {
+  text-align: center;
+}
+
+#tracker-filter-subject {
+  width: calc(100% - 8px);
+}
+
+.filter-hide {
+  display: none;
+}
+
+@media(max-width: 768px) {
+
+  html, body {
+    font-size: 18px;
+  }
+
+  .lastreply {
+    display: none;
+  }
+
+  .msg-body {
+    width: initial;
+  }
+
+  .msg-thread-nav-bydate {
+    float: none;
+  }
+
+  .msg-thread-nav-bythread {
+    float: none;
+  }
+
+  .threadindex .lastreply {
+      display: none;
+      width: 0%;
+  }
+
+  .threadindex th:nth-child(1) {
+      width: 80%;
+  }
+
+  .threadindex th:nth-child(2) {
+      width: 20%;
+  }
+
+  .tracker-panel {
+    width: 95%;
+    margin: 0px auto;
+    float: none;
+  }
+
+  .tracker-table thead th:nth-child(1) {
+  width: 80%;
+  }
+
+  .tracker-table thead th:nth-child(2), .tracker-table tbody td:nth-child(2) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(3), .tracker-table tbody td:nth-child(3) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(4), .tracker-table tbody td:nth-child(4) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(5) {
+    width: 20%;
+  }
+}
+</style>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<header>
+<ul><li><a href="/historic/tsc-devel-archive/">tsc-devel@secretchronicles.org</a></li><li><a href="/historic/tsc-devel-archive/about.html">About</a></li></ul>
+</header>
+<main>
+<h1 class="msg-subject">Re: [tsc-devel] Team Nominations...</h1>
+<p class="msg-meta">
+  <span class="msg-from">datahead</span> |
+
+ Tue, 15 Mar 2016 06:37:11 UTC
+</p>
+
+
+
+
+<div class="tracker-placeholder"></div>
+
+
+
+<pre class="msg-body">Post via forum by datahead &lt;…9@x…&gt;:
+[quote]
+You said you want a month of voting time. That’d be impossible, because
+before voting can start, two weeks need to pass, §5(1) VotR. That is,
+between voting announcement and start of voting there is a leap time of
+two weeks.
+[/quote]
+
+No, I had not accounted for this 2 week delay.  Since we have not started the team nominations vote yet and since only about 3.5 weeks are left, it may be of a bit less use to start an early vote now.  I was largely delayed in responding to this with some job hunting things that distracted / occupied me.
+
+I think there is a good chance we may have 4 or more core team members who will not make it to the IRC team meeting, so there is a good chance Kirbyfan64 and skarfester will not have voting rights if voted on in the IRC meeting, based on a 2/3rds majority of all team members.  Keep in mind not everyone has been participating recently.  I think we may be being a little too rigid regarding what is obviously an error in the voting rules document (it is an error because the team additions and team removals rules are inconsistent), but I am not going to tell the team what to do when this is a legal voting rules question.
+
+[quote]Do you have a concrete phrasing proposal?[/quote]
+
+My last statement on the voting was clear, but these are the exact quotes from the voting document:
+
+Section: Acquisition of Membership
+
+Change: &#34;The vote requires that two thirds of the existing team
+members vote in favour of adding the new person to the team.&#34;
+
+To: &#34;The vote requires that two thirds of the team members voting on a team addition
+vote in favour of adding the new person to the team.&#34;
+
+--this is the technical change
+
+Section: End of Membership
+Change: &#34;The team reserves the right to remove any person at any
+time, for any reason, through a vote. This requires a two
+thirds majority, and the candidate for removal is not al-
+lowed to cast a vote.&#34;
+
+To: &#34;The team reserves the right to remove any person at any
+time, for any reason, through a vote. This requires a two
+thirds majority of those voting, and the candidate for removal is not al-
+lowed to cast a vote.&#34;
+
+--this is for clarity
+
+Section: Changes
+Change: &#34;Changes to this document require a vote whose winning op-
+tion passes with at least two thirds of the team members being
+in favour of it.&#34;
+To: &#34;Changes to this document require a vote whose winning op-
+tion passes with at least two thirds of ALL team members being
+in favour of it.&#34;
+
+--this is for clarity
+
+
+@Quintus, what are your thoughts?
+
+-- 
+Sent by Chessboard.
+</pre>
+
+
+
+<div class="msg-nav">
+<div class="msg-thread-nav msg-thread-nav-bythread">
+<table>
+<caption>By Thread</caption>
+<tbody>
+<tr><td></td><td>2016-02-29 23:40:45</td><td>Chris Jacobsen</td><td class="msg-thread-level-0"><a href="/historic/tsc-devel-archive/2016/02/m8.html">[tsc-devel] Team Nominations...</a></td></tr>
+<tr><td></td><td>2016-03-03 19:41:13</td><td>Quintus</td><td class="msg-thread-level-1"><a href="/historic/tsc-devel-archive/2016/03/m1.html">Re: [tsc-devel] Team Nominations...</a></td></tr>
+<tr><td></td><td>2016-03-05 05:33:08</td><td>datahead</td><td class="msg-thread-level-2"><a href="/historic/tsc-devel-archive/2016/03/m14.html">Re: [tsc-devel] Team Nominations...</a></td></tr>
+<tr><td></td><td>2016-03-05 08:50:56</td><td>Quintus</td><td class="msg-thread-level-3"><a href="/historic/tsc-devel-archive/2016/03/m15.html">Re: [tsc-devel] Team Nominations...</a></td></tr>
+<tr><td></td><td>2016-03-07 23:21:26</td><td>datahead</td><td class="msg-thread-level-4"><a href="/historic/tsc-devel-archive/2016/03/m29.html">Re: [tsc-devel] Team Nominations...</a></td></tr>
+<tr><td></td><td>2016-03-08 07:20:16</td><td>Quintus</td><td class="msg-thread-level-5"><a href="/historic/tsc-devel-archive/2016/03/m32.html">Re: [tsc-devel] Team Nominations...</a></td></tr>
+<tr><td>▶</td><td>2016-03-15 06:37:11</td><td>datahead</td><td class="msg-thread-level-6"><a href="/historic/tsc-devel-archive/2016/03/m41.html">Re: [tsc-devel] Team Nominations...</a></td></tr>
+<tr><td></td><td>2016-03-15 08:43:44</td><td>Quintus</td><td class="msg-thread-level-7"><a href="/historic/tsc-devel-archive/2016/03/m42.html">Re: [tsc-devel] Team Nominations...</a></td></tr>
+
+</tbody>
+</table>
+</div>
+<div class="msg-thread-nav msg-thread-nav-bydate">
+<table>
+<caption>By Date</caption>
+<tbody>
+
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/02/m8.html">[tsc-devel] Team Nominations...</a></td><td>Chris Jacobsen</td><td>2016-02-29 23:40:45</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/03/m1.html">Re: [tsc-devel] Team Nominations...</a></td><td>Quintus</td><td>2016-03-03 19:41:13</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/03/m14.html">Re: [tsc-devel] Team Nominations...</a></td><td>datahead</td><td>2016-03-05 05:33:08</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/03/m15.html">Re: [tsc-devel] Team Nominations...</a></td><td>Quintus</td><td>2016-03-05 08:50:56</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/03/m29.html">Re: [tsc-devel] Team Nominations...</a></td><td>datahead</td><td>2016-03-07 23:21:26</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/03/m32.html">Re: [tsc-devel] Team Nominations...</a></td><td>Quintus</td><td>2016-03-08 07:20:16</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/03/m41.html">Re: [tsc-devel] Team Nominations...</a></td><td>datahead</td><td>2016-03-15 06:37:11</td><td class="msg-here">◀</td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/03/m42.html">Re: [tsc-devel] Team Nominations...</a></td><td>Quintus</td><td>2016-03-15 08:43:44</td><td class="msg-here"></td></tr>
+
+</tbody>
+</table>
+</div>
+</div>
+
+</main>
+<footer>
+<p>Mailing list archive generated by <a href="https://mg.guelker.eu/projects/postkasten/">Postkasten</a>.</p>
+</footer>
+</body>
+</html>

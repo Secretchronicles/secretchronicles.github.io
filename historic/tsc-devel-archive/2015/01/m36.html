@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8"/>
+  <title>[tsc-devel] [Arik Burns] Check out my new track. · tsc-devel@secretchronicles.org</title>
+  <style type="text/css">html, body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial Nova", "Arial", sans-serif;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  margin: 0px;
+}
+
+a {
+  color: #0b8ae1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #520ebb;
+}
+
+header {
+  margin: 0px;
+  padding: 12px 6px;
+  background-color: #0b8ae1;
+}
+
+header ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header ul li::after {
+  margin-left: 8px;
+  content: "|";
+  margin-right: 8px;
+}
+
+header ul li:last-child::after {
+  content: "";
+  margin-right: 0px;
+}
+
+header a {
+  color: white;
+}
+
+header a:hover {
+  color: black;
+}
+
+footer {
+  border-top: 1px solid #999999;
+  color: #999999;
+  font-size: 0.8rem;
+  padding: 8px;
+  text-align: center;
+  clear: both;
+}
+
+footer p {
+  margin: 0px;
+}
+
+main {
+  margin: 8px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+h1.msg-subject {
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+h2, caption {
+  font-size: 1rem;
+}
+
+
+.msg-meta {
+  margin-top: 0px;
+}
+
+.msg-from {
+  font-weight: bold;
+}
+
+.msg-cc {
+  color: #e1730a;
+}
+
+.msg-attachments h2 {
+  font-style: italic;
+}
+
+table, tr, td, th {
+  border: none;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #eeeeee;
+}
+
+thead tr {
+  border-bottom: 1px solid black;
+}
+
+.newyear {
+  font-style: italic;
+  text-align: center;
+  font-weight: bold;
+}
+
+.numreplies {
+  text-align: center;
+}
+
+.thread-ghost {
+  font-style: italic;
+}
+
+.lastreply {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+pre, code {
+  font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+.msg-body {
+  width: 80ch;
+}
+
+.msg-quote {
+  color: #698900;
+  font-style: italic;
+}
+
+.msg-nav {
+  clear: both;
+}
+
+.msg-thread-nav {
+  width: calc(50% - 4px);
+}
+
+.msg-thread-nav-bydate {
+  float: right;
+}
+
+.msg-thread-nav-bythread {
+  float: left;
+}
+
+.msg-thread-nav table caption {
+  background-color: #0b8ae1;
+  color: white;
+  border: none;
+  caption-side: top;
+  text-align: center;
+  font-weight: bold;
+}
+
+.msg-thread-nav tbody tr td {
+  padding: 2px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.msg-thread-nav-bydate table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bydate table td:nth-child(1) {
+  width: 55%;
+
+}
+
+.msg-thread-nav-bydate table td:nth-child(2) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bydate table td:nth-child(3) {
+  width:20%;
+  text-align: right;
+}
+
+.msg-thread-nav-bydate table td:nth-child(4) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+
+.msg-thread-nav-bythread table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bythread table td:nth-child(1) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+.msg-thread-nav-bythread table td:nth-child(2) {
+  width: 20%;
+
+}
+
+.msg-thread-nav-bythread table td:nth-child(3) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bythread table td:nth-child(4) {
+  width:55%;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-0 {
+  padding-left: 0px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-1 {
+  padding-left: 32px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-2 {
+  padding-left: 64px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-3 {
+  padding-left: 96px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-4 {
+  padding-left: 128px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-5 {
+  padding-left: 160px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-6 {
+  padding-left: 192px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-7 {
+  padding-left: 224px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-8 {
+  padding-left: 256px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-9 {
+  padding-left: 288px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-10 {
+  padding-left: 320px;
+}
+
+.threadindex {
+    table-layout: fixed;
+}
+
+.threadindex th:nth-child(1) {
+    width: 78%;
+}
+
+.threadindex th:nth-child(2) {
+    text-align: center;
+    width: 7%;
+}
+
+.threadindex th:nth-child(3) {
+    width: 15%;
+}
+
+.formatted-patch .patch-add {
+  color: #00CC00;
+}
+
+.formatted-patch .patch-del {
+  color: #FF0000;
+}
+
+.formatted-patch .patch-pos {
+  color: #0000FF;
+  background-color: #ddddFF;
+}
+
+div.formatted-patch {
+  border: 1px solid black;
+}
+
+div.formatted-patch pre {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'Inconsolata', 'DejaVu Sans Mono', monospace;
+  margin: 0px;
+}
+
+
+div.formatted-patch pre.linenos {
+  background-color: #0b8ae1;
+  float: left;
+  padding-right: 4px;
+  text-align: right;
+  margin-right: 4px;
+}
+
+.linenos a {
+  color: white;
+}
+
+.linenos a:hover {
+  color: black;
+}
+
+.linenos a:target {
+  color: #8b000e;
+}
+
+tracker-placeholder {
+  display: none;
+}
+
+.tracker-state-change {
+  font-style: italic;
+  color: #e1730a;
+}
+
+.ticket-state {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.ticket-state-open {
+  color: #00CC00;
+}
+
+.ticket-state-confirmed {
+  color: #e1730a;
+}
+
+.ticket-state-closed {
+  color: #FF0000;
+}
+
+.tracker-panel {
+  width: 450px;
+  float: right;
+  margin: 8px;
+  padding: 0px;
+  border: 2px solid #0b8ae1;
+  text-align: center;
+}
+
+.tracker-panel h2 {
+  background-color: #0b8ae1;
+  color: white;
+  margin-top: 0px;
+}
+
+.tracker-panel ul {
+  padding: 0px 8px;
+  margin: 8px;
+  text-align: left;
+  list-style-type: none;
+}
+
+.tracker-table {
+  table-layout: fixed;
+}
+
+.tracker-table tbody td:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tracker-table thead th:nth-child(1) {
+  width: 60%;
+}
+
+.tracker-table thead th:nth-child(2) {
+  width: 13%;
+}
+
+.tracker-table thead th:nth-child(3) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(4) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(5) {
+  width: 7%;
+  text-align: center;
+}
+
+.tracker-table tbody td:nth-child(5) {
+  text-align: center;
+}
+
+#tracker-filter-subject {
+  width: calc(100% - 8px);
+}
+
+.filter-hide {
+  display: none;
+}
+
+@media(max-width: 768px) {
+
+  html, body {
+    font-size: 18px;
+  }
+
+  .lastreply {
+    display: none;
+  }
+
+  .msg-body {
+    width: initial;
+  }
+
+  .msg-thread-nav-bydate {
+    float: none;
+  }
+
+  .msg-thread-nav-bythread {
+    float: none;
+  }
+
+  .threadindex .lastreply {
+      display: none;
+      width: 0%;
+  }
+
+  .threadindex th:nth-child(1) {
+      width: 80%;
+  }
+
+  .threadindex th:nth-child(2) {
+      width: 20%;
+  }
+
+  .tracker-panel {
+    width: 95%;
+    margin: 0px auto;
+    float: none;
+  }
+
+  .tracker-table thead th:nth-child(1) {
+  width: 80%;
+  }
+
+  .tracker-table thead th:nth-child(2), .tracker-table tbody td:nth-child(2) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(3), .tracker-table tbody td:nth-child(3) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(4), .tracker-table tbody td:nth-child(4) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(5) {
+    width: 20%;
+  }
+}
+</style>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<header>
+<ul><li><a href="/historic/tsc-devel-archive/">tsc-devel@secretchronicles.org</a></li><li><a href="/historic/tsc-devel-archive/about.html">About</a></li></ul>
+</header>
+<main>
+<h1 class="msg-subject">[tsc-devel] [Arik Burns] Check out my new track.</h1>
+<p class="msg-meta">
+  <span class="msg-from">Quintus</span> |
+
+ Tue, 13 Jan 2015 15:22:47 UTC
+</p>
+
+
+
+
+<div class="tracker-placeholder"></div>
+
+
+
+<pre class="msg-body">[This e-mailed failed to parse properly. Below follows the raw message body.]
+
+--=-=-=
+Content-Type: text/plain
+
+Hi everyone,
+
+I received the following two messages from Aakburns (one is quoted). I
+uploaded the song he spoke of to
+
+  <a href="http://team.secretchronicles.de/~quintus/stuff/Hopdoppop.ogg">http://team.secretchronicles.de/~quintus/stuff/Hopdoppop.ogg</a>
+
+, converted to a more user-friendly format (OGG Vorbis).
+
+Valete,
+Quintus
+
+
+--=-=-=
+Content-Type: message/rfc822
+Content-Disposition: inline
+
+Return-Path: &lt;…s@g…&gt;
+Delivered-To: …s@q…
+Received: from mail.pegasus-alpha.eu
+	by montblanc.pegasus-alpha.eu (Dovecot) with LMTP id eU1MEeL2tFTqWgAAlmSF5g
+	for &lt;…s@q…&gt;; Tue, 13 Jan 2015 10:43:46 +0000
+Received: from mail-oi0-x22e.google.com (mail-oi0-x22e.google.com [IPv6:2607:f8b0:4003:c06::22e])
+	by mail.pegasus-alpha.eu (Postfix) with ESMTPS id 2EC3A68817C
+	for &lt;…s@q…&gt;; Tue, 13 Jan 2015 10:43:40 +0000 (UTC)
+Received: by mail-oi0-f46.google.com with SMTP id a3so1719066oib.5
+        for &lt;…s@q…&gt;; Tue, 13 Jan 2015 02:43:38 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=mime-version:in-reply-to:references:date:message-id:subject:from:to
+         :content-type;
+        bh=oWbopVI3OANaDg2KSlxYHhjVa0iO/wf3dD/o6+BfBdU=;
+        b=FcZjqoaATRypyCSNSVjKYcK+NigyF80BgMbikAuqefEPJLzrMEmqAJH07+MUKtDD66
+         qy/S2AegqW4KzZwj/O5dVPqT6MQYvfBFLVwJxaZt/PXPXk4GdoRN12Je6rcFZoTNhtfc
+         C6dbWvk+FA2rkF8/GJ5Kb0XupwgPW5tv4gIwC+lftnHzwk3WKWOX6d8K4KLvR8PFdRwy
+         1ZvFM0UZFr9WRK98GdpUtzij/n+7+PBZxbspBO2nkpSlB8b/9OOPG6bf6Xib76wor57E
+         p4+anNblCRR+hoT2+NwFOA3A76YTyOj/UteatDMziEGgazlmsWKNWHjzfMkAmVBvsxDn
+         Jrsg==
+X-Received: by 10.182.199.70 with SMTP id ji6mr13271865obc.3.1421145818135;
+ Tue, 13 Jan 2015 02:43:38 -0800 (PST)
+Received: by 10.76.73.162 with HTTP; Tue, 13 Jan 2015 02:43:38 -0800 (PST)
+In-Reply-To: &lt;…f@h…&gt;
+References: &lt;…Q@m…&gt;
+	&lt;…f@h…&gt;
+Date: Tue, 13 Jan 2015 04:43:38 -0600
+Message-ID: &lt;…Q@m…&gt;
+Subject: Re: Check out my new track.
+From: Arik Burns &lt;…s@g…&gt;
+To: Quintus &lt;…s@q…&gt;
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary=&#34;====-=-=&#34;
+
+--====-=-=
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+I tend to forget to make things ogg for you.  I only use the format for you
+and that game.  You can share the track with whoever you&#39;d like, I&#39;m just
+not handing it up for the game at this point.
+
+On Mon, Jan 12, 2015 at 12:50 PM, Quintus &lt;…s@q…&gt; wrote:
+
+<span class="msg-quote">&gt; Hi Arik,</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; Arik Burns &lt;…s@g…&gt; writes:</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; &gt; Not sure I&#39;d offer this up for the game, but I like to share my music</span>
+<span class="msg-quote">&gt; with</span>
+<span class="msg-quote">&gt; &gt; you.</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; I like it. Has some interesting mixture of themes... A bit retro, a bit</span>
+<span class="msg-quote">&gt; spooky, some more modern elements. As a piece of music on its own I</span>
+<span class="msg-quote">&gt; think it=E2=80=99s really nice. You said you want to share it (only) with=</span>
+ me, so
+<span class="msg-quote">&gt; I won=E2=80=99t forward it to the other TSC team members.</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; Whether you want to provide it to TSC or not is a decision I can=E2=80=99=</span>
+t make
+<span class="msg-quote">&gt; for you. We are (still) urgently looking for any new music to wipe out</span>
+<span class="msg-quote">&gt; the Mario-like music we still have[1], so I=E2=80=99d appreciate it. Well=</span>
+, what
+<span class="msg-quote">&gt; else could I say than that... :-)</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; One note, though. I=E2=80=99m honoured you share your songs with me and I=</span>
+ enjoy
+<span class="msg-quote">&gt; listening to them regardless of whether they are to be included into TSC</span>
+<span class="msg-quote">&gt; or not. But if you send songs to me, please do not use MP3 format; it=E2=</span>
+=80=99s
+<span class="msg-quote">&gt; a hell of software patents. Use OGG with Vorbis or Opus; especially the</span>
+<span class="msg-quote">&gt; latter should not provide lesser quality then MP3.</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; Vale,</span>
+<span class="msg-quote">&gt; Quintus</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; [1]:</span>
+<span class="msg-quote">&gt; <a href="https://github.com/Secretchronicles/TSC/issues/97#issuecomment-69496395">https://github.com/Secretchronicles/TSC/issues/97#issuecomment-69496395</a></span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; --</span>
+<span class="msg-quote">&gt; Blog: <a href="http://www.quintilianus.eu">http://www.quintilianus.eu</a></span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; I will reject HTML emails.     | Ich akzeptiere keine HTML-Nachrichten.</span>
+<span class="msg-quote">&gt;                                |</span>
+<span class="msg-quote">&gt; Use GnuPG for mail encryption: | GnuPG f=C3=BCr Mail-Verschl=C3=BCsselung:</span>
+<span class="msg-quote">&gt; <a href="http://www.gnupg.org">http://www.gnupg.org</a>           | <a href="http://gnupg.org/index.de.html">http://gnupg.org/index.de.html</a></span>
+<span class="msg-quote">&gt;</span>
+
+--====-=-=
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+&lt;div dir=3D&#34;ltr&#34;&gt;I tend to forget to make things ogg for you.=C2=A0 I only =
+use the format for you and that game.=C2=A0 You can share the track with wh=
+oever you&amp;#39;d like, I&amp;#39;m just not handing it up for the game at this p=
+oint.&lt;/div&gt;&lt;div class=3D&#34;gmail_extra&#34;&gt;&lt;br&gt;&lt;div class=3D&#34;gmail_quote&#34;&gt;On Mon=
+, Jan 12, 2015 at 12:50 PM, Quintus &lt;span dir=3D&#34;ltr&#34;&gt;&amp;lt;&lt;a href=3D&#34;mailto=
+:…s@q…&#34; target=3D&#34;_blank&#34;&gt;…s@q…&lt;/a&gt;&amp;gt;=
+&lt;/span&gt; wrote:&lt;br&gt;&lt;blockquote class=3D&#34;gmail_quote&#34; style=3D&#34;margin:0 0 0 .=
+8ex;border-left:1px #ccc solid;padding-left:1ex&#34;&gt;Hi Arik,&lt;br&gt;
+&lt;span class=3D&#34;&#34;&gt;&lt;br&gt;
+Arik Burns &amp;lt;&lt;a href=3D&#34;mailto:…s@g…&#34;&gt;…s@g…&lt;/a&gt;=
+&amp;gt; writes:&lt;br&gt;
+&lt;br&gt;
+&amp;gt; Not sure I&amp;#39;d offer this up for the game, but I like to share my mu=
+sic with&lt;br&gt;
+&amp;gt; you.&lt;br&gt;
+&lt;br&gt;
+&lt;/span&gt;I like it. Has some interesting mixture of themes... A bit retro, a =
+bit&lt;br&gt;
+spooky, some more modern elements. As a piece of music on its own I&lt;br&gt;
+think it=E2=80=99s really nice. You said you want to share it (only) with m=
+e, so&lt;br&gt;
+I won=E2=80=99t forward it to the other TSC team members.&lt;br&gt;
+&lt;br&gt;
+Whether you want to provide it to TSC or not is a decision I can=E2=80=99t =
+make&lt;br&gt;
+for you. We are (still) urgently looking for any new music to wipe out&lt;br&gt;
+the Mario-like music we still have[1], so I=E2=80=99d appreciate it. Well, =
+what&lt;br&gt;
+else could I say than that... :-)&lt;br&gt;
+&lt;br&gt;
+One note, though. I=E2=80=99m honoured you share your songs with me and I e=
+njoy&lt;br&gt;
+listening to them regardless of whether they are to be included into TSC&lt;br&gt;
+or not. But if you send songs to me, please do not use MP3 format; it=E2=80=
+=99s&lt;br&gt;
+a hell of software patents. Use OGG with Vorbis or Opus; especially the&lt;br&gt;
+latter should not provide lesser quality then MP3.&lt;br&gt;
+&lt;br&gt;
+Vale,&lt;br&gt;
+Quintus&lt;br&gt;
+&lt;br&gt;
+[1]: &lt;a href=3D&#34;<a href="https://github.com/Secretchronicles/TSC/issues/97#issuecomm=">https://github.com/Secretchronicles/TSC/issues/97#issuecomm=</a>
+ent-69496395&#34; target=3D&#34;_blank&#34;&gt;<a href="https://github.com/Secretchronicles/TSC/iss=">https://github.com/Secretchronicles/TSC/iss=</a>
+ues/97#issuecomment-69496395&lt;/a&gt;&lt;br&gt;
+&lt;span class=3D&#34;HOEnZb&#34;&gt;&lt;font color=3D&#34;#888888&#34;&gt;&lt;br&gt;
+--&lt;br&gt;
+Blog: &lt;a href=3D&#34;<a href="http://www.quintilianus.eu&#34;">http://www.quintilianus.eu&#34;</a> target=3D&#34;_blank&#34;&gt;<a href="http://www.q=">http://www.q=</a>
+uintilianus.eu&lt;/a&gt;&lt;br&gt;
+&lt;br&gt;
+I will reject HTML emails.=C2=A0 =C2=A0 =C2=A0| Ich akzeptiere keine HTML-N=
+achrichten.&lt;br&gt;
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0|&lt;br&gt;
+Use GnuPG for mail encryption: | GnuPG f=C3=BCr Mail-Verschl=C3=BCsselung:&lt;=
+br&gt;
+&lt;a href=3D&#34;<a href="http://www.gnupg.org&#34;">http://www.gnupg.org&#34;</a> target=3D&#34;_blank&#34;&gt;<a href="http://www.gnupg.org&lt;/a">http://www.gnupg.org&lt;/a</a>&gt;=
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0| &lt;a href=3D&#34;<a href="http://gnupg.org/inde=">http://gnupg.org/inde=</a>
+x.de.html&#34; target=3D&#34;_blank&#34;&gt;<a href="http://gnupg.org/index.de.html&lt;/a">http://gnupg.org/index.de.html&lt;/a</a>&gt;&lt;br&gt;
+&lt;/font&gt;&lt;/span&gt;&lt;/blockquote&gt;&lt;/div&gt;&lt;br&gt;&lt;/div&gt;
+
+--====-=-=--
+
+--=-=-=
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+
+
+--=20
+Blog: <a href="http://www.quintilianus.eu">http://www.quintilianus.eu</a>
+
+I will reject HTML emails.     | Ich akzeptiere keine HTML-Nachrichten.
+                               |
+Use GnuPG for mail encryption: | GnuPG f=C3=BCr Mail-Verschl=C3=BCsselung:
+<a href="http://www.gnupg.org">http://www.gnupg.org</a>           | <a href="http://gnupg.org/index.de.html">http://gnupg.org/index.de.html</a>
+
+--=-=-=--
+
+</pre>
+
+
+
+<div class="msg-nav">
+<div class="msg-thread-nav msg-thread-nav-bythread">
+<table>
+<caption>By Thread</caption>
+<tbody>
+<tr><td>▶</td><td>2015-01-13 15:22:47</td><td>Quintus</td><td class="msg-thread-level-0"><a href="/historic/tsc-devel-archive/2015/01/m36.html">[tsc-devel] [Arik Burns] Check out my new track.</a></td></tr>
+<tr><td></td><td>2015-01-14 16:21:26</td><td>Sydney Dykstra</td><td class="msg-thread-level-1"><a href="/historic/tsc-devel-archive/2015/01/m38.html">Re: [tsc-devel] [Arik Burns] Check out my new track.</a></td></tr>
+<tr><td></td><td>2015-02-01 20:33:47</td><td>Chris Jacobsen</td><td class="msg-thread-level-2"><a href="/historic/tsc-devel-archive/2015/02/m3.html">Re: [tsc-devel] [Arik Burns] Check out my new track.</a></td></tr>
+
+</tbody>
+</table>
+</div>
+<div class="msg-thread-nav msg-thread-nav-bydate">
+<table>
+<caption>By Date</caption>
+<tbody>
+
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/01/m36.html">[tsc-devel] [Arik Burns] Check out my new track.</a></td><td>Quintus</td><td>2015-01-13 15:22:47</td><td class="msg-here">◀</td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/01/m38.html">Re: [tsc-devel] [Arik Burns] Check out my new track.</a></td><td>Sydney Dykstra</td><td>2015-01-14 16:21:26</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/02/m3.html">Re: [tsc-devel] [Arik Burns] Check out my new track.</a></td><td>Chris Jacobsen</td><td>2015-02-01 20:33:47</td><td class="msg-here"></td></tr>
+
+</tbody>
+</table>
+</div>
+</div>
+
+</main>
+<footer>
+<p>Mailing list archive generated by <a href="https://mg.guelker.eu/projects/postkasten/">Postkasten</a>.</p>
+</footer>
+</body>
+</html>

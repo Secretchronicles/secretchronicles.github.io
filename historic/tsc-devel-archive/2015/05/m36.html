@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Re: [tsc-devel] 2.0.0 release and SFML branch · tsc-devel@secretchronicles.org</title>
+  <style type="text/css">html, body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial Nova", "Arial", sans-serif;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  margin: 0px;
+}
+
+a {
+  color: #0b8ae1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #520ebb;
+}
+
+header {
+  margin: 0px;
+  padding: 12px 6px;
+  background-color: #0b8ae1;
+}
+
+header ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header ul li::after {
+  margin-left: 8px;
+  content: "|";
+  margin-right: 8px;
+}
+
+header ul li:last-child::after {
+  content: "";
+  margin-right: 0px;
+}
+
+header a {
+  color: white;
+}
+
+header a:hover {
+  color: black;
+}
+
+footer {
+  border-top: 1px solid #999999;
+  color: #999999;
+  font-size: 0.8rem;
+  padding: 8px;
+  text-align: center;
+  clear: both;
+}
+
+footer p {
+  margin: 0px;
+}
+
+main {
+  margin: 8px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+h1.msg-subject {
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+h2, caption {
+  font-size: 1rem;
+}
+
+
+.msg-meta {
+  margin-top: 0px;
+}
+
+.msg-from {
+  font-weight: bold;
+}
+
+.msg-cc {
+  color: #e1730a;
+}
+
+.msg-attachments h2 {
+  font-style: italic;
+}
+
+table, tr, td, th {
+  border: none;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #eeeeee;
+}
+
+thead tr {
+  border-bottom: 1px solid black;
+}
+
+.newyear {
+  font-style: italic;
+  text-align: center;
+  font-weight: bold;
+}
+
+.numreplies {
+  text-align: center;
+}
+
+.thread-ghost {
+  font-style: italic;
+}
+
+.lastreply {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+pre, code {
+  font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+.msg-body {
+  width: 80ch;
+}
+
+.msg-quote {
+  color: #698900;
+  font-style: italic;
+}
+
+.msg-nav {
+  clear: both;
+}
+
+.msg-thread-nav {
+  width: calc(50% - 4px);
+}
+
+.msg-thread-nav-bydate {
+  float: right;
+}
+
+.msg-thread-nav-bythread {
+  float: left;
+}
+
+.msg-thread-nav table caption {
+  background-color: #0b8ae1;
+  color: white;
+  border: none;
+  caption-side: top;
+  text-align: center;
+  font-weight: bold;
+}
+
+.msg-thread-nav tbody tr td {
+  padding: 2px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.msg-thread-nav-bydate table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bydate table td:nth-child(1) {
+  width: 55%;
+
+}
+
+.msg-thread-nav-bydate table td:nth-child(2) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bydate table td:nth-child(3) {
+  width:20%;
+  text-align: right;
+}
+
+.msg-thread-nav-bydate table td:nth-child(4) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+
+.msg-thread-nav-bythread table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bythread table td:nth-child(1) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+.msg-thread-nav-bythread table td:nth-child(2) {
+  width: 20%;
+
+}
+
+.msg-thread-nav-bythread table td:nth-child(3) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bythread table td:nth-child(4) {
+  width:55%;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-0 {
+  padding-left: 0px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-1 {
+  padding-left: 32px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-2 {
+  padding-left: 64px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-3 {
+  padding-left: 96px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-4 {
+  padding-left: 128px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-5 {
+  padding-left: 160px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-6 {
+  padding-left: 192px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-7 {
+  padding-left: 224px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-8 {
+  padding-left: 256px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-9 {
+  padding-left: 288px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-10 {
+  padding-left: 320px;
+}
+
+.threadindex {
+    table-layout: fixed;
+}
+
+.threadindex th:nth-child(1) {
+    width: 78%;
+}
+
+.threadindex th:nth-child(2) {
+    text-align: center;
+    width: 7%;
+}
+
+.threadindex th:nth-child(3) {
+    width: 15%;
+}
+
+.formatted-patch .patch-add {
+  color: #00CC00;
+}
+
+.formatted-patch .patch-del {
+  color: #FF0000;
+}
+
+.formatted-patch .patch-pos {
+  color: #0000FF;
+  background-color: #ddddFF;
+}
+
+div.formatted-patch {
+  border: 1px solid black;
+}
+
+div.formatted-patch pre {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'Inconsolata', 'DejaVu Sans Mono', monospace;
+  margin: 0px;
+}
+
+
+div.formatted-patch pre.linenos {
+  background-color: #0b8ae1;
+  float: left;
+  padding-right: 4px;
+  text-align: right;
+  margin-right: 4px;
+}
+
+.linenos a {
+  color: white;
+}
+
+.linenos a:hover {
+  color: black;
+}
+
+.linenos a:target {
+  color: #8b000e;
+}
+
+tracker-placeholder {
+  display: none;
+}
+
+.tracker-state-change {
+  font-style: italic;
+  color: #e1730a;
+}
+
+.ticket-state {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.ticket-state-open {
+  color: #00CC00;
+}
+
+.ticket-state-confirmed {
+  color: #e1730a;
+}
+
+.ticket-state-closed {
+  color: #FF0000;
+}
+
+.tracker-panel {
+  width: 450px;
+  float: right;
+  margin: 8px;
+  padding: 0px;
+  border: 2px solid #0b8ae1;
+  text-align: center;
+}
+
+.tracker-panel h2 {
+  background-color: #0b8ae1;
+  color: white;
+  margin-top: 0px;
+}
+
+.tracker-panel ul {
+  padding: 0px 8px;
+  margin: 8px;
+  text-align: left;
+  list-style-type: none;
+}
+
+.tracker-table {
+  table-layout: fixed;
+}
+
+.tracker-table tbody td:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tracker-table thead th:nth-child(1) {
+  width: 60%;
+}
+
+.tracker-table thead th:nth-child(2) {
+  width: 13%;
+}
+
+.tracker-table thead th:nth-child(3) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(4) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(5) {
+  width: 7%;
+  text-align: center;
+}
+
+.tracker-table tbody td:nth-child(5) {
+  text-align: center;
+}
+
+#tracker-filter-subject {
+  width: calc(100% - 8px);
+}
+
+.filter-hide {
+  display: none;
+}
+
+@media(max-width: 768px) {
+
+  html, body {
+    font-size: 18px;
+  }
+
+  .lastreply {
+    display: none;
+  }
+
+  .msg-body {
+    width: initial;
+  }
+
+  .msg-thread-nav-bydate {
+    float: none;
+  }
+
+  .msg-thread-nav-bythread {
+    float: none;
+  }
+
+  .threadindex .lastreply {
+      display: none;
+      width: 0%;
+  }
+
+  .threadindex th:nth-child(1) {
+      width: 80%;
+  }
+
+  .threadindex th:nth-child(2) {
+      width: 20%;
+  }
+
+  .tracker-panel {
+    width: 95%;
+    margin: 0px auto;
+    float: none;
+  }
+
+  .tracker-table thead th:nth-child(1) {
+  width: 80%;
+  }
+
+  .tracker-table thead th:nth-child(2), .tracker-table tbody td:nth-child(2) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(3), .tracker-table tbody td:nth-child(3) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(4), .tracker-table tbody td:nth-child(4) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(5) {
+    width: 20%;
+  }
+}
+</style>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<header>
+<ul><li><a href="/historic/tsc-devel-archive/">tsc-devel@secretchronicles.org</a></li><li><a href="/historic/tsc-devel-archive/about.html">About</a></li></ul>
+</header>
+<main>
+<h1 class="msg-subject">Re: [tsc-devel] 2.0.0 release and SFML branch</h1>
+<p class="msg-meta">
+  <span class="msg-from">Chris Jacobsen</span> |
+
+ Sat, 30 May 2015 05:16:26 UTC
+</p>
+
+
+
+
+<div class="tracker-placeholder"></div>
+
+
+
+<pre class="msg-body"><span class="msg-quote">&gt; Yes, and if my reply came over critical, I apologise — it is actually a</span>
+good thing you use that client as it helped me to iron out the bug. This
+time your email has been received and parsed correctly, look here:  I just meant sorry if it caused trouble.  You are fine.  I am glad we are getting HTML based emails working in the system.
+<span class="msg-quote">&gt; I can add a number of additional tasks specifically related to the SFML</span>
+porting; do you think it makes sense to create a new milestone “SFML
+Port” on the tracker to group these together?
+Per our discussion in IRC, I wouldn&#39;t have thought that clicking checkboxes in the SFML ticket (in order to use checkbox items as subtasks) was a big deal, but a milestone could work, too.  We have had high level and low level versions of tasks in the tracker before, so this is nothing new.
+<span class="msg-quote">&gt; SFML is easy. You can read the tutorial in about one hour: If it&#39;s simple, one could probably get some sort of feel as to its style in an hour, but API&#39;s always take longer than an hour to really put to use.  I&#39;m not a fast reader generally, though.</span>
+<span class="msg-quote">&gt; In this regard I can only repeat what</span>
+others have said to me; which merely boils down to the different choices
+of development environment tools one has
+I was using QT Creator before but could not get the &#34;make install&#34; command to work through its configuration, requiring me to set the TSC FIXED_DATA_DIR variable in config.hpp if I wanted to debug in the IDE.  Every time I changed things in git, this seemed to become lost, forcing me to redo the procedure and recompile all of TSC, which is very tedious.In addition, QT Creator would often mess up the entire Ubuntu desktop, hiding my icons.  These are the factors that were leading me to want to abandon QT Creator(though I don&#39;t really like it&#39;s IDE design that much anyways).See: <a href="http://forum.secretchronicles.de/topics/43">http://forum.secretchronicles.de/topics/43</a>
+
+I am interested in trying Code Blocks.  Either way, I need to get the debugger working in an IDE for it to be useful at all for me.
+I am not much of a fan of command line gdb (I used to use this for debugging C programs at my previous job), but I suppose I should try it again some time.
+-datahead 
+
+
+
+     On Friday, May 29, 2015 12:00 PM, Quintus &lt;…s@q…&gt; wrote:
+   
+
+ Chris Jacobsen &lt;…9@y…&gt; writes:
+
+<span class="msg-quote">&gt; I&#39;m sorry it caused a hassle, but there will probably be others who</span>
+<span class="msg-quote">&gt; use HTML-only clients as well. I have been using yahoo mail. We</span>
+<span class="msg-quote">&gt; certainly don&#39;t want thesoftware to crash, so I am glad you fixed this</span>
+<span class="msg-quote">&gt; issue.</span>
+
+Yes, and if my reply came over critical, I apologise — it is actually a
+good thing you use that client as it helped me to iron out the bug. This
+time your email has been received and parsed correctly, look here:
+
+  <a href="http://forum.secretchronicles.de/topics/242/posts/1180">http://forum.secretchronicles.de/topics/242/posts/1180</a>
+
+The message shows up where it should and no crash resulted. Good. Thank
+you for giving me another chance :-)
+
+I should maybe try to add auto line breaking of such mails, but that may
+not be the correct handling in any case. At least you can now see how
+your email looks in my mail client. :-)
+
+<span class="msg-quote">&gt; If you can post some of the things that need to be done with details,</span>
+<span class="msg-quote">&gt; this mightpull some programmers in more easily. This will especially</span>
+<span class="msg-quote">&gt; be true if someonecan &#34;dive in&#34;.</span>
+
+I will provide any help that is asked for. Also, all code I wrote is
+rich in comments, and there’s lots of documentation in the sourcecode
+files I added.
+
+I can add a number of additional tasks specifically related to the SFML
+porting; do you think it makes sense to create a new milestone “SFML
+Port” on the tracker to group these together?
+
+<span class="msg-quote">&gt; If we need to spend a while</span>
+<span class="msg-quote">&gt; practicing SFML programs before evertouching TSC, it&#39;s a lot less</span>
+<span class="msg-quote">&gt; likely we&#39;ll be able to find time.</span>
+
+SFML is easy. You can read the tutorial in about one hour:
+
+  <a href="http://www.sfml-dev.org/tutorials/2.3/">http://www.sfml-dev.org/tutorials/2.3/</a>
+
+The API is nice and easily usable. It should not take long to understand
+it; after you read the tutorial, the reference (which is complete and
+well documented) is mostly all you need:
+
+  <a href="http://www.sfml-dev.org/documentation/2.3/">http://www.sfml-dev.org/documentation/2.3/</a>
+
+<span class="msg-quote">&gt; If you are able to provide any insight when I try to configure a</span>
+<span class="msg-quote">&gt; different IDE in Linuxfor TSC it may help me develop, as well. I</span>
+<span class="msg-quote">&gt; realize you don&#39;t use IDE&#39;s, but a lotof the configuration boils down</span>
+<span class="msg-quote">&gt; to cmake, gdb, make, and g++.</span>
+
+If I can be of any help, I will be available of course; but as you said,
+I’m using Emacs + the command line tools available on Linux so I can’t
+be of help with specific IDEs. In this regard I can only repeat what
+others have said to me; which merely boils down to the different choices
+of development environment tools one has:
+
+* Editor + commandline tools like me
+* Code::Blocks, full-featured IDE (often heard of that from C++ devs)
+* Gedit + lots of plugins (often heard of that from Ruby devs)
+* Atom, IDE by GitHub (young project, but popular on HackerNews)
+* Eclipse (Cross-platform IDE mostly used by Java people I think)
+* Anjuta (GNOME IDE; never heard much of it)
+* kdevelop (KDE IDE; same)
+* QTCreator (IDE coupled to Qt AFAIK)
+
+Vale,
+Quintus
+
+-- 
+Blog: <a href="http://www.quintilianus.eu">http://www.quintilianus.eu</a>
+
+I will reject HTML emails.    | Ich akzeptiere keine HTML-Nachrichten.
+                              |
+Use GnuPG for mail encryption: | GnuPG für Mail-Verschlüsselung:
+<a href="https://www.gnupg.org">https://www.gnupg.org</a>         | <a href="https://de.wikipedia.org/wiki/GnuPG">https://de.wikipedia.org/wiki/GnuPG</a>
+My key fingerprint:            | Mein Schlüsselabdruck:
+B1FE 958E D5E8 468E AA20      | B1FE 958E D5E8 468E AA20
+8F4B F1D8 799F BCC8 BC4F      | 8F4B F1D8 799F BCC8 BC4F
+
+
+</pre>
+
+
+
+<div class="msg-nav">
+<div class="msg-thread-nav msg-thread-nav-bythread">
+<table>
+<caption>By Thread</caption>
+<tbody>
+<tr><td></td><td>2015-05-19 22:29:09</td><td>Quintus</td><td class="msg-thread-level-0"><a href="/historic/tsc-devel-archive/2015/05/m12.html">[tsc-devel] 2.0.0 release and SFML branch</a></td></tr>
+<tr><td></td><td>2015-05-28 10:51:58</td><td>Quintus</td><td class="msg-thread-level-1"><a href="/historic/tsc-devel-archive/2015/05/m30.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td></tr>
+<tr><td></td><td>2015-05-29 03:57:57</td><td>Chris Jacobsen</td><td class="msg-thread-level-2"><a href="/historic/tsc-devel-archive/2015/05/m31.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td></tr>
+<tr><td></td><td>2015-05-29 07:13:33</td><td>Quintus</td><td class="msg-thread-level-3"><a href="/historic/tsc-devel-archive/2015/05/m33.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td></tr>
+<tr><td></td><td>2015-05-29 07:32:58</td><td>Chris Jacobsen</td><td class="msg-thread-level-4"><a href="/historic/tsc-devel-archive/2015/05/m34.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td></tr>
+<tr><td></td><td>2015-05-29 16:00:26</td><td>Quintus</td><td class="msg-thread-level-5"><a href="/historic/tsc-devel-archive/2015/05/m35.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td></tr>
+<tr><td>▶</td><td>2015-05-30 05:16:26</td><td>Chris Jacobsen</td><td class="msg-thread-level-6"><a href="/historic/tsc-devel-archive/2015/05/m36.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td></tr>
+<tr><td></td><td>2015-05-31 19:12:43</td><td>Brian Allen Vanderburg II</td><td class="msg-thread-level-2"><a href="/historic/tsc-devel-archive/2015/05/m38.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td></tr>
+<tr><td></td><td>2015-05-31 21:01:59</td><td>Quintus</td><td class="msg-thread-level-3"><a href="/historic/tsc-devel-archive/2015/05/m39.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td></tr>
+
+</tbody>
+</table>
+</div>
+<div class="msg-thread-nav msg-thread-nav-bydate">
+<table>
+<caption>By Date</caption>
+<tbody>
+
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/05/m12.html">[tsc-devel] 2.0.0 release and SFML branch</a></td><td>Quintus</td><td>2015-05-19 22:29:09</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/05/m30.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td><td>Quintus</td><td>2015-05-28 10:51:58</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/05/m31.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td><td>Chris Jacobsen</td><td>2015-05-29 03:57:57</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/05/m33.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td><td>Quintus</td><td>2015-05-29 07:13:33</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/05/m34.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td><td>Chris Jacobsen</td><td>2015-05-29 07:32:58</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/05/m35.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td><td>Quintus</td><td>2015-05-29 16:00:26</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/05/m36.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td><td>Chris Jacobsen</td><td>2015-05-30 05:16:26</td><td class="msg-here">◀</td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/05/m38.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td><td>Brian Allen Vanderburg II</td><td>2015-05-31 19:12:43</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/05/m39.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td><td>Quintus</td><td>2015-05-31 21:01:59</td><td class="msg-here"></td></tr>
+
+</tbody>
+</table>
+</div>
+</div>
+
+</main>
+<footer>
+<p>Mailing list archive generated by <a href="https://mg.guelker.eu/projects/postkasten/">Postkasten</a>.</p>
+</footer>
+</body>
+</html>

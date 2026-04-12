@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Thread Index for 2016 ·  tsc-devel@secretchronicles.org</title>
+  <style type="text/css">html, body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial Nova", "Arial", sans-serif;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  margin: 0px;
+}
+
+a {
+  color: #0b8ae1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #520ebb;
+}
+
+header {
+  margin: 0px;
+  padding: 12px 6px;
+  background-color: #0b8ae1;
+}
+
+header ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header ul li::after {
+  margin-left: 8px;
+  content: "|";
+  margin-right: 8px;
+}
+
+header ul li:last-child::after {
+  content: "";
+  margin-right: 0px;
+}
+
+header a {
+  color: white;
+}
+
+header a:hover {
+  color: black;
+}
+
+footer {
+  border-top: 1px solid #999999;
+  color: #999999;
+  font-size: 0.8rem;
+  padding: 8px;
+  text-align: center;
+  clear: both;
+}
+
+footer p {
+  margin: 0px;
+}
+
+main {
+  margin: 8px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+h1.msg-subject {
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+h2, caption {
+  font-size: 1rem;
+}
+
+
+.msg-meta {
+  margin-top: 0px;
+}
+
+.msg-from {
+  font-weight: bold;
+}
+
+.msg-cc {
+  color: #e1730a;
+}
+
+.msg-attachments h2 {
+  font-style: italic;
+}
+
+table, tr, td, th {
+  border: none;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #eeeeee;
+}
+
+thead tr {
+  border-bottom: 1px solid black;
+}
+
+.newyear {
+  font-style: italic;
+  text-align: center;
+  font-weight: bold;
+}
+
+.numreplies {
+  text-align: center;
+}
+
+.thread-ghost {
+  font-style: italic;
+}
+
+.lastreply {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+pre, code {
+  font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+.msg-body {
+  width: 80ch;
+}
+
+.msg-quote {
+  color: #698900;
+  font-style: italic;
+}
+
+.msg-nav {
+  clear: both;
+}
+
+.msg-thread-nav {
+  width: calc(50% - 4px);
+}
+
+.msg-thread-nav-bydate {
+  float: right;
+}
+
+.msg-thread-nav-bythread {
+  float: left;
+}
+
+.msg-thread-nav table caption {
+  background-color: #0b8ae1;
+  color: white;
+  border: none;
+  caption-side: top;
+  text-align: center;
+  font-weight: bold;
+}
+
+.msg-thread-nav tbody tr td {
+  padding: 2px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.msg-thread-nav-bydate table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bydate table td:nth-child(1) {
+  width: 55%;
+
+}
+
+.msg-thread-nav-bydate table td:nth-child(2) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bydate table td:nth-child(3) {
+  width:20%;
+  text-align: right;
+}
+
+.msg-thread-nav-bydate table td:nth-child(4) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+
+.msg-thread-nav-bythread table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bythread table td:nth-child(1) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+.msg-thread-nav-bythread table td:nth-child(2) {
+  width: 20%;
+
+}
+
+.msg-thread-nav-bythread table td:nth-child(3) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bythread table td:nth-child(4) {
+  width:55%;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-0 {
+  padding-left: 0px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-1 {
+  padding-left: 32px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-2 {
+  padding-left: 64px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-3 {
+  padding-left: 96px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-4 {
+  padding-left: 128px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-5 {
+  padding-left: 160px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-6 {
+  padding-left: 192px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-7 {
+  padding-left: 224px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-8 {
+  padding-left: 256px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-9 {
+  padding-left: 288px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-10 {
+  padding-left: 320px;
+}
+
+.threadindex {
+    table-layout: fixed;
+}
+
+.threadindex th:nth-child(1) {
+    width: 78%;
+}
+
+.threadindex th:nth-child(2) {
+    text-align: center;
+    width: 7%;
+}
+
+.threadindex th:nth-child(3) {
+    width: 15%;
+}
+
+.formatted-patch .patch-add {
+  color: #00CC00;
+}
+
+.formatted-patch .patch-del {
+  color: #FF0000;
+}
+
+.formatted-patch .patch-pos {
+  color: #0000FF;
+  background-color: #ddddFF;
+}
+
+div.formatted-patch {
+  border: 1px solid black;
+}
+
+div.formatted-patch pre {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'Inconsolata', 'DejaVu Sans Mono', monospace;
+  margin: 0px;
+}
+
+
+div.formatted-patch pre.linenos {
+  background-color: #0b8ae1;
+  float: left;
+  padding-right: 4px;
+  text-align: right;
+  margin-right: 4px;
+}
+
+.linenos a {
+  color: white;
+}
+
+.linenos a:hover {
+  color: black;
+}
+
+.linenos a:target {
+  color: #8b000e;
+}
+
+tracker-placeholder {
+  display: none;
+}
+
+.tracker-state-change {
+  font-style: italic;
+  color: #e1730a;
+}
+
+.ticket-state {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.ticket-state-open {
+  color: #00CC00;
+}
+
+.ticket-state-confirmed {
+  color: #e1730a;
+}
+
+.ticket-state-closed {
+  color: #FF0000;
+}
+
+.tracker-panel {
+  width: 450px;
+  float: right;
+  margin: 8px;
+  padding: 0px;
+  border: 2px solid #0b8ae1;
+  text-align: center;
+}
+
+.tracker-panel h2 {
+  background-color: #0b8ae1;
+  color: white;
+  margin-top: 0px;
+}
+
+.tracker-panel ul {
+  padding: 0px 8px;
+  margin: 8px;
+  text-align: left;
+  list-style-type: none;
+}
+
+.tracker-table {
+  table-layout: fixed;
+}
+
+.tracker-table tbody td:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tracker-table thead th:nth-child(1) {
+  width: 60%;
+}
+
+.tracker-table thead th:nth-child(2) {
+  width: 13%;
+}
+
+.tracker-table thead th:nth-child(3) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(4) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(5) {
+  width: 7%;
+  text-align: center;
+}
+
+.tracker-table tbody td:nth-child(5) {
+  text-align: center;
+}
+
+#tracker-filter-subject {
+  width: calc(100% - 8px);
+}
+
+.filter-hide {
+  display: none;
+}
+
+@media(max-width: 768px) {
+
+  html, body {
+    font-size: 18px;
+  }
+
+  .lastreply {
+    display: none;
+  }
+
+  .msg-body {
+    width: initial;
+  }
+
+  .msg-thread-nav-bydate {
+    float: none;
+  }
+
+  .msg-thread-nav-bythread {
+    float: none;
+  }
+
+  .threadindex .lastreply {
+      display: none;
+      width: 0%;
+  }
+
+  .threadindex th:nth-child(1) {
+      width: 80%;
+  }
+
+  .threadindex th:nth-child(2) {
+      width: 20%;
+  }
+
+  .tracker-panel {
+    width: 95%;
+    margin: 0px auto;
+    float: none;
+  }
+
+  .tracker-table thead th:nth-child(1) {
+  width: 80%;
+  }
+
+  .tracker-table thead th:nth-child(2), .tracker-table tbody td:nth-child(2) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(3), .tracker-table tbody td:nth-child(3) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(4), .tracker-table tbody td:nth-child(4) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(5) {
+    width: 20%;
+  }
+}
+</style>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+  <header>
+    <ul><li><a href="/historic/tsc-devel-archive/">tsc-devel@secretchronicles.org</a></li><li><a href="/historic/tsc-devel-archive/about.html">About</a></li></ul>
+  </header>
+  <main>
+    <h1>Archive of tsc-devel@secretchronicles.org – Thread Index for 2016</h1>
+    
+      <table class="threadindex">
+        <thead>
+          <tr><th>Subject</th><th>Replies</th><th class="lastreply">Last Reply</th></tr>
+        </thead>
+        <tbody>
+          
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/01/m1.html">[tsc-devel] SFML Tasks?</a></span><br/>by <span class="msg-from">datahead</span> on Wed, 06 Jan 2016 06:12:52 UTC</td>
+                <td class="numreplies">1</td><td class="lastreply">Wed, 06 Jan 2016 09:40:16 UTC<br/>
+                  by <span class="msg-from">Quintus</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/01/m3.html">[tsc-devel] [ANN] Luiji steps down as project assistant lead</a></span><br/>by <span class="msg-from">Quintus</span> on Sat, 09 Jan 2016 10:48:17 UTC</td>
+                <td class="numreplies">5</td><td class="lastreply">Sat, 23 Jan 2016 15:16:03 UTC<br/>
+                  by <span class="msg-from">Quintus</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/01/m4.html">[tsc-devel] Retaining old IRC logs...</a></span><br/>by <span class="msg-from">datahead</span> on Tue, 12 Jan 2016 16:26:23 UTC</td>
+                <td class="numreplies">8</td><td class="lastreply">Sat, 21 May 2016 15:34:48 UTC<br/>
+                  by <span class="msg-from">Marvin Gülker</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/01/m7.html">[tsc-devel] Project management software / server OS</a></span><br/>by <span class="msg-from">Quintus</span> on Sun, 17 Jan 2016 13:43:01 UTC</td>
+                <td class="numreplies">30</td><td class="lastreply">Mon, 14 Mar 2016 09:51:59 UTC<br/>
+                  by <span class="msg-from">Lauri Ojansivu</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/01/m19.html">[tsc-devel] SFML Port... What is it?</a></span><br/>by <span class="msg-from">Bugsbane</span> on Wed, 20 Jan 2016 07:50:18 UTC</td>
+                <td class="numreplies">2</td><td class="lastreply">Wed, 20 Jan 2016 09:13:45 UTC<br/>
+                  by <span class="msg-from">Quintus</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/01/m33.html">[tsc-devel] TSC now has a bank account.</a></span><br/>by <span class="msg-from">Quintus</span> on Thu, 28 Jan 2016 11:10:16 UTC</td><td class="numreplies">0</td><td class="lastreply">—</td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/02/m1.html">[tsc-devel] [ANN] 2nd General Discussion - Request for Agenda</a></span><br/>by <span class="msg-from">Quintus</span> on Mon, 08 Feb 2016 10:34:45 UTC</td>
+                <td class="numreplies">16</td><td class="lastreply">Tue, 29 Mar 2016 17:33:24 UTC<br/>
+                  by <span class="msg-from">skarfester</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/02/m8.html">[tsc-devel] Team Nominations...</a></span><br/>by <span class="msg-from">Chris Jacobsen</span> on Mon, 29 Feb 2016 23:40:45 UTC</td>
+                <td class="numreplies">7</td><td class="lastreply">Tue, 15 Mar 2016 08:43:44 UTC<br/>
+                  by <span class="msg-from">Quintus</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/03/m3.html">[tsc-devel] General Team IRC Meeting - Picking a Date - Responses Needed...</a></span><br/>by <span class="msg-from">Chris Jacobsen</span> on Fri, 04 Mar 2016 04:04:31 UTC</td>
+                <td class="numreplies">10</td><td class="lastreply">Fri, 04 Mar 2016 21:37:08 UTC<br/>
+                  by <span class="msg-from">Quintus</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/03/m43.html">[tsc-devel] VOTE ANNOUNCEMENT: Voting Rules Change</a></span><br/>by <span class="msg-from">Quintus</span> on Sun, 20 Mar 2016 23:16:47 UTC</td>
+                <td class="numreplies">2</td><td class="lastreply">Mon, 21 Mar 2016 09:54:49 UTC<br/>
+                  by <span class="msg-from">Quintus</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/03/m46.html">[tsc-devel] Tiny Clipboard...</a></span><br/>by <span class="msg-from">Chris Jacobsen</span> on Tue, 22 Mar 2016 23:07:43 UTC</td>
+                <td class="numreplies">1</td><td class="lastreply">Wed, 23 Mar 2016 03:24:45 UTC<br/>
+                  by <span class="msg-from">datahead</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/03/m49.html">[tsc-devel] Game Controllers Working In Linux?</a></span><br/>by <span class="msg-from">datahead</span> on Wed, 23 Mar 2016 03:27:23 UTC</td>
+                <td class="numreplies">7</td><td class="lastreply">Fri, 15 Apr 2016 14:14:15 UTC<br/>
+                  by <span class="msg-from">xet7</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/03/m53.html">[tsc-devel] VOTE ANNOUNCEMENT: Votings in the General Discussion</a></span><br/>by <span class="msg-from">Quintus</span> on Fri, 25 Mar 2016 22:39:49 UTC</td><td class="numreplies">0</td><td class="lastreply">—</td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/03/m55.html">[tsc-devel] [Document 16/1] Story submission by danfun64</a></span><br/>by <span class="msg-from">Quintus</span> on Sun, 27 Mar 2016 00:23:20 UTC</td><td class="numreplies">0</td><td class="lastreply">—</td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/03/m56.html">[tsc-devel] LaTeX class file for document submissions</a></span><br/>by <span class="msg-from">Quintus</span> on Sun, 27 Mar 2016 00:32:15 UTC</td>
+                <td class="numreplies">6</td><td class="lastreply">Sun, 03 Apr 2016 22:37:24 UTC<br/>
+                  by <span class="msg-from">Chris Jacobsen</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/03/m61.html">[tsc-devel] [Document 16/2] Story principles suggestion by datahead</a></span><br/>by <span class="msg-from">Quintus</span> on Sun, 27 Mar 2016 11:17:35 UTC</td><td class="numreplies">0</td><td class="lastreply">—</td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/03/m62.html">[tsc-devel] [Document 16/3] Story proposal by datahead</a></span><br/>by <span class="msg-from">Quintus</span> on Sun, 27 Mar 2016 11:20:44 UTC</td><td class="numreplies">0</td><td class="lastreply">—</td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/04/m1.html">[tsc-devel] [ANN] TSC Finance Report 1st quarter 2016</a></span><br/>by <span class="msg-from">Quintus</span> on Fri, 01 Apr 2016 18:53:42 UTC</td><td class="numreplies">0</td><td class="lastreply">—</td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/04/m2.html">[tsc-devel] [Document 16/4] Story proposal by Quintus</a></span><br/>by <span class="msg-from">Quintus</span> on Sat, 02 Apr 2016 18:57:15 UTC</td><td class="numreplies">0</td><td class="lastreply">—</td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/04/m5.html">[tsc-devel] [ANN] Schedule for the 2nd General Discussion</a></span><br/>by <span class="msg-from">Quintus</span> on Sat, 02 Apr 2016 20:52:50 UTC</td><td class="numreplies">0</td><td class="lastreply">—</td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/04/m6.html">[tsc-devel] [Document 16/5] Suggestions on different meeting topics by datahead</a></span><br/>by <span class="msg-from">Quintus</span> on Sat, 02 Apr 2016 21:12:55 UTC</td><td class="numreplies">0</td><td class="lastreply">—</td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/04/m9.html">[tsc-devel] CALL FOR VOTES: Voting Rules Change</a></span><br/>by <span class="msg-from">Quintus</span> on Mon, 04 Apr 2016 08:15:06 UTC</td>
+                <td class="numreplies">6</td><td class="lastreply">Thu, 07 Apr 2016 10:16:55 UTC<br/>
+                  by <span class="msg-from">Lauri Ojansivu</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/04/m11.html">[tsc-devel] [Document 16/6] Suggestions on different meeting topics by skarfester</a></span><br/>by <span class="msg-from">Quintus</span> on Mon, 04 Apr 2016 08:49:21 UTC</td>
+                <td class="numreplies">2</td><td class="lastreply">Mon, 04 Apr 2016 09:15:06 UTC<br/>
+                  by <span class="msg-from">Quintus</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/04/m21.html">[tsc-devel] TSC bug tracking software: Please inform yourself!</a></span><br/>by <span class="msg-from">Quintus</span> on Fri, 08 Apr 2016 08:46:34 UTC</td><td class="numreplies">0</td><td class="lastreply">—</td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/04/m23.html">[tsc-devel] VOTE ANNOUNCEMENT: Translation software</a></span><br/>by <span class="msg-from">Quintus</span> on Mon, 11 Apr 2016 20:02:06 UTC</td><td class="numreplies">0</td><td class="lastreply">—</td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/04/m25.html">[tsc-devel] Changed E-Mail Address</a></span><br/>by <span class="msg-from">Quintus</span> on Mon, 18 Apr 2016 10:14:46 UTC</td><td class="numreplies">0</td><td class="lastreply">—</td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/04/m26.html">[tsc-devel] Personal update</a></span><br/>by <span class="msg-from">skarfester</span> on Sun, 24 Apr 2016 20:10:45 UTC</td>
+                <td class="numreplies">1</td><td class="lastreply">Mon, 25 Apr 2016 18:17:01 UTC<br/>
+                  by <span class="msg-from">Marvin Gülker</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/05/m1.html">[tsc-devel] CALL FOR VOTES: Translation software</a></span><br/>by <span class="msg-from">Marvin Gülker</span> on Mon, 02 May 2016 20:27:01 UTC</td>
+                <td class="numreplies">4</td><td class="lastreply">Mon, 09 May 2016 14:34:18 UTC<br/>
+                  by <span class="msg-from">skarfester</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/05/m9.html">[tsc-devel] DECLARATION OF RESULTS: Translation software</a></span><br/>by <span class="msg-from">Marvin Gülker</span> on Tue, 10 May 2016 09:22:53 UTC</td><td class="numreplies">0</td><td class="lastreply">—</td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/05/m12.html">[tsc-devel] My Availability...</a></span><br/>by <span class="msg-from">datahead</span> on Mon, 30 May 2016 13:33:41 UTC</td><td class="numreplies">0</td><td class="lastreply">—</td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/06/m1.html">[tsc-devel] We need input from Gamepad owners!</a></span><br/>by <span class="msg-from">Marvin Gülker</span> on Sun, 12 Jun 2016 11:16:38 UTC</td><td class="numreplies">0</td><td class="lastreply">—</td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/06/m2.html">[tsc-devel] furbot unable to join IRC channel</a></span><br/>by <span class="msg-from">Lauri Ojansivu</span> on Thu, 23 Jun 2016 23:05:15 UTC</td>
+                <td class="numreplies">3</td><td class="lastreply">Fri, 24 Jun 2016 15:03:28 UTC<br/>
+                  by <span class="msg-from">Marvin Gülker</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/07/m1.html">[tsc-devel] [ANN] TSC Finance report 2nd quarter 2016</a></span><br/>by <span class="msg-from">Marvin Gülker</span> on Sun, 10 Jul 2016 10:35:57 UTC</td><td class="numreplies">0</td><td class="lastreply">—</td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/07/m2.html">[tsc-devel] CEGUI 0.8 port complete</a></span><br/>by <span class="msg-from">Marvin Gülker</span> on Mon, 18 Jul 2016 21:35:22 UTC</td><td class="numreplies">0</td><td class="lastreply">—</td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/07/m3.html">[tsc-devel] Metadata in TSC assets</a></span><br/>by <span class="msg-from">Marvin Gülker</span> on Sat, 23 Jul 2016 14:01:10 UTC</td>
+                <td class="numreplies">6</td><td class="lastreply">Tue, 02 Aug 2016 08:38:28 UTC<br/>
+                  by <span class="msg-from">Marvin Gülker</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/07/m5.html">[tsc-devel] 2.1.0 release plans</a></span><br/>by <span class="msg-from">Marvin Gülker</span> on Mon, 25 Jul 2016 13:09:09 UTC</td>
+                <td class="numreplies">1</td><td class="lastreply">Wed, 27 Jul 2016 02:08:04 UTC<br/>
+                  by <span class="msg-from">datahead</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/07/m7.html">[tsc-devel] Bad build?</a></span><br/>by <span class="msg-from">datahead</span> on Sun, 31 Jul 2016 22:57:19 UTC</td>
+                <td class="numreplies">8</td><td class="lastreply">Thu, 04 Aug 2016 19:04:17 UTC<br/>
+                  by <span class="msg-from">Marvin Gülker</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/08/m1.html">[tsc-devel] Temporary build instructions for Lubuntu 16.10</a></span><br/>by <span class="msg-from">xet7</span> on Mon, 01 Aug 2016 00:35:51 UTC</td>
+                <td class="numreplies">3</td><td class="lastreply">Mon, 01 Aug 2016 10:13:15 UTC<br/>
+                  by <span class="msg-from">xet7</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/08/m14.html">[tsc-devel] Keeping the cache on the rewrite?</a></span><br/>by <span class="msg-from">Marvin Gülker</span> on Wed, 03 Aug 2016 16:42:23 UTC</td>
+                <td class="numreplies">2</td><td class="lastreply">Thu, 04 Aug 2016 08:09:18 UTC<br/>
+                  by <span class="msg-from">Marvin Gülker</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/08/m16.html">[tsc-devel] Win32 crossbuild works again</a></span><br/>by <span class="msg-from">Marvin Gülker</span> on Wed, 03 Aug 2016 21:52:34 UTC</td><td class="numreplies">0</td><td class="lastreply">—</td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/08/m17.html">[tsc-devel] Linux Builds for Testers...</a></span><br/>by <span class="msg-from">datahead</span> on Thu, 04 Aug 2016 00:18:58 UTC</td>
+                <td class="numreplies">2</td><td class="lastreply">Sat, 06 Aug 2016 18:42:49 UTC<br/>
+                  by <span class="msg-from">datahead</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/08/m30.html">[tsc-devel] List of Old Branches in GitHub - Some Can Be Deleted...</a></span><br/>by <span class="msg-from">datahead</span> on Fri, 12 Aug 2016 04:31:53 UTC</td>
+                <td class="numreplies">2</td><td class="lastreply">Fri, 12 Aug 2016 19:02:10 UTC<br/>
+                  by <span class="msg-from">Marvin Gülker</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/08/m33.html">[tsc-devel] Switch directory name change impacts level scripts...</a></span><br/>by <span class="msg-from">datahead</span> on Thu, 25 Aug 2016 04:19:07 UTC</td>
+                <td class="numreplies">4</td><td class="lastreply">Fri, 02 Sep 2016 00:33:11 UTC<br/>
+                  by <span class="msg-from">datahead</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/09/m4.html">[tsc-devel] Transfer of secretchronicles.de domain to xet7</a></span><br/>by <span class="msg-from">Marvin Gülker</span> on Fri, 16 Sep 2016 07:36:12 UTC</td>
+                <td class="numreplies">13</td><td class="lastreply">Sun, 09 Oct 2016 17:06:30 UTC<br/>
+                  by <span class="msg-from">Marvin Gülker</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/10/m1.html">[tsc-devel] Forum down?</a></span><br/>by <span class="msg-from">Ryan Gonzalez</span> on Sat, 08 Oct 2016 23:32:47 UTC</td>
+                <td class="numreplies">3</td><td class="lastreply">Sun, 09 Oct 2016 16:29:13 UTC<br/>
+                  by <span class="msg-from">Lauri Ojansivu</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/10/m5.html">[tsc-devel] Changing the Git branching model</a></span><br/>by <span class="msg-from">Marvin Gülker</span> on Sun, 09 Oct 2016 17:03:52 UTC</td><td class="numreplies">0</td><td class="lastreply">—</td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/10/m7.html">[tsc-devel] FYI: TSC does not build with libxml&#43;&#43; 3.0.0</a></span><br/>by <span class="msg-from">Marvin Gülker</span> on Sat, 15 Oct 2016 19:28:42 UTC</td><td class="numreplies">0</td><td class="lastreply">—</td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/11/m1.html">[tsc-devel] Menu tooltips...</a></span><br/>by <span class="msg-from">datahead</span> on Fri, 04 Nov 2016 19:11:05 UTC</td>
+                <td class="numreplies">1</td><td class="lastreply">Sat, 05 Nov 2016 08:59:42 UTC<br/>
+                  by <span class="msg-from">Marvin Gülker</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/11/m3.html">[tsc-devel] [ANN] TSC Finance Report 3rd quarter 2016</a></span><br/>by <span class="msg-from">Marvin Gülker</span> on Sat, 05 Nov 2016 12:39:31 UTC</td><td class="numreplies">0</td><td class="lastreply">—</td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/11/m7.html">[tsc-devel] Use OpenProject.org that is based on Redmine ?</a></span><br/>by <span class="msg-from">xet7</span> on Wed, 09 Nov 2016 14:15:24 UTC</td>
+                <td class="numreplies">3</td><td class="lastreply">Sun, 13 Nov 2016 16:31:08 UTC<br/>
+                  by <span class="msg-from">Quintus</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/11/m11.html">[tsc-devel] Git commit formatting</a></span><br/>by <span class="msg-from">Marvin Gülker</span> on Thu, 17 Nov 2016 18:35:38 UTC</td><td class="numreplies">0</td><td class="lastreply">—</td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/11/m12.html">[tsc-devel] Help on install from git</a></span><br/>by <span class="msg-from">jhemarcos</span> on Thu, 24 Nov 2016 01:52:23 UTC</td>
+                <td class="numreplies">2</td><td class="lastreply">Thu, 24 Nov 2016 22:19:44 UTC<br/>
+                  by <span class="msg-from">xet7</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/12/m1.html">[tsc-devel] 3.0.0 rewrite: Complete vs. incremental</a></span><br/>by <span class="msg-from">Marvin Gülker</span> on Sat, 03 Dec 2016 21:01:43 UTC</td>
+                <td class="numreplies">5</td><td class="lastreply">Thu, 15 Dec 2016 03:43:10 UTC<br/>
+                  by <span class="msg-from">datahead</span>
+                </td></tr>
+          
+            
+
+            <tr><td><span class="thread-subject "><a href="/historic/tsc-devel-archive/2016/12/m7.html">[tsc-devel] [ANN] New domain for the Secretchronicles project</a></span><br/>by <span class="msg-from">Marvin Gülker</span> on Wed, 21 Dec 2016 18:15:27 UTC</td>
+                <td class="numreplies">1</td><td class="lastreply">Wed, 21 Dec 2016 18:23:33 UTC<br/>
+                  by <span class="msg-from">xet7</span>
+                </td></tr>
+          
+        </tbody>
+      </table>
+    
+  </main>
+  <footer>
+    <p>Mailing list archive generated by <a href="https://mg.guelker.eu/projects/postkasten/">Postkasten</a>.</p>
+  </footer>
+</body>
+</html>

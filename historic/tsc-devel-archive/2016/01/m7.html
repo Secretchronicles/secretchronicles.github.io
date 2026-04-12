@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8"/>
+  <title>[tsc-devel] Project management software / server OS · tsc-devel@secretchronicles.org</title>
+  <style type="text/css">html, body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial Nova", "Arial", sans-serif;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  margin: 0px;
+}
+
+a {
+  color: #0b8ae1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #520ebb;
+}
+
+header {
+  margin: 0px;
+  padding: 12px 6px;
+  background-color: #0b8ae1;
+}
+
+header ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header ul li::after {
+  margin-left: 8px;
+  content: "|";
+  margin-right: 8px;
+}
+
+header ul li:last-child::after {
+  content: "";
+  margin-right: 0px;
+}
+
+header a {
+  color: white;
+}
+
+header a:hover {
+  color: black;
+}
+
+footer {
+  border-top: 1px solid #999999;
+  color: #999999;
+  font-size: 0.8rem;
+  padding: 8px;
+  text-align: center;
+  clear: both;
+}
+
+footer p {
+  margin: 0px;
+}
+
+main {
+  margin: 8px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+h1.msg-subject {
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+h2, caption {
+  font-size: 1rem;
+}
+
+
+.msg-meta {
+  margin-top: 0px;
+}
+
+.msg-from {
+  font-weight: bold;
+}
+
+.msg-cc {
+  color: #e1730a;
+}
+
+.msg-attachments h2 {
+  font-style: italic;
+}
+
+table, tr, td, th {
+  border: none;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #eeeeee;
+}
+
+thead tr {
+  border-bottom: 1px solid black;
+}
+
+.newyear {
+  font-style: italic;
+  text-align: center;
+  font-weight: bold;
+}
+
+.numreplies {
+  text-align: center;
+}
+
+.thread-ghost {
+  font-style: italic;
+}
+
+.lastreply {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+pre, code {
+  font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+.msg-body {
+  width: 80ch;
+}
+
+.msg-quote {
+  color: #698900;
+  font-style: italic;
+}
+
+.msg-nav {
+  clear: both;
+}
+
+.msg-thread-nav {
+  width: calc(50% - 4px);
+}
+
+.msg-thread-nav-bydate {
+  float: right;
+}
+
+.msg-thread-nav-bythread {
+  float: left;
+}
+
+.msg-thread-nav table caption {
+  background-color: #0b8ae1;
+  color: white;
+  border: none;
+  caption-side: top;
+  text-align: center;
+  font-weight: bold;
+}
+
+.msg-thread-nav tbody tr td {
+  padding: 2px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.msg-thread-nav-bydate table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bydate table td:nth-child(1) {
+  width: 55%;
+
+}
+
+.msg-thread-nav-bydate table td:nth-child(2) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bydate table td:nth-child(3) {
+  width:20%;
+  text-align: right;
+}
+
+.msg-thread-nav-bydate table td:nth-child(4) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+
+.msg-thread-nav-bythread table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bythread table td:nth-child(1) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+.msg-thread-nav-bythread table td:nth-child(2) {
+  width: 20%;
+
+}
+
+.msg-thread-nav-bythread table td:nth-child(3) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bythread table td:nth-child(4) {
+  width:55%;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-0 {
+  padding-left: 0px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-1 {
+  padding-left: 32px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-2 {
+  padding-left: 64px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-3 {
+  padding-left: 96px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-4 {
+  padding-left: 128px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-5 {
+  padding-left: 160px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-6 {
+  padding-left: 192px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-7 {
+  padding-left: 224px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-8 {
+  padding-left: 256px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-9 {
+  padding-left: 288px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-10 {
+  padding-left: 320px;
+}
+
+.threadindex {
+    table-layout: fixed;
+}
+
+.threadindex th:nth-child(1) {
+    width: 78%;
+}
+
+.threadindex th:nth-child(2) {
+    text-align: center;
+    width: 7%;
+}
+
+.threadindex th:nth-child(3) {
+    width: 15%;
+}
+
+.formatted-patch .patch-add {
+  color: #00CC00;
+}
+
+.formatted-patch .patch-del {
+  color: #FF0000;
+}
+
+.formatted-patch .patch-pos {
+  color: #0000FF;
+  background-color: #ddddFF;
+}
+
+div.formatted-patch {
+  border: 1px solid black;
+}
+
+div.formatted-patch pre {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'Inconsolata', 'DejaVu Sans Mono', monospace;
+  margin: 0px;
+}
+
+
+div.formatted-patch pre.linenos {
+  background-color: #0b8ae1;
+  float: left;
+  padding-right: 4px;
+  text-align: right;
+  margin-right: 4px;
+}
+
+.linenos a {
+  color: white;
+}
+
+.linenos a:hover {
+  color: black;
+}
+
+.linenos a:target {
+  color: #8b000e;
+}
+
+tracker-placeholder {
+  display: none;
+}
+
+.tracker-state-change {
+  font-style: italic;
+  color: #e1730a;
+}
+
+.ticket-state {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.ticket-state-open {
+  color: #00CC00;
+}
+
+.ticket-state-confirmed {
+  color: #e1730a;
+}
+
+.ticket-state-closed {
+  color: #FF0000;
+}
+
+.tracker-panel {
+  width: 450px;
+  float: right;
+  margin: 8px;
+  padding: 0px;
+  border: 2px solid #0b8ae1;
+  text-align: center;
+}
+
+.tracker-panel h2 {
+  background-color: #0b8ae1;
+  color: white;
+  margin-top: 0px;
+}
+
+.tracker-panel ul {
+  padding: 0px 8px;
+  margin: 8px;
+  text-align: left;
+  list-style-type: none;
+}
+
+.tracker-table {
+  table-layout: fixed;
+}
+
+.tracker-table tbody td:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tracker-table thead th:nth-child(1) {
+  width: 60%;
+}
+
+.tracker-table thead th:nth-child(2) {
+  width: 13%;
+}
+
+.tracker-table thead th:nth-child(3) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(4) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(5) {
+  width: 7%;
+  text-align: center;
+}
+
+.tracker-table tbody td:nth-child(5) {
+  text-align: center;
+}
+
+#tracker-filter-subject {
+  width: calc(100% - 8px);
+}
+
+.filter-hide {
+  display: none;
+}
+
+@media(max-width: 768px) {
+
+  html, body {
+    font-size: 18px;
+  }
+
+  .lastreply {
+    display: none;
+  }
+
+  .msg-body {
+    width: initial;
+  }
+
+  .msg-thread-nav-bydate {
+    float: none;
+  }
+
+  .msg-thread-nav-bythread {
+    float: none;
+  }
+
+  .threadindex .lastreply {
+      display: none;
+      width: 0%;
+  }
+
+  .threadindex th:nth-child(1) {
+      width: 80%;
+  }
+
+  .threadindex th:nth-child(2) {
+      width: 20%;
+  }
+
+  .tracker-panel {
+    width: 95%;
+    margin: 0px auto;
+    float: none;
+  }
+
+  .tracker-table thead th:nth-child(1) {
+  width: 80%;
+  }
+
+  .tracker-table thead th:nth-child(2), .tracker-table tbody td:nth-child(2) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(3), .tracker-table tbody td:nth-child(3) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(4), .tracker-table tbody td:nth-child(4) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(5) {
+    width: 20%;
+  }
+}
+</style>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<header>
+<ul><li><a href="/historic/tsc-devel-archive/">tsc-devel@secretchronicles.org</a></li><li><a href="/historic/tsc-devel-archive/about.html">About</a></li></ul>
+</header>
+<main>
+<h1 class="msg-subject">[tsc-devel] Project management software / server OS</h1>
+<p class="msg-meta">
+  <span class="msg-from">Quintus</span> |
+
+ Sun, 17 Jan 2016 13:43:01 UTC
+</p>
+
+
+
+
+<div class="tracker-placeholder"></div>
+
+
+
+<pre class="msg-body">-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Hi everyone,
+
+xet7 yesterday decided that we are going to install Sandstorm as the OS
+on alexandria. I read the corresponding email today, and I want to put
+this before the entire team to decide on.
+
+Here is the IRC log from yesterday, 2016-01-16:
+
+- ----------------------------------------
+16:23 --&gt;lambda-11235 entered #secretchronicles.
+16:23 xet7         | Quintus_q head8debian: I now have access to new donated VPS. For comparison: Alexandria 2 GB RAM, 240 GB disk space where 64 GB used - mostly backups that are 44.6 GB, kernel 2.6.32. New VPS, running at DigitalOcean Frankfurt datacenter: 1 GB RAM, 30 GB disk space where 2.2 GB used. Running Ubuntu 14.04 64bit, with kernel 3.13.0-71. TSC website would need to thank DigitalOcean for providing hosting. I will use <a href="https://sandstorm.i">https://sandstorm.i</a>
+16:23 xet7         | o platform on the server. Server is donated by Sandstorm, that had DigitalOcean free credits. They will check progress after one year. I have been translating Sandstorm projects to Finnish, and will continue that.
+16:25 xet7         | Anyway, alexandria server will remain as is now, until I have tested and configured all on new server.
+16:25 xet7         | New kernel also makes possible to use OpenVPN on server, if needed.
+16:27 xet7         | Sandstorm has lot of security features that require newer kernel.
+17:21 &lt;--DarkAceZ left the IRC network (Read error: Connection reset by peer)
+17:21 --&gt;DarkAceZ entered #secretchronicles.
+17:49 --datahead8888 is now known as datahead7777
+18:57 ZenWalker    | datahead7777: thanks
+19:01 head8debian  | xet7: Why didn&#39;t you jsut ask Firstroot for another server? They would have been glad to give us one.
+19:03 &lt;--Tobbi left the IRC network (Remote host closed the connection)
+19:03 --&gt;Tobbi entered #secretchronicles.
+19:04 xet7         | head8debian: Really? I can ask sure.
+19:06 xet7         | head8debian: I could really use more RAM and disk space, it that is possible. I&#39;ll send Firstroot a ticket.
+19:12 datahead7777 | lambda-11235, I merged your PR earlier today
+19:22 lambda-11235 | datahead7777: I saw that.
+19:51 head8debian  | xet7: I&#39;d talke to QUintus first. ;)
+19:51 head8debian  | talk*
+19:52 datahead7777 | head8debian, are there advantages if we can get a second server with First Root rather than having two different providers?
+19:53 xet7         | I already sent Firstroot a ticket .. did I act too fast?
+19:53 head8debian  | datahead7777: Not really, except that First root knows us quite well, and has been very generous and willing in the past.
+19:53 head8debian  | I guess we just sit back and see...
+19:53 head8debian  | I was hoping to hear Quintus&#39;s opinion, since he has worked with them quite a bit.
+19:57 xet7         | head8debian: I tried to be polite etc in my ticket to Firstroot. And previously at this channel Quintus said &#34;&lt;Quintus_q&gt; head8debian: It would be nice if you took the time and work together with xet7 for upgrading alexandria and setting up our own project infrastructure&#34;
+19:59 xet7         | Plan was first to upgrade alexandria current server, but using Sandstorm for infra would be much easier and secure for upgrades etc, and Sandstorm requires newer kernel.
+20:00 xet7         | I will send Quintus email about current status.
+20:03 datahead7777 | I was thinking in the back of my mind if there was any chance they think we&#39;re asking too much of them to try to get another server, though it really depends on our relationship with them
+20:04 datahead7777 | I guess it depends on how we approach it, too
+20:04 head8debian  | datahead7777: Yes it does.
+20:05 datahead7777 | head8debian, well, having one provider simplifies are administration
+20:05 datahead7777 | We&#39;d have one company to contact for any needs
+20:05 head8debian  | datahead7777: From what i can tell from QUintus&#39;s convos is that they are quite impressed with what we have done so far, and are quite happy to keep helping us, but i could be wrong.
+20:05 head8debian  | Anyways, im afk...
+20:05 datahead7777 | Having a release makes a differences
+20:05 datahead7777 | We&#39;ll need to get another release semi-soon to show more progress
+20:10 xet7         | I sent email to Quintus.
+20:32 datahead7777 | Okay, let us know if there&#39;s anything we should be aware of.  The mailing list is probably a good place to announce anything.
+20:32 datahead7777 | Or discuss anything
+20:33 datahead7777 | Thanks, xet7
+20:36 xet7         | datahead7777: Yes I will let you know. Currently I&#39;m testing various infra software etc, so no actual changes to any current system yet.
+- ----------------------------------------
+
+I have neither heard of nor have I tried Sandstorm previously. This
+doesn’t have to say anything, though. However, a quick view on the
+website of this software makes me sceptic about how it fits our current
+workflow. It is more like a complete collaboration platform that
+replaces everything we currently have. This is a fairly major switch
+that I want to see appreciated by more people on the team. As for my
+part, I think it is a known fact that I am a commandline hacker who has
+not a lot of use for fancy UIs. I mostly communicate by means of email,
+and I recently complained to GitHub their email notifications on PRs do
+not contain a link to the full URL needed for $ git pull so that I am
+forced to visit the website. My ideal project issue tracker is fully
+email-transparent and mostly acts like a mailinglist; it doesn’t have to
+be entirely like this, but to some degree I need my email interface. I
+recognise I am of a somewhat singular opinion in this regard, but I hope
+not completely alone.
+
+To be clear, I don’t want an email-only thing only either. I do know it
+is difficult for some people to use, although I can only point out how
+much more productive one is this way. If there’s a web interface, that
+is okay, just don’t force me to use it in a project I work on
+voluntaryly. TSC does not have a large amount of contributors anyway,
+and thus it is important that first and foremost any software we use
+fits our workflow and only on a secondary level is easy to use for
+non-core TSC contributors. As it stands, I fear we’re about to change
+our current workflow from a rather classic, commandlineish, emailish OSS
+one to a modern hyped one. If it wasn’t clear from the above, I am a
+fairly conservative nature.
+
+I realise I am not in the position to dictate the team what it has to
+use as software, but neither is xet7. I will call for a vote on this if
+you really want to impose this newly-fangled stuff on me.
+
+It would be unfair of me if I forced xet7 to make a server only fitting
+my very own views after I told him to think about stuff himself. I would
+thus of course take over server maintenance myself again, so he is not
+covered with work arising only from my queer views of how to administer
+a project and a server. For the work he already put in the server OS and
+software reserach, I do say thank you. It was me whose wording in IRC
+was unclear; I expected to get a little more feedback before someone of
+us runs out and asks other companies for support. For this I apologise.
+
+Any input from anybody is appreciated.
+
+Valete,
+Quintus
+
+- -- 
+#!/sbin/quintus
+Blog: <a href="http://www.guelkerdev.de">http://www.guelkerdev.de</a>
+
+GnuPG key: F1D8799FBCC8BC4F
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v2
+
+iQEcBAEBCAAGBQJWm5prAAoJEPHYeZ+8yLxP1hoH/ijChoyJc6V0cKP3WdH7vaBf
+8LvaeeG3RPxQUhIVMjzT6wD8QlzBORs8BJsMTvRdsQFTevLZhYOHm2JC5SWtqZrA
+j10a/alUI8NNJxmku8sR7YEBPglTFC4h1Sjfei0U5WkeMjLioC6u62njrsTKsaGo
+VrbbRUq6DgOAzhEfD2hV8B22xELWkdL8aAY/aBfsqEt4Vappzi89Rrjr9tlOIEhh
+1fpCTnC6D6lbesCSaw9MUxKgRBXNXeb1xIsUZIVtXuKTfIVIusf+HOH2XWkwvGfP
+FpfIFhy4gnbDACu5tSRw/XZQCcp43lEkFbG2zrOfUj92MCAeVXAbp8Fq4+7Bgdo=
+=6/ZS
+-----END PGP SIGNATURE-----
+
+</pre>
+
+
+
+<div class="msg-nav">
+<div class="msg-thread-nav msg-thread-nav-bythread">
+<table>
+<caption>By Thread</caption>
+<tbody>
+<tr><td>▶</td><td>2016-01-17 13:43:01</td><td>Quintus</td><td class="msg-thread-level-0"><a href="/historic/tsc-devel-archive/2016/01/m7.html">[tsc-devel] Project management software / server OS</a></td></tr>
+<tr><td></td><td>2016-01-17 13:56:41</td><td>Lauri Ojansivu</td><td class="msg-thread-level-1"><a href="/historic/tsc-devel-archive/2016/01/m8.html">Re: [tsc-devel] Project management software / server OS</a></td></tr>
+<tr><td></td><td>2016-01-17 14:00:56</td><td>Lauri Ojansivu</td><td class="msg-thread-level-2"><a href="/historic/tsc-devel-archive/2016/01/m9.html">Re: [tsc-devel] Project management software / server OS</a></td></tr>
+<tr><td></td><td>2016-01-17 14:37:18</td><td>Lauri Ojansivu</td><td class="msg-thread-level-3"><a href="/historic/tsc-devel-archive/2016/01/m10.html">Re: [tsc-devel] Project management software / server OS</a></td></tr>
+<tr><td></td><td>2016-01-20 08:38:12</td><td>Quintus</td><td class="msg-thread-level-3"><a href="/historic/tsc-devel-archive/2016/01/m21.html">Re: [tsc-devel] Project management software / server OS</a></td></tr>
+<tr><td></td><td>2016-01-20 09:21:08</td><td>Lauri Ojansivu</td><td class="msg-thread-level-4"><a href="/historic/tsc-devel-archive/2016/01/m25.html">Re: [tsc-devel] Project management software / server OS</a></td></tr>
+<tr><td></td><td>2016-01-20 16:21:01</td><td>Chris Jacobsen</td><td class="msg-thread-level-5"><a href="/historic/tsc-devel-archive/2016/01/m26.html">Re: [tsc-devel] Project management software / server OS</a></td></tr>
+<tr><td></td><td>2016-01-20 16:28:34</td><td>Lauri Ojansivu</td><td class="msg-thread-level-6"><a href="/historic/tsc-devel-archive/2016/01/m27.html">Re: [tsc-devel] Project management software / server OS</a></td></tr>
+<tr><td></td><td>2016-01-20 16:35:35</td><td>Lauri Ojansivu</td><td class="msg-thread-level-7"><a href="/historic/tsc-devel-archive/2016/01/m28.html">Re: [tsc-devel] Project management software / server OS</a></td></tr>
+<tr><td></td><td>2016-03-07 14:37:35</td><td>Quintus</td><td class="msg-thread-level-5"><a href="/historic/tsc-devel-archive/2016/03/m18.html">Re: [tsc-devel] Project management software / server OS</a></td></tr>
+<tr><td></td><td>2016-03-07 14:59:58</td><td>Lauri Ojansivu</td><td class="msg-thread-level-6"><a href="/historic/tsc-devel-archive/2016/03/m19.html">Re: [tsc-devel] Project management software / server OS</a></td></tr>
+<tr><td></td><td>2016-03-07 17:30:19</td><td>Quintus</td><td class="msg-thread-level-7"><a href="/historic/tsc-devel-archive/2016/03/m20.html">Re: [tsc-devel] Project management software / server OS</a></td></tr>
+<tr><td></td><td>2016-03-07 19:44:59</td><td>Lauri Ojansivu</td><td class="msg-thread-level-8"><a href="/historic/tsc-devel-archive/2016/03/m22.html">Re: [tsc-devel] Project management software / server OS</a></td></tr>
+<tr><td></td><td>2016-03-07 20:24:48</td><td>Lauri Ojansivu</td><td class="msg-thread-level-9"><a href="/historic/tsc-devel-archive/2016/03/m23.html">Re: [tsc-devel] Project management software / server OS</a></td></tr>
+<tr><td></td><td>2016-03-07 21:42:30</td><td>Quintus</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2016/03/m26.html">Re: [tsc-devel] Project management software / server OS</a></td></tr>
+<tr><td></td><td>2016-03-07 20:32:08</td><td>Quintus</td><td class="msg-thread-level-9"><a href="/historic/tsc-devel-archive/2016/03/m24.html">Re: [tsc-devel] Project management software / server OS</a></td></tr>
+<tr><td></td><td>2016-03-07 22:14:16</td><td>Lauri Ojansivu</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2016/03/m27.html">Re: [tsc-devel] Project management software / server OS</a></td></tr>
+<tr><td></td><td>2016-03-07 22:36:56</td><td>Quintus</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2016/03/m28.html">Re: [tsc-devel] Project management software / server OS</a></td></tr>
+<tr><td></td><td>2016-03-07 23:26:15</td><td>Quintus</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2016/03/m30.html">Re: [tsc-devel] Project management software / server OS</a></td></tr>
+<tr><td></td><td>2016-03-07 23:51:46</td><td>Lauri Ojansivu</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2016/03/m31.html">Re: [tsc-devel] Project management software / server OS</a></td></tr>
+<tr><td></td><td>2016-03-14 05:08:46</td><td>Lauri Ojansivu</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2016/03/m33.html">Re: [tsc-devel] Project management software / server OS</a></td></tr>
+<tr><td></td><td>2016-03-14 05:32:43</td><td>Lauri Ojansivu</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2016/03/m34.html">Re: [tsc-devel] Project management software / server OS</a></td></tr>
+<tr><td></td><td>2016-03-14 08:25:57</td><td>Quintus</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2016/03/m35.html">Re: [tsc-devel] Project management software / server OS</a></td></tr>
+<tr><td></td><td>2016-03-14 08:44:37</td><td>Quintus</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2016/03/m36.html">Re: [tsc-devel] Project management software / server OS</a></td></tr>
+<tr><td></td><td>2016-03-14 08:52:30</td><td>Quintus</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2016/03/m37.html">Re: [tsc-devel] Project management software / server OS</a></td></tr>
+<tr><td></td><td>2016-03-14 09:51:59</td><td>Lauri Ojansivu</td><td class="msg-thread-level-10"><a href="/historic/tsc-devel-archive/2016/03/m38.html">Re: [tsc-devel] Project management software / server OS</a></td></tr>
+<tr><td></td><td>2016-01-18 21:43:53</td><td>Quintus</td><td class="msg-thread-level-2"><a href="/historic/tsc-devel-archive/2016/01/m11.html">Re: [tsc-devel] Project management software / server OS</a></td></tr>
+<tr><td></td><td>2016-01-18 21:56:48</td><td>Lauri Ojansivu</td><td class="msg-thread-level-3"><a href="/historic/tsc-devel-archive/2016/01/m12.html">Re: [tsc-devel] Project management software / server OS</a></td></tr>
+<tr><td></td><td>2016-01-18 21:57:48</td><td>Sydney Dykstra</td><td class="msg-thread-level-3"><a href="/historic/tsc-devel-archive/2016/01/m13.html">Re: [tsc-devel] Project management software / server OS</a></td></tr>
+<tr><td></td><td>2016-01-18 22:03:18</td><td>Sydney Dykstra</td><td class="msg-thread-level-4"><a href="/historic/tsc-devel-archive/2016/01/m14.html">Re: [tsc-devel] Project management software / server OS</a></td></tr>
+<tr><td></td><td>2016-01-18 22:23:55</td><td>Chris Jacobsen</td><td class="msg-thread-level-5"><a href="/historic/tsc-devel-archive/2016/01/m15.html">Re: [tsc-devel] Project management software / server OS</a></td></tr>
+
+</tbody>
+</table>
+</div>
+<div class="msg-thread-nav msg-thread-nav-bydate">
+<table>
+<caption>By Date</caption>
+<tbody>
+
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/01/m7.html">[tsc-devel] Project management software / server OS</a></td><td>Quintus</td><td>2016-01-17 13:43:01</td><td class="msg-here">◀</td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/01/m8.html">Re: [tsc-devel] Project management software / server OS</a></td><td>Lauri Ojansivu</td><td>2016-01-17 13:56:41</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/01/m9.html">Re: [tsc-devel] Project management software / server OS</a></td><td>Lauri Ojansivu</td><td>2016-01-17 14:00:56</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/01/m10.html">Re: [tsc-devel] Project management software / server OS</a></td><td>Lauri Ojansivu</td><td>2016-01-17 14:37:18</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/01/m11.html">Re: [tsc-devel] Project management software / server OS</a></td><td>Quintus</td><td>2016-01-18 21:43:53</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/01/m12.html">Re: [tsc-devel] Project management software / server OS</a></td><td>Lauri Ojansivu</td><td>2016-01-18 21:56:48</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/01/m13.html">Re: [tsc-devel] Project management software / server OS</a></td><td>Sydney Dykstra</td><td>2016-01-18 21:57:48</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/01/m14.html">Re: [tsc-devel] Project management software / server OS</a></td><td>Sydney Dykstra</td><td>2016-01-18 22:03:18</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/01/m15.html">Re: [tsc-devel] Project management software / server OS</a></td><td>Chris Jacobsen</td><td>2016-01-18 22:23:55</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/01/m21.html">Re: [tsc-devel] Project management software / server OS</a></td><td>Quintus</td><td>2016-01-20 08:38:12</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/01/m25.html">Re: [tsc-devel] Project management software / server OS</a></td><td>Lauri Ojansivu</td><td>2016-01-20 09:21:08</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/01/m26.html">Re: [tsc-devel] Project management software / server OS</a></td><td>Chris Jacobsen</td><td>2016-01-20 16:21:01</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/01/m27.html">Re: [tsc-devel] Project management software / server OS</a></td><td>Lauri Ojansivu</td><td>2016-01-20 16:28:34</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/01/m28.html">Re: [tsc-devel] Project management software / server OS</a></td><td>Lauri Ojansivu</td><td>2016-01-20 16:35:35</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/03/m18.html">Re: [tsc-devel] Project management software / server OS</a></td><td>Quintus</td><td>2016-03-07 14:37:35</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/03/m19.html">Re: [tsc-devel] Project management software / server OS</a></td><td>Lauri Ojansivu</td><td>2016-03-07 14:59:58</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/03/m20.html">Re: [tsc-devel] Project management software / server OS</a></td><td>Quintus</td><td>2016-03-07 17:30:19</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/03/m22.html">Re: [tsc-devel] Project management software / server OS</a></td><td>Lauri Ojansivu</td><td>2016-03-07 19:44:59</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/03/m23.html">Re: [tsc-devel] Project management software / server OS</a></td><td>Lauri Ojansivu</td><td>2016-03-07 20:24:48</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/03/m24.html">Re: [tsc-devel] Project management software / server OS</a></td><td>Quintus</td><td>2016-03-07 20:32:08</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/03/m26.html">Re: [tsc-devel] Project management software / server OS</a></td><td>Quintus</td><td>2016-03-07 21:42:30</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/03/m27.html">Re: [tsc-devel] Project management software / server OS</a></td><td>Lauri Ojansivu</td><td>2016-03-07 22:14:16</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/03/m28.html">Re: [tsc-devel] Project management software / server OS</a></td><td>Quintus</td><td>2016-03-07 22:36:56</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/03/m30.html">Re: [tsc-devel] Project management software / server OS</a></td><td>Quintus</td><td>2016-03-07 23:26:15</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/03/m31.html">Re: [tsc-devel] Project management software / server OS</a></td><td>Lauri Ojansivu</td><td>2016-03-07 23:51:46</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/03/m33.html">Re: [tsc-devel] Project management software / server OS</a></td><td>Lauri Ojansivu</td><td>2016-03-14 05:08:46</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/03/m34.html">Re: [tsc-devel] Project management software / server OS</a></td><td>Lauri Ojansivu</td><td>2016-03-14 05:32:43</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/03/m35.html">Re: [tsc-devel] Project management software / server OS</a></td><td>Quintus</td><td>2016-03-14 08:25:57</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/03/m36.html">Re: [tsc-devel] Project management software / server OS</a></td><td>Quintus</td><td>2016-03-14 08:44:37</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/03/m37.html">Re: [tsc-devel] Project management software / server OS</a></td><td>Quintus</td><td>2016-03-14 08:52:30</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/03/m38.html">Re: [tsc-devel] Project management software / server OS</a></td><td>Lauri Ojansivu</td><td>2016-03-14 09:51:59</td><td class="msg-here"></td></tr>
+
+</tbody>
+</table>
+</div>
+</div>
+
+</main>
+<footer>
+<p>Mailing list archive generated by <a href="https://mg.guelker.eu/projects/postkasten/">Postkasten</a>.</p>
+</footer>
+</body>
+</html>

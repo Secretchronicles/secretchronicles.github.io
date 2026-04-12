@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8"/>
+  <title>[tsc-devel] VOTE ANNOUNCEMENT: Votings in the General Discussion · tsc-devel@secretchronicles.org</title>
+  <style type="text/css">html, body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial Nova", "Arial", sans-serif;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  margin: 0px;
+}
+
+a {
+  color: #0b8ae1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #520ebb;
+}
+
+header {
+  margin: 0px;
+  padding: 12px 6px;
+  background-color: #0b8ae1;
+}
+
+header ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header ul li::after {
+  margin-left: 8px;
+  content: "|";
+  margin-right: 8px;
+}
+
+header ul li:last-child::after {
+  content: "";
+  margin-right: 0px;
+}
+
+header a {
+  color: white;
+}
+
+header a:hover {
+  color: black;
+}
+
+footer {
+  border-top: 1px solid #999999;
+  color: #999999;
+  font-size: 0.8rem;
+  padding: 8px;
+  text-align: center;
+  clear: both;
+}
+
+footer p {
+  margin: 0px;
+}
+
+main {
+  margin: 8px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+h1.msg-subject {
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+h2, caption {
+  font-size: 1rem;
+}
+
+
+.msg-meta {
+  margin-top: 0px;
+}
+
+.msg-from {
+  font-weight: bold;
+}
+
+.msg-cc {
+  color: #e1730a;
+}
+
+.msg-attachments h2 {
+  font-style: italic;
+}
+
+table, tr, td, th {
+  border: none;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #eeeeee;
+}
+
+thead tr {
+  border-bottom: 1px solid black;
+}
+
+.newyear {
+  font-style: italic;
+  text-align: center;
+  font-weight: bold;
+}
+
+.numreplies {
+  text-align: center;
+}
+
+.thread-ghost {
+  font-style: italic;
+}
+
+.lastreply {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+pre, code {
+  font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+.msg-body {
+  width: 80ch;
+}
+
+.msg-quote {
+  color: #698900;
+  font-style: italic;
+}
+
+.msg-nav {
+  clear: both;
+}
+
+.msg-thread-nav {
+  width: calc(50% - 4px);
+}
+
+.msg-thread-nav-bydate {
+  float: right;
+}
+
+.msg-thread-nav-bythread {
+  float: left;
+}
+
+.msg-thread-nav table caption {
+  background-color: #0b8ae1;
+  color: white;
+  border: none;
+  caption-side: top;
+  text-align: center;
+  font-weight: bold;
+}
+
+.msg-thread-nav tbody tr td {
+  padding: 2px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.msg-thread-nav-bydate table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bydate table td:nth-child(1) {
+  width: 55%;
+
+}
+
+.msg-thread-nav-bydate table td:nth-child(2) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bydate table td:nth-child(3) {
+  width:20%;
+  text-align: right;
+}
+
+.msg-thread-nav-bydate table td:nth-child(4) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+
+.msg-thread-nav-bythread table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bythread table td:nth-child(1) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+.msg-thread-nav-bythread table td:nth-child(2) {
+  width: 20%;
+
+}
+
+.msg-thread-nav-bythread table td:nth-child(3) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bythread table td:nth-child(4) {
+  width:55%;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-0 {
+  padding-left: 0px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-1 {
+  padding-left: 32px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-2 {
+  padding-left: 64px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-3 {
+  padding-left: 96px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-4 {
+  padding-left: 128px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-5 {
+  padding-left: 160px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-6 {
+  padding-left: 192px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-7 {
+  padding-left: 224px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-8 {
+  padding-left: 256px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-9 {
+  padding-left: 288px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-10 {
+  padding-left: 320px;
+}
+
+.threadindex {
+    table-layout: fixed;
+}
+
+.threadindex th:nth-child(1) {
+    width: 78%;
+}
+
+.threadindex th:nth-child(2) {
+    text-align: center;
+    width: 7%;
+}
+
+.threadindex th:nth-child(3) {
+    width: 15%;
+}
+
+.formatted-patch .patch-add {
+  color: #00CC00;
+}
+
+.formatted-patch .patch-del {
+  color: #FF0000;
+}
+
+.formatted-patch .patch-pos {
+  color: #0000FF;
+  background-color: #ddddFF;
+}
+
+div.formatted-patch {
+  border: 1px solid black;
+}
+
+div.formatted-patch pre {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'Inconsolata', 'DejaVu Sans Mono', monospace;
+  margin: 0px;
+}
+
+
+div.formatted-patch pre.linenos {
+  background-color: #0b8ae1;
+  float: left;
+  padding-right: 4px;
+  text-align: right;
+  margin-right: 4px;
+}
+
+.linenos a {
+  color: white;
+}
+
+.linenos a:hover {
+  color: black;
+}
+
+.linenos a:target {
+  color: #8b000e;
+}
+
+tracker-placeholder {
+  display: none;
+}
+
+.tracker-state-change {
+  font-style: italic;
+  color: #e1730a;
+}
+
+.ticket-state {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.ticket-state-open {
+  color: #00CC00;
+}
+
+.ticket-state-confirmed {
+  color: #e1730a;
+}
+
+.ticket-state-closed {
+  color: #FF0000;
+}
+
+.tracker-panel {
+  width: 450px;
+  float: right;
+  margin: 8px;
+  padding: 0px;
+  border: 2px solid #0b8ae1;
+  text-align: center;
+}
+
+.tracker-panel h2 {
+  background-color: #0b8ae1;
+  color: white;
+  margin-top: 0px;
+}
+
+.tracker-panel ul {
+  padding: 0px 8px;
+  margin: 8px;
+  text-align: left;
+  list-style-type: none;
+}
+
+.tracker-table {
+  table-layout: fixed;
+}
+
+.tracker-table tbody td:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tracker-table thead th:nth-child(1) {
+  width: 60%;
+}
+
+.tracker-table thead th:nth-child(2) {
+  width: 13%;
+}
+
+.tracker-table thead th:nth-child(3) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(4) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(5) {
+  width: 7%;
+  text-align: center;
+}
+
+.tracker-table tbody td:nth-child(5) {
+  text-align: center;
+}
+
+#tracker-filter-subject {
+  width: calc(100% - 8px);
+}
+
+.filter-hide {
+  display: none;
+}
+
+@media(max-width: 768px) {
+
+  html, body {
+    font-size: 18px;
+  }
+
+  .lastreply {
+    display: none;
+  }
+
+  .msg-body {
+    width: initial;
+  }
+
+  .msg-thread-nav-bydate {
+    float: none;
+  }
+
+  .msg-thread-nav-bythread {
+    float: none;
+  }
+
+  .threadindex .lastreply {
+      display: none;
+      width: 0%;
+  }
+
+  .threadindex th:nth-child(1) {
+      width: 80%;
+  }
+
+  .threadindex th:nth-child(2) {
+      width: 20%;
+  }
+
+  .tracker-panel {
+    width: 95%;
+    margin: 0px auto;
+    float: none;
+  }
+
+  .tracker-table thead th:nth-child(1) {
+  width: 80%;
+  }
+
+  .tracker-table thead th:nth-child(2), .tracker-table tbody td:nth-child(2) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(3), .tracker-table tbody td:nth-child(3) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(4), .tracker-table tbody td:nth-child(4) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(5) {
+    width: 20%;
+  }
+}
+</style>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<header>
+<ul><li><a href="/historic/tsc-devel-archive/">tsc-devel@secretchronicles.org</a></li><li><a href="/historic/tsc-devel-archive/about.html">About</a></li></ul>
+</header>
+<main>
+<h1 class="msg-subject">[tsc-devel] VOTE ANNOUNCEMENT: Votings in the General Discussion</h1>
+<p class="msg-meta">
+  <span class="msg-from">Quintus</span> |
+
+ Fri, 25 Mar 2016 22:39:49 UTC
+</p>
+
+
+
+
+<div class="tracker-placeholder"></div>
+
+
+
+<pre class="msg-body">-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Hi everyone,
+
+this is the
+
+                A N N O U N C E M E N T   O F   V O T E
+
+for the votes we are doing in the General Discussion on April 9th. Since
+nobody submitted any voting options, I’ll make some up for now so we
+have something to vote on even if we don’t get the required majority for
+changing the voting rules.
+
+Still I do hope we get that one through so we don’t get cought in an
+overly formalistic voting procedure. I apologise for not having seen the
+problem of IRC meetings when writing the first version of the
+rules. This is why we should change them. But that’s for the other
+topic.
+
+Allowed to vote is any team member, which as per § 1 VotR is everybody
+who is publically listed as a member of the “Secretchronicles”
+organisation on GitHub.
+
+The voting period starts on 2016-04-09 with the opening of the
+respective voting process in the General Discussion, and closes with the
+closing of the respective voting process in the General Discussion.
+
+In the General Discussion, each of the topics will be announced,
+discussed, and then voted on (call for votes) if no consent is
+found. When the voting is finished and all votes have been counted, the
+declaration of results happens directly in the GD. The results will also
+be published on the ML.
+
+Any vote given before the call for votes is ignored. If no option
+receives the most votes (but multiple ones win), a second vote is held
+with the set of options reduced to those that got the most votes.
+
+Each team member has the right to request a covert vote. A covert vote
+means that a technical procedure is employed that prevents everyone from
+seeing how anyone else has voted. It is intended to prevent conflicts
+within the team or between users and specific team members, and you
+should only request this if you really think this is required. More
+openness is better for the project.
+
+If the request is made, it must be honoured. I will announce the
+technical procedure in that case.
+
+The request must be made before the Call for Votes has been posted, any
+further requests for covert votes are ignored.
+
+The voting rules change vote has already been announced, so it is not
+included in this Announcement.
+
+Team membership I
+°°°°°°°°°°°°°°°°°
+
+Vote subject: Inclusion of kirbyfan into the team
+Vote proponent: datahead
+
+Vote options:
+
+1. Yes
+2. No
+
+As per §2(2) VotR, this vote requires a 2/3 majority of *all* team
+members. Different only if we accept the voting rules changes before
+voting on this.
+
+Team membership II
+°°°°°°°°°°°°°°°°°°
+
+Vote subject: Inclusion of skarfester into the team
+Vote proponent: datahead
+
+Vote options:
+
+1. Yes
+2. No
+
+As per §2(2) VotR, this vote requires a 2/3 majority of *all* team
+members. Different only if we accept the voting rules changes before
+voting on this.
+
+Bugtracker software
+°°°°°°°°°°°°°°°°°°°
+
+Vote subject: Which bugtracking software to use for TSC
+Vote proponent: Quintus
+
+Vote options:
+
+1. Bugzilla
+2. Custom solution
+3. Flyspray
+4. GitLab
+5. Gogs
+6. Mailinglist only
+7. Mantis
+8. Redmine
+9. Trac
+
+Translation software
+°°°°°°°°°°°°°°°°°°°°
+
+Vote subject: Which tooling to use for translations
+Vote proponent: datahead
+
+Vote options:
+
+1. Provide only PO files (i.e. keep current state, no change)
+2. Transifex, no PO files
+3. Transifex + PO files
+4. Weblate, no PO files
+5. Weblate + PO files
+6. Custom solution
+
+Audience
+°°°°°°°°
+
+Vote subject: Whom to address with the game
+Vote proponent: datahead
+
+Vote options:
+
+1. Adults
+2. Everyone
+3. Old children
+4. Young and old children
+5. Young children
+
+Depth of story
+°°°°°°°°°°°°°°
+
+Vote subject: How deep should the story be?
+Vote proponent: datahead
+
+Vote options:
+
+1. Complex story critically required to enjoy the game
+2. Good story, understanding increases value of the game
+3. A bit of story, the game is more about playing a level
+4. No story at all
+
+Themes
+°°°°°°
+
+Vote subject: Which themes to focus on?
+Vote proponent: datahead
+
+Vote options:
+
+1. Shakespeare and his works
+2. Mario references
+3. Food
+4. Zombies
+5. Futurism
+6. Magic
+7. No specific theme
+
+Narration
+°°°°°°°°°
+
+Vote subject: How to tell the story?
+Vote proponent: datahead
+
+Vote options:
+
+1. All by text
+2. Cinematic scenes with text
+3. Cinematic scenes with speech, text as fallback if localisation is not
+   available
+4. Cinematic scenes with speech, English as fallback if localisation is not
+   available
+5. Videos, with text as fallback if localisation is not available
+6. Videos, with English as fallback if localisation is not available
+
+Lifes and energy
+°°°°°°°°°°°°°°°°
+
+Vote subject: Changing the life system to an energy system
+Vote proponent: datahead
+
+Vote options:
+
+1. Yes
+2. No
+
+CEGUI/SFGUI
+°°°°°°°°°°°
+
+Vote subject: Which GUI system to use
+Vote proponent: Quintus (on suggestion of skarfester [not TSC team])
+
+Vote options:
+
+1. CEGUI
+2. SFGUI
+
+Quintus
+TSC project lead.
+
+- -- 
+#!/sbin/quintus
+Blog: <a href="http://www.guelkerdev.de">http://www.guelkerdev.de</a>
+
+GnuPG key: F1D8799FBCC8BC4F
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v2
+
+iQEcBAEBCAAGBQJW9b2rAAoJEPHYeZ+8yLxPZWcH/jtlbYJ8QFJBAeCxptc0ICsi
+WlHRUb0GwGrvgOR87sLI7u363HsQDHptGjEO0StDUQAjfeumenIl4dQkdewGJChJ
+gqxn+YX+303rRCINltGTZMvIc2IbgDh8nQQqnLjCxRIfNpenJQyuarLisYIuNBqE
+xuSSsUnmklFztt9HBSN1u6Nv7wHadNynMXrWMEPObu+rmnApQfHE9E1eKfXa3v0o
+GfhPynZiuIkJF34JmPSe62GfjPCLBXpLny1eE2l2ZJ7DRpYjH3GgJI926ylQjUrD
+SD7HpIrR5gQe5h6EFU7EvE00HSYUh+MaaMvFUFqtobP2NljOwY8R60JNLPdUlHU=
+=o9/c
+-----END PGP SIGNATURE-----
+
+</pre>
+
+
+
+<div class="msg-nav">
+<div class="msg-thread-nav msg-thread-nav-bythread">
+<table>
+<caption>By Thread</caption>
+<tbody>
+<tr><td>▶</td><td>2016-03-25 22:39:49</td><td>Quintus</td><td class="msg-thread-level-0"><a href="/historic/tsc-devel-archive/2016/03/m53.html">[tsc-devel] VOTE ANNOUNCEMENT: Votings in the General Discussion</a></td></tr>
+
+</tbody>
+</table>
+</div>
+<div class="msg-thread-nav msg-thread-nav-bydate">
+<table>
+<caption>By Date</caption>
+<tbody>
+
+
+<tr><td><a href="/historic/tsc-devel-archive/2016/03/m53.html">[tsc-devel] VOTE ANNOUNCEMENT: Votings in the General Discussion</a></td><td>Quintus</td><td>2016-03-25 22:39:49</td><td class="msg-here">◀</td></tr>
+
+</tbody>
+</table>
+</div>
+</div>
+
+</main>
+<footer>
+<p>Mailing list archive generated by <a href="https://mg.guelker.eu/projects/postkasten/">Postkasten</a>.</p>
+</footer>
+</body>
+</html>

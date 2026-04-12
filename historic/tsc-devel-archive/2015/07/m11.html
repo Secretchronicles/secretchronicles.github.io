@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Fw: Re: [tsc-devel] RFC: Voting rules draft · tsc-devel@secretchronicles.org</title>
+  <style type="text/css">html, body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial Nova", "Arial", sans-serif;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  margin: 0px;
+}
+
+a {
+  color: #0b8ae1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #520ebb;
+}
+
+header {
+  margin: 0px;
+  padding: 12px 6px;
+  background-color: #0b8ae1;
+}
+
+header ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header ul li::after {
+  margin-left: 8px;
+  content: "|";
+  margin-right: 8px;
+}
+
+header ul li:last-child::after {
+  content: "";
+  margin-right: 0px;
+}
+
+header a {
+  color: white;
+}
+
+header a:hover {
+  color: black;
+}
+
+footer {
+  border-top: 1px solid #999999;
+  color: #999999;
+  font-size: 0.8rem;
+  padding: 8px;
+  text-align: center;
+  clear: both;
+}
+
+footer p {
+  margin: 0px;
+}
+
+main {
+  margin: 8px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+h1.msg-subject {
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+h2, caption {
+  font-size: 1rem;
+}
+
+
+.msg-meta {
+  margin-top: 0px;
+}
+
+.msg-from {
+  font-weight: bold;
+}
+
+.msg-cc {
+  color: #e1730a;
+}
+
+.msg-attachments h2 {
+  font-style: italic;
+}
+
+table, tr, td, th {
+  border: none;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #eeeeee;
+}
+
+thead tr {
+  border-bottom: 1px solid black;
+}
+
+.newyear {
+  font-style: italic;
+  text-align: center;
+  font-weight: bold;
+}
+
+.numreplies {
+  text-align: center;
+}
+
+.thread-ghost {
+  font-style: italic;
+}
+
+.lastreply {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+pre, code {
+  font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+.msg-body {
+  width: 80ch;
+}
+
+.msg-quote {
+  color: #698900;
+  font-style: italic;
+}
+
+.msg-nav {
+  clear: both;
+}
+
+.msg-thread-nav {
+  width: calc(50% - 4px);
+}
+
+.msg-thread-nav-bydate {
+  float: right;
+}
+
+.msg-thread-nav-bythread {
+  float: left;
+}
+
+.msg-thread-nav table caption {
+  background-color: #0b8ae1;
+  color: white;
+  border: none;
+  caption-side: top;
+  text-align: center;
+  font-weight: bold;
+}
+
+.msg-thread-nav tbody tr td {
+  padding: 2px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.msg-thread-nav-bydate table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bydate table td:nth-child(1) {
+  width: 55%;
+
+}
+
+.msg-thread-nav-bydate table td:nth-child(2) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bydate table td:nth-child(3) {
+  width:20%;
+  text-align: right;
+}
+
+.msg-thread-nav-bydate table td:nth-child(4) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+
+.msg-thread-nav-bythread table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bythread table td:nth-child(1) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+.msg-thread-nav-bythread table td:nth-child(2) {
+  width: 20%;
+
+}
+
+.msg-thread-nav-bythread table td:nth-child(3) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bythread table td:nth-child(4) {
+  width:55%;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-0 {
+  padding-left: 0px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-1 {
+  padding-left: 32px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-2 {
+  padding-left: 64px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-3 {
+  padding-left: 96px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-4 {
+  padding-left: 128px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-5 {
+  padding-left: 160px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-6 {
+  padding-left: 192px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-7 {
+  padding-left: 224px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-8 {
+  padding-left: 256px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-9 {
+  padding-left: 288px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-10 {
+  padding-left: 320px;
+}
+
+.threadindex {
+    table-layout: fixed;
+}
+
+.threadindex th:nth-child(1) {
+    width: 78%;
+}
+
+.threadindex th:nth-child(2) {
+    text-align: center;
+    width: 7%;
+}
+
+.threadindex th:nth-child(3) {
+    width: 15%;
+}
+
+.formatted-patch .patch-add {
+  color: #00CC00;
+}
+
+.formatted-patch .patch-del {
+  color: #FF0000;
+}
+
+.formatted-patch .patch-pos {
+  color: #0000FF;
+  background-color: #ddddFF;
+}
+
+div.formatted-patch {
+  border: 1px solid black;
+}
+
+div.formatted-patch pre {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'Inconsolata', 'DejaVu Sans Mono', monospace;
+  margin: 0px;
+}
+
+
+div.formatted-patch pre.linenos {
+  background-color: #0b8ae1;
+  float: left;
+  padding-right: 4px;
+  text-align: right;
+  margin-right: 4px;
+}
+
+.linenos a {
+  color: white;
+}
+
+.linenos a:hover {
+  color: black;
+}
+
+.linenos a:target {
+  color: #8b000e;
+}
+
+tracker-placeholder {
+  display: none;
+}
+
+.tracker-state-change {
+  font-style: italic;
+  color: #e1730a;
+}
+
+.ticket-state {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.ticket-state-open {
+  color: #00CC00;
+}
+
+.ticket-state-confirmed {
+  color: #e1730a;
+}
+
+.ticket-state-closed {
+  color: #FF0000;
+}
+
+.tracker-panel {
+  width: 450px;
+  float: right;
+  margin: 8px;
+  padding: 0px;
+  border: 2px solid #0b8ae1;
+  text-align: center;
+}
+
+.tracker-panel h2 {
+  background-color: #0b8ae1;
+  color: white;
+  margin-top: 0px;
+}
+
+.tracker-panel ul {
+  padding: 0px 8px;
+  margin: 8px;
+  text-align: left;
+  list-style-type: none;
+}
+
+.tracker-table {
+  table-layout: fixed;
+}
+
+.tracker-table tbody td:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tracker-table thead th:nth-child(1) {
+  width: 60%;
+}
+
+.tracker-table thead th:nth-child(2) {
+  width: 13%;
+}
+
+.tracker-table thead th:nth-child(3) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(4) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(5) {
+  width: 7%;
+  text-align: center;
+}
+
+.tracker-table tbody td:nth-child(5) {
+  text-align: center;
+}
+
+#tracker-filter-subject {
+  width: calc(100% - 8px);
+}
+
+.filter-hide {
+  display: none;
+}
+
+@media(max-width: 768px) {
+
+  html, body {
+    font-size: 18px;
+  }
+
+  .lastreply {
+    display: none;
+  }
+
+  .msg-body {
+    width: initial;
+  }
+
+  .msg-thread-nav-bydate {
+    float: none;
+  }
+
+  .msg-thread-nav-bythread {
+    float: none;
+  }
+
+  .threadindex .lastreply {
+      display: none;
+      width: 0%;
+  }
+
+  .threadindex th:nth-child(1) {
+      width: 80%;
+  }
+
+  .threadindex th:nth-child(2) {
+      width: 20%;
+  }
+
+  .tracker-panel {
+    width: 95%;
+    margin: 0px auto;
+    float: none;
+  }
+
+  .tracker-table thead th:nth-child(1) {
+  width: 80%;
+  }
+
+  .tracker-table thead th:nth-child(2), .tracker-table tbody td:nth-child(2) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(3), .tracker-table tbody td:nth-child(3) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(4), .tracker-table tbody td:nth-child(4) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(5) {
+    width: 20%;
+  }
+}
+</style>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<header>
+<ul><li><a href="/historic/tsc-devel-archive/">tsc-devel@secretchronicles.org</a></li><li><a href="/historic/tsc-devel-archive/about.html">About</a></li></ul>
+</header>
+<main>
+<h1 class="msg-subject">Fw: Re: [tsc-devel] RFC: Voting rules draft</h1>
+<p class="msg-meta">
+  <span class="msg-from">Quintus</span> |
+
+ Mon, 27 Jul 2015 09:35:38 UTC
+</p>
+
+
+
+
+<div class="tracker-placeholder"></div>
+
+
+
+<pre class="msg-body">[This e-mailed failed to parse properly. Below follows the raw message body.]
+
+--=-=-=
+Content-Type: text/plain
+
+DarkAceZ sent this to me personally, I forward it to the ML instead.
+
+Vale,
+Quintus
+
+
+--=-=-=
+Content-Type: message/rfc822
+Content-Disposition: inline
+
+Return-Path: &lt;…r@g…&gt;
+Delivered-To: &lt;…s@q…&gt;
+Received: from troia.quintilianus.eu
+	by troia.quintilianus.eu (Dovecot) with LMTP id S0RtF6mqs1VQDwAAC1rZVA
+	for &lt;…s@q…&gt;; Sat, 25 Jul 2015 15:26:33 +0000
+Received: from mail-ig0-x232.google.com (mail-ig0-x232.google.com [IPv6:2607:f8b0:4001:c05::232])
+	by troia.quintilianus.eu (Postfix) with ESMTPS id E5D4F9600A0
+	for &lt;…s@q…&gt;; Sat, 25 Jul 2015 15:26:32 +0000 (UTC)
+Received: by igr7 with SMTP id 7so34657277igr.0
+        for &lt;…s@q…&gt;; Sat, 25 Jul 2015 08:26:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=mime-version:in-reply-to:references:from:date:message-id:subject:to
+         :content-type;
+        bh=Kz/4Ui2BbisI99LAI4NVELxhVV2XgfD40kB2WCTK6iA=;
+        b=lsAyBJUvCZr/yv4ljv6XMRY1XYSU+TD6M0XQ6GgPLQevERIcfftU8yoPkXAd2Q9tj1
+         JB23fT6k4cHsc3Ulo+TPlHiAtS0QWCOAQgA6QO40BK8ogzkoxMb2j026+YkAGL972F4E
+         CwFHRW6KCf1NXiJ0vovdlj/AHwbfTt/3f+vsQWDXrVEwnv00AKkgFI98tNtUvyKso552
+         ahvw9Be3EwEtTvyT6kLPGeq79h5DsLXcb/g52pLpmw0jA7VvOFd6TODHG3YHMBaCWjwb
+         9xkL48rO7Y+AD9y3vcVVCeU6x8XuDiT4S2X7Az4R6YTGMsb6Yhwdazjc3ojDytU3PdJO
+         lqmQ==
+X-Received: by 10.107.46.159 with SMTP id u31mr29139092iou.69.1437837990771;
+ Sat, 25 Jul 2015 08:26:30 -0700 (PDT)
+Received: by 10.36.156.3 with HTTP; Sat, 25 Jul 2015 08:25:51 -0700 (PDT)
+In-Reply-To: &lt;<a href="/historic/tsc-devel-archive/2015/07/m8.html">87io9apzvk.fsf@hades.cable.internal.west-ik.de</a>&gt;
+References: &lt;<a href="/historic/tsc-devel-archive/2015/07/m5.html">87615gavth.fsf@hades.cable.internal.west-ik.de</a>&gt;
+ &lt;<a href="/historic/tsc-devel-archive/2015/07/m6.html">859086702.1427233.1437461304767.JavaMail.yahoo@mail.yahoo.com</a>&gt;
+ &lt;<a href="/historic/tsc-devel-archive/2015/07/m7.html">87wpxtqskw.fsf@hades.cable.internal.west-ik.de</a>&gt; &lt;<a href="/historic/tsc-devel-archive/2015/07/m8.html">87io9apzvk.fsf@hades.cable.internal.west-ik.de</a>&gt;
+From: Justin Rissler &lt;…r@g…&gt;
+Date: Sat, 25 Jul 2015 11:25:51 -0400
+Message-ID: &lt;…w@m…&gt;
+Subject: Re: [tsc-devel] RFC: Voting rules draft
+To: Quintus &lt;…s@q…&gt;
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary=&#34;====-=-=&#34;
+
+--====-=-=
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+I&#39;m currently lacking a home internet connection, but what I&#39;ve read so far
+sounds fine.
+Will these polls be available for non-members to see? We might want to keep
+in mind what they think while voting, if a majority of them lean towards
+one option.
+
+On Thu, Jul 23, 2015 at 1:06 PM, Quintus &lt;…s@q…&gt; wrote:
+
+<span class="msg-quote">&gt; Okay, if I see this correctly, then everyone is fine with voting rights</span>
+<span class="msg-quote">&gt; being tied to the GitHub organisation. Can we postpone the question of</span>
+<span class="msg-quote">&gt; whom to add/remove to/from the organisation until we have all agreed on</span>
+<span class="msg-quote">&gt; the rest of the voting rules document then?</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; Up until now no concerns other than the discussed one about the GitHub</span>
+<span class="msg-quote">&gt; organisation membership have been raised. I=E2=80=99d like to see more pe=</span>
+ople
+<span class="msg-quote">&gt; taking part in this discussion, though, as the voting rules are</span>
+<span class="msg-quote">&gt; something pretty fundamental for our continued development of the TSC</span>
+<span class="msg-quote">&gt; project. I appreciate it if everyone likes my draft, but now is the time</span>
+<span class="msg-quote">&gt; to properly discuss its fundamental outlines. Later changes will require</span>
+<span class="msg-quote">&gt; a 2/3 majority among the team members, so if you don=E2=80=99t make your</span>
+<span class="msg-quote">&gt; suggestions now, it=E2=80=99ll be difficult to get them in later.</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; Once no further changes are suggested, I want ideally all people in the</span>
+<span class="msg-quote">&gt; team to indicate that they=E2=80=99re fine with the document. The more ag=</span>
+reement
+<span class="msg-quote">&gt; is there, the better the foundation is.</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; Valete,</span>
+<span class="msg-quote">&gt; Quintus</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; --</span>
+<span class="msg-quote">&gt; #!/sbin/quintus</span>
+<span class="msg-quote">&gt; Blog: <a href="http://www.guelkerdev.de">http://www.guelkerdev.de</a></span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt; GnuPG key: F1D8799FBCC8BC4F</span>
+<span class="msg-quote">&gt;</span>
+<span class="msg-quote">&gt;</span>
+
+--====-=-=
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+&lt;div dir=3D&#34;ltr&#34;&gt;I&amp;#39;m currently lacking a home internet connection, but =
+what I&amp;#39;ve read so far sounds fine.&lt;div&gt;Will these polls be available fo=
+r non-members to see? We might want to keep in mind what they think while v=
+oting, if a majority of them lean towards one option.&lt;/div&gt;&lt;/div&gt;&lt;div class=
+=3D&#34;gmail_extra&#34;&gt;&lt;br&gt;&lt;div class=3D&#34;gmail_quote&#34;&gt;On Thu, Jul 23, 2015 at 1:0=
+6 PM, Quintus &lt;span dir=3D&#34;ltr&#34;&gt;&amp;lt;&lt;a href=3D&#34;mailto:…s@q…
+eu&#34; target=3D&#34;_blank&#34;&gt;…s@q…&lt;/a&gt;&amp;gt;&lt;/span&gt; wrote:&lt;br&gt;&lt;blo=
+ckquote class=3D&#34;gmail_quote&#34; style=3D&#34;margin:0 0 0 .8ex;border-left:1px #c=
+cc solid;padding-left:1ex&#34;&gt;Okay, if I see this correctly, then everyone is =
+fine with voting rights&lt;br&gt;
+being tied to the GitHub organisation. Can we postpone the question of&lt;br&gt;
+whom to add/remove to/from the organisation until we have all agreed on&lt;br&gt;
+the rest of the voting rules document then?&lt;br&gt;
+&lt;br&gt;
+Up until now no concerns other than the discussed one about the GitHub&lt;br&gt;
+organisation membership have been raised. I=E2=80=99d like to see more peop=
+le&lt;br&gt;
+taking part in this discussion, though, as the voting rules are&lt;br&gt;
+something pretty fundamental for our continued development of the TSC&lt;br&gt;
+project. I appreciate it if everyone likes my draft, but now is the time&lt;br&gt;
+to properly discuss its fundamental outlines. Later changes will require&lt;br&gt;
+a 2/3 majority among the team members, so if you don=E2=80=99t make your&lt;br&gt;
+suggestions now, it=E2=80=99ll be difficult to get them in later.&lt;br&gt;
+&lt;br&gt;
+Once no further changes are suggested, I want ideally all people in the&lt;br&gt;
+team to indicate that they=E2=80=99re fine with the document. The more agre=
+ement&lt;br&gt;
+is there, the better the foundation is.&lt;br&gt;
+&lt;br&gt;
+Valete,&lt;br&gt;
+&lt;div class=3D&#34;HOEnZb&#34;&gt;&lt;div class=3D&#34;h5&#34;&gt;Quintus&lt;br&gt;
+&lt;br&gt;
+--&lt;br&gt;
+#!/sbin/quintus&lt;br&gt;
+Blog: &lt;a href=3D&#34;<a href="http://www.guelkerdev.de&#34;">http://www.guelkerdev.de&#34;</a> rel=3D&#34;noreferrer&#34; target=3D&#34;_bl=
+ank&#34;&gt;<a href="http://www.guelkerdev.de&lt;/a">http://www.guelkerdev.de&lt;/a</a>&gt;&lt;br&gt;
+&lt;br&gt;
+GnuPG key: F1D8799FBCC8BC4F&lt;br&gt;
+&lt;br&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/blockquote&gt;&lt;/div&gt;&lt;br&gt;&lt;/div&gt;
+
+--====-=-=--
+
+--=-=-=
+Content-Type: text/plain
+
+
+
+-- 
+#!/sbin/quintus
+Blog: <a href="http://www.guelkerdev.de">http://www.guelkerdev.de</a>
+
+GnuPG key: F1D8799FBCC8BC4F
+
+--=-=-=--
+
+</pre>
+
+
+
+<div class="msg-nav">
+<div class="msg-thread-nav msg-thread-nav-bythread">
+<table>
+<caption>By Thread</caption>
+<tbody>
+<tr><td>▶</td><td>2015-07-27 09:35:38</td><td>Quintus</td><td class="msg-thread-level-0"><a href="/historic/tsc-devel-archive/2015/07/m11.html">Fw: Re: [tsc-devel] RFC: Voting rules draft</a></td></tr>
+<tr><td></td><td>2015-07-27 12:26:49</td><td>Luiji Maryo</td><td class="msg-thread-level-1"><a href="/historic/tsc-devel-archive/2015/07/m13.html">Re: Fw: Re: [tsc-devel] RFC: Voting rules draft</a></td></tr>
+
+</tbody>
+</table>
+</div>
+<div class="msg-thread-nav msg-thread-nav-bydate">
+<table>
+<caption>By Date</caption>
+<tbody>
+
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/07/m11.html">Fw: Re: [tsc-devel] RFC: Voting rules draft</a></td><td>Quintus</td><td>2015-07-27 09:35:38</td><td class="msg-here">◀</td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/07/m13.html">Re: Fw: Re: [tsc-devel] RFC: Voting rules draft</a></td><td>Luiji Maryo</td><td>2015-07-27 12:26:49</td><td class="msg-here"></td></tr>
+
+</tbody>
+</table>
+</div>
+</div>
+
+</main>
+<footer>
+<p>Mailing list archive generated by <a href="https://mg.guelker.eu/projects/postkasten/">Postkasten</a>.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8"/>
+  <title>[tsc-devel] 2.0.0 release and SFML branch · tsc-devel@secretchronicles.org</title>
+  <style type="text/css">html, body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial Nova", "Arial", sans-serif;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  margin: 0px;
+}
+
+a {
+  color: #0b8ae1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #520ebb;
+}
+
+header {
+  margin: 0px;
+  padding: 12px 6px;
+  background-color: #0b8ae1;
+}
+
+header ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header ul li::after {
+  margin-left: 8px;
+  content: "|";
+  margin-right: 8px;
+}
+
+header ul li:last-child::after {
+  content: "";
+  margin-right: 0px;
+}
+
+header a {
+  color: white;
+}
+
+header a:hover {
+  color: black;
+}
+
+footer {
+  border-top: 1px solid #999999;
+  color: #999999;
+  font-size: 0.8rem;
+  padding: 8px;
+  text-align: center;
+  clear: both;
+}
+
+footer p {
+  margin: 0px;
+}
+
+main {
+  margin: 8px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+h1.msg-subject {
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+h2, caption {
+  font-size: 1rem;
+}
+
+
+.msg-meta {
+  margin-top: 0px;
+}
+
+.msg-from {
+  font-weight: bold;
+}
+
+.msg-cc {
+  color: #e1730a;
+}
+
+.msg-attachments h2 {
+  font-style: italic;
+}
+
+table, tr, td, th {
+  border: none;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #eeeeee;
+}
+
+thead tr {
+  border-bottom: 1px solid black;
+}
+
+.newyear {
+  font-style: italic;
+  text-align: center;
+  font-weight: bold;
+}
+
+.numreplies {
+  text-align: center;
+}
+
+.thread-ghost {
+  font-style: italic;
+}
+
+.lastreply {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+pre, code {
+  font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+.msg-body {
+  width: 80ch;
+}
+
+.msg-quote {
+  color: #698900;
+  font-style: italic;
+}
+
+.msg-nav {
+  clear: both;
+}
+
+.msg-thread-nav {
+  width: calc(50% - 4px);
+}
+
+.msg-thread-nav-bydate {
+  float: right;
+}
+
+.msg-thread-nav-bythread {
+  float: left;
+}
+
+.msg-thread-nav table caption {
+  background-color: #0b8ae1;
+  color: white;
+  border: none;
+  caption-side: top;
+  text-align: center;
+  font-weight: bold;
+}
+
+.msg-thread-nav tbody tr td {
+  padding: 2px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.msg-thread-nav-bydate table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bydate table td:nth-child(1) {
+  width: 55%;
+
+}
+
+.msg-thread-nav-bydate table td:nth-child(2) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bydate table td:nth-child(3) {
+  width:20%;
+  text-align: right;
+}
+
+.msg-thread-nav-bydate table td:nth-child(4) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+
+.msg-thread-nav-bythread table {
+  table-layout: fixed;
+}
+
+.msg-thread-nav-bythread table td:nth-child(1) {
+  width: 3%;
+  text-align: center;
+  font-weight: bold;
+  color: #0b8ae1;
+}
+
+.msg-thread-nav-bythread table td:nth-child(2) {
+  width: 20%;
+
+}
+
+.msg-thread-nav-bythread table td:nth-child(3) {
+  width: 22%;
+  text-align: left;
+}
+
+.msg-thread-nav-bythread table td:nth-child(4) {
+  width:55%;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-0 {
+  padding-left: 0px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-1 {
+  padding-left: 32px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-2 {
+  padding-left: 64px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-3 {
+  padding-left: 96px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-4 {
+  padding-left: 128px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-5 {
+  padding-left: 160px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-6 {
+  padding-left: 192px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-7 {
+  padding-left: 224px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-8 {
+  padding-left: 256px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-9 {
+  padding-left: 288px;
+}
+
+.msg-thread-nav tbody tr td.msg-thread-level-10 {
+  padding-left: 320px;
+}
+
+.threadindex {
+    table-layout: fixed;
+}
+
+.threadindex th:nth-child(1) {
+    width: 78%;
+}
+
+.threadindex th:nth-child(2) {
+    text-align: center;
+    width: 7%;
+}
+
+.threadindex th:nth-child(3) {
+    width: 15%;
+}
+
+.formatted-patch .patch-add {
+  color: #00CC00;
+}
+
+.formatted-patch .patch-del {
+  color: #FF0000;
+}
+
+.formatted-patch .patch-pos {
+  color: #0000FF;
+  background-color: #ddddFF;
+}
+
+div.formatted-patch {
+  border: 1px solid black;
+}
+
+div.formatted-patch pre {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'Inconsolata', 'DejaVu Sans Mono', monospace;
+  margin: 0px;
+}
+
+
+div.formatted-patch pre.linenos {
+  background-color: #0b8ae1;
+  float: left;
+  padding-right: 4px;
+  text-align: right;
+  margin-right: 4px;
+}
+
+.linenos a {
+  color: white;
+}
+
+.linenos a:hover {
+  color: black;
+}
+
+.linenos a:target {
+  color: #8b000e;
+}
+
+tracker-placeholder {
+  display: none;
+}
+
+.tracker-state-change {
+  font-style: italic;
+  color: #e1730a;
+}
+
+.ticket-state {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.ticket-state-open {
+  color: #00CC00;
+}
+
+.ticket-state-confirmed {
+  color: #e1730a;
+}
+
+.ticket-state-closed {
+  color: #FF0000;
+}
+
+.tracker-panel {
+  width: 450px;
+  float: right;
+  margin: 8px;
+  padding: 0px;
+  border: 2px solid #0b8ae1;
+  text-align: center;
+}
+
+.tracker-panel h2 {
+  background-color: #0b8ae1;
+  color: white;
+  margin-top: 0px;
+}
+
+.tracker-panel ul {
+  padding: 0px 8px;
+  margin: 8px;
+  text-align: left;
+  list-style-type: none;
+}
+
+.tracker-table {
+  table-layout: fixed;
+}
+
+.tracker-table tbody td:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tracker-table thead th:nth-child(1) {
+  width: 60%;
+}
+
+.tracker-table thead th:nth-child(2) {
+  width: 13%;
+}
+
+.tracker-table thead th:nth-child(3) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(4) {
+  width: 10%;
+}
+
+.tracker-table thead th:nth-child(5) {
+  width: 7%;
+  text-align: center;
+}
+
+.tracker-table tbody td:nth-child(5) {
+  text-align: center;
+}
+
+#tracker-filter-subject {
+  width: calc(100% - 8px);
+}
+
+.filter-hide {
+  display: none;
+}
+
+@media(max-width: 768px) {
+
+  html, body {
+    font-size: 18px;
+  }
+
+  .lastreply {
+    display: none;
+  }
+
+  .msg-body {
+    width: initial;
+  }
+
+  .msg-thread-nav-bydate {
+    float: none;
+  }
+
+  .msg-thread-nav-bythread {
+    float: none;
+  }
+
+  .threadindex .lastreply {
+      display: none;
+      width: 0%;
+  }
+
+  .threadindex th:nth-child(1) {
+      width: 80%;
+  }
+
+  .threadindex th:nth-child(2) {
+      width: 20%;
+  }
+
+  .tracker-panel {
+    width: 95%;
+    margin: 0px auto;
+    float: none;
+  }
+
+  .tracker-table thead th:nth-child(1) {
+  width: 80%;
+  }
+
+  .tracker-table thead th:nth-child(2), .tracker-table tbody td:nth-child(2) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(3), .tracker-table tbody td:nth-child(3) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(4), .tracker-table tbody td:nth-child(4) {
+    display: none;
+  }
+
+  .tracker-table thead th:nth-child(5) {
+    width: 20%;
+  }
+}
+</style>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<header>
+<ul><li><a href="/historic/tsc-devel-archive/">tsc-devel@secretchronicles.org</a></li><li><a href="/historic/tsc-devel-archive/about.html">About</a></li></ul>
+</header>
+<main>
+<h1 class="msg-subject">[tsc-devel] 2.0.0 release and SFML branch</h1>
+<p class="msg-meta">
+  <span class="msg-from">Quintus</span> |
+
+ Tue, 19 May 2015 22:29:09 UTC
+</p>
+
+
+
+
+<div class="tracker-placeholder"></div>
+
+
+
+<pre class="msg-body">Hi everyone,
+
+as I have noted in IRC occasionally the work on the SFML port is much
+more than I expected it to be. My original goal of completing the SFML
+transition before the 2.0.0 final release has become pretty unreachable
+and I’m thus unsure on how to proceed, which is why I’d like to ask for
+some opinions from the rest of the team.
+
+                           I. Releasing 2.0.0
+
+Ticket #97 is mostly done thanks to kirbyfan’s great piece of music. It
+just needs a last review if really all the Mario remix music is gone
+from the game, which when completed will leave us with #406 as the last
+ticket opened. I have mostly completed my private tasks that were
+blocking me during the last weeks, and I think what remains can safely
+be done in parallel to any work I can do on TSC. Therefore, I think I’m
+able to take up on #406 in the next few days and create minified
+versions of the pipes for the world map.
+
+I’d thus welcome it if you all gave a quick glance over TSC’s existing
+music collection and see if we overlooked some Mario music. I hope not,
+but you never know.
+
+As soon as I have completed work on #406 I’m going to publish the first
+Release Candidate of Version 2.0.0. We are, again, behind our release
+plan and we really need to finally do something.
+
+                    II. State of the SFML transition
+
+I have completely thrown out the lowlevel OpenGL stuff in the
+“feature-sfml-port” branch in the repository and rewrote several
+integral parts of the game from ground up. When you run it it still
+looks fairly minimal, but I am confident that there isn’t too much
+missing to reapply the upper half of the code on the new ground I coded
+with SFML.
+
+The drawing basics work in that branch. As announced, I have implemented
+that by employing a scene-based programming model that replaces the
+rather confusing who-draws-what in original TSC code. The class
+hierarchy is now clearly structured, with cActor at the top and several
+more and more specialised classes below that, where cAnimatedActor
+additionally inherits from simpletoon’s animation file parser. I have
+also reworked the collision system to work in a structured way that
+makes it foreseeable which actor will receive the collision by filtering
+any emitted collision against a binary tree of existing UID&lt;-&gt;collision
+mappings so that double collisions cannot happen. This system will make
+the problem outlined in tickets #372 and #373 impossible.
+
+Although images can be successfully loaded from simpletoon’s animation
+system (which I had to adapt slightly as the OpenGL-based code needed to
+be swapped out), an actual animation system that _changes_ the loaded
+images is not yet implemented. The entire input handling, which
+previously was done by SDL1, is also still missing and the music system
+only has a debugging implementation I used to test if I can play any
+sound files at all.
+
+The scene-based model currently contains a bare mainmenu scene without
+any functionality other than a start button and a debugging level
+scene. Once the animation and image loading system is fully implemented
+in SFML, the existing level XML loader can directly be attached to have
+working levels, similar for worlds. There still need to be scenes for
+in-game menues and the option screen.
+
+In all of this, it is possible to keep the compatibility with the
+existing level files in case you wonder. The entire SFML thing is only
+about the underlying code structures, thus it is technically possible to
+introduce the SFML backend even in the 2.x series.
+
+              III. Consequences for the development of TSC
+
+We are going to release the longstanding 2.0.0 soon as outlined
+above. It is however unfortunate that the SFML port can’t be finished
+before, as in its current state (see II. above) it is pretty much
+impossible to properly merge further development in the “devel” branch
+into “feature-sfml-port”. The code for the lowlevel things has so
+dramtically changed that files like levelplayer.cpp or sprite.cpp have
+been completey rewritten, and any fixes or improvements to the code in
+“devel” will not be portable to “feature-sfml-port” when they affect
+these lowlevel stuff. The problem is that TSC’s previous architecture
+was not really cleanly separated, and changes in more highlevel areas
+will most likely cause changes in the lowlevel files as well, with the
+latter being not really applicable to the SFML port.
+
+Thus we have to decide how we should continue. I see the following
+options:
+
+1. Continue merging “devel” into “feature-sfml-port”, but discard any
+   changes to the lowlevel files.
+2. Do not merge “devel” into “feature-sfml-port” in the future and
+   reconsider things when the SFML port is done.
+3. Depart the SFML port from the 2.x series and treat it as the
+   beginning of the 3.x series.
+4. Concentrate all development efforts on the SFML port and halt any
+   other development in “devel” until it is completed.
+
+I personally favour option 1), in the hope, that I am able to quickly
+reach a point that will allow me to merge the “feature-sfml-port” branch
+back into “devel” again. Once that point is reached the problem
+vanishes, and I hope it is reached before the “devel” branch evolves
+far.
+
+If things go more complicated than expected, I suggest to follow option
+4). That is, not only me, but all of us shall work on the SFML port to
+get it done as quickly as possible.
+
+If any of you has further options to consider, please speak up. With the
+2.0.0 release immediately in front and thus the likelihood of an
+increased development momentum I deemed it useful to gave an overview of
+the SFML porting problems. To summarize the problem in a single
+sentence, the complex changes made in the SFML port will come into
+conflict with further changes in the “devel” branch, and we need to
+decide how to manage the upcoming development efforts it we are not
+intending to multiply our work by parts of the team working on
+incompatible systems each.
+
+Valete,
+Quintus
+
+-- 
+Blog: <a href="http://www.quintilianus.eu">http://www.quintilianus.eu</a>
+
+I will reject HTML emails.     | Ich akzeptiere keine HTML-Nachrichten.
+                               |
+Use GnuPG for mail encryption: | GnuPG für Mail-Verschlüsselung:
+<a href="https://www.gnupg.org">https://www.gnupg.org</a>          | <a href="https://de.wikipedia.org/wiki/GnuPG">https://de.wikipedia.org/wiki/GnuPG</a>
+My key fingerprint:            | Mein Schlüsselabdruck:
+B1FE 958E D5E8 468E AA20       | B1FE 958E D5E8 468E AA20
+8F4B F1D8 799F BCC8 BC4F       | 8F4B F1D8 799F BCC8 BC4F
+
+</pre>
+
+
+
+<div class="msg-nav">
+<div class="msg-thread-nav msg-thread-nav-bythread">
+<table>
+<caption>By Thread</caption>
+<tbody>
+<tr><td>▶</td><td>2015-05-19 22:29:09</td><td>Quintus</td><td class="msg-thread-level-0"><a href="/historic/tsc-devel-archive/2015/05/m12.html">[tsc-devel] 2.0.0 release and SFML branch</a></td></tr>
+<tr><td></td><td>2015-05-28 10:51:58</td><td>Quintus</td><td class="msg-thread-level-1"><a href="/historic/tsc-devel-archive/2015/05/m30.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td></tr>
+<tr><td></td><td>2015-05-29 03:57:57</td><td>Chris Jacobsen</td><td class="msg-thread-level-2"><a href="/historic/tsc-devel-archive/2015/05/m31.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td></tr>
+<tr><td></td><td>2015-05-29 07:13:33</td><td>Quintus</td><td class="msg-thread-level-3"><a href="/historic/tsc-devel-archive/2015/05/m33.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td></tr>
+<tr><td></td><td>2015-05-29 07:32:58</td><td>Chris Jacobsen</td><td class="msg-thread-level-4"><a href="/historic/tsc-devel-archive/2015/05/m34.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td></tr>
+<tr><td></td><td>2015-05-29 16:00:26</td><td>Quintus</td><td class="msg-thread-level-5"><a href="/historic/tsc-devel-archive/2015/05/m35.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td></tr>
+<tr><td></td><td>2015-05-30 05:16:26</td><td>Chris Jacobsen</td><td class="msg-thread-level-6"><a href="/historic/tsc-devel-archive/2015/05/m36.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td></tr>
+<tr><td></td><td>2015-05-31 19:12:43</td><td>Brian Allen Vanderburg II</td><td class="msg-thread-level-2"><a href="/historic/tsc-devel-archive/2015/05/m38.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td></tr>
+<tr><td></td><td>2015-05-31 21:01:59</td><td>Quintus</td><td class="msg-thread-level-3"><a href="/historic/tsc-devel-archive/2015/05/m39.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td></tr>
+
+</tbody>
+</table>
+</div>
+<div class="msg-thread-nav msg-thread-nav-bydate">
+<table>
+<caption>By Date</caption>
+<tbody>
+
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/05/m12.html">[tsc-devel] 2.0.0 release and SFML branch</a></td><td>Quintus</td><td>2015-05-19 22:29:09</td><td class="msg-here">◀</td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/05/m30.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td><td>Quintus</td><td>2015-05-28 10:51:58</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/05/m31.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td><td>Chris Jacobsen</td><td>2015-05-29 03:57:57</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/05/m33.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td><td>Quintus</td><td>2015-05-29 07:13:33</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/05/m34.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td><td>Chris Jacobsen</td><td>2015-05-29 07:32:58</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/05/m35.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td><td>Quintus</td><td>2015-05-29 16:00:26</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/05/m36.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td><td>Chris Jacobsen</td><td>2015-05-30 05:16:26</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/05/m38.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td><td>Brian Allen Vanderburg II</td><td>2015-05-31 19:12:43</td><td class="msg-here"></td></tr>
+
+<tr><td><a href="/historic/tsc-devel-archive/2015/05/m39.html">Re: [tsc-devel] 2.0.0 release and SFML branch</a></td><td>Quintus</td><td>2015-05-31 21:01:59</td><td class="msg-here"></td></tr>
+
+</tbody>
+</table>
+</div>
+</div>
+
+</main>
+<footer>
+<p>Mailing list archive generated by <a href="https://mg.guelker.eu/projects/postkasten/">Postkasten</a>.</p>
+</footer>
+</body>
+</html>
