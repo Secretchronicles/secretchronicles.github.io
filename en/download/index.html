@@ -45,6 +45,49 @@ of Secretchronicles. This and older releases are at
 <a href="https://github.com/Secretchronicles/TSC/releases">GitHub releases</a>,
 but please note that outdated releases are unsupported.</p>
 
+<h2 id="package-repositories">Package repositories</h2>
+
+<p>A repository installs TSC with your system’s own package manager and keeps it up to date afterwards, so you do not have to come back to this page for the next release. Everything in them is built by the workflows in the <a href="https://github.com/Secretchronicles/TSC">TSC repository</a> and served from the files attached to a <a href="https://github.com/Secretchronicles/TSC/releases">GitHub release</a>.</p>
+
+<p><b>These repositories are not signed yet.</b> Signing needs a GPG key, which is a secret the build cannot invent for itself, so the commands below tell your package manager to trust them without one. That means you are trusting whoever serves these files. The <a href="https://github.com/Secretchronicles/TSC/blob/devel/.github/workflows/Deb.yml">workflows</a> say what to change once a key exists.</p>
+
+<h3 id="repo-apt">Debian and Ubuntu (apt)</h3>
+
+<p>Ubuntu 26.04 and Debian 14 and newer — those are the releases that ship SFML 3, which TSC needs. On anything older, use the AppImage or the Flatpak.</p>
+
+<pre><code>sudo mkdir -p /etc/apt/sources.list.d
+echo 'deb [trusted=yes] https://secretchronicles.org/apt ./' \
+  | sudo tee /etc/apt/sources.list.d/tsc.list
+sudo apt update
+sudo apt install tsc
+</code></pre>
+
+<p>Then start it from your application menu, or run <code>tsc</code>.</p>
+
+<h3 id="repo-appimage">AppImage</h3>
+
+<p>One file that runs on any Linux distribution without being installed. <code>zsync</code> updates it in place instead of downloading it again:</p>
+
+<pre><code>wget https://secretchronicles.org/appimage/TSC-x86_64.AppImage
+chmod +x TSC-x86_64.AppImage
+./TSC-x86_64.AppImage
+
+# later, to update it in place:
+zsync https://secretchronicles.org/appimage/TSC-x86_64.AppImage.zsync
+</code></pre>
+
+<h3 id="repo-flatpak">Flatpak</h3>
+
+<p>Any distribution with Flatpak, x86_64 and aarch64:</p>
+
+<pre><code>flatpak remote-add --if-not-exists --no-gpg-verify tsc \
+  https://secretchronicles.org/flatpak/tsc.flatpakrepo
+flatpak install tsc org.secretchronicles.TSC
+flatpak run org.secretchronicles.TSC
+</code></pre>
+
+<p>Individual files for older releases are further down this page.</p>
+
 <h2 id="beta-version">Beta Version</h2>
 
 <p>v2.2.0-beta1 released 2024-10-27. New .deb packages are being built and added to
@@ -678,7 +721,6 @@ RSGZ3oE55XSy9Po6q6Jl7pZQYz9jBLD0KeWLvcTQhZCGR8hg8+O0
 
   <p>Copyright © 2024 The Secret Chronicles Team</p>
   <p id="sponsor">Hosting thanks to our collegues from <a href="https://wekan.github.io/"><img src="/assets/wekan-logo.svg" alt="Wekan" style="height: 24px"/></a></p>
-  </p>
 </div>
 
   </div>
