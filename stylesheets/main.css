@@ -193,3 +193,51 @@ blockquote {
     font-size: 10pt;
     font-style: italic;
 }
+
+/***************************************
+ * Download tables (en/fi/es download pages)
+ *
+ * One table per operating system, newest release at the top. The checksum
+ * cell holds an MD5 and a SHA256 sum, which is far more text than the rest of
+ * the row, so it sits behind a <details> caret: the row stays one line until
+ * somebody actually wants to verify a download.
+ ***************************************/
+
+table.downloads {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.5em 0 1.5em 0;
+}
+
+table.downloads th,
+table.downloads td {
+    border: 1px solid #ccc;
+    padding: 4px 8px;
+    text-align: left;
+    vertical-align: top;
+}
+
+table.downloads th {
+    background: #eee;
+}
+
+table.downloads tr:nth-child(even) td {
+    background: #f8f8f8;
+}
+
+table.downloads summary {
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+/* A checksum must not stretch the table wider than the page on a phone. */
+table.downloads code {
+    font-size: 9pt;
+    word-break: break-all;
+}
+
+/* The whole table scrolls sideways rather than the page doing it. */
+div.downloads-scroll,
+table.downloads {
+    overflow-x: auto;
+}
